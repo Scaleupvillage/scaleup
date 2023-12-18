@@ -1,0 +1,28 @@
+// Define variables for hamburger icon
+
+// Hamburger icon styles
+.hamburger {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: #fff;
+  position: relative;
+  cursor: pointer;
+
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+  }
+  &::after {
+    top: -10px;
+  }
+  &::before {
+    top: 10px;
+  }
+}

@@ -12,7 +12,7 @@ export default function Home() {
     () => (
       <div className="w-full bg-black bg-opacity-20 h-full flex justify-center items-center flex-col">
         <div className="mx-auto w-full  md:max-w-[1140px] flex justify-center items-center flex-col">
-          <h1 className="text-[18px] md:text-[42px] font-medium leading-none">
+          <h1 className="text-[18px] md:text-[42px] font-medium leading-none text-white">
             PREPARE YOURSELF FOR THE
           </h1>
           <h1 className="text-[#f50136] text-[46px] md:text-[90px] font-extrabold ">
@@ -30,7 +30,7 @@ export default function Home() {
     () => (
       <div className="w-full bg-black bg-opacity-20 h-full flex justify-start items-center ">
         <div className="px-4 md:px-0 mx-auto w-full md:max-w-[1140px] max-w-[800px] flex justify-center items-start flex-col">
-          <h1 className="text-[18px] md:text-[42px] font-medium leading-none">
+          <h1 className="text-[18px] md:text-[42px] font-medium leading-none text-white">
             PREPARE YOURSELF FOR THE
           </h1>
           <h1 className="text-[#f50136] text-[46px] md:text-[90px] font-extrabold ">

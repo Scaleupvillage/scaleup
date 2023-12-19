@@ -69,7 +69,7 @@ const Navbar = () => {
               <li key={index}>
                 <Link
                   href={link}
-                  className="p-5 hover:text-[#f50136] transition-colors ease-in-out duration-700 text-sm"
+                  className="p-5 text-white hover:text-[#f50136] transition-colors ease-in-out duration-700 text-sm"
                 >
                   {label}
                 </Link>
@@ -107,7 +107,7 @@ const Navbar = () => {
               <li key={index}>
                 <Link
                   href={link}
-                  className="p-5 block hover:text-[#f50136] transition-colors ease-in-out duration-700 text-sm"
+                  className="p-5 block text-white hover:text-[#f50136] transition-colors ease-in-out duration-700 text-sm"
                 >
                   {label}
                 </Link>

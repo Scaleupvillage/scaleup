@@ -21,7 +21,10 @@ export default function Home() {
           <p className="text-sm md:text-lg mb-8">
             12-14 FEBRUARY 2018-LOS ANGELES, CA
           </p>
-          <button type="button" className="bg-[#f50136] px-8 py-3 rounded-full">
+          <button
+            type="button"
+            className="bg-[#f50136] px-8 py-3 rounded-full text-white"
+          >
             BUY TICKETS NOW
           </button>
         </div>
@@ -39,7 +42,10 @@ export default function Home() {
           <p className="text-sm md:text-lg mb-8">
             12-14 FEBRUARY 2018-LOS ANGELES, CA
           </p>
-          <button type="button" className="bg-[#f50136] px-8 py-3 rounded-full">
+          <button
+            type="button"
+            className="bg-[#f50136] px-8 py-3 rounded-full text-white"
+          >
             BUY TICKETS NOW
           </button>
         </div>

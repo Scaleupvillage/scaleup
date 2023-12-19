@@ -1,11 +1,25 @@
-import { useSwiper } from "swiper/react";
+import { useSwiper, useSwiperSlide } from "swiper/react";
 import Styles from "@/Components/Slider/sldier.module.scss";
 const SliderPagination = ({ slideLength }) => {
   const swiper = useSwiper();
-  console.log(Array.from(Array(slideLength).keys()));
+  
   return (
-    <div className="absolute bottom-0">
-      <div className={Styles["slider-pagination"]}></div>
+    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-[1]">
+      <div className="relative flex">
+        <div className={`${Styles["slider-pagination"]} flex `}></div>
+        <div className="absolute z-[3] w-full h-full flex justify-center items-center gap-x-3">
+          {Array.from(Array(slideLength).keys()).map((slideIndex) => (
+            <div
+              role="button"
+              key={slideIndex}
+              className={`px-3 py-2 border  rounded-lg font-semibold`}
+              onClick={() => swiper.slideTo(slideIndex)}
+            >
+              {slideIndex + 1}
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

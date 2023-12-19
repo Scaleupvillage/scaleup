@@ -4,7 +4,7 @@ import React, { useRef } from "react";
 import Style from "./layout.module.scss";
 import { motion, sync, useCycle } from "framer-motion";
 import { useDimensions } from "./useDimensions";
-
+import logo from "@/assets/images/logo.png";
 const Navbar = () => {
   const containerRef = useRef(null);
   const [isOpen, toggleOpen] = useCycle(false, true);
@@ -55,12 +55,7 @@ const Navbar = () => {
     <>
       <div className=" p-5 justify-between items-center h-[20vh] hidden md:flex">
         <Link href="/">
-          <Image
-            width="160"
-            height="100"
-            alt="logo"
-            src="https://preview.colorlib.com/theme/evento/assets/img/logo.png.webp"
-          />
+          <Image width="100" height="100" alt="logo" src={logo.src} />
         </Link>
 
         <div>
@@ -79,7 +74,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className="w-full block md:hidden bg-[#18181C]">
+      <div className="w-full block md:hidden bg-[#18181C] absolute">
         <div
           className="w-full flex justify-between relative  p-5 "
           initial={false}

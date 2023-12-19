@@ -1,0 +1,15 @@
+.counter {
+  margin: 20px;
+  display: inline-block;
+  padding: 25px;
+  min-width: 120px;
+  background-color: #f44336;
+  color: #ffffff;
+  font-size: 48px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.2;
+  .label {
+    font-size: 14px;
+  }
+}

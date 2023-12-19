@@ -13,7 +13,7 @@ const Slider = ({ slides, ...props }) => {
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>{slide()}</SwiperSlide>
         ))}
-        {/* <SliderPagination slideLength={slides.length} /> */}
+        <SliderPagination slideLength={slides.length} />
       </Swiper>
     </div>
   );

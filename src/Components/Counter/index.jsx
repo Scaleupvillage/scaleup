@@ -1,0 +1,62 @@
+"use client";
+import React, { useState, useEffect } from "react";
+import Styles from "./counter.module.scss";
+const Countdown = ({ targetDate }) => {
+  const calculateTimeLeft = () => {
+    const difference = targetDate - new Date();
+
+    if (difference > 0) {
+      const weeks = Math.floor(difference / (1000 * 60 * 60 * 24 * 7));
+      const days = Math.floor((difference / (1000 * 60 * 60 * 24)) % 7);
+      const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((difference / 1000 / 60) % 60);
+      const seconds = Math.floor((difference / 1000) % 60);
+
+      return { weeks, days, hours, minutes, seconds };
+    }
+    return { weeks: 0, days: 0, hours: 0, minutes: 0, seconds: 0 };
+  };
+
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  });
+
+  const { weeks, days, hours, minutes, seconds } = timeLeft;
+
+  return (
+    <div className="flex flex-col lg:flex-row gap-x-4">
+      <div className="grid grid-cols-2 lg:grid-cols-4 lg:gap-x-4">
+        <div className={Styles["counter"]}>
+          {weeks}
+          <div className={Styles["label"]}>weeks</div>
+        </div>
+        <div className={Styles["counter"]}>
+          {days}
+          <div className={Styles["label"]}> Days</div>
+        </div>
+        <div className={Styles["counter"]}>
+          {hours}
+          <div className={Styles["label"]}>Hours</div>
+        </div>
+        <div className={Styles["counter"]}>
+          {minutes}
+          <div className={Styles["label"]}>Minute</div>
+        </div>
+      </div>
+      <div className={"flex justify-center items-center"}>
+        <div className={`${Styles["counter"]} `}>
+          {seconds}
+          <div className={Styles["label"]}>Seconds</div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Countdown;

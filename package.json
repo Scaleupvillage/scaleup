@@ -17,6 +17,7 @@
     "swiper": "^11.0.5"
   },
   "devDependencies": {
+    "@iconify/react": "^4.1.1",
     "autoprefixer": "^10",
     "eslint": "^8",
     "eslint-config-next": "13.5.6",

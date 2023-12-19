@@ -26,3 +26,13 @@
     top: 10px;
   }
 }
+
+.footer-link {
+  display: flex;
+  .social-link {
+    border: 1px solid #f50136;
+    display: block;
+    padding: 5px;
+    border-radius: 50%;
+  }
+}

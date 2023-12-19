@@ -1,5 +1,5 @@
 .slider-pagination {
-  padding: 15px 90px;
+  padding: 33px 150px;
   margin: 0 auto;
   text-align: center;
   float: none;
@@ -8,13 +8,13 @@
   list-style: none;
   position: relative;
   background-color: #ffffff;
-  top: -14px;
+  bottom: 0px;
   border-top-left-radius: 51px;
   border-top-right-radius: 51px;
-  &::after {
+  z-index: 2;
+  &::after {  
     content: " ";
     display: block;
-    z-index: 99999;
     position: absolute;
     right: -30px;
     bottom: 0;
@@ -22,7 +22,7 @@
     border-top-left-radius: 0;
     width: 0;
     height: 0;
-    border-bottom: 40px solid #ffffff;
+    border-bottom: 45px solid #ffffff;
     border-right: 40px solid transparent;
   }
   &::before {
@@ -36,7 +36,7 @@
     border-top-left-radius: 0;
     width: 0;
     height: 0;
-    border-bottom: 40px solid white;
+    border-bottom: 45px solid white;
     border-left: 40px solid transparent;
   }
 }

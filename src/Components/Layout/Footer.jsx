@@ -1,10 +1,11 @@
 import Image from "next/image";
-import logo from "@/assets/images/logo-white.png";
+import logo from "@/assets/images/logo.png";
+import scribblegroup from "@/assets/images/scribblegroup.png";
 import { Icon } from "@iconify/react";
 import Styles from "@/Components/Layout/layout.module.scss";
 const Footer = () => {
   return (
-    <div className="bg-[#0B031B] pt-[50px] pb-[100px]  ">
+    <div className="bg-[#ffffff] pt-[50px] pb-[100px]  ">
       <div className="custom-container flex flex-col lg:flex-row justify-between items-center">
         <div className="w-full lg:w-1/4 mb-8 ">
           <Image
@@ -23,28 +24,35 @@ const Footer = () => {
           <ul className={`${Styles["footer-link"]} gap-x-4`}>
             <li>
               <a className={Styles["social-link"]}>
-                <Icon icon="mdi:pinterest" color="red" width="25" />
+                <Icon icon="mdi:pinterest" color="#003b6d" width="25" />
               </a>
             </li>
             <li>
               <a className={Styles["social-link"]}>
-                <Icon icon="eva:facebook-fill" color="red" width="25" />
+                <Icon icon="eva:facebook-fill" color="#ffcf3f" width="25" />
               </a>
             </li>
             <li>
               <a className={Styles["social-link"]}>
-                <Icon icon="mdi:twitter" color="red" width="25" />
+                <Icon icon="mdi:twitter" color="#803e97" width="25" />
               </a>
             </li>
             <li>
               <a className={Styles["social-link"]}>
-                <Icon icon="ri:instagram-fill" color="red" width="25" />
+                <Icon icon="ri:instagram-fill" color="#00b7bb" width="25" />
               </a>
             </li>
           </ul>
         </div>
-        <div className="w-full lg:w-1/4">
-          <h1 className="title text-[18px]" style={{ color: "white" }}>
+        <div className="w-full lg:w-1/4 h-full">
+          <Image
+            src={scribblegroup.src}
+            alt="scribble"
+            width="100"
+            height="150"
+            className="w-full"
+          />
+          {/* <h1 className="title text-[18px]" style={{ color: "white" }}>
             SUBSCRIBE TO OUR NEWSLETTER
           </h1>
           <div>
@@ -60,7 +68,7 @@ const Footer = () => {
             >
               SUBSCRIBE
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

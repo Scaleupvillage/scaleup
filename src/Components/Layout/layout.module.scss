@@ -34,5 +34,29 @@
     display: block;
     padding: 5px;
     border-radius: 50%;
+    &:nth-child(1) {
+      @apply border-primary-blue;
+      &:hover {
+        background: #003b6d !important;
+        svg {
+          color: white !important;
+        }
+      }
+    }
+    &:nth-child(2) {
+      border: 1px solid #ffcf3f;
+      &:hover {
+        background: #ffcf3f !important;
+        svg {
+          color: white !important;
+        }
+      }
+    }
+    &:nth-child(3) {
+      @apply border-primary-purple;
+    }
+    &:nth-child(4) {
+      @apply border-primary-cyan;
+    }
   }
 }

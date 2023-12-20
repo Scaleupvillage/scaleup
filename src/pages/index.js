@@ -1,7 +1,7 @@
-import { Montserrat } from "next/font/google";
+import { Exo_2 } from "next/font/google";
 import Styles from "@/pages/index.module.scss";
 import Navbar from "@/Components/Layout/Navbar";
-const montserrat = Montserrat({ subsets: ["latin"] });
+const exo2 = Exo_2({ subsets: ["latin"], adjustFontFallback: false });
 
 import { EffectFade, Autoplay } from "swiper/modules";
 import Slider from "@/Components/Slider";
@@ -201,8 +201,8 @@ export default function Home() {
   ];
   const targetDate = new Date("2024-01-01T00:00:00");
   return (
-    <div>
-      <div className={`${Styles["main-container"]} ${montserrat.className}`}>
+    <div className={exo2.className}>
+      <div className={`${Styles["main-container"]} `}>
         <div>
           <div className="mx-auto w-full max-w-[1140px] ">
             <Navbar />
@@ -286,7 +286,7 @@ export default function Home() {
       <div className="py-[100px] custom-container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-7">
           <div>
-            <h1 className="title text-[36px]">ABOUT THE EVENT</h1>
+            <h1 className="title text-[36px]">ScaleUp Conclave 2024</h1>
             <p className="description">
               Lorem ipsum dolor sit amet, consectetur adipiscing eli. Integer
               iaculis in lacus a sollicitudin. Ut hendrerit hendrerit nisl a
@@ -320,7 +320,26 @@ export default function Home() {
               icon="ph:microphone"
               width="70"
               className="mic"
-              color="#f50136"
+              color="#003b6d"
+            />
+            <div className="py-4">
+              <h1 className={Styles["card-heading"]}>Students</h1>
+              <p className="mb-4">
+                Tech Learning Stations,Non Tech Learning Stations, Live Idea
+                Pitching Competiotions,Panel Discussion : Kerala to the
+                Globe,Startup Stories,Live Idea Pitching,Medical Hackathon
+              </p>
+              <a href="" className={Styles["card-link"]}>
+                Read More
+              </a>
+            </div>
+          </div>
+          <div className={Styles["about-card"]}>
+            <Icon
+              icon="ph:microphone"
+              width="70"
+              className="mic"
+              color="#ffcf3f"
             />
             <div className="py-4">
               <h1 className={Styles["card-heading"]}>9 Speakers</h1>
@@ -339,7 +358,7 @@ export default function Home() {
               icon="ph:microphone"
               width="70"
               className="mic"
-              color="#f50136"
+              color="#803e97"
             />
             <div className="py-4">
               <h1 className={Styles["card-heading"]}>9 Speakers</h1>
@@ -358,26 +377,7 @@ export default function Home() {
               icon="ph:microphone"
               width="70"
               className="mic"
-              color="#f50136"
-            />
-            <div className="py-4">
-              <h1 className={Styles["card-heading"]}>9 Speakers</h1>
-              <p className="mb-4">
-                Lorem ipsum dolor sit amet,consectetur adipiscing elit. In
-                rhoncus massa nec graviante.at volutpat ligula euismod quis.
-                Maecenas ornare, ex in malesuada tempus.
-              </p>
-              <a href="" className={Styles["card-link"]}>
-                Read More
-              </a>
-            </div>
-          </div>
-          <div className={Styles["about-card"]}>
-            <Icon
-              icon="ph:microphone"
-              width="70"
-              className="mic"
-              color="#f50136"
+              color="#00b7bb"
             />
             <div className="py-4">
               <h1 className={Styles["card-heading"]}>9 Speakers</h1>
@@ -404,9 +404,11 @@ export default function Home() {
               className="w-full"
               alt="speaker"
             />
-            <div className="w-full absolute bottom-0 bg-[#18181c] h-[100px] px-8 py-2">
-              <h1 className="text-primary text-lg">{speaker.name}</h1>
-              <p className="text-white text-sm">{speaker.role}</p>
+            <div className="w-full absolute bottom-0 bg-[#ffffff] h-[100px] px-8 py-2">
+              <h1 className="text-primary-purple font-bold text-lg">
+                {speaker.name}
+              </h1>
+              <p className="text-primary-purple text-sm ">{speaker.role}</p>
             </div>
           </div>
         ))}

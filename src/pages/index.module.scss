@@ -50,8 +50,35 @@
     font-weight: 600;
   }
 
-  &:hover {
-    background-color: #f50136;
+  &:nth-child(1):hover {
+    background-color: #003b6d;
+    .card-heading,
+    p,
+    svg,
+    .card-link {
+      color: #f0f2f6 !important;
+    }
+  }
+  &:nth-child(2):hover {
+    background-color: #eabe3d;
+    .card-heading,
+    p,
+    svg,
+    .card-link {
+      color: #f0f2f6 !important;
+    }
+  }
+  &:nth-child(3):hover {
+    background-color: #803e97;
+    .card-heading,
+    p,
+    svg,
+    .card-link {
+      color: #f0f2f6 !important;
+    }
+  }
+  &:nth-child(4):hover {
+    background-color: #00b7bb;
     .card-heading,
     p,
     svg,
@@ -64,8 +91,11 @@
 .speaker {
   &:hover {
     div {
-      background-color: #f50136;
+      @apply bg-primary-purple;
       h1 {
+        color: #f0f2f6;
+      }
+      p {
         color: #f0f2f6;
       }
     }

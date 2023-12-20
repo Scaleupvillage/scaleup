@@ -4,7 +4,7 @@ import React, { useRef } from "react";
 import Style from "./layout.module.scss";
 import { motion, sync, useCycle } from "framer-motion";
 import { useDimensions } from "./useDimensions";
-import logo from "@/assets/images/logo-white.png";
+import logo from "@/assets/images/logo-white-yellow.png";
 const Navbar = () => {
   const containerRef = useRef(null);
   const [isOpen, toggleOpen] = useCycle(false, true);

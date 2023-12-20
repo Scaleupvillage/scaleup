@@ -30,33 +30,38 @@
 .footer-link {
   display: flex;
   .social-link {
-    border: 1px solid #f50136;
+    @apply border-[3px];
+    @apply border-primary-cyan;
+    @apply flex justify-center items-center cursor-pointer;
     display: block;
     padding: 5px;
     border-radius: 50%;
+    svg {
+      fill: #00b7bb !important;
+    }
     &:nth-child(1) {
-      @apply border-primary-blue;
       &:hover {
-        background: #003b6d !important;
+        transition: all 0.3s ease-in-out;
+        @apply bg-primary-cyan;
         svg {
-          color: white !important;
+          fill: white !important;
         }
       }
     }
-    &:nth-child(2) {
-      border: 1px solid #ffcf3f;
-      &:hover {
-        background: #ffcf3f !important;
-        svg {
-          color: white !important;
-        }
-      }
-    }
-    &:nth-child(3) {
-      @apply border-primary-purple;
-    }
-    &:nth-child(4) {
-      @apply border-primary-cyan;
-    }
+    // &:nth-child(2) {
+    //   border: 1px solid #ffcf3f;
+    //   &:hover {
+    //     background: #ffcf3f !important;
+    //     svg {
+    //       color: white !important;
+    //     }
+    //   }
+    // }
+    // &:nth-child(3) {
+    //   @apply border-primary-purple;
+    // }
+    // &:nth-child(4) {
+    //   @apply border-primary-cyan;
+    // }
   }
 }

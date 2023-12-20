@@ -1,7 +1,7 @@
 .main-container {
   width: 100%;
   height: 100vh;
-  background-image: url("https://preview.colorlib.com/theme/evento/assets/img/bg/slider.png.webp");
+  background-image: url("../assets/images/main-bg.jpg");
   background-size: cover;
   background-position: bottom;
 }
@@ -89,6 +89,8 @@
 }
 
 .speaker {
+  overflow: hidden;
+
   &:hover {
     div {
       @apply bg-primary-purple;
@@ -98,6 +100,10 @@
       p {
         color: #f0f2f6;
       }
+    }
+    img {
+      scale: 1.2;
+      transition: all 0.2s ease-in-out;
     }
   }
 }

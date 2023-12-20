@@ -1,8 +1,8 @@
 .counter {
+  @apply bg-primary-purple;
   display: inline-block;
   padding: 10px;
   min-width: 100%;
-  background-color: #f44336;
   color: #ffffff;
   font-size: 32px;
   font-weight: 600;

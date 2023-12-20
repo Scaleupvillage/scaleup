@@ -27,6 +27,16 @@ import AnoopAmbika from "@/assets/images/speakers/AnoopAmbika.png";
 import Gopinath from "@/assets/images/speakers/Gopinath.png";
 import NavasMeeran from "@/assets/images/speakers/NavasMeeran.png";
 import MuhammedMusthafa from "@/assets/images/speakers/MuhammedMusthafa.png";
+import UserIcon from "@/Components/Icons/UserIcon";
+import Calendar from "@/Components/Icons/Calendar";
+import LocatioIcon from "@/Components/Icons/LocatioIcon";
+import LabelIcon from "@/Components/Icons/LabelIcon";
+import Wave from "@/Components/Icons/scribbles/Wave";
+import Scribbles from "@/Components/Scribbles";
+import Group1 from "@/Components/Icons/scribbles/Group1";
+import Group2 from "@/Components/Icons/scribbles/Group";
+import Line from "@/Components/Icons/scribbles/Line";
+import Arrow from "@/Components/Icons/scribbles/Arrow";
 const Countdown = dynamic(() => import("@/Components/Counter"), { ssr: false });
 export default function Home() {
   const slides = [
@@ -36,7 +46,7 @@ export default function Home() {
           <h1 className="text-[18px] lg:text-[42px] font-medium leading-none text-white">
             BE A PART OF OUR
           </h1>
-          <h1 className="text-[#f50136] text-[24px] lg:text-[90px] font-extrabold ">
+          <h1 className="text-white text-[24px] lg:text-[90px] font-extrabold ">
             GRAND CELEBERATION
           </h1>
           <p className="text-sm lg:text-lg mb-8 text-white">
@@ -44,7 +54,7 @@ export default function Home() {
           </p>
           <button
             type="button"
-            className="bg-[#f50136] px-8 py-3 rounded-full text-white"
+            className="bg-primary-cyan shadow-lg shadow-primary-cyan px-8 py-3 rounded-full text-white"
           >
             BUY TICKETS NOW
           </button>
@@ -57,7 +67,7 @@ export default function Home() {
           <h1 className="text-[14px] lg:text-[42px] font-medium leading-none text-white uppercase">
             Join the annual conclave that is
           </h1>
-          <h1 className="text-[#f50136] text-[21px] lg:text-[60px] font-extrabold uppercase text-center">
+          <h1 className="text-white text-[21px] lg:text-[60px] font-extrabold uppercase text-center">
             reshaping Kerala&apos;s startup landscapes
           </h1>
           <p className="text-sm lg:text-lg mb-8 text-white uppercase">
@@ -65,7 +75,7 @@ export default function Home() {
           </p>
           <button
             type="button"
-            className="bg-[#f50136] px-8 py-3 rounded-full text-white"
+            className="bg-primary-cyan shadow-lg shadow-primary-cyan px-8 py-3 rounded-full text-white"
           >
             BUY TICKETS NOW
           </button>
@@ -78,7 +88,7 @@ export default function Home() {
           <h1 className="text-[18px] lg:text-[42px] font-medium leading-none text-white uppercase">
             Witness the convergence of
           </h1>
-          <h1 className="text-[#f50136] text-[24px] lg:text-[90px] font-extrabold uppercase">
+          <h1 className="text-white text-[24px] lg:text-[90px] font-extrabold uppercase">
             business paths
           </h1>
           <p className="text-sm lg:text-lg mb-8 text-white uppercase">
@@ -86,7 +96,7 @@ export default function Home() {
           </p>
           <button
             type="button"
-            className="bg-[#f50136] px-8 py-3 rounded-full text-white"
+            className="bg-primary-cyan shadow-lg shadow-primary-cyan px-8 py-3 rounded-full text-white"
           >
             BUY TICKETS NOW
           </button>
@@ -199,10 +209,125 @@ export default function Home() {
       name: "Navas Meeran",
     },
   ];
+
+  let scribbles = [
+    {
+      component: (
+        <Wave
+          className="absolute bottom-[10%] right-[5%]"
+          width="200"
+          fill="#00B4B8"
+        />
+      ),
+    },
+    {
+      component: (
+        <Wave
+          className="absolute bottom-[7%] right-[-1%]"
+          width="200"
+          fill="#FFCF3F"
+        />
+      ),
+    },
+    {
+      component: (
+        <Group1
+          className="absolute bottom-[5%] left-[-1%]"
+          width="170"
+          fill="#FFCF3F"
+        />
+      ),
+    },
+  ];
+  let scribblesSecond = [
+    {
+      component: (
+        <Wave
+          className="absolute top-[11%] left-[-4%]"
+          width="200"
+          fill="#CB8DF7"
+        />
+      ),
+    },
+    {
+      component: (
+        <Wave
+          className="absolute top-[5%] left-[2%]"
+          width="200"
+          fill="#FFCF3F"
+        />
+      ),
+    },
+    {
+      component: (
+        <Group1
+          className="absolute bottom-[5%] right-0"
+          width="170"
+          fill="#FFCF3F"
+        />
+      ),
+    },
+  ];
+  let aboutScribble = [
+    {
+      component: (
+        <Wave
+          className="absolute top-[8%] right-[-4%]"
+          width="200"
+          fill="#CB8DF7"
+        />
+      ),
+    },
+    {
+      component: (
+        <Wave
+          className="absolute top-[5%] right-[2%]"
+          width="200"
+          fill="#FFCF3F"
+        />
+      ),
+    },
+    {
+      component: (
+        <Wave
+          className="absolute bottom-[6%] right-0 rotate-[360deg]"
+          width="200"
+          fill="#CB8DF7"
+        />
+      ),
+    },
+    {
+      component: (
+        <Line
+          className="absolute bottom-[10%] right-0"
+          width="200"
+          fill="#CB8DF7"
+        />
+      ),
+    },
+    {
+      component: (
+        <Arrow
+          className="absolute bottom-[0] right-0"
+          width="200"
+          fill="#CB8DF7"
+        />
+      ),
+    },
+    {
+      component: (
+        <Group2
+          className="absolute bottom-[5%] left-0"
+          width="170"
+          fill="#FFCF3F"
+        />
+      ),
+    },
+  ];
   const targetDate = new Date("2024-01-01T00:00:00");
   return (
     <div className={exo2.className}>
-      <div className={`${Styles["main-container"]} `}>
+      <div className={`${Styles["main-container"]} relative overflow-hidden`}>
         <div>
           <div className="mx-auto w-full max-w-[1140px] ">
             <Navbar />
@@ -224,41 +349,34 @@ export default function Home() {
             />
           </div>
         </div>
+        <Scribbles scribbles={scribbles} />
       </div>
-      <div className="  h-[50vh] ">
+      <div className="  h-[50vh] relative overflow-hidden">
         <div className="custom-container flex justify-center items-center h-full">
           <div className="bg-white w-full grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-x-12   ">
             <div className="flex justify-center items-center gap-x-4">
-              <Icon
-                icon="ant-design:calendar-outlined"
-                color="#f50136"
-                width="70"
-              />
+              <Calendar />
               <div className=" flex flex-col justify-center">
                 <h1 className="text-[18px] font-medium">DATE</h1>
                 <h1 className="text-[14px]">12-14 february 2018</h1>
               </div>
             </div>
             <div className="flex justify-center items-center gap-x-4">
-              <Icon icon="ei:location" color="#f50136" width="70" />
+              <LocatioIcon />
               <div className=" flex flex-col justify-center">
                 <h1 className="text-[18px] font-medium">LOCATION</h1>
                 <h1 className="text-[14px]">Los Angeles, CA. </h1>
               </div>
             </div>
             <div className="flex justify-center items-center gap-x-4">
-              <Icon icon="el:user" color="#f50136" width="65" />
+              <UserIcon />
               <div className=" flex flex-col justify-center">
                 <h1 className="text-[18px] font-medium">SPEAKERS</h1>
                 <h1 className="text-[14px]">Natalie James + guests</h1>
               </div>
             </div>
             <div className="flex justify-center items-center gap-x-4">
-              <Icon
-                icon="ant-design:calendar-outlined"
-                color="#f50136"
-                width="70"
-              />
+              <LabelIcon />
               <div className=" flex flex-col justify-center">
                 <h1 className="text-[18px] font-medium">TICKETS</h1>
                 <h1 className="text-[14px]">$65 early bird</h1>
@@ -266,6 +384,7 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <Scribbles scribbles={scribblesSecond} />
       </div>
 
       {/* COUNTER  */}
@@ -283,141 +402,152 @@ export default function Home() {
       </div>
       {/* /COUNTER  */}
 
-      <div className="py-[100px] custom-container">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-7">
-          <div>
-            <h1 className="title text-[36px]">ScaleUp Conclave 2024</h1>
-            <p className="description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing eli. Integer
-              iaculis in lacus a sollicitudin. Ut hendrerit hendrerit nisl a
-              accumsan. Pellentesque convallis consectetur tortor id placerat.
-              Curabitur a pulvinar nunc. Maecenas laoreet finibus lectus, at
-              volutpat ligula euismod. In rhoncus massa nec sollicitudin. Ut
-              hendrerit hendrerit nisl a accumsan. Pellentesque convallis
-              consectetur tortor id placerat. Curabitur a pulvinar nunc.
-              Maecenas laoreet finibus lectus, at volutpat ligula euismod quis.
-              Maecenas ornare, ex in malesuada tempus.
-            </p>
+      <div className="py-[100px] relative overflow-hidden">
+        <div className="custom-container relative">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-7">
+            <div>
+              <h1 className="title text-[36px]">ScaleUp Conclave 2024</h1>
+              <p className="description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing eli. Integer
+                iaculis in lacus a sollicitudin. Ut hendrerit hendrerit nisl a
+                accumsan. Pellentesque convallis consectetur tortor id placerat.
+                Curabitur a pulvinar nunc. Maecenas laoreet finibus lectus, at
+                volutpat ligula euismod. In rhoncus massa nec sollicitudin. Ut
+                hendrerit hendrerit nisl a accumsan. Pellentesque convallis
+                consectetur tortor id placerat. Curabitur a pulvinar nunc.
+                Maecenas laoreet finibus lectus, at volutpat ligula euismod
+                quis. Maecenas ornare, ex in malesuada tempus.
+              </p>
+            </div>
+            <div>
+              <h1 className="title text-[36px]">ABOUT THE EVENT</h1>
+              <p className="description">
+                The excitement doesn&apos;t end with ScaleUp Conclave, it marks
+                the beginning of a continuous journey towards growth and
+                innovation. As we celebrate the success of each annual conclave,
+                our focus extends seamlessly to the transformative hub, ScaleUp
+                Village. ScaleUp Village is not just an industrial park but a
+                dedicated space focused on Direct-to-Consumer (D2C) innovation.
+                With a planned launch within six months, this hub aims to
+                revolutionize the entrepreneurial landscape, providing startups
+                and businesses with an environment tailored for success.
+              </p>
+            </div>
           </div>
-          <div>
-            <h1 className="title text-[36px]">ABOUT THE EVENT</h1>
-            <p className="description">
-              The excitement doesn&apos;t end with ScaleUp Conclave, it marks
-              the beginning of a continuous journey towards growth and
-              innovation. As we celebrate the success of each annual conclave,
-              our focus extends seamlessly to the transformative hub, ScaleUp
-              Village. ScaleUp Village is not just an industrial park but a
-              dedicated space focused on Direct-to-Consumer (D2C) innovation.
-              With a planned launch within six months, this hub aims to
-              revolutionize the entrepreneurial landscape, providing startups
-              and businesses with an environment tailored for success.
-            </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-x-4 ">
+            <div className={Styles["about-card"]}>
+              <Icon
+                icon="ph:microphone"
+                width="70"
+                className="mic"
+                color="#003b6d"
+              />
+              <div className="py-4">
+                <h1 className={Styles["card-heading"]}>Students</h1>
+                <p className="mb-4">
+                  Tech Learning Stations,Non Tech Learning Stations, Live Idea
+                  Pitching Competiotions,Panel Discussion : Kerala to the
+                  Globe,Startup Stories,Live Idea Pitching,Medical Hackathon
+                </p>
+                <a href="" className={Styles["card-link"]}>
+                  Read More
+                </a>
+              </div>
+            </div>
+            <div className={Styles["about-card"]}>
+              <Icon
+                icon="ph:microphone"
+                width="70"
+                className="mic"
+                color="#ffcf3f"
+              />
+              <div className="py-4">
+                <h1 className={Styles["card-heading"]}>9 Speakers</h1>
+                <p className="mb-4">
+                  Lorem ipsum dolor sit amet,consectetur adipiscing elit. In
+                  rhoncus massa nec graviante.at volutpat ligula euismod quis.
+                  Maecenas ornare, ex in malesuada tempus.
+                </p>
+                <a href="" className={Styles["card-link"]}>
+                  Read More
+                </a>
+              </div>
+            </div>
+            <div className={Styles["about-card"]}>
+              <Icon
+                icon="ph:microphone"
+                width="70"
+                className="mic"
+                color="#803e97"
+              />
+              <div className="py-4">
+                <h1 className={Styles["card-heading"]}>9 Speakers</h1>
+                <p className="mb-4">
+                  Lorem ipsum dolor sit amet,consectetur adipiscing elit. In
+                  rhoncus massa nec graviante.at volutpat ligula euismod quis.
+                  Maecenas ornare, ex in malesuada tempus.
+                </p>
+                <a href="" className={Styles["card-link"]}>
+                  Read More
+                </a>
+              </div>
+            </div>
+            <div className={Styles["about-card"]}>
+              <Icon
+                icon="ph:microphone"
+                width="70"
+                className="mic"
+                color="#00b7bb"
+              />
+              <div className="py-4">
+                <h1 className={Styles["card-heading"]}>9 Speakers</h1>
+                <p className="mb-4">
+                  Lorem ipsum dolor sit amet,consectetur adipiscing elit. In
+                  rhoncus massa nec graviante.at volutpat ligula euismod quis.
+                  Maecenas ornare, ex in malesuada tempus.
+                </p>
+                <a href="" className={Styles["card-link"]}>
+                  Read More
+                </a>
+              </div>
+            </div>
           </div>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-x-4 ">
-          <div className={Styles["about-card"]}>
-            <Icon
-              icon="ph:microphone"
-              width="70"
-              className="mic"
-              color="#003b6d"
-            />
-            <div className="py-4">
-              <h1 className={Styles["card-heading"]}>Students</h1>
-              <p className="mb-4">
-                Tech Learning Stations,Non Tech Learning Stations, Live Idea
-                Pitching Competiotions,Panel Discussion : Kerala to the
-                Globe,Startup Stories,Live Idea Pitching,Medical Hackathon
-              </p>
-              <a href="" className={Styles["card-link"]}>
-                Read More
-              </a>
-            </div>
-          </div>
-          <div className={Styles["about-card"]}>
-            <Icon
-              icon="ph:microphone"
-              width="70"
-              className="mic"
-              color="#ffcf3f"
-            />
-            <div className="py-4">
-              <h1 className={Styles["card-heading"]}>9 Speakers</h1>
-              <p className="mb-4">
-                Lorem ipsum dolor sit amet,consectetur adipiscing elit. In
-                rhoncus massa nec graviante.at volutpat ligula euismod quis.
-                Maecenas ornare, ex in malesuada tempus.
-              </p>
-              <a href="" className={Styles["card-link"]}>
-                Read More
-              </a>
-            </div>
-          </div>
-          <div className={Styles["about-card"]}>
-            <Icon
-              icon="ph:microphone"
-              width="70"
-              className="mic"
-              color="#803e97"
-            />
-            <div className="py-4">
-              <h1 className={Styles["card-heading"]}>9 Speakers</h1>
-              <p className="mb-4">
-                Lorem ipsum dolor sit amet,consectetur adipiscing elit. In
-                rhoncus massa nec graviante.at volutpat ligula euismod quis.
-                Maecenas ornare, ex in malesuada tempus.
-              </p>
-              <a href="" className={Styles["card-link"]}>
-                Read More
-              </a>
-            </div>
-          </div>
-          <div className={Styles["about-card"]}>
-            <Icon
-              icon="ph:microphone"
-              width="70"
-              className="mic"
-              color="#00b7bb"
-            />
-            <div className="py-4">
-              <h1 className={Styles["card-heading"]}>9 Speakers</h1>
-              <p className="mb-4">
-                Lorem ipsum dolor sit amet,consectetur adipiscing elit. In
-                rhoncus massa nec graviante.at volutpat ligula euismod quis.
-                Maecenas ornare, ex in malesuada tempus.
-              </p>
-              <a href="" className={Styles["card-link"]}>
-                Read More
-              </a>
-            </div>
-          </div>
-        </div>
+        <Scribbles scribbles={aboutScribble} />
       </div>
 
-      <div className="py-[100] grid grid-cols-1 lg:grid-cols-5">
-        {speakers.map((speaker, index) => (
-          <div className={`relative w-full ${Styles["speaker"]}`} key={index}>
-            <Image
-              width={350}
-              height={450}
-              src={speaker.image}
-              className="w-full"
-              alt="speaker"
-            />
-            <div className="w-full absolute bottom-0 bg-[#ffffff] h-[100px] px-8 py-2">
-              <h1 className="text-primary-purple font-bold text-lg">
-                {speaker.name}
-              </h1>
-              <p className="text-primary-purple text-sm ">{speaker.role}</p>
+      <div className="py-[100">
+        <div className="custom-container">
+          <h1 className="title text-[36px] cyan-before">OUR SPEAKERS</h1>
+        </div>
+        <div className=" grid grid-cols-1 lg:grid-cols-5">
+          {speakers.map((speaker, index) => (
+            <div
+              className={`relative w-full ${Styles["speaker"]} h-[500px]`}
+              key={index}
+            >
+              <Image
+                width={350}
+                height={500}
+                src={speaker.image}
+                className="w-full"
+                alt="speaker"
+              />
+              <div className="w-full absolute bottom-0 bg-[#ffffff] h-[100px] px-8 py-2">
+                <h1 className="text-primary-purple font-bold text-lg">
+                  {speaker.name}
+                </h1>
+                <p className="text-primary-purple text-sm ">{speaker.role}</p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
       <div className={`${Styles["registration-bg"]} lg:h-[50vh] py-[100px] `}>
         <div className="custom-container grid grid-cols-10 gap-x-4">
           <div className="col-span-10 mb-5">
             <h1
-              className="title text-[36px] text-white"
+              className="title text-[36px] text-white cyan-before"
               style={{ color: "white" }}
             >
               GET YOUR TIKETS
@@ -448,7 +578,7 @@ export default function Home() {
           <div className="col-span-10 lg:col-span-2 flex justify-center items-center">
             <button
               type="button"
-              className="w-full bg-[#f50136] px-8 py-3 rounded-full text-white"
+              className="w-full bg-primary-cyan  px-8 py-3 rounded-full text-white"
             >
               Register
             </button>

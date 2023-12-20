@@ -74,7 +74,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className="w-full block md:hidden bg-[#18181C] absolute">
+      <div className="w-full block md:hidden bg-[#18181C] absolute z-20">
         <div
           className="w-full flex justify-between relative  p-5 "
           initial={false}

@@ -4,7 +4,7 @@ import React, { useRef } from "react";
 import Style from "./layout.module.scss";
 import { motion, sync, useCycle } from "framer-motion";
 import { useDimensions } from "./useDimensions";
-import logo from "@/assets/images/logo.png";
+import logo from "@/assets/images/logo-white.png";
 const Navbar = () => {
   const containerRef = useRef(null);
   const [isOpen, toggleOpen] = useCycle(false, true);
@@ -82,12 +82,7 @@ const Navbar = () => {
           ref={containerRef}
         >
           <Link href="/">
-            <Image
-              width="100"
-              height="100"
-              alt="logo"
-              src="https://preview.colorlib.com/theme/evento/assets/img/logo.png.webp"
-            />
+            <Image width="90" height="100" alt="logo" src={logo.src} />
           </Link>
           <div className="px-3 flex justify-center items-center">
             <button type="button" onClick={toggleOpen}>

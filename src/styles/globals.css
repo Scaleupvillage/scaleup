@@ -75,3 +75,8 @@
   -webkit-transition: all ease-in-out 0.4s;
   transition: all ease-in-out 0.4s;
 }
+.label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+}

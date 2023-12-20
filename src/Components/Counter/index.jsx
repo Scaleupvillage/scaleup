@@ -30,30 +30,26 @@ const Countdown = ({ targetDate }) => {
   const { weeks, days, hours, minutes, seconds } = timeLeft;
 
   return (
-    <div className="flex flex-col lg:flex-row gap-x-4">
-      <div className="grid grid-cols-2 lg:grid-cols-4 lg:gap-x-4">
-        <div className={Styles["counter"]}>
-          {weeks}
-          <div className={Styles["label"]}>weeks</div>
-        </div>
-        <div className={Styles["counter"]}>
-          {days}
-          <div className={Styles["label"]}> Days</div>
-        </div>
-        <div className={Styles["counter"]}>
-          {hours}
-          <div className={Styles["label"]}>Hours</div>
-        </div>
-        <div className={Styles["counter"]}>
-          {minutes}
-          <div className={Styles["label"]}>Minute</div>
-        </div>
+    <div className="grid grid-cols-5  gap-x-2">
+      <div className={Styles["counter"]}>
+        {weeks}
+        <div className={Styles["label"]}>Weeks</div>
       </div>
-      <div className={"flex justify-center items-center"}>
-        <div className={`${Styles["counter"]} `}>
-          {seconds}
-          <div className={Styles["label"]}>Seconds</div>
-        </div>
+      <div className={Styles["counter"]}>
+        {days}
+        <div className={Styles["label"]}> Days</div>
+      </div>
+      <div className={Styles["counter"]}>
+        {hours}
+        <div className={Styles["label"]}>Hours</div>
+      </div>
+      <div className={Styles["counter"]}>
+        {minutes}
+        <div className={Styles["label"]}>Minutes</div>
+      </div>
+      <div className={`${Styles["counter"]} `}>
+        {seconds}
+        <div className={Styles["label"]}>Seconds</div>
       </div>
     </div>
   );

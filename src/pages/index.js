@@ -272,7 +272,7 @@ export default function Home() {
       <div className={`${Styles["counter-bg"]} md:h-[50vh]`}>
         <div className={`${Styles["overlay"]} z-[1]`}></div>
 
-        <div className="mx-auto w-full max-w-[800px] h-full py-[70px] flex justify-center items-center">
+        <div className="custom-container h-full py-[70px] flex justify-center items-center">
           <div className="z-[10] relative flex justify-center items-center flex-col">
             <h1 className="text-white font-bold text-[16px] md:text-[24px] mb-[30px]">
               Counter until the big event
@@ -284,19 +284,36 @@ export default function Home() {
       {/* /COUNTER  */}
 
       <div className="py-[100px] custom-container">
-        <h1 className="title text-[36px]">ABOUT THE EVENT</h1>
-        <p className="description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing eli. Integer
-          iaculis in lacus a sollicitudin. Ut hendrerit hendrerit nisl a
-          accumsan. Pellentesque convallis consectetur tortor id placerat.
-          Curabitur a pulvinar nunc. Maecenas laoreet finibus lectus, at
-          volutpat ligula euismod. In rhoncus massa nec sollicitudin. Ut
-          hendrerit hendrerit nisl a accumsan. Pellentesque convallis
-          consectetur tortor id placerat. Curabitur a pulvinar nunc. Maecenas
-          laoreet finibus lectus, at volutpat ligula euismod quis. Maecenas
-          ornare, ex in malesuada tempus.
-        </p>
-
+        <div className="grid grid-cols-2 gap-x-7">
+          <div>
+            <h1 className="title text-[36px]">ABOUT THE EVENT</h1>
+            <p className="description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing eli. Integer
+              iaculis in lacus a sollicitudin. Ut hendrerit hendrerit nisl a
+              accumsan. Pellentesque convallis consectetur tortor id placerat.
+              Curabitur a pulvinar nunc. Maecenas laoreet finibus lectus, at
+              volutpat ligula euismod. In rhoncus massa nec sollicitudin. Ut
+              hendrerit hendrerit nisl a accumsan. Pellentesque convallis
+              consectetur tortor id placerat. Curabitur a pulvinar nunc.
+              Maecenas laoreet finibus lectus, at volutpat ligula euismod quis.
+              Maecenas ornare, ex in malesuada tempus.
+            </p>
+          </div>
+          <div>
+            <h1 className="title text-[36px]">ABOUT THE EVENT</h1>
+            <p className="description">
+              The excitement doesn&apos;t end with ScaleUp Conclave, it marks
+              the beginning of a continuous journey towards growth and
+              innovation. As we celebrate the success of each annual conclave,
+              our focus extends seamlessly to the transformative hub, ScaleUp
+              Village. ScaleUp Village is not just an industrial park but a
+              dedicated space focused on Direct-to-Consumer (D2C) innovation.
+              With a planned launch within six months, this hub aims to
+              revolutionize the entrepreneurial landscape, providing startups
+              and businesses with an environment tailored for success.
+            </p>
+          </div>
+        </div>
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-x-4 ">
           <div className={Styles["about-card"]}>
             <Icon

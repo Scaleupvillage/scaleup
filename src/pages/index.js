@@ -40,7 +40,7 @@ export default function Home() {
             Join the annual conclave that is
           </h1>
           <h1 className="text-[#f50136] text-[24px] lg:text-[90px] font-extrabold uppercase">
-            reshaping Kerala's startup landscapes
+            reshaping Kerala&apos;s startup landscapes
           </h1>
           <p className="text-sm lg:text-lg mb-8 text-white uppercase">
             Your gateway to success awaits!
@@ -64,7 +64,7 @@ export default function Home() {
             business paths
           </h1>
           <p className="text-sm lg:text-lg mb-8 text-white uppercase">
-            It's the nexus where your business scales new heights!
+            It&apos;s the nexus where your business scales new heights!
           </p>
           <button
             type="button"

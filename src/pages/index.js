@@ -9,6 +9,24 @@ import { Icon } from "@iconify/react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import Footer from "@/Components/Layout/Footer";
+import Kunjalikutty from "@/assets/images/speakers/Kunjalikutty.png";
+import MLA from "@/assets/images/speakers/MLA.png";
+import Minister from "@/assets/images/speakers/Minister.png";
+import AnishAchuthan from "@/assets/images/speakers/AnishAchuthan.png";
+import ShamlalAhamad from "@/assets/images/speakers/ShamlalAhamad.png";
+import UshaTitus from "@/assets/images/speakers/UshaTitus.png";
+import IbnuJala from "@/assets/images/speakers/IbnuJala.png";
+import VimalGovind from "@/assets/images/speakers/VimalGovind.png";
+import MabelChacko from "@/assets/images/speakers/MabelChacko.png";
+import Tanooraa from "@/assets/images/speakers/Tanooraa.png";
+import Riyas from "@/assets/images/speakers/Riyas.png";
+import Musthafa from "@/assets/images/speakers/Musthafa.png";
+import SanthoshGeorge from "@/assets/images/speakers/SanthoshGeorge.png";
+import HariKishore from "@/assets/images/speakers/HariKishore.png";
+import AnoopAmbika from "@/assets/images/speakers/AnoopAmbika.png";
+import Gopinath from "@/assets/images/speakers/Gopinath.png";
+import NavasMeeran from "@/assets/images/speakers/NavasMeeran.png";
+import MuhammedMusthafa from "@/assets/images/speakers/MuhammedMusthafa.png";
 const Countdown = dynamic(() => import("@/Components/Counter"), { ssr: false });
 export default function Home() {
   const slides = [
@@ -79,38 +97,32 @@ export default function Home() {
 
   const speakers = [
     {
-      image:
-        "https://preview.colorlib.com/theme/evento/assets/img/speakers/s1.png.webp",
+      image: Minister.src,
       role: "Minister for Industries, Law and Coir in the Government of Kerala",
       name: "P Rajeev",
     },
     {
-      image:
-        "https://preview.colorlib.com/theme/evento/assets/img/speakers/s1.png.webp",
+      image: Kunjalikutty.src,
       role: "MLA Vengara",
       name: "P. K. Kunhalikutty",
     },
     {
-      image:
-        "https://preview.colorlib.com/theme/evento/assets/img/speakers/s1.png.webp",
+      image: MLA.src,
       role: "MLA Perinthalmanna",
       name: "Najeeb Kanthapuram",
     },
     {
-      image:
-        "https://preview.colorlib.com/theme/evento/assets/img/speakers/s1.png.webp",
+      image: AnishAchuthan.src,
       role: "Cofounder & CEO, Open Financial Technologies",
       name: "Anish Achuthan",
     },
     {
-      image:
-        "https://preview.colorlib.com/theme/evento/assets/img/speakers/s1.png.webp",
+      image: ShamlalAhamad.src,
       role: "MD International Relations Malabar Gold & Diamonds",
       name: "Shamlal Ahamed MP",
     },
     {
-      image:
-        "https://preview.colorlib.com/theme/evento/assets/img/speakers/s1.png.webp",
+      image: UshaTitus.src,
       role: "Chairperson and MD, ASAP Kerala",
       name: "Dr Usha Titus",
     },
@@ -121,32 +133,27 @@ export default function Home() {
       name: "V P Mohammed Miandad",
     },
     {
-      image:
-        "https://preview.colorlib.com/theme/evento/assets/img/speakers/s1.png.webp",
+      image: IbnuJala.src,
       role: "Founder & CEO, Morfin Versity",
       name: "Ibnu Jala",
     },
     {
-      image:
-        "https://preview.colorlib.com/theme/evento/assets/img/speakers/s1.png.webp",
+      image: VimalGovind.src,
       role: "Co-Founder & CEO, Genrobotics ",
       name: "Vimal Govind MK",
     },
     {
-      image:
-        "https://preview.colorlib.com/theme/evento/assets/img/speakers/s1.png.webp",
+      image: MabelChacko.src,
       role: "Co-Founder & COO, Open Financial Technologies",
       name: "Mabel Chacko",
     },
     {
-      image:
-        "https://preview.colorlib.com/theme/evento/assets/img/speakers/s1.png.webp",
+      image: MuhammedMusthafa.src,
       role: "Founder & CEO, Edroots International",
       name: "Muhammed Musthafa Koori",
     },
     {
-      image:
-        "https://preview.colorlib.com/theme/evento/assets/img/speakers/s1.png.webp",
+      image: Tanooraa.src,
       role: "Founder, Zoul and Zera",
       name: "Tanooraa Swetha Menon",
     },
@@ -157,44 +164,37 @@ export default function Home() {
       name: "Jishnu PV",
     },
     {
-      image:
-        "https://preview.colorlib.com/theme/evento/assets/img/speakers/s1.png.webp",
+      image: Riyas.src,
       role: "General Manager, Kerala Knowledge Economy Mission",
       name: "Riyas PM",
     },
     {
-      image:
-        "https://preview.colorlib.com/theme/evento/assets/img/speakers/s1.png.webp",
+      image: Musthafa.src,
       role: "CEO, iD Fresh Food India PVT. LTD.",
       name: "PC Musthafa",
     },
     {
-      image:
-        "https://preview.colorlib.com/theme/evento/assets/img/speakers/s1.png.webp",
+      image: SanthoshGeorge.src,
       role: "Santhosh George Kulangara",
       name: "Founder and MD, Safari TV",
     },
     {
-      image:
-        "https://preview.colorlib.com/theme/evento/assets/img/speakers/s1.png.webp",
+      image: HariKishore.src,
       role: "Director, Industries and Commerce Department",
       name: "Harikishore S. IAS",
     },
     {
-      image:
-        "https://preview.colorlib.com/theme/evento/assets/img/speakers/s1.png.webp",
+      image: AnoopAmbika.src,
       role: "CEO, Kerala Startup Mission",
       name: "Anoop Ambika",
     },
     {
-      image:
-        "https://preview.colorlib.com/theme/evento/assets/img/speakers/s1.png.webp",
+      image: Gopinath.src,
       role: "Vice Chancellor, Kerala University of Digital Sciences, Innovation and Technology",
       name: "Saji Gopinath",
     },
     {
-      image:
-        "https://preview.colorlib.com/theme/evento/assets/img/speakers/s1.png.webp",
+      image: NavasMeeran.src,
       role: "Chairman, Group Meeran",
       name: "Navas Meeran",
     },
@@ -404,7 +404,7 @@ export default function Home() {
               className="w-full"
               alt="speaker"
             />
-            <div className="w-full absolute bottom-0 bg-[#18181c] px-8 py-2">
+            <div className="w-full absolute bottom-0 bg-[#18181c] h-[100px] px-8 py-2">
               <h1 className="text-primary text-lg">{speaker.name}</h1>
               <p className="text-white text-sm">{speaker.role}</p>
             </div>

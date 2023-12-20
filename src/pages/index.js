@@ -284,7 +284,7 @@ export default function Home() {
       {/* /COUNTER  */}
 
       <div className="py-[100px] custom-container">
-        <div className="grid grid-cols-2 gap-x-7">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-7">
           <div>
             <h1 className="title text-[36px]">ABOUT THE EVENT</h1>
             <p className="description">

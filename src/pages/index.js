@@ -355,28 +355,54 @@ export default function Home() {
         </div>
         <Scribbles scribbles={scribbles} />
       </div>
-      <div className="  h-[50vh] relative overflow-hidden">
+      <div className="  lg:h-[75vh] py-[100px] relative overflow-hidden">
         <div className="custom-container flex justify-center items-center h-full">
-          <div className="bg-white w-full grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-x-12   ">
-            <div className="flex justify-center items-center gap-x-4">
-              <Calendar />
-              <div className=" flex flex-col justify-center">
-                <h1 className="text-[18px] font-medium">DATE</h1>
-                <h1 className="text-[14px]">12-14 february 2018</h1>
+          <div className="bg-white w-full grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-x-12  ">
+            <div className="col-span-2 my-auto items-center">
+              <div className="grid grid-cols-12 p-1">
+                <div className=" col-span-6 bg-primary-purple h-[100px] mr-3 rounded-md flex flex-col items-center justify-center">
+                  <h1 className="text-[30px] font-extrabold text-primary-yellow">
+                    5000 +
+                  </h1>
+
+                  <p className="text-white text-[20px] font-normal">
+                    Total Attendees
+                  </p>
+                </div>
+                <div className=" col-span-6 rounded-md bg-primary-yellow flex flex-col items-center justify-center  ">
+                  <h1 className="text-primary-blue text-[30px] font-extrabold">
+                    300 +
+                  </h1>
+                  <p className="text-primary-blue text-[20px] font-normal">
+                    Local Business Heroes
+                  </p>
+                </div>
+              </div>
+              <div className="grid grid-cols-12 p-2">
+                <div className="flex items-center justify-center gap-2 col-span-8 bg-primary-cyan h-[100px] mr-3 rounded-md">
+                  <h1 className="text-primary-yellow text-[30px] font-extrabold">
+                    150 +
+                  </h1>
+                  <p className="text-white text-[20px] font-normal">
+                    Participating <br /> Educational Institutions
+                  </p>
+                </div>
+                <div className="flex flex-col items-center justify-center col-span-4 bg-primary-purple rounded-md">
+                  <h1 className="text-white text-[30px] font-extrabold">
+                    20 +
+                  </h1>
+                  <p className="text-primary-cyan text-[20px] font-normal">
+                   Investors
+                  </p>
+                </div>
               </div>
             </div>
-            <div className="flex justify-center items-center gap-x-4">
-              <LocatioIcon />
-              <div className=" flex flex-col justify-center">
-                <h1 className="text-[18px] font-medium">LOCATION</h1>
-                <h1 className="text-[14px]">Los Angeles, CA. </h1>
-              </div>
-            </div>
-            <div className="flex justify-center items-center gap-x-4 col-span-2">
+
+            <div className="flex justify-center items-center gap-x-4 col-span-2 h-[300px] w-full rounded-lg overflow-hidden">
               <ReactPlayer
                 url="https://www.youtube.com/watch?v=LfDRCktozmk"
-                height={250}
-                width={550}
+                height={"100%"}
+                width={"100%"}
               />
             </div>
           </div>

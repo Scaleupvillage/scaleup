@@ -10,6 +10,7 @@ module.exports = {
         "primary-yellow": "#ffcf3f",
         "primary-purple": "#803e97",
         "primary-cyan": "#00b7bb",
+        "text-muted": "#838383",
       },
     },
   },

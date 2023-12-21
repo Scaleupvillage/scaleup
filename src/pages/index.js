@@ -37,10 +37,19 @@ import Group1 from "@/Components/Icons/scribbles/Group1";
 import Group2 from "@/Components/Icons/scribbles/Group";
 import Line from "@/Components/Icons/scribbles/Line";
 import Arrow from "@/Components/Icons/scribbles/Arrow";
-import ReactPlayer from "react-player";
+import { motion } from "framer-motion";
+import ArrowHead from "@/Components/Icons/scribbles/ArrowHead";
+import Group3 from "@/Components/Icons/scribbles/Group3";
+import ScholarCap from "@/Components/Icons/ScholarCap";
+import Speaker from "@/Components/Icons/Speaker";
+import Clock from "@/Components/Icons/Clock";
+import UpArrows from "@/Components/Icons/scribbles/UpArrows";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import Rocket from "@/Components/Icons/Rocket";
+
 
 const Countdown = dynamic(() => import("@/Components/Counter"), { ssr: false });
+const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 export default function Home() {
   const slides = [
     () => (
@@ -261,30 +270,12 @@ export default function Home() {
         />
       ),
     },
-    {
-      component: (
-        <Group1
-          className="absolute bottom-[5%] right-0"
-          width="170"
-          fill="#FFCF3F"
-        />
-      ),
-    },
   ];
   let aboutScribble = [
     {
       component: (
         <Wave
-          className="absolute top-[8%] right-[-4%]"
-          width="200"
-          fill="#CB8DF7"
-        />
-      ),
-    },
-    {
-      component: (
-        <Wave
-          className="absolute top-[5%] right-[2%]"
+          className="absolute top-[8%] right-[-9%]"
           width="200"
           fill="#FFCF3F"
         />
@@ -293,38 +284,199 @@ export default function Home() {
     {
       component: (
         <Wave
-          className="absolute bottom-[6%] right-0 rotate-[360deg]"
+          className="absolute top-[5%] right-[-3%]"
           width="200"
-          fill="#CB8DF7"
+          fill="#00B4B8"
         />
       ),
     },
     {
-      component: (
-        <Line
-          className="absolute bottom-[10%] right-0"
-          width="200"
-          fill="#CB8DF7"
-        />
-      ),
+      component: <Group3 className="absolute top-[3%] left-0" width="150" />,
+    },
+  ];
+  let timerScribbles = [
+    {
+      component: <Wave fill="#FFCF3F" className="absolute top-[55%] left-0" />,
+    },
+    {
+      component: <Wave fill="#FFCF3F" className="absolute top-[55%] right-0" />,
     },
     {
       component: (
-        <Arrow
-          className="absolute bottom-[0] right-0"
-          width="200"
-          fill="#CB8DF7"
-        />
-      ),
-    },
-    {
-      component: (
-        <Group2
-          className="absolute bottom-[5%] left-0"
-          width="170"
+        <ArrowHead
           fill="#FFCF3F"
+          className="absolute top-[50%] right-[16%] rotate-180"
         />
       ),
+    },
+    {
+      component: (
+        <ArrowHead fill="#FFCF3F" className="absolute top-[50%] left-[16%] " />
+      ),
+    },
+  ];
+  let aboutCards = [
+    {
+      title: "Studens",
+      description:
+        "Engage in vibrant discussions, panels, and workshops to share and absorb industry insights",
+      icon: <ScholarCap />,
+    },
+    {
+      title: "Startups",
+      description:
+        "Explore the innovative landscape as we showcase startups from Kerala and beyond.",
+      icon: <Rocket />,
+    },
+    {
+      title: "Local Business/SMEs",
+      description:
+        "Witness the acknowledgement of outstanding startups, entrepreneurs, and contributors.",
+      icon: <Speaker />,
+    },
+    {
+      title: "Investors",
+      description:
+        "Stay ahead of the curve with hands-on workshops on cutting-edge technologies and emerging trends.",
+      icon: <Clock />,
+    },
+  ];
+  let aboutSecondScribble = [
+    {
+      component: <UpArrows className="absolute bottom-[-25px] right-0" />,
+    },
+  ];
+  let highLighEvents = [
+    {
+      title: "Events For Students",
+      card: [
+        {
+          image:
+            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
+          title: "Panel Discussion : Kerala to the Globe",
+          description:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
+        },
+        {
+          image:
+            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
+          title: "Startup Stories",
+          description:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
+        },
+        {
+          image:
+            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
+          title: "Live Idea Pitching",
+          description:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
+        },
+        {
+          image:
+            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
+          title: "Medical Hackathon",
+          description:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
+        },
+      ],
+    },
+    {
+      title: "Events For Startup",
+      card: [
+        {
+          image:
+            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
+          title: "Let's talk about Startup by CEO KSUM",
+          description:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
+        },
+        {
+          image:
+            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
+          title: "Panel Discussion : Kerala to the Globe",
+          description:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
+        },
+        {
+          image:
+            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
+          title: " Mrs & Mr Startup",
+          description:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
+        },
+      ],
+    },
+    {
+      title: "Events For Local Business Owners/SMEs",
+      card: [
+        {
+          image:
+            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
+          title:
+            "Panel Discussion: Opportunities and Resolutions, How to Scale",
+          description:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
+        },
+        {
+          image:
+            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
+          title: "Panel Discussion : Kerala to the Globe",
+          description:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
+        },
+        {
+          image:
+            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
+          title: "Non Tech Learning Stations",
+          description:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
+        },
+      ],
+    },
+    {
+      title: "Gulf Returnees/NREs",
+      card: [
+        {
+          image:
+            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
+          title: "Investors Clinic(How to Invest Wisely)",
+          description:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
+        },
+        {
+          image:
+            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
+          title: "Panel Discussion : Kerala to the Globe",
+          description:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
+        },
+      ],
+    },
+    {
+      title: "Entertainment",
+      card: [
+        {
+          image:
+            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
+          title: "Magic Planet Show",
+          description:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
+        },
+        {
+          image:
+            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
+          title: "Cookathon Cooking Competition",
+          description:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
+        },
+        {
+          image:
+            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
+          title: " Culturel events/Exhibits",
+          description:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
+        },
+      ],
     },
   ];
   const targetDate = new Date("2024-01-01T00:00:00");
@@ -410,134 +562,85 @@ export default function Home() {
 
       {/* COUNTER  */}
       <div className={`${Styles["counter-bg"]} md:h-[50vh]`}>
-        <div className={`${Styles["overlay"]} z-[1]`}></div>
-
         <div className="custom-container h-full py-[70px] flex justify-center items-center">
           <div className="z-[10] relative flex justify-center items-center flex-col">
-            <h1 className="text-white font-bold text-[16px] md:text-[24px] mb-[30px]">
-              Counter until the big event
+            <h1 className="text-black font-bold text-[16px] md:text-[24px] mb-[30px]">
+              The Countdown Has Begun
             </h1>
             <Countdown targetDate={targetDate} />
           </div>
         </div>
+        <Scribbles scribbles={timerScribbles} />
       </div>
       {/* /COUNTER  */}
 
       <div className="py-[100px] relative overflow-hidden">
         <div className="custom-container relative">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-7">
-            <div>
-              <h1 className="title text-[36px]">ScaleUp Conclave 2024</h1>
+          <div>
+            <h1 className="title purple-before text-[36px]">
+              ScaleUp Conclave 2024
+            </h1>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-7">
               <p className="description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing eli. Integer
-                iaculis in lacus a sollicitudin. Ut hendrerit hendrerit nisl a
-                accumsan. Pellentesque convallis consectetur tortor id placerat.
-                Curabitur a pulvinar nunc. Maecenas laoreet finibus lectus, at
-                volutpat ligula euismod. In rhoncus massa nec sollicitudin. Ut
-                hendrerit hendrerit nisl a accumsan. Pellentesque convallis
-                consectetur tortor id placerat. Curabitur a pulvinar nunc.
-                Maecenas laoreet finibus lectus, at volutpat ligula euismod
-                quis. Maecenas ornare, ex in malesuada tempus.
+                Is the first edition of an annual celebratory platform that
+                fuses you with entrepreneurs, investors, professionals, and
+                business enthusiasts for a comprehensive two-day event. It
+                promotes inspiration, knowledge exchange, and networking
+                opportunities.
               </p>
-            </div>
-            <div>
-              <h1 className="title text-[36px]">ABOUT THE EVENT</h1>
               <p className="description">
-                The excitement doesn&apos;t end with ScaleUp Conclave, it marks
-                the beginning of a continuous journey towards growth and
-                innovation. As we celebrate the success of each annual conclave,
-                our focus extends seamlessly to the transformative hub, ScaleUp
-                Village. ScaleUp Village is not just an industrial park but a
-                dedicated space focused on Direct-to-Consumer (D2C) innovation.
-                With a planned launch within six months, this hub aims to
-                revolutionize the entrepreneurial landscape, providing startups
-                and businesses with an environment tailored for success.
+                Bringing together innovation, expertise, and entrepreneurial
+                ethos, this conclave aims to propel Kerala&apos;s startup
+                ecosystem to unprecedented heights.
               </p>
             </div>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-x-4 ">
-            <div className={Styles["about-card"]}>
-              <Icon
-                icon="ph:microphone"
-                width="70"
-                className="mic"
-                color="#003b6d"
-              />
-              <div className="py-4">
-                <h1 className={Styles["card-heading"]}>Students</h1>
-                <p className="mb-4">
-                  Tech Learning Stations,Non Tech Learning Stations, Live Idea
-                  Pitching Competiotions,Panel Discussion : Kerala to the
-                  Globe,Startup Stories,Live Idea Pitching,Medical Hackathon
-                </p>
-                <a href="" className={Styles["card-link"]}>
-                  Read More
-                </a>
-              </div>
-            </div>
-            <div className={Styles["about-card"]}>
-              <Icon
-                icon="ph:microphone"
-                width="70"
-                className="mic"
-                color="#ffcf3f"
-              />
-              <div className="py-4">
-                <h1 className={Styles["card-heading"]}>9 Speakers</h1>
-                <p className="mb-4">
-                  Lorem ipsum dolor sit amet,consectetur adipiscing elit. In
-                  rhoncus massa nec graviante.at volutpat ligula euismod quis.
-                  Maecenas ornare, ex in malesuada tempus.
-                </p>
-                <a href="" className={Styles["card-link"]}>
-                  Read More
-                </a>
-              </div>
-            </div>
-            <div className={Styles["about-card"]}>
-              <Icon
-                icon="ph:microphone"
-                width="70"
-                className="mic"
-                color="#803e97"
-              />
-              <div className="py-4">
-                <h1 className={Styles["card-heading"]}>9 Speakers</h1>
-                <p className="mb-4">
-                  Lorem ipsum dolor sit amet,consectetur adipiscing elit. In
-                  rhoncus massa nec graviante.at volutpat ligula euismod quis.
-                  Maecenas ornare, ex in malesuada tempus.
-                </p>
-                <a href="" className={Styles["card-link"]}>
-                  Read More
-                </a>
-              </div>
-            </div>
-            <div className={Styles["about-card"]}>
-              <Icon
-                icon="ph:microphone"
-                width="70"
-                className="mic"
-                color="#00b7bb"
-              />
-              <div className="py-4">
-                <h1 className={Styles["card-heading"]}>9 Speakers</h1>
-                <p className="mb-4">
-                  Lorem ipsum dolor sit amet,consectetur adipiscing elit. In
-                  rhoncus massa nec graviante.at volutpat ligula euismod quis.
-                  Maecenas ornare, ex in malesuada tempus.
-                </p>
-                <a href="" className={Styles["card-link"]}>
-                  Read More
-                </a>
-              </div>
+          <div className="py-[100px]">
+            <h1 className="title purple-before text-[36px]">
+              ScaleUp for who?
+            </h1>
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-x-4 ">
+              {aboutCards.map((card, index) => (
+                <div className={Styles["about-card"]} key={index}>
+                  {card.icon}
+                  <div className="py-4 h-full">
+                    <h1 className={Styles["card-heading"]}>{card.title}</h1>
+                    <p className="mb-4 line-clamp-3">{card.description}</p>
+                    <a href="" className={Styles["card-link"]}>
+                      Read More
+                    </a>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
         <Scribbles scribbles={aboutScribble} />
       </div>
-
-      <div className="py-[100">
+      <div className="py-[100px] h-[75vh] relative overflow-hidden bg-primary-purple">
+        <div className="custom-container grid grid-cols-12">
+          <div className="col-span-6">
+            <h1 className="title  text-[36px]" style={{ color: "white" }}>
+              Scaleup Village
+            </h1>
+            <p className="text-white mb-5">
+              The thrill sparked at the ScaleUp Conclave isn&apos;t merely
+              fleeting. It signals the inception of the catalytic centre,
+              ScaleUp Village, propelling our commitment to transformation.
+            </p>
+            <p className="text-white mb-4">
+              ScaleUp Village is not just an industrial park but a dedicated
+              space focused on Direct-to-Consumer (D2C) innovation,
+              first-of-its-kind in India. With a planned launch within six
+              months, this hub aims to revolutionize the entrepreneurial
+              landscape, providing startups and businesses with an environment
+              tailored for success.
+            </p>
+          </div>
+        </div>
+        <Scribbles scribbles={aboutSecondScribble} />
+      </div>
+      <div className="py-[100]">
         <div className="custom-container">
           <h1 className="title text-[36px] cyan-before">OUR SPEAKERS</h1>
         </div>
@@ -564,18 +667,59 @@ export default function Home() {
           ))}
         </div>
       </div>
-      <div className="px-[200px] p-1">
+      <div className="px-[200px] p-1 mt-[40px]">
+      <h1 className="text-[30px] font-semibold">SHEDULE</h1>
         <div className="custom-container grid grid-cols-4 pb-6">
-          <div className=" h-[50px] w-[230px] "></div>
-          <div className="bg-gray-200 h-[50px] w-[220px] ">second</div>
-          <div className="bg-gray-200 h-[50px] w-[220px] ">third</div>
+          <div className=" h-[50px] w-[250px] "></div>
+          <div className="bg-gray-200 h-[50px] w-[250px] flex ">
+            <h1 className="font-semibold text-[15px] p-3">Day 1</h1>
+            <h1
+              className="ms-[70px] mt-[5px] text-[45px] font-semibold
+             text-primary-cyan max-h-[50px] overflow-hidden"
+            >
+              2 Feb
+            </h1>
+          </div>
+          <div className="bg-gray-200 h-[50px] w-[250px] ms-7 ">
+            <div className="bg-gray-200 h-[50px] w-[250px] flex ">
+              <h1 className="font-semibold text-[15px] p-3 text-gray-400 ">
+                Day 2
+              </h1>
+              <h1
+                className="ms-[70px] mt-[5px] text-[45px] font-semibold
+             text-gray-400 max-h-[50px] overflow-hidden"
+              >
+                3 Feb
+              </h1>
+            </div>
+          </div>
           <div className=" h-[50px] w-[230px] "></div>
         </div>
         <div className="grid grid-cols-4 ">
-          <div className="bg-gray-200 h-[50px] w-[220px] ">1</div>
-          <div className="bg-gray-200 h-[50px] w-[220px]">2</div>
-          <div className="bg-gray-200 h-[50px] w-[220px]">3</div>
-          <div className="bg-gray-200 h-[50px] w-[220px]  ">4</div>
+          <div className="bg-gray-200 h-[50px] w-[220px] flex items-center justify-center gap-14 overflow-hidden">
+            <h1 className="font-semibold ">Students</h1>
+            <ScholarCap className="fill-primary-cyan max-h-[65px] mb-[15px] " />
+          </div>
+          <div className="bg-gray-200 h-[50px] w-[220px]">
+            <div className="bg-gray-200 h-[50px] w-[220px] flex items-center justify-center gap-14 overflow-hidden">
+              <h1 className="font-semibold text-gray-400">Startups</h1>
+              <Rocket className="fill-gray-400 max-h-[65px] mb-[15px] " />
+            </div>
+          </div>
+          <div className="bg-gray-200 h-[50px] w-[220px]">
+            <div className="bg-gray-200 h-[50px] w-[220px] flex items-center justify-center gap-14 overflow-hidden">
+              <h1 className="font-semibold text-gray-400 w-[180px] text-[17px]">
+                Local Business
+              </h1>
+              <Speaker className="fill-gray-400 max-h-[50px] mb-[13px] " />
+            </div>
+          </div>
+          <div className="bg-gray-200 h-[50px] w-[220px]  ">
+            <div className="bg-gray-200 h-[50px] w-[220px] flex items-center justify-center gap-14 overflow-hidden">
+              <h1 className="font-semibold text-gray-400">Investors</h1>
+              <Clock className="fill-gray-400 max-h-[45px] mb-[15px] " />
+            </div>
+          </div>
         </div>
 
         <div className="grid grid-cols-5 bg-primary-cyan mt-[50px]">
@@ -589,9 +733,8 @@ export default function Home() {
           <div></div>
         </div>
         <div className="grid grid-cols-5 bg-gray-200">
-          <div>
-      <Image src = {Minister}  width={100} height={100}/>
-      
+          <div className="rounded-md overflow-hidden w-full">
+            <Image src={Minister} width={90} height={90} />
           </div>
           <div className="flex items-center justify-center flex-col">
             <div className="text-[20px] font-semibold">14</div>
@@ -612,38 +755,185 @@ export default function Home() {
             </button>
           </div>
           <div className="flex items-center justify-center">
-            <div >
-              <a className="text-primary-cyan text-[12px] font-semibold underline underline-primary-cyan" href=""  >Join Whatsapp</a>
+            <div>
+              <a
+                className="text-primary-cyan text-[12px] font-semibold underline underline-primary-cyan"
+                href=""
+              >
+                Join Whatsapp
+              </a>
             </div>
           </div>
 
-          
+          <div>
+            <Image src={Minister} width={90} height={90} />
+          </div>
+          <div className="flex items-center justify-center flex-col">
+            <div className="text-[20px] font-semibold">14</div>
+            <div>February</div>
+          </div>
+          <div className="flex flex-col items-center justify-center">
+            <h1 className="text-[15px] font-semibold">
+              Conference in Amsterdam
+            </h1>
+            <p className="text-[10px] font-semibold">08 AM 04 PM</p>
+            <p className="text-[7px] font-normal text-gray-500">
+              Speaker: Daniel Hill
+            </p>
+          </div>
+          <div className="flex items-center justify-center">
+            <button className="rounded-2xl bg-primary-cyan text-white px-10 py-2 text-[10px]">
+              Read More
+            </button>
+          </div>
+          <div className="flex items-center justify-center">
+            <div>
+              <a
+                className="text-primary-cyan text-[12px] font-semibold underline underline-primary-cyan"
+                href=""
+              >
+                Join Whatsapp
+              </a>
+            </div>
+          </div>
 
-          
+          <div>
+            <Image src={Minister} width={90} height={90} />
+          </div>
+          <div className="flex items-center justify-center flex-col">
+            <div className="text-[20px] font-semibold">14</div>
+            <div>February</div>
+          </div>
+          <div className="flex flex-col items-center justify-center">
+            <h1 className="text-[15px] font-semibold">
+              Conference in Amsterdam
+            </h1>
+            <p className="text-[10px] font-semibold">08 AM 04 PM</p>
+            <p className="text-[7px] font-normal text-gray-500">
+              Speaker: Daniel Hill
+            </p>
+          </div>
+          <div className="flex items-center justify-center">
+            <button className="rounded-2xl bg-primary-cyan text-white px-10 py-2 text-[10px]">
+              Read More
+            </button>
+          </div>
+          <div className="flex items-center justify-center">
+            <div>
+              <a
+                className="text-primary-cyan text-[12px] font-semibold underline underline-primary-cyan"
+                href=""
+              >
+                Join Whatsapp
+              </a>
+            </div>
+          </div>
+          <div>
+            <Image src={Minister} width={90} height={90} />
+          </div>
+          <div className="flex items-center justify-center flex-col">
+            <div className="text-[20px] font-semibold">14</div>
+            <div>February</div>
+          </div>
+          <div className="flex flex-col items-center justify-center">
+            <h1 className="text-[15px] font-semibold">
+              Conference in Amsterdam
+            </h1>
+            <p className="text-[10px] font-semibold">08 AM 04 PM</p>
+            <p className="text-[7px] font-normal text-gray-500">
+              Speaker: Daniel Hill
+            </p>
+          </div>
+          <div className="flex items-center justify-center">
+            <button className="rounded-2xl bg-primary-cyan text-white px-10 py-2 text-[10px]">
+              Read More
+            </button>
+          </div>
+          <div className="flex items-center justify-center">
+            <div>
+              <a
+                className="text-primary-cyan text-[12px] font-semibold underline underline-primary-cyan"
+                href=""
+              >
+                Join Whatsapp
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <Image src={Minister} width={90} height={90} />
+          </div>
+          <div className="flex items-center justify-center flex-col">
+            <div className="text-[20px] font-semibold">14</div>
+            <div>February</div>
+          </div>
+          <div className="flex flex-col items-center justify-center">
+            <h1 className="text-[15px] font-semibold">
+              Conference in Amsterdam
+            </h1>
+            <p className="text-[10px] font-semibold">08 AM 04 PM</p>
+            <p className="text-[7px] font-normal text-gray-500">
+              Speaker: Daniel Hill
+            </p>
+          </div>
+          <div className="flex items-center justify-center">
+            <button className="rounded-2xl bg-primary-cyan text-white px-10 py-2 text-[10px]">
+              Read More
+            </button>
+          </div>
+          <div className="flex items-center justify-center">
+            <div>
+              <a
+                className="text-primary-cyan text-[12px] font-semibold underline underline-primary-cyan"
+                href=""
+              >
+                Join Whatsapp
+              </a>
+            </div>
+          </div>
         </div>
       </div>
 
       <div className="custom-container">
-        <Swiper
-          slidesPerView={4}
-          spaceBetween={30}
-          centeredSlides={true}
-          pagination={{
-            clickable: true,
-          }}
-          modules={[Pagination]}
-          className="mySwiper"
-        >
-          <SwiperSlide>Slide 1</SwiperSlide>
-          <SwiperSlide>Slide 2</SwiperSlide>
-          <SwiperSlide>Slide 3</SwiperSlide>
-          <SwiperSlide>Slide 4</SwiperSlide>
-          <SwiperSlide>Slide 5</SwiperSlide>
-          <SwiperSlide>Slide 6</SwiperSlide>
-          <SwiperSlide>Slide 7</SwiperSlide>
-          <SwiperSlide>Slide 8</SwiperSlide>
-          <SwiperSlide>Slide 9</SwiperSlide>
-        </Swiper>
+        {/* HILIGHT EVENTS */}
+        {highLighEvents.map((event, index) => (
+          <div key={index} className="custom-container py-[100px]">
+            <h1 className="title purple-before text-[36px]">{event.title}</h1>
+
+            <div className="grid grid-cols-1 lg:grid-cols-4 ">
+              {event.card.map((card, key) => (
+                <div
+                  key={index}
+                  className="bg-white max-w-[18rem] shadow-lg border border-text-muted border-opacity-40 rounded-lg overflow-hidden "
+                >
+                  <Image
+                    src={card.image}
+                    alt=""
+                    width="300"
+                    height="100"
+                    className="w-full"
+                  />
+                  <div className="p-4 h-1/2">
+                    <div className="h-[40%]">
+                      <h1 className="title">{card.title}</h1>
+                    </div>
+                    <div className="h-[60%]">
+                      <p className="line-clamp-2 text-text-muted mb-4">
+                        {card.description}
+                      </p>
+                      <button
+                        type="button"
+                        class="bg-[#25D366] text-white py-3 px-4 rounded-full  w-full"
+                      >
+                        WhatsApp
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
 
       <div className={`${Styles["registration-bg"]} lg:h-[50vh] py-[100px] `}>
@@ -659,7 +949,7 @@ export default function Home() {
 
           <div className="col-span-10 lg:col-span-8 grid grid-cols-1 lg:grid-cols-2 gap-x-4">
             <div>
-              <labe className="label text-white">Full Name</labe>
+              <label className="label text-white">Full Name</label>
               <input
                 type="text"
                 name="name"

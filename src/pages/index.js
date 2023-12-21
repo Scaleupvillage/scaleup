@@ -41,11 +41,11 @@ import { motion } from "framer-motion";
 import ArrowHead from "@/Components/Icons/scribbles/ArrowHead";
 import Group3 from "@/Components/Icons/scribbles/Group3";
 import ScholarCap from "@/Components/Icons/ScholarCap";
-import Rocket from "@/Components/Icons/Rocket";
 import Speaker from "@/Components/Icons/Speaker";
 import Clock from "@/Components/Icons/Clock";
 import UpArrows from "@/Components/Icons/scribbles/UpArrows";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import Rocket from "@/Components/Icons/Rocket";
 
 const Countdown = dynamic(() => import("@/Components/Counter"), { ssr: false });
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
@@ -319,7 +319,9 @@ export default function Home() {
       component: <UpArrows className="absolute bottom-[-25px] right-0" />,
     },
     {
-      component: <Group2 className="absolute bottom-[5%] left-[2%]" height="250" />,
+      component: (
+        <Group2 className="absolute bottom-[5%] left-[2%]" height="250" />
+      ),
     },
   ];
 
@@ -511,7 +513,7 @@ export default function Home() {
       </div>
       <div className="  lg:h-[75vh] py-[100px] relative overflow-hidden">
         <div className="custom-container flex justify-center items-center h-full">
-          <div className="bg-white w-full grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-x-12  ">
+          <div className="bg-white w-full grid grid-cols-2 lg:grid-cols-4  lg:gap-x-12  ">
             <div className="col-span-2 my-auto items-center">
               <div className="grid grid-cols-12 p-1">
                 <div className=" col-span-6 bg-primary-purple h-[100px] mr-3 rounded-md flex flex-col items-center justify-center">
@@ -671,12 +673,219 @@ export default function Home() {
           ))}
         </div>
       </div>
-
-       <div className="py-[100px] custom-container">
-            <div className="grid grid-cols-4">
-              <div>Students</div>
+      <div className="py-[100px] custom-container">
+        <h1 className="text-[36px] title">SHEDULE</h1>
+        <div className="custom-container grid grid-cols-4 pb-6">
+          <div className=" h-[50px] w-[250px] "></div>
+          <div className="bg-gray-200 h-[50px] w-[250px] flex ">
+            <h1 className="font-semibold text-[15px] p-3">Day 1</h1>
+            <h1
+              className="ms-[70px] mt-[5px] text-[45px] font-semibold
+             text-primary-cyan max-h-[50px] overflow-hidden"
+            >
+              2 Feb
+            </h1>
+          </div>
+          <div className="bg-gray-200 h-[50px] w-[250px] ms-7 ">
+            <div className="bg-gray-200 h-[50px] w-[250px] flex ">
+              <h1 className="font-semibold text-[15px] p-3 text-gray-400 ">
+                Day 2
+              </h1>
+              <h1
+                className="ms-[70px] mt-[5px] text-[45px] font-semibold
+             text-gray-400 max-h-[50px] overflow-hidden"
+              >
+                3 Feb
+              </h1>
             </div>
-        </div>     
+          </div>
+          <div className=" h-[50px] w-[230px] "></div>
+        </div>
+        <div className="grid grid-cols-4 gap-x-12">
+          <div className=" py-4 px-5 bg-gray-200  w-full flex items-center justify-between  overflow-hidden relative">
+            <h1 className="font-semibold text-[20px]">Students</h1>
+            <ScholarCap className="fill-primary-cyan max-h-[65px] absolute right-0 top-[-5px] " />
+          </div>
+          <div className=" py-4 px-5 bg-gray-200  w-full flex items-center justify-between  overflow-hidden relative">
+            <h1 className="font-semibold text-[20px]">Students</h1>
+            <ScholarCap className="fill-primary-cyan max-h-[65px] absolute right-0 top-[-5px] " />
+          </div>
+          <div className=" py-4 px-5 bg-gray-200  w-full flex items-center justify-between  overflow-hidden relative">
+            <h1 className="font-semibold text-[20px]">Students</h1>
+            <ScholarCap className="fill-primary-cyan max-h-[65px] absolute right-0 top-[-5px] " />
+          </div>
+          <div className=" py-4 px-5 bg-gray-200  w-full flex items-center justify-between  overflow-hidden relative">
+            <h1 className="font-semibold text-[20px]">Students</h1>
+            <ScholarCap className="fill-primary-cyan max-h-[65px] absolute right-0 top-[-5px] " />
+          </div>
+        </div>
+        <div>
+          <div className=" bg-primary-cyan mt-[50px]">
+            <div className="flex px-4 items-center ">
+              <Calendar width="20" fill="white" />
+              <h1 className="text-white ml-3">Main Events</h1>
+            </div>
+          </div>
+          <div>
+            <div className="grid grid-cols-5 bg-gray-200">
+              <div className="rounded-md overflow-hidden w-full">
+                <Image src={Minister} width={90} height={90} />
+              </div>
+              <div className="flex items-center justify-center flex-col">
+                <div className="text-[20px] font-semibold">14</div>
+                <div>February</div>
+              </div>
+              <div className="flex flex-col items-center justify-center">
+                <h1 className="text-[15px] font-semibold">
+                  Conference in Amsterdam
+                </h1>
+                <p className="text-[14px] font-semibold">08 AM 04 PM</p>
+                <p className="text-[10px] font-normal text-gray-500">
+                  Speaker: Daniel Hill
+                </p>
+              </div>
+              <div className="flex items-center justify-center">
+                <button className="rounded-2xl bg-primary-cyan text-white px-10 py-2 text-[10px]">
+                  Read More
+                </button>
+              </div>
+              <div className="flex items-center justify-center">
+                <a
+                  className="text-primary-cyan text-[12px] font-semibold underline underline-primary-cyan"
+                  href=""
+                >
+                  Join Whatsapp
+                </a>
+              </div>
+            </div>
+            <div className="grid grid-cols-5 bg-gray-200">
+              <div className="rounded-md overflow-hidden w-full">
+                <Image src={Minister} width={90} height={90} />
+              </div>
+              <div className="flex items-center justify-center flex-col">
+                <div className="text-[20px] font-semibold">14</div>
+                <div>February</div>
+              </div>
+              <div className="flex flex-col items-center justify-center">
+                <h1 className="text-[15px] font-semibold">
+                  Conference in Amsterdam
+                </h1>
+                <p className="text-[14px] font-semibold">08 AM 04 PM</p>
+                <p className="text-[10px] font-normal text-gray-500">
+                  Speaker: Daniel Hill
+                </p>
+              </div>
+              <div className="flex items-center justify-center">
+                <button className="rounded-2xl bg-primary-cyan text-white px-10 py-2 text-[10px]">
+                  Read More
+                </button>
+              </div>
+              <div className="flex items-center justify-center">
+                <a
+                  className="text-primary-cyan text-[12px] font-semibold underline underline-primary-cyan"
+                  href=""
+                >
+                  Join Whatsapp
+                </a>
+              </div>
+            </div>
+            <div className="grid grid-cols-5 bg-gray-200">
+              <div className="rounded-md overflow-hidden w-full">
+                <Image src={Minister} width={90} height={90} />
+              </div>
+              <div className="flex items-center justify-center flex-col">
+                <div className="text-[20px] font-semibold">14</div>
+                <div>February</div>
+              </div>
+              <div className="flex flex-col items-center justify-center">
+                <h1 className="text-[15px] font-semibold">
+                  Conference in Amsterdam
+                </h1>
+                <p className="text-[14px] font-semibold">08 AM 04 PM</p>
+                <p className="text-[10px] font-normal text-gray-500">
+                  Speaker: Daniel Hill
+                </p>
+              </div>
+              <div className="flex items-center justify-center">
+                <button className="rounded-2xl bg-primary-cyan text-white px-10 py-2 text-[10px]">
+                  Read More
+                </button>
+              </div>
+              <div className="flex items-center justify-center">
+                <a
+                  className="text-primary-cyan text-[12px] font-semibold underline underline-primary-cyan"
+                  href=""
+                >
+                  Join Whatsapp
+                </a>
+              </div>
+            </div>
+            <div className="grid grid-cols-5 bg-gray-200">
+              <div className="rounded-md overflow-hidden w-full">
+                <Image src={Minister} width={90} height={90} />
+              </div>
+              <div className="flex items-center justify-center flex-col">
+                <div className="text-[20px] font-semibold">14</div>
+                <div>February</div>
+              </div>
+              <div className="flex flex-col items-center justify-center">
+                <h1 className="text-[15px] font-semibold">
+                  Conference in Amsterdam
+                </h1>
+                <p className="text-[14px] font-semibold">08 AM 04 PM</p>
+                <p className="text-[10px] font-normal text-gray-500">
+                  Speaker: Daniel Hill
+                </p>
+              </div>
+              <div className="flex items-center justify-center">
+                <button className="rounded-2xl bg-primary-cyan text-white px-10 py-2 text-[10px]">
+                  Read More
+                </button>
+              </div>
+              <div className="flex items-center justify-center">
+                <a
+                  className="text-primary-cyan text-[12px] font-semibold underline underline-primary-cyan"
+                  href=""
+                >
+                  Join Whatsapp
+                </a>
+              </div>
+            </div>
+            <div className="grid grid-cols-5 bg-gray-200">
+              <div className="rounded-md overflow-hidden w-full">
+                <Image src={Minister} width={90} height={90} />
+              </div>
+              <div className="flex items-center justify-center flex-col">
+                <div className="text-[20px] font-semibold">14</div>
+                <div>February</div>
+              </div>
+              <div className="flex flex-col items-center justify-center">
+                <h1 className="text-[15px] font-semibold">
+                  Conference in Amsterdam
+                </h1>
+                <p className="text-[14px] font-semibold">08 AM 04 PM</p>
+                <p className="text-[10px] font-normal text-gray-500">
+                  Speaker: Daniel Hill
+                </p>
+              </div>
+              <div className="flex items-center justify-center">
+                <button className="rounded-2xl bg-primary-cyan text-white px-10 py-2 text-[10px]">
+                  Read More
+                </button>
+              </div>
+              <div className="flex items-center justify-center">
+                <a
+                  className="text-primary-cyan text-[12px] font-semibold underline underline-primary-cyan"
+                  href=""
+                >
+                  Join Whatsapp
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className={`${Styles["registration-bg"]} lg:h-[50vh] py-[100px] `}>
         <div className="custom-container grid grid-cols-10 gap-x-4">
           <div className="col-span-10 mb-5">

@@ -314,6 +314,15 @@ export default function Home() {
       ),
     },
   ];
+  let aboutSecondScribble = [
+    {
+      component: <UpArrows className="absolute bottom-[-25px] right-0" />,
+    },
+    {
+      component: <Group2 className="absolute bottom-[5%] left-[2%]" height="250" />,
+    },
+  ];
+
   let aboutCards = [
     {
       title: "Studens",
@@ -340,11 +349,7 @@ export default function Home() {
       icon: <Clock />,
     },
   ];
-  let aboutSecondScribble = [
-    {
-      component: <UpArrows className="absolute bottom-[-25px] right-0" />,
-    },
-  ];
+
   let highLighEvents = [
     {
       title: "Events For Students",
@@ -667,70 +672,11 @@ export default function Home() {
         </div>
       </div>
 
-      {/* HILIGHT EVENTS */}
-      {highLighEvents.map((event, index) => (
-        <div key={index} className="custom-container py-[100px]">
-          <h1 className="title purple-before text-[36px]">{event.title}</h1>
-
-          <div className="grid grid-cols-1 lg:grid-cols-4 ">
-            {event.card.map((card, key) => (
-              <div
-                key={index}
-                className="bg-white max-w-[18rem] shadow-lg border border-text-muted border-opacity-40 rounded-lg overflow-hidden "
-              >
-                <Image
-                  src={card.image}
-                  alt=""
-                  width="300"
-                  height="100"
-                  className="w-full"
-                />
-                <div className="p-4 h-1/2">
-                  <div className="h-[40%]">
-                    <h1 className="title">{card.title}</h1>
-                  </div>
-                  <div className="h-[60%]">
-                    <p className="line-clamp-2 text-text-muted mb-4">
-                      {card.description}
-                    </p>
-                    <button
-                      type="button"
-                      class="bg-[#25D366] text-white py-3 px-4 rounded-full  w-full"
-                    >
-                      WhatsApp
-                    </button>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      ))}
-
-      {/* HILIGHT EVENTS */}
-      {/* <div className="custom-container">
-        <Swiper
-          slidesPerView={4}
-          spaceBetween={30}
-          centeredSlides={true}
-          pagination={{
-            clickable: true,
-          }}
-          modules={[Pagination]}
-          className="mySwiper"
-        >
-          <SwiperSlide>Slide 1</SwiperSlide>
-          <SwiperSlide>Slide 2</SwiperSlide>
-          <SwiperSlide>Slide 3</SwiperSlide>
-          <SwiperSlide>Slide 4</SwiperSlide>
-          <SwiperSlide>Slide 5</SwiperSlide>
-          <SwiperSlide>Slide 6</SwiperSlide>
-          <SwiperSlide>Slide 7</SwiperSlide>
-          <SwiperSlide>Slide 8</SwiperSlide>
-          <SwiperSlide>Slide 9</SwiperSlide>
-        </Swiper>
-      </div> */}
-
+       <div className="py-[100px] custom-container">
+            <div className="grid grid-cols-4">
+              <div>Students</div>
+            </div>
+        </div>     
       <div className={`${Styles["registration-bg"]} lg:h-[50vh] py-[100px] `}>
         <div className="custom-container grid grid-cols-10 gap-x-4">
           <div className="col-span-10 mb-5">

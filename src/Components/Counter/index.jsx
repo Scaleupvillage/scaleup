@@ -31,10 +31,10 @@ const Countdown = ({ targetDate }) => {
 
   return (
     <div className="grid grid-cols-5  gap-x-2">
-      <div className={Styles["counter"]}>
+      {/* <div className={Styles["counter"]}>
         {weeks}
         <div className={Styles["label"]}>Weeks</div>
-      </div>
+      </div> */}
       <div className={Styles["counter"]}>
         {days}
         <div className={Styles["label"]}> Days</div>

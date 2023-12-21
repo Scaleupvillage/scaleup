@@ -37,6 +37,7 @@ import Group1 from "@/Components/Icons/scribbles/Group1";
 import Group2 from "@/Components/Icons/scribbles/Group";
 import Line from "@/Components/Icons/scribbles/Line";
 import Arrow from "@/Components/Icons/scribbles/Arrow";
+import { motion } from "framer-motion";
 const Countdown = dynamic(() => import("@/Components/Counter"), { ssr: false });
 export default function Home() {
   const slides = [
@@ -324,6 +325,140 @@ export default function Home() {
       ),
     },
   ];
+
+  let highLighEvents = [
+    {
+      title: "Events For Students",
+      card: [
+        {
+          image:
+            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
+          title: "Panel Discussion : Kerala to the Globe",
+          description:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
+        },
+        {
+          image:
+            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
+          title: "Startup Stories",
+          description:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
+        },
+        {
+          image:
+            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
+          title: "Live Idea Pitching",
+          description:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
+        },
+        {
+          image:
+            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
+          title: "Medical Hackathon",
+          description:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
+        },
+      ],
+    },
+    {
+      title: "Events For Startup",
+      card: [
+        {
+          image:
+            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
+          title: "Let's talk about Startup by CEO KSUM",
+          description:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
+        },
+        {
+          image:
+            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
+          title: "Panel Discussion : Kerala to the Globe",
+          description:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
+        },
+        {
+          image:
+            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
+          title: " Mrs & Mr Startup",
+          description:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
+        },
+      ],
+    },
+    {
+      title: "Events For Local Business Owners/SMEs",
+      card: [
+        {
+          image:
+            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
+          title:
+            "Panel Discussion: Opportunities and Resolutions, How to Scale",
+          description:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
+        },
+        {
+          image:
+            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
+          title: "Panel Discussion : Kerala to the Globe",
+          description:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
+        },
+        {
+          image:
+            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
+          title: "Non Tech Learning Stations",
+          description:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
+        },
+      ],
+    },
+    {
+      title: "Gulf Returnees/NREs",
+      card: [
+        {
+          image:
+            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
+          title: "Investors Clinic(How to Invest Wisely)",
+          description:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
+        },
+        {
+          image:
+            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
+          title: "Panel Discussion : Kerala to the Globe",
+          description:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
+        },
+      ],
+    },
+    {
+      title: "Entertainment",
+      card: [
+        {
+          image:
+            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
+          title: "Magic Planet Show",
+          description:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
+        },
+        {
+          image:
+            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
+          title: "Cookathon Cooking Competition",
+          description:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
+        },
+        {
+          image:
+            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
+          title: " Culturel events/Exhibits",
+          description:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
+        },
+      ],
+    },
+  ];
   const targetDate = new Date("2024-01-01T00:00:00");
   return (
     <div className={exo2.className}>
@@ -406,21 +541,25 @@ export default function Home() {
         <div className="custom-container relative">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-7">
             <div>
-              <h1 className="title text-[36px]">ScaleUp Conclave 2024</h1>
+              <h1 className="title purple-before text-[36px]">
+                ScaleUp Conclave 2024
+              </h1>
               <p className="description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing eli. Integer
-                iaculis in lacus a sollicitudin. Ut hendrerit hendrerit nisl a
-                accumsan. Pellentesque convallis consectetur tortor id placerat.
-                Curabitur a pulvinar nunc. Maecenas laoreet finibus lectus, at
-                volutpat ligula euismod. In rhoncus massa nec sollicitudin. Ut
-                hendrerit hendrerit nisl a accumsan. Pellentesque convallis
-                consectetur tortor id placerat. Curabitur a pulvinar nunc.
-                Maecenas laoreet finibus lectus, at volutpat ligula euismod
-                quis. Maecenas ornare, ex in malesuada tempus.
+                The excitement doesn&apos;t end with ScaleUp Conclave, it marks
+                the beginning of a continuous journey towards growth and
+                innovation. As we celebrate the success of each annual conclave,
+                our focus extends seamlessly to the transformative hub, ScaleUp
+                Village. ScaleUp Village is not just an industrial park but a
+                dedicated space focused on Direct-to-Consumer (D2C) innovation.
+                With a planned launch within six months, this hub aims to
+                revolutionize the entrepreneurial landscape, providing startups
+                and businesses with an environment tailored for success.
               </p>
             </div>
             <div>
-              <h1 className="title text-[36px]">ABOUT THE EVENT</h1>
+              <h1 className="title purple-before text-[36px]">
+                Scaleup Village
+              </h1>
               <p className="description">
                 The excitement doesn&apos;t end with ScaleUp Conclave, it marks
                 the beginning of a continuous journey towards growth and
@@ -434,81 +573,87 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-x-4 ">
-            <div className={Styles["about-card"]}>
-              <Icon
-                icon="ph:microphone"
-                width="70"
-                className="mic"
-                color="#003b6d"
-              />
-              <div className="py-4">
-                <h1 className={Styles["card-heading"]}>Students</h1>
-                <p className="mb-4">
-                  Tech Learning Stations,Non Tech Learning Stations, Live Idea
-                  Pitching Competiotions,Panel Discussion : Kerala to the
-                  Globe,Startup Stories,Live Idea Pitching,Medical Hackathon
-                </p>
-                <a href="" className={Styles["card-link"]}>
-                  Read More
-                </a>
+          <div className="py-[100px]">
+            <h1 className="title purple-before text-[36px]">
+              {" "}
+              Target Audiance{" "}
+            </h1>
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-x-4 ">
+              <div className={Styles["about-card"]}>
+                <Icon
+                  icon="ph:microphone"
+                  width="70"
+                  className="mic"
+                  color="#003b6d"
+                />
+                <div className="py-4">
+                  <h1 className={Styles["card-heading"]}>Students</h1>
+                  <p className="mb-4">
+                    Tech Learning Stations,Non Tech Learning Stations, Live Idea
+                    Pitching Competiotions,Panel Discussion : Kerala to the
+                    Globe,Startup Stories,Live Idea Pitching,Medical Hackathon
+                  </p>
+                  <a href="" className={Styles["card-link"]}>
+                    Read More
+                  </a>
+                </div>
               </div>
-            </div>
-            <div className={Styles["about-card"]}>
-              <Icon
-                icon="ph:microphone"
-                width="70"
-                className="mic"
-                color="#ffcf3f"
-              />
-              <div className="py-4">
-                <h1 className={Styles["card-heading"]}>9 Speakers</h1>
-                <p className="mb-4">
-                  Lorem ipsum dolor sit amet,consectetur adipiscing elit. In
-                  rhoncus massa nec graviante.at volutpat ligula euismod quis.
-                  Maecenas ornare, ex in malesuada tempus.
-                </p>
-                <a href="" className={Styles["card-link"]}>
-                  Read More
-                </a>
+              <div className={Styles["about-card"]}>
+                <Icon
+                  icon="ph:microphone"
+                  width="70"
+                  className="mic"
+                  color="#ffcf3f"
+                />
+                <div className="py-4">
+                  <h1 className={Styles["card-heading"]}>Startups</h1>
+                  <p className="mb-4">
+                    Lorem ipsum dolor sit amet,consectetur adipiscing elit. In
+                    rhoncus massa nec graviante.at volutpat ligula euismod quis.
+                    Maecenas ornare, ex in malesuada tempus.
+                  </p>
+                  <a href="" className={Styles["card-link"]}>
+                    Read More
+                  </a>
+                </div>
               </div>
-            </div>
-            <div className={Styles["about-card"]}>
-              <Icon
-                icon="ph:microphone"
-                width="70"
-                className="mic"
-                color="#803e97"
-              />
-              <div className="py-4">
-                <h1 className={Styles["card-heading"]}>9 Speakers</h1>
-                <p className="mb-4">
-                  Lorem ipsum dolor sit amet,consectetur adipiscing elit. In
-                  rhoncus massa nec graviante.at volutpat ligula euismod quis.
-                  Maecenas ornare, ex in malesuada tempus.
-                </p>
-                <a href="" className={Styles["card-link"]}>
-                  Read More
-                </a>
+              <div className={Styles["about-card"]}>
+                <Icon
+                  icon="ph:microphone"
+                  width="70"
+                  className="mic"
+                  color="#803e97"
+                />
+                <div className="py-4">
+                  <h1 className={Styles["card-heading"]}>9 Speakers</h1>
+                  <p className="mb-4">
+                    Lorem ipsum dolor sit amet,consectetur adipiscing elit. In
+                    rhoncus massa nec graviante.at volutpat ligula euismod quis.
+                    Maecenas ornare, ex in malesuada tempus.
+                  </p>
+                  <a href="" className={Styles["card-link"]}>
+                    Read More
+                  </a>
+                </div>
               </div>
-            </div>
-            <div className={Styles["about-card"]}>
-              <Icon
-                icon="ph:microphone"
-                width="70"
-                className="mic"
-                color="#00b7bb"
-              />
-              <div className="py-4">
-                <h1 className={Styles["card-heading"]}>9 Speakers</h1>
-                <p className="mb-4">
-                  Lorem ipsum dolor sit amet,consectetur adipiscing elit. In
-                  rhoncus massa nec graviante.at volutpat ligula euismod quis.
-                  Maecenas ornare, ex in malesuada tempus.
-                </p>
-                <a href="" className={Styles["card-link"]}>
-                  Read More
-                </a>
+              <div className={Styles["about-card"]}>
+                <Icon
+                  icon="ph:microphone"
+                  width="70"
+                  className="mic"
+                  color="#00b7bb"
+                />
+                <div className="py-4">
+                  <h1 className={Styles["card-heading"]}>9 Speakers</h1>
+                  <p className="mb-4">
+                    Lorem ipsum dolor sit amet,consectetur adipiscing elit. In
+                    rhoncus massa nec graviante.at volutpat ligula euismod quis.
+                    Maecenas ornare, ex in malesuada tempus.
+                  </p>
+                  <a href="" className={Styles["card-link"]}>
+                    Read More
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -516,7 +661,7 @@ export default function Home() {
         <Scribbles scribbles={aboutScribble} />
       </div>
 
-      <div className="py-[100">
+      <div className="py-[100]">
         <div className="custom-container">
           <h1 className="title text-[36px] cyan-before">OUR SPEAKERS</h1>
         </div>
@@ -543,6 +688,49 @@ export default function Home() {
           ))}
         </div>
       </div>
+
+      {/* HILIGHT EVENTS */}
+      {highLighEvents.map((event, index) => (
+        <div key={index} className="custom-container py-[100px]">
+          <h1 className="title purple-before text-[36px]">{event.title}</h1>
+
+          <div className="grid grid-cols-1 lg:grid-cols-4 ">
+            {event.card.map((card, key) => (
+              <div
+                key={index}
+                className="bg-white max-w-[18rem] shadow-lg border border-text-muted border-opacity-40 rounded-lg overflow-hidden "
+              >
+                <Image
+                  src={card.image}
+                  alt=""
+                  width="300"
+                  height="100"
+                  className="w-full"
+                />
+                <div className="p-4 h-1/2">
+                  <div className="h-[40%]">
+                    <h1 className="title">{card.title}</h1>
+                  </div>
+                  <div className="h-[60%]">
+                    <p className="line-clamp-2 text-text-muted mb-4">
+                      {card.description}
+                    </p>
+                    <button
+                      type="button"
+                      class="bg-[#25D366] text-white py-3 px-4 rounded-full  w-full"
+                    >
+                      WhatsApp
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+
+      {/* HILIGHT EVENTS */}
+
       <div className={`${Styles["registration-bg"]} lg:h-[50vh] py-[100px] `}>
         <div className="custom-container grid grid-cols-10 gap-x-4">
           <div className="col-span-10 mb-5">

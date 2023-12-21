@@ -41,9 +41,9 @@
   color: #18181c;
 }
 
-.title::before {
+.title.purple-before::before {
   @apply border-[3px];
-  @apply border-primary-purple;
+  @apply border-primary-cyan;
   content: " ";
   position: absolute;
   width: 30px;

@@ -40,10 +40,8 @@ import Arrow from "@/Components/Icons/scribbles/Arrow";
 import ReactPlayer from "react-player";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 
-
 const Countdown = dynamic(() => import("@/Components/Counter"), { ssr: false });
 export default function Home() {
-  
   const slides = [
     () => (
       <div className="w-full bg-black bg-opacity-20 h-full flex justify-center items-center flex-col">
@@ -357,7 +355,7 @@ export default function Home() {
       </div>
       <div className="  lg:h-[75vh] py-[100px] relative overflow-hidden">
         <div className="custom-container flex justify-center items-center h-full">
-          <div className="bg-white w-full grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-x-12  ">
+          <div className="bg-white w-full grid grid-cols-2 lg:grid-cols-4  lg:gap-x-12  ">
             <div className="col-span-2 my-auto items-center">
               <div className="grid grid-cols-12 p-1">
                 <div className=" col-span-6 bg-primary-purple h-[100px] mr-3 rounded-md flex flex-col items-center justify-center">
@@ -392,7 +390,7 @@ export default function Home() {
                     20 +
                   </h1>
                   <p className="text-primary-cyan text-[20px] font-normal">
-                   Investors
+                    Investors
                   </p>
                 </div>
               </div>
@@ -566,6 +564,65 @@ export default function Home() {
           ))}
         </div>
       </div>
+      <div className="px-[200px] p-1">
+        <div className="custom-container grid grid-cols-4 pb-6">
+          <div className=" h-[50px] w-[230px] "></div>
+          <div className="bg-gray-200 h-[50px] w-[220px] ">second</div>
+          <div className="bg-gray-200 h-[50px] w-[220px] ">third</div>
+          <div className=" h-[50px] w-[230px] "></div>
+        </div>
+        <div className="grid grid-cols-4 ">
+          <div className="bg-gray-200 h-[50px] w-[220px] ">1</div>
+          <div className="bg-gray-200 h-[50px] w-[220px]">2</div>
+          <div className="bg-gray-200 h-[50px] w-[220px]">3</div>
+          <div className="bg-gray-200 h-[50px] w-[220px]  ">4</div>
+        </div>
+
+        <div className="grid grid-cols-5 bg-primary-cyan mt-[50px]">
+          <div className="flex gap-2 items-center ">
+            <Calendar width="23" fill="white" />
+            <h1 className="text-white">Main Events</h1>
+          </div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div className="grid grid-cols-5 bg-gray-200">
+          <div>
+      <Image src = {Minister}  width={100} height={100}/>
+      
+          </div>
+          <div className="flex items-center justify-center flex-col">
+            <div className="text-[20px] font-semibold">14</div>
+            <div>February</div>
+          </div>
+          <div className="flex flex-col items-center justify-center">
+            <h1 className="text-[15px] font-semibold">
+              Conference in Amsterdam
+            </h1>
+            <p className="text-[10px] font-semibold">08 AM 04 PM</p>
+            <p className="text-[7px] font-normal text-gray-500">
+              Speaker: Daniel Hill
+            </p>
+          </div>
+          <div className="flex items-center justify-center">
+            <button className="rounded-2xl bg-primary-cyan text-white px-10 py-2 text-[10px]">
+              Read More
+            </button>
+          </div>
+          <div className="flex items-center justify-center">
+            <div >
+              <a className="text-primary-cyan text-[12px] font-semibold underline underline-primary-cyan" href=""  >Join Whatsapp</a>
+            </div>
+          </div>
+
+          
+
+          
+        </div>
+      </div>
+
       <div className="custom-container">
         <Swiper
           slidesPerView={4}

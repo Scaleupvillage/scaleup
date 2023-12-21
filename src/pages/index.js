@@ -3,7 +3,7 @@ import Styles from "@/pages/index.module.scss";
 import Navbar from "@/Components/Layout/Navbar";
 const exo2 = Exo_2({ subsets: ["latin"], adjustFontFallback: false });
 
-import { EffectFade, Autoplay } from "swiper/modules";
+import { EffectFade, Autoplay, Pagination } from "swiper/modules";
 import Slider from "@/Components/Slider";
 import { Icon } from "@iconify/react";
 import dynamic from "next/dynamic";
@@ -37,8 +37,13 @@ import Group1 from "@/Components/Icons/scribbles/Group1";
 import Group2 from "@/Components/Icons/scribbles/Group";
 import Line from "@/Components/Icons/scribbles/Line";
 import Arrow from "@/Components/Icons/scribbles/Arrow";
+import ReactPlayer from "react-player";
+import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+
+
 const Countdown = dynamic(() => import("@/Components/Counter"), { ssr: false });
 export default function Home() {
+  
   const slides = [
     () => (
       <div className="w-full bg-black bg-opacity-20 h-full flex justify-center items-center flex-col">
@@ -329,9 +334,8 @@ export default function Home() {
     <div className={exo2.className}>
       <div className={`${Styles["main-container"]} relative overflow-hidden`}>
         <div>
-          <div className="mx-auto w-full max-w-[1140px] ">
-            <Navbar />
-          </div>
+          <Navbar />
+
           <div>
             <Slider
               spaceBetween={30}
@@ -368,19 +372,12 @@ export default function Home() {
                 <h1 className="text-[14px]">Los Angeles, CA. </h1>
               </div>
             </div>
-            <div className="flex justify-center items-center gap-x-4">
-              <UserIcon />
-              <div className=" flex flex-col justify-center">
-                <h1 className="text-[18px] font-medium">SPEAKERS</h1>
-                <h1 className="text-[14px]">Natalie James + guests</h1>
-              </div>
-            </div>
-            <div className="flex justify-center items-center gap-x-4">
-              <LabelIcon />
-              <div className=" flex flex-col justify-center">
-                <h1 className="text-[18px] font-medium">TICKETS</h1>
-                <h1 className="text-[14px]">$65 early bird</h1>
-              </div>
+            <div className="flex justify-center items-center gap-x-4 col-span-2">
+              <ReactPlayer
+                url="https://www.youtube.com/watch?v=LfDRCktozmk"
+                height={250}
+                width={550}
+              />
             </div>
           </div>
         </div>
@@ -543,6 +540,29 @@ export default function Home() {
           ))}
         </div>
       </div>
+      <div className="custom-container">
+        <Swiper
+          slidesPerView={4}
+          spaceBetween={30}
+          centeredSlides={true}
+          pagination={{
+            clickable: true,
+          }}
+          modules={[Pagination]}
+          className="mySwiper"
+        >
+          <SwiperSlide>Slide 1</SwiperSlide>
+          <SwiperSlide>Slide 2</SwiperSlide>
+          <SwiperSlide>Slide 3</SwiperSlide>
+          <SwiperSlide>Slide 4</SwiperSlide>
+          <SwiperSlide>Slide 5</SwiperSlide>
+          <SwiperSlide>Slide 6</SwiperSlide>
+          <SwiperSlide>Slide 7</SwiperSlide>
+          <SwiperSlide>Slide 8</SwiperSlide>
+          <SwiperSlide>Slide 9</SwiperSlide>
+        </Swiper>
+      </div>
+
       <div className={`${Styles["registration-bg"]} lg:h-[50vh] py-[100px] `}>
         <div className="custom-container grid grid-cols-10 gap-x-4">
           <div className="col-span-10 mb-5">

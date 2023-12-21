@@ -43,7 +43,7 @@
 
 .title.purple-before::before {
   @apply border-[3px];
-  @apply border-primary-cyan;
+  @apply border-primary-purple;
   content: " ";
   position: absolute;
   width: 30px;
@@ -56,6 +56,17 @@
   content: " ";
   position: absolute;
   width: 30px;
+  left: 0;
+  top: 0;
+}
+.title.wave-before::before {
+  content: " ";
+  position: absolute;
+  background: url("../assets/svg/blue.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 60px;
+  height: 30px;
   left: 0;
   top: 0;
 }

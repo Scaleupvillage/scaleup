@@ -5,7 +5,6 @@ const exo2 = Exo_2({ subsets: ["latin"], adjustFontFallback: false });
 
 import { EffectFade, Autoplay, Pagination } from "swiper/modules";
 import Slider from "@/Components/Slider";
-import { Icon } from "@iconify/react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import Footer from "@/Components/Layout/Footer";
@@ -27,29 +26,24 @@ import AnoopAmbika from "@/assets/images/speakers/AnoopAmbika.png";
 import Gopinath from "@/assets/images/speakers/Gopinath.png";
 import NavasMeeran from "@/assets/images/speakers/NavasMeeran.png";
 import MuhammedMusthafa from "@/assets/images/speakers/MuhammedMusthafa.png";
-import UserIcon from "@/Components/Icons/UserIcon";
 import Calendar from "@/Components/Icons/Calendar";
-import LocatioIcon from "@/Components/Icons/LocatioIcon";
-import LabelIcon from "@/Components/Icons/LabelIcon";
 import Wave from "@/Components/Icons/scribbles/Wave";
 import Scribbles from "@/Components/Scribbles";
 import Group1 from "@/Components/Icons/scribbles/Group1";
 import Group2 from "@/Components/Icons/scribbles/Group";
-import Line from "@/Components/Icons/scribbles/Line";
-import Arrow from "@/Components/Icons/scribbles/Arrow";
-import { motion } from "framer-motion";
 import ArrowHead from "@/Components/Icons/scribbles/ArrowHead";
 import Group3 from "@/Components/Icons/scribbles/Group3";
 import ScholarCap from "@/Components/Icons/ScholarCap";
 import Speaker from "@/Components/Icons/Speaker";
 import Clock from "@/Components/Icons/Clock";
 import UpArrows from "@/Components/Icons/scribbles/UpArrows";
-import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import Rocket from "@/Components/Icons/Rocket";
-
+import cardPlaceHolder from "@/assets/images/placeholder.png";
+import { useState } from "react";
 const Countdown = dynamic(() => import("@/Components/Counter"), { ssr: false });
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 export default function Home() {
+  const [scheduledTab, setScheduledTab] = useState("Students");
   const slides = [
     () => (
       <div className="w-full bg-black bg-opacity-20 h-full flex justify-center items-center flex-col">
@@ -316,7 +310,7 @@ export default function Home() {
   ];
   let aboutSecondScribble = [
     {
-      component: <UpArrows className="absolute bottom-[-25px] right-0" />,
+      component: <UpArrows className="absolute bottom-[0px] right-0" />,
     },
     {
       component: (
@@ -352,137 +346,46 @@ export default function Home() {
     },
   ];
 
-  let highLighEvents = [
+  const scheduleTab = [
     {
-      title: "Events For Students",
-      card: [
-        {
-          image:
-            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
-          title: "Panel Discussion : Kerala to the Globe",
-          description:
-            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
-        },
-        {
-          image:
-            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
-          title: "Startup Stories",
-          description:
-            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
-        },
-        {
-          image:
-            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
-          title: "Live Idea Pitching",
-          description:
-            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
-        },
-        {
-          image:
-            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
-          title: "Medical Hackathon",
-          description:
-            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
-        },
-      ],
+      name: "Students",
+      icon: (name) => (
+        <ScholarCap
+          className={` max-h-[50px] absolute right-0 top-[-5px] ${
+            scheduledTab === name ? "fill-primary-cyan" : "fill-gray-400"
+          }`}
+        />
+      ),
     },
     {
-      title: "Events For Startup",
-      card: [
-        {
-          image:
-            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
-          title: "Let's talk about Startup by CEO KSUM",
-          description:
-            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
-        },
-        {
-          image:
-            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
-          title: "Panel Discussion : Kerala to the Globe",
-          description:
-            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
-        },
-        {
-          image:
-            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
-          title: " Mrs & Mr Startup",
-          description:
-            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
-        },
-      ],
+      name: "Startups",
+      icon: (name) => (
+        <Rocket
+          className={` max-h-[50px] absolute right-0 top-[-5px] ${
+            scheduledTab === name ? "fill-primary-cyan" : "fill-gray-400"
+          }`}
+        />
+      ),
     },
     {
-      title: "Events For Local Business Owners/SMEs",
-      card: [
-        {
-          image:
-            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
-          title:
-            "Panel Discussion: Opportunities and Resolutions, How to Scale",
-          description:
-            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
-        },
-        {
-          image:
-            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
-          title: "Panel Discussion : Kerala to the Globe",
-          description:
-            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
-        },
-        {
-          image:
-            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
-          title: "Non Tech Learning Stations",
-          description:
-            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
-        },
-      ],
+      name: "Local Business",
+      icon: (name) => (
+        <Speaker
+          className={` max-h-[50px] absolute right-0 top-[-5px] ${
+            scheduledTab === name ? "fill-primary-cyan" : "fill-gray-400"
+          }`}
+        />
+      ),
     },
     {
-      title: "Gulf Returnees/NREs",
-      card: [
-        {
-          image:
-            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
-          title: "Investors Clinic(How to Invest Wisely)",
-          description:
-            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
-        },
-        {
-          image:
-            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
-          title: "Panel Discussion : Kerala to the Globe",
-          description:
-            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
-        },
-      ],
-    },
-    {
-      title: "Entertainment",
-      card: [
-        {
-          image:
-            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
-          title: "Magic Planet Show",
-          description:
-            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
-        },
-        {
-          image:
-            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
-          title: "Cookathon Cooking Competition",
-          description:
-            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
-        },
-        {
-          image:
-            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
-          title: " Culturel events/Exhibits",
-          description:
-            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
-        },
-      ],
+      name: "Investors",
+      icon: (name) => (
+        <Clock
+          className={` max-h-[50px] absolute right-0 top-[-5px] ${
+            scheduledTab === name ? "fill-primary-cyan" : "fill-gray-400"
+          }`}
+        />
+      ),
     },
   ];
   const targetDate = new Date("2024-01-01T00:00:00");
@@ -623,7 +526,9 @@ export default function Home() {
         </div>
         <Scribbles scribbles={aboutScribble} />
       </div>
-      <div className="py-[100px] h-[75vh] relative overflow-hidden bg-primary-purple">
+      <div
+        className={`${Styles["scaleup-container"]} py-[100px] h-[75vh] relative  bg-primary-purple`}
+      >
         <div className="custom-container grid grid-cols-12">
           <div className="col-span-6">
             <h1 className="title  text-[36px]" style={{ color: "white" }}>
@@ -648,7 +553,7 @@ export default function Home() {
       </div>
       <div className="py-[100]">
         <div className="custom-container">
-          <h1 className="title text-[36px] cyan-before">OUR SPEAKERS</h1>
+          <h1 className="title text-[36px] wave-before">OUR SPEAKERS</h1>
         </div>
         <div className=" grid grid-cols-1 lg:grid-cols-5">
           {speakers.map((speaker, index) => (
@@ -673,6 +578,112 @@ export default function Home() {
           ))}
         </div>
       </div>
+
+      <div className="py-[100px] custom-container">
+        <h1 className="text-[36px] title wave-before">Highlights</h1>
+        <div className="grid grid-cols-4 gap-x-12">
+          {scheduleTab.map((tab, index) => (
+            <div
+              key={index}
+              className=" py-4 px-5 bg-gray-200  w-full flex items-center justify-between  overflow-hidden relative"
+            >
+              <h1
+                className={`font-semibold text-[20px] ${
+                  scheduledTab !== tab.name && "text-gray-400"
+                }`}
+              >
+                {tab.name}
+              </h1>
+              {tab.icon(tab.name)}
+            </div>
+          ))}
+        </div>
+
+        <div className="grid grid-cols-12 gap-x-6 mt-[50px]">
+          <div className="bg-[#F0F2F6] p-4 col-span-4">
+            <div className="grid grid-cols-2 items-end ">
+              <Image
+                src={cardPlaceHolder.src}
+                className="w-full h-full"
+                width="100"
+                height="100"
+                alt=""
+              />
+              <h1 className="title ml-4">The Event Name here</h1>
+            </div>
+
+            <div className="flex flex-col justify-between items-end mt-4">
+              <div className="">
+                <p className="text-text-muted">
+                  Engage in vibrant discussions, panels, and workshops to share
+                  and absorb industry insights
+                </p>
+              </div>
+              <button
+                type="button"
+                className="rounded-full uppercase bg-[#7A0996] text-white w-1/2 py-4 mt-4"
+              >
+                JOIN NOW
+              </button>
+            </div>
+          </div>
+          <div className="bg-[#F0F2F6] p-4 col-span-4">
+            <div className="grid grid-cols-2 items-end ">
+              <Image
+                src={cardPlaceHolder.src}
+                className="w-full h-full"
+                width="100"
+                height="100"
+                alt=""
+              />
+              <h1 className="title ml-4">The Event Name here</h1>
+            </div>
+
+            <div className="flex flex-col justify-between items-end mt-4">
+              <div className="">
+                <p className="text-text-muted">
+                  Engage in vibrant discussions, panels, and workshops to share
+                  and absorb industry insights
+                </p>
+              </div>
+              <button
+                type="button"
+                className="rounded-full uppercase bg-[#7A0996] text-white w-1/2 py-4 mt-4"
+              >
+                JOIN NOW
+              </button>
+            </div>
+          </div>
+          <div className="bg-[#F0F2F6] p-4 col-span-4">
+            <div className="grid grid-cols-2 items-end ">
+              <Image
+                src={cardPlaceHolder.src}
+                className="w-full h-full"
+                width="100"
+                height="100"
+                alt=""
+              />
+              <h1 className="title ml-4">The Event Name here</h1>
+            </div>
+
+            <div className="flex flex-col justify-between items-end mt-4">
+              <div className="">
+                <p className="text-text-muted">
+                  Engage in vibrant discussions, panels, and workshops to share
+                  and absorb industry insights
+                </p>
+              </div>
+              <button
+                type="button"
+                className="rounded-full uppercase bg-[#7A0996] text-white w-1/2 py-4 mt-4"
+              >
+                JOIN NOW
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="py-[100px] custom-container">
         <h1 className="text-[36px] title">SHEDULE</h1>
         <div className="custom-container grid grid-cols-4 pb-6">
@@ -702,22 +713,21 @@ export default function Home() {
           <div className=" h-[50px] w-[230px] "></div>
         </div>
         <div className="grid grid-cols-4 gap-x-12">
-          <div className=" py-4 px-5 bg-gray-200  w-full flex items-center justify-between  overflow-hidden relative">
-            <h1 className="font-semibold text-[20px]">Students</h1>
-            <ScholarCap className="fill-primary-cyan max-h-[65px] absolute right-0 top-[-5px] " />
-          </div>
-          <div className=" py-4 px-5 bg-gray-200  w-full flex items-center justify-between  overflow-hidden relative">
-            <h1 className="font-semibold text-[20px]">Students</h1>
-            <ScholarCap className="fill-primary-cyan max-h-[65px] absolute right-0 top-[-5px] " />
-          </div>
-          <div className=" py-4 px-5 bg-gray-200  w-full flex items-center justify-between  overflow-hidden relative">
-            <h1 className="font-semibold text-[20px]">Students</h1>
-            <ScholarCap className="fill-primary-cyan max-h-[65px] absolute right-0 top-[-5px] " />
-          </div>
-          <div className=" py-4 px-5 bg-gray-200  w-full flex items-center justify-between  overflow-hidden relative">
-            <h1 className="font-semibold text-[20px]">Students</h1>
-            <ScholarCap className="fill-primary-cyan max-h-[65px] absolute right-0 top-[-5px] " />
-          </div>
+          {scheduleTab.map((tab, index) => (
+            <div
+              key={index}
+              className=" py-4 px-5 bg-gray-200  w-full flex items-center justify-between  overflow-hidden relative"
+            >
+              <h1
+                className={`font-semibold text-[20px] ${
+                  scheduledTab !== tab.name && "text-gray-400"
+                }`}
+              >
+                {tab.name}
+              </h1>
+              {tab.icon(tab.name)}
+            </div>
+          ))}
         </div>
         <div>
           <div className=" bg-primary-cyan mt-[50px]">

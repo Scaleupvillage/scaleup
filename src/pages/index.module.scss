@@ -13,9 +13,6 @@
 }
 
 .counter-bg {
-  background-image: url("https://preview.colorlib.com/theme/evento/assets/img/bg/bg-img.png.webp");
-  background-size: cover;
-  background-position: center;
   position: relative;
 }
 .overlay {
@@ -41,49 +38,27 @@
   .card-heading {
     color: #18181c;
     margin-bottom: 15px;
-    font-size: 24px;
+    font-size: 21px;
     font-weight: 700;
   }
   .card-link {
-    color: #f50136;
+    @apply text-primary-purple;
     font-size: 14px;
     font-weight: 600;
   }
-
-  &:nth-child(1):hover {
-    background-color: #003b6d;
+  svg {
+    @apply fill-primary-purple;
+  }
+  &:hover {
+    @apply bg-primary-purple;
     .card-heading,
     p,
     svg,
     .card-link {
       color: #f0f2f6 !important;
     }
-  }
-  &:nth-child(2):hover {
-    background-color: #eabe3d;
-    .card-heading,
-    p,
-    svg,
-    .card-link {
-      color: #f0f2f6 !important;
-    }
-  }
-  &:nth-child(3):hover {
-    background-color: #803e97;
-    .card-heading,
-    p,
-    svg,
-    .card-link {
-      color: #f0f2f6 !important;
-    }
-  }
-  &:nth-child(4):hover {
-    background-color: #00b7bb;
-    .card-heading,
-    p,
-    svg,
-    .card-link {
-      color: #f0f2f6 !important;
+    svg {
+      fill: #f0f2f6 !important;
     }
   }
 }

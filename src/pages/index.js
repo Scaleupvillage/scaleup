@@ -38,6 +38,13 @@ import Group2 from "@/Components/Icons/scribbles/Group";
 import Line from "@/Components/Icons/scribbles/Line";
 import Arrow from "@/Components/Icons/scribbles/Arrow";
 import { motion } from "framer-motion";
+import ArrowHead from "@/Components/Icons/scribbles/ArrowHead";
+import Group3 from "@/Components/Icons/scribbles/Group3";
+import ScholarCap from "@/Components/Icons/ScholarCap";
+import Rocket from "@/Components/Icons/Rocket";
+import Speaker from "@/Components/Icons/Speaker";
+import Clock from "@/Components/Icons/Clock";
+import UpArrows from "@/Components/Icons/scribbles/UpArrows";
 const Countdown = dynamic(() => import("@/Components/Counter"), { ssr: false });
 export default function Home() {
   const slides = [
@@ -259,30 +266,12 @@ export default function Home() {
         />
       ),
     },
-    {
-      component: (
-        <Group1
-          className="absolute bottom-[5%] right-0"
-          width="170"
-          fill="#FFCF3F"
-        />
-      ),
-    },
   ];
   let aboutScribble = [
     {
       component: (
         <Wave
-          className="absolute top-[8%] right-[-4%]"
-          width="200"
-          fill="#CB8DF7"
-        />
-      ),
-    },
-    {
-      component: (
-        <Wave
-          className="absolute top-[5%] right-[2%]"
+          className="absolute top-[8%] right-[-9%]"
           width="200"
           fill="#FFCF3F"
         />
@@ -291,41 +280,68 @@ export default function Home() {
     {
       component: (
         <Wave
-          className="absolute bottom-[6%] right-0 rotate-[360deg]"
+          className="absolute top-[5%] right-[-3%]"
           width="200"
-          fill="#CB8DF7"
+          fill="#00B4B8"
         />
       ),
     },
     {
-      component: (
-        <Line
-          className="absolute bottom-[10%] right-0"
-          width="200"
-          fill="#CB8DF7"
-        />
-      ),
+      component: <Group3 className="absolute top-[3%] left-0" width="150" />,
+    },
+  ];
+  let timerScribbles = [
+    {
+      component: <Wave fill="#FFCF3F" className="absolute top-[55%] left-0" />,
+    },
+    {
+      component: <Wave fill="#FFCF3F" className="absolute top-[55%] right-0" />,
     },
     {
       component: (
-        <Arrow
-          className="absolute bottom-[0] right-0"
-          width="200"
-          fill="#CB8DF7"
-        />
-      ),
-    },
-    {
-      component: (
-        <Group2
-          className="absolute bottom-[5%] left-0"
-          width="170"
+        <ArrowHead
           fill="#FFCF3F"
+          className="absolute top-[50%] right-[16%] rotate-180"
         />
+      ),
+    },
+    {
+      component: (
+        <ArrowHead fill="#FFCF3F" className="absolute top-[50%] left-[16%] " />
       ),
     },
   ];
-
+  let aboutCards = [
+    {
+      title: "Studens",
+      description:
+        "Engage in vibrant discussions, panels, and workshops to share and absorb industry insights",
+      icon: <ScholarCap />,
+    },
+    {
+      title: "Startups",
+      description:
+        "Explore the innovative landscape as we showcase startups from Kerala and beyond.",
+      icon: <Rocket />,
+    },
+    {
+      title: "Local Business/SMEs",
+      description:
+        "Witness the acknowledgement of outstanding startups, entrepreneurs, and contributors.",
+      icon: <Speaker />,
+    },
+    {
+      title: "Investors",
+      description:
+        "Stay ahead of the curve with hands-on workshops on cutting-edge technologies and emerging trends.",
+      icon: <Clock />,
+    },
+  ];
+  let aboutSecondScribble = [
+    {
+      component: <UpArrows className="absolute bottom-[-25px] right-0" />,
+    },
+  ];
   let highLighEvents = [
     {
       title: "Events For Students",
@@ -524,143 +540,84 @@ export default function Home() {
 
       {/* COUNTER  */}
       <div className={`${Styles["counter-bg"]} md:h-[50vh]`}>
-        <div className={`${Styles["overlay"]} z-[1]`}></div>
-
         <div className="custom-container h-full py-[70px] flex justify-center items-center">
           <div className="z-[10] relative flex justify-center items-center flex-col">
-            <h1 className="text-white font-bold text-[16px] md:text-[24px] mb-[30px]">
-              Counter until the big event
+            <h1 className="text-black font-bold text-[16px] md:text-[24px] mb-[30px]">
+              The Countdown Has Begun
             </h1>
             <Countdown targetDate={targetDate} />
           </div>
         </div>
+        <Scribbles scribbles={timerScribbles} />
       </div>
       {/* /COUNTER  */}
 
       <div className="py-[100px] relative overflow-hidden">
         <div className="custom-container relative">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-7">
-            <div>
-              <h1 className="title purple-before text-[36px]">
-                ScaleUp Conclave 2024
-              </h1>
+          <div>
+            <h1 className="title purple-before text-[36px]">
+              ScaleUp Conclave 2024
+            </h1>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-7">
               <p className="description">
-                The excitement doesn&apos;t end with ScaleUp Conclave, it marks
-                the beginning of a continuous journey towards growth and
-                innovation. As we celebrate the success of each annual conclave,
-                our focus extends seamlessly to the transformative hub, ScaleUp
-                Village. ScaleUp Village is not just an industrial park but a
-                dedicated space focused on Direct-to-Consumer (D2C) innovation.
-                With a planned launch within six months, this hub aims to
-                revolutionize the entrepreneurial landscape, providing startups
-                and businesses with an environment tailored for success.
+                Is the first edition of an annual celebratory platform that
+                fuses you with entrepreneurs, investors, professionals, and
+                business enthusiasts for a comprehensive two-day event. It
+                promotes inspiration, knowledge exchange, and networking
+                opportunities.
               </p>
-            </div>
-            <div>
-              <h1 className="title purple-before text-[36px]">
-                Scaleup Village
-              </h1>
               <p className="description">
-                The excitement doesn&apos;t end with ScaleUp Conclave, it marks
-                the beginning of a continuous journey towards growth and
-                innovation. As we celebrate the success of each annual conclave,
-                our focus extends seamlessly to the transformative hub, ScaleUp
-                Village. ScaleUp Village is not just an industrial park but a
-                dedicated space focused on Direct-to-Consumer (D2C) innovation.
-                With a planned launch within six months, this hub aims to
-                revolutionize the entrepreneurial landscape, providing startups
-                and businesses with an environment tailored for success.
+                Bringing together innovation, expertise, and entrepreneurial
+                ethos, this conclave aims to propel Kerala's startup ecosystem
+                to unprecedented heights.
               </p>
             </div>
           </div>
           <div className="py-[100px]">
             <h1 className="title purple-before text-[36px]">
-              {" "}
-              Target Audiance{" "}
+              ScaleUp for who?
             </h1>
             <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-x-4 ">
-              <div className={Styles["about-card"]}>
-                <Icon
-                  icon="ph:microphone"
-                  width="70"
-                  className="mic"
-                  color="#003b6d"
-                />
-                <div className="py-4">
-                  <h1 className={Styles["card-heading"]}>Students</h1>
-                  <p className="mb-4">
-                    Tech Learning Stations,Non Tech Learning Stations, Live Idea
-                    Pitching Competiotions,Panel Discussion : Kerala to the
-                    Globe,Startup Stories,Live Idea Pitching,Medical Hackathon
-                  </p>
-                  <a href="" className={Styles["card-link"]}>
-                    Read More
-                  </a>
+              {aboutCards.map((card, index) => (
+                <div className={Styles["about-card"]} key={index}>
+                  {card.icon}
+                  <div className="py-4 h-full">
+                    <h1 className={Styles["card-heading"]}>{card.title}</h1>
+                    <p className="mb-4 line-clamp-3">{card.description}</p>
+                    <a href="" className={Styles["card-link"]}>
+                      Read More
+                    </a>
+                  </div>
                 </div>
-              </div>
-              <div className={Styles["about-card"]}>
-                <Icon
-                  icon="ph:microphone"
-                  width="70"
-                  className="mic"
-                  color="#ffcf3f"
-                />
-                <div className="py-4">
-                  <h1 className={Styles["card-heading"]}>Startups</h1>
-                  <p className="mb-4">
-                    Lorem ipsum dolor sit amet,consectetur adipiscing elit. In
-                    rhoncus massa nec graviante.at volutpat ligula euismod quis.
-                    Maecenas ornare, ex in malesuada tempus.
-                  </p>
-                  <a href="" className={Styles["card-link"]}>
-                    Read More
-                  </a>
-                </div>
-              </div>
-              <div className={Styles["about-card"]}>
-                <Icon
-                  icon="ph:microphone"
-                  width="70"
-                  className="mic"
-                  color="#803e97"
-                />
-                <div className="py-4">
-                  <h1 className={Styles["card-heading"]}>9 Speakers</h1>
-                  <p className="mb-4">
-                    Lorem ipsum dolor sit amet,consectetur adipiscing elit. In
-                    rhoncus massa nec graviante.at volutpat ligula euismod quis.
-                    Maecenas ornare, ex in malesuada tempus.
-                  </p>
-                  <a href="" className={Styles["card-link"]}>
-                    Read More
-                  </a>
-                </div>
-              </div>
-              <div className={Styles["about-card"]}>
-                <Icon
-                  icon="ph:microphone"
-                  width="70"
-                  className="mic"
-                  color="#00b7bb"
-                />
-                <div className="py-4">
-                  <h1 className={Styles["card-heading"]}>9 Speakers</h1>
-                  <p className="mb-4">
-                    Lorem ipsum dolor sit amet,consectetur adipiscing elit. In
-                    rhoncus massa nec graviante.at volutpat ligula euismod quis.
-                    Maecenas ornare, ex in malesuada tempus.
-                  </p>
-                  <a href="" className={Styles["card-link"]}>
-                    Read More
-                  </a>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
         <Scribbles scribbles={aboutScribble} />
       </div>
-
+      <div className="py-[100px] h-[75vh] relative overflow-hidden bg-primary-purple">
+        <div className="custom-container grid grid-cols-12">
+          <div className="col-span-6">
+            <h1 className="title  text-[36px]" style={{ color: "white" }}>
+              Scaleup Village
+            </h1>
+            <p className="text-white mb-5">
+              The thrill sparked at the ScaleUp Conclave isn&apos;t merely
+              fleeting. It signals the inception of the catalytic centre,
+              ScaleUp Village, propelling our commitment to transformation.
+            </p>
+            <p className="text-white mb-4">
+              ScaleUp Village is not just an industrial park but a dedicated
+              space focused on Direct-to-Consumer (D2C) innovation,
+              first-of-its-kind in India. With a planned launch within six
+              months, this hub aims to revolutionize the entrepreneurial
+              landscape, providing startups and businesses with an environment
+              tailored for success.
+            </p>
+          </div>
+        </div>
+        <Scribbles scribbles={aboutSecondScribble} />
+      </div>
       <div className="py-[100]">
         <div className="custom-container">
           <h1 className="title text-[36px] cyan-before">OUR SPEAKERS</h1>

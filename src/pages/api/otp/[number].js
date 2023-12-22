@@ -39,13 +39,16 @@ export default async function handler(req, res) {
   };
   const { method } = req;
   const contactNumber = req.query.number;
-  const { contact, otp } = req.body;
   switch (method) {
     case "GET":
-      sentVerificationOtp(contactNumber);
+      sentVerificationOtp(contactNumber)
+        .then(() => {
+          return res.status(200).json({ message: "Otp send successfully" });
+        })
+        .catch(() => {
+          return res.status(400).json({ message: "Something went wrong" });
+        });
       break;
-    case "POST":
-      verifyPhoneOtp(contact, otp);
-      break;
+   
   }
 }

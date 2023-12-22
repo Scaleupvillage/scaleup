@@ -1,4 +1,5 @@
 import dbConnect from "../db";
+import Contact from "../db/model/User";
 
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 const client = require("twilio")(
@@ -7,21 +8,7 @@ const client = require("twilio")(
 );
 export default async function handler(req, res) {
   await dbConnect();
-  const sentVerificationOtp = (Contact) => {
-    return new Promise((resolve, reject) => {
-      client.verify.v2
-        .services(process.env.TWILIO_AUTHY_SERVICEID)
-        .verifications.create({ to: `+91${Contact}`, channel: "sms" })
-        .then((verification) => {
-          console.log(verification.status);
-          resolve(verification);
-        })
-        .catch((error) => {
-          console.log(error.message);
-          reject(error);
-        });
-    });
-  };
+
   const verifyPhoneOtp = (Contact, otp) => {
     return new Promise((resolve, reject) => {
       client.verify.v2
@@ -38,13 +25,23 @@ export default async function handler(req, res) {
     });
   };
   const { method } = req;
-  const { contact } = req.params;
-  console.log(contact);
+  const { phoneNumber, otp } = req.body;
+
   switch (method) {
-    case "GET":
-      // sentVerificationOtp(contact);
-      break;
     case "POST":
+      verifyPhoneOtp(phoneNumber, otp)
+        .then(async () => {
+          try {
+            const user = await Contact.create(req.body);
+            return res.status(200).json({ message: "Successfull" });
+          } catch (err) {
+            return res.status(400).json({ message: "Something went wrong" });
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+          return res.status(400).json({ message: "Something went wrong" });
+        });
       break;
   }
 }

@@ -2,72 +2,96 @@ import React, { useState } from "react";
 import Close from "./Icons/close.png";
 import Image from "next/image";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const Register = ({ setShow }) => {
+  const [showOtp, setShowOtp] = useState(false);
   const closeModal = () => {
     setShow(false);
   };
 
-  const handleClick = () => {
-    axios.get("/api/otp/8137886298").then(() => {});
+  const [formData, setFormData] = useState({
+    name: "",
+    phoneNumber: "",
+    email: "",
+    category: "",
+    compony: "",
+    otp: "",
+  });
+  const [errors, setErrors] = useState({});
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+    setErrors({ ...errors, [name]: "" });
   };
-   const [formData, setFormData] = useState({
-     name: "",
-     phoneNumber: "",
-     email: "",
-     category: "",
-     compony: "",
-   });
-    const [errors, setErrors] = useState({});
-     const handleChange = (e) => {
-       const { name, value } = e.target;
-       setFormData((prevData) => ({
-         ...prevData,
-         [name]: value,
-       }));
-     };
-     const validateForm = () => {
-       const newErrors = {};
+  const validateForm = () => {
+    const newErrors = {};
 
-       // Validate Full Name
-       if (!formData.name.trim()) {
-         newErrors.name = "Full Name is required";
-       }
+    // Validate Full Name
+    if (!formData.name.trim()) {
+      newErrors.name = "Full Name is required";
+    }
 
-       // Validate Phone Number
-       if (!formData.phoneNumber.trim()) {
-         newErrors.phoneNumber = "Phone Number is required";
-       }
+    // Validate Phone Number
+    if (!formData.phoneNumber.trim()) {
+      newErrors.phoneNumber = "Phone Number is required";
+    }
 
-       // Validate Email
-       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-       if (!formData.email.trim() || !emailRegex.test(formData.email)) {
-         newErrors.email = "Valid email is required";
-       }
+    // Validate Email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!formData.email.trim() || !emailRegex.test(formData.email)) {
+      newErrors.email = "Valid email is required";
+    }
 
-       // Validate Category
-       if (!formData.category) {
-         newErrors.category = "Category is required";
-       }
+    // Validate Category
+    if (!formData.category || formData.category == "") {
+      newErrors.category = "Category is required";
+    }
 
-       // Validate Company
-       if (!formData.compony.trim()) {
-         newErrors.compony = "Company/Organization is required";
-       }
+    // Validate Company
+    if (!formData.compony.trim()) {
+      newErrors.compony = "Company/Organization is required";
+    }
+    // Validate Company
+    if (showOtp) {
+      if (formData.otp == "") {
+        newErrors.otp = "otp required";
+      }
+    }
 
-       setErrors(newErrors);
+    setErrors(newErrors);
 
-       // Return true if there are no errors
-       return Object.keys(newErrors).length === 0;
-     };
-     const handleFormSubmit = () => {
-       const isValid = validateForm();
+    // Return true if there are no errors
+    return Object.keys(newErrors).length === 0;
+  };
 
-       if (isValid) {
-         // Perform your form submission logic here
-         console.log("Form submitted:", formData);
-       }
-     };
+  const sendOtp = () => {
+    axios.get("/api/otp/" + formData.phoneNumber).then(() => {
+      setShowOtp(true);
+    });
+  };
+  const handleFormSubmit = () => {
+    const isValid = validateForm();
+
+    if (isValid) {
+      axios.post("/api/otp/", { ...formData }).then((response) => {
+        console.log(response);
+        // toast("Registered Successfully", {
+        //   position: "top-right",
+        //   autoClose: 5000,
+        //   hideProgressBar: false,
+        //   closeOnClick: true,
+        //   pauseOnHover: true,
+        //   draggable: true,
+        //   progress: undefined,
+        //   theme: "light",
+        // });
+      });
+    }
+  };
   return (
     <div
       className="w-[95%] max-w-[450px] z-50 rounded-lg fixed top-[50%] left-[50%] translate-x-[-50%] 
@@ -91,22 +115,54 @@ const Register = ({ setShow }) => {
             value={formData.name}
             onChange={handleChange}
           />
-          {errors.name && <div className="text-red-500">{errors.name}</div>}
-        </div>
-        <div className="mb-1">
-          <label className="label text-primary-blue">Phone Number</label>
-          <input
-            type="text"
-            name="phoneNumber"
-            placeholder="Phone Number"
-            className="input"
-            value={formData.phoneNumber}
-            onChange={handleChange}
-          />
-          {errors.phoneNumber && (
-            <div className="text-red-500">{errors.phoneNumber}</div>
+          {errors.name && (
+            <div className="text-red-500 text-sm">{errors.name}</div>
           )}
         </div>
+        <div className="mb-1 ">
+          <label className="label text-primary-blue">Phone Number</label>
+          <div className="w-full flex items-center gap-x-5">
+            <div className="w-full">
+              <input
+                type="number"
+                name="phoneNumber"
+                placeholder="Phone Number"
+                className="input"
+                value={formData.phoneNumber}
+                onChange={handleChange}
+              />
+            </div>
+            <div>
+              <button
+                type="button"
+                className="bg-primary-cyan px-5 py-2 rounded-full text-white disabled:cursor-not-allowed disabled:opacity-75"
+                disabled={formData.phoneNumber.length != 10}
+                onClick={sendOtp}
+              >
+                Verify{" "}
+              </button>
+            </div>
+          </div>
+          {errors.phoneNumber && (
+            <div className="text-red-500 text-sm">{errors.phoneNumber}</div>
+          )}
+        </div>
+        {showOtp && (
+          <div className="mb-1">
+            <label className="label text-primary-blue">OTP</label>
+            <input
+              type="text"
+              name="otp"
+              placeholder="Enter your otp"
+              className="input"
+              value={formData.otp}
+              onChange={handleChange}
+            />
+            {errors.otp && (
+              <div className="text-red-500 text-sm">{errors.otp}</div>
+            )}
+          </div>
+        )}
         <div className="mb-1">
           <label className="label text-primary-blue">Email</label>
           <input
@@ -117,17 +173,31 @@ const Register = ({ setShow }) => {
             value={formData.email}
             onChange={handleChange}
           />
-          {errors.email && <div className="text-red-500">{errors.email}</div>}
+          {errors.email && (
+            <div className="text-red-500 text-sm">{errors.email}</div>
+          )}
         </div>
         <div className="mb-1">
           <label className="label text-primary-blue">Category</label>
-          <select id="mySelect" className="input">
-            <option value="option1">Option 1</option>
-            <option value="option2">Option 2</option>
-            <option value="option3">Option 3</option>
+          <select
+            id="mySelect"
+            name="category"
+            className="input"
+            onChange={handleChange}
+            value={formData.category}
+          >
+            <option value="Student">Student</option>
+            <option value="Entruprenurs"> Entruprenurs</option>
+            <option value="Professional">Professional</option>
+            <option value="Wantrprenuers">Wantrprenuers</option>
+            <option value="Working">Working</option>
+            <option value="NREs or Gulf Returnees">
+              NREs or Gulf Returnees
+            </option>
+            <option value="Others">Others</option>
           </select>
-          {errors.phoneNumber && (
-            <div className="text-red-500">{errors.category}</div>
+          {errors.category && (
+            <div className="text-red-500 text-sm">{errors.category}</div>
           )}
         </div>
         <div className="mb-4  ">
@@ -143,7 +213,7 @@ const Register = ({ setShow }) => {
             onChange={handleChange}
           />
           {errors.phoneNumber && (
-            <div className="text-red-500">{errors.compony}</div>
+            <div className="text-red-500 text-sm">{errors.compony}</div>
           )}
         </div>
       </div>
@@ -152,7 +222,7 @@ const Register = ({ setShow }) => {
         <button
           type="button"
           className="w-full bg-primary-cyan  px-8 py-3 rounded-full text-white"
-          onClick={validateForm}
+          onClick={handleFormSubmit}
         >
           Register
         </button>

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { Exo_2 } from "next/font/google";
 import Styles from "@/pages/index.module.scss";
 import Navbar from "@/Components/Layout/Navbar";
@@ -40,6 +41,11 @@ import UpArrows from "@/Components/Icons/scribbles/UpArrows";
 import Rocket from "@/Components/Icons/Rocket";
 import cardPlaceHolder from "@/assets/images/placeholder.png";
 import { useState } from "react";
+import hackathon from "@/assets/images/hackathon.png";
+import discussion from "@/assets/images/discussion.png";
+import code from "@/assets/images/code.png";
+import start from "@/assets/images/start.png";
+import colors from "@/assets/images/color.jpeg";
 const Countdown = dynamic(() => import("@/Components/Counter"), { ssr: false });
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 export default function Home() {
@@ -339,10 +345,140 @@ export default function Home() {
       icon: <Speaker />,
     },
     {
-      title: "Investors",
+      title: "NREs",
       description:
         "Stay ahead of the curve with hands-on workshops on cutting-edge technologies and emerging trends.",
       icon: <Clock />,
+    },
+  ];
+
+  let highLighEvents = [
+    {
+      title: "Students Track",
+      card: [
+        {
+          image: discussion.src,
+          title: "Medical Hackathon",
+          description:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
+        },
+        {
+          image: code.src,
+          title: "Idea Pitching",
+          description:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
+        },
+        {
+          image: start.src,
+          title: "3D Printing Workshop          ",
+          description:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
+        },
+        {
+          image: hackathon.src,
+          title: "AI & ML Workshop",
+          description:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
+        },
+      ],
+    },
+    {
+      title: " Startup Track",
+
+      card: [
+        {
+          image:
+            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
+          title: "Panel Discussion",
+          description:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
+        },
+        {
+          image:
+            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
+          title: "Mrs & Mr Startup",
+          description:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
+        },
+        {
+          image:
+            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
+          title: "Let's talk about Startup ",
+          description:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
+        },
+      ],
+    },
+    {
+      title: " Local Business Owners/SMEs Track",
+      card: [
+        {
+          image:
+            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
+          title: "Kerala to the Globe",
+          description:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
+        },
+        {
+          image:
+            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
+          title: "How to Sell Online",
+          description:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
+        },
+        {
+          image:
+            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
+          title: "Branding Workshop",
+          description:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
+        },
+      ],
+    },
+    {
+      title: "NRE/Investors ",
+      card: [
+        {
+          image:
+            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
+          title: "Investors Clinic",
+          description:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
+        },
+      ],
+    },
+    {
+      title: "Artisans/Hobbyists ",
+      card: [
+        {
+          image:
+            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
+          title: "Resin Art Workshop",
+          description:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
+        },
+        {
+          image:
+            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
+          title: "Knitting Workshop",
+          description:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
+        },
+        {
+          image:
+            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
+          title: "Cookathon",
+          description:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
+        },
+        {
+          image:
+            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
+          title: "Arduino Workshop",
+          description:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
+        },
+      ],
     },
   ];
 
@@ -485,25 +621,6 @@ export default function Home() {
 
       <div className="py-[100px] relative overflow-hidden">
         <div className="custom-container relative">
-          <div>
-            <h1 className="title purple-before text-[36px]">
-              ScaleUp Conclave 2024
-            </h1>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-7">
-              <p className="description">
-                Is the first edition of an annual celebratory platform that
-                fuses you with entrepreneurs, investors, professionals, and
-                business enthusiasts for a comprehensive two-day event. It
-                promotes inspiration, knowledge exchange, and networking
-                opportunities.
-              </p>
-              <p className="description">
-                Bringing together innovation, expertise, and entrepreneurial
-                ethos, this conclave aims to propel Kerala&apos;s startup
-                ecosystem to unprecedented heights.
-              </p>
-            </div>
-          </div>
           <div className="py-[100px]">
             <h1 className="title purple-before text-[36px]">
               ScaleUp for who?
@@ -515,9 +632,6 @@ export default function Home() {
                   <div className="py-4 h-full">
                     <h1 className={Styles["card-heading"]}>{card.title}</h1>
                     <p className="mb-4 line-clamp-3">{card.description}</p>
-                    <a href="" className={Styles["card-link"]}>
-                      Read More
-                    </a>
                   </div>
                 </div>
               ))}
@@ -529,8 +643,24 @@ export default function Home() {
       <div
         className={`${Styles["scaleup-container"]} py-[100px] h-[75vh] relative  bg-primary-purple`}
       >
-        <div className="custom-container grid grid-cols-12">
-          <div className="col-span-6">
+        <div className="custom-container grid grid-cols-2 gap-x-8">
+          <div className="">
+            <h1 className="title  text-[36px]" style={{ color: "white" }}>
+              SCALEUP CONCLAVE 2024
+            </h1>
+            <p className="text-white mb-5">
+              Is the first edition of an annual celebratory platform that fuses
+              you with entrepreneurs, investors, professionals, and business
+              enthusiasts for a comprehensive two-day event. It promotes
+              inspiration, knowledge exchange, and networking opportunities.
+            </p>
+            <p className="text-white mb-4">
+              Bringing together innovation, expertise, and entrepreneurial
+              ethos, this conclave aims to propel Kerala&apos;s startup
+              ecosystem to unprecedented heights.
+            </p>
+          </div>
+          <div className="">
             <h1 className="title  text-[36px]" style={{ color: "white" }}>
               Scaleup Village
             </h1>
@@ -580,143 +710,87 @@ export default function Home() {
       </div>
 
       <div className="py-[100px] custom-container">
-        <h1 className="text-[36px] title wave-before">Highlights</h1>
-        <div className="grid grid-cols-4 gap-x-12">
-          {scheduleTab.map((tab, index) => (
-            <div
-              key={index}
-              className=" py-4 px-5 bg-gray-200  w-full flex items-center justify-between  overflow-hidden relative"
-            >
+        {highLighEvents.map((event, key) => (
+          <div className="py-[50px] custom-container" key={key}>
+            <>
               <h1
-                className={`font-semibold text-[20px] ${
-                  scheduledTab !== tab.name && "text-gray-400"
+                className={` title wave-before ${
+                  key == 4 ? "text-[30px]" : "text-[36px]"
                 }`}
               >
-                {tab.name}
+                {event.title}
               </h1>
-              {tab.icon(tab.name)}
-            </div>
-          ))}
-        </div>
+              <div className="grid grid-cols-12 gap-x-6 mt-[20px]">
+                {event.card.map((card, key) => (
+                  <div
+                    className="bg-white border shadow-lg rounded-xl p-4 col-span-12 lg:col-span-4 mb-5"
+                    key={key}
+                  >
+                    <div className=" items-end " key={key}>
+                      <img
+                        src={card.image}
+                        className="w-full h-[200px] rounded-md"
+                        width="100"
+                        height="100"
+                        alt=""
+                        quality={100}
+                      />
+                    </div>
+                    <h1 className="title ">{card.title}</h1>
 
-        <div className="grid grid-cols-12 gap-x-6 mt-[50px]">
-          <div className="bg-[#F0F2F6] p-4 col-span-4">
-            <div className="grid grid-cols-2 items-end ">
-              <Image
-                src={cardPlaceHolder.src}
-                className="w-full h-full"
-                width="100"
-                height="100"
-                alt=""
-              />
-              <h1 className="title ml-4">The Event Name here</h1>
-            </div>
-
-            <div className="flex flex-col justify-between items-end mt-4">
-              <div className="">
-                <p className="text-text-muted">
-                  Engage in vibrant discussions, panels, and workshops to share
-                  and absorb industry insights
-                </p>
+                    <div className="flex flex-col justify-between items-end ">
+                      <div className="">
+                        <p className="text-text-muted">
+                          Engage in vibrant discussions, panels, and workshops
+                          to share and absorb industry insights
+                        </p>
+                      </div>
+                      <button
+                        type="button"
+                        className="rounded-full uppercase bg-[#25D366] text-white w-1/2 py-2 mt-4"
+                      >
+                        JOIN NOW
+                      </button>
+                    </div>
+                  </div>
+                ))}
               </div>
-              <button
-                type="button"
-                className="rounded-full uppercase bg-[#7A0996] text-white w-1/2 py-4 mt-4"
-              >
-                JOIN NOW
-              </button>
-            </div>
+            </>
           </div>
-          <div className="bg-[#F0F2F6] p-4 col-span-4">
-            <div className="grid grid-cols-2 items-end ">
-              <Image
-                src={cardPlaceHolder.src}
-                className="w-full h-full"
-                width="100"
-                height="100"
-                alt=""
-              />
-              <h1 className="title ml-4">The Event Name here</h1>
-            </div>
-
-            <div className="flex flex-col justify-between items-end mt-4">
-              <div className="">
-                <p className="text-text-muted">
-                  Engage in vibrant discussions, panels, and workshops to share
-                  and absorb industry insights
-                </p>
-              </div>
-              <button
-                type="button"
-                className="rounded-full uppercase bg-[#7A0996] text-white w-1/2 py-4 mt-4"
-              >
-                JOIN NOW
-              </button>
-            </div>
-          </div>
-          <div className="bg-[#F0F2F6] p-4 col-span-4">
-            <div className="grid grid-cols-2 items-end ">
-              <Image
-                src={cardPlaceHolder.src}
-                className="w-full h-full"
-                width="100"
-                height="100"
-                alt=""
-              />
-              <h1 className="title ml-4">The Event Name here</h1>
-            </div>
-
-            <div className="flex flex-col justify-between items-end mt-4">
-              <div className="">
-                <p className="text-text-muted">
-                  Engage in vibrant discussions, panels, and workshops to share
-                  and absorb industry insights
-                </p>
-              </div>
-              <button
-                type="button"
-                className="rounded-full uppercase bg-[#7A0996] text-white w-1/2 py-4 mt-4"
-              >
-                JOIN NOW
-              </button>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
 
       <div className="py-[100px] custom-container">
         <h1 className="text-[36px] title">SHEDULE</h1>
-        <div className="custom-container grid grid-cols-4 pb-6">
-          <div className=" h-[50px] w-[250px] "></div>
-          <div className="bg-gray-200 h-[50px] w-[250px] flex ">
-            <h1 className="font-semibold text-[15px] p-3">Day 1</h1>
+        <div className="custom-container flex gap-x-6 justify-center items-center  pb-6 overflow-auto">
+          <div className="bg-gray-200 h-[50px] w-[250px] relative overflow-hidden">
+            <h1 className="font-semibold text-[15px] lg:text-[20px] p-3 text-gray-400 ">
+              Day 1
+            </h1>
             <h1
-              className="ms-[70px] mt-[5px] text-[45px] font-semibold
-             text-primary-cyan max-h-[50px] overflow-hidden"
+              className=" absolute right-0 bottom-[-10px] text-[30px] lg:text-[45px] font-semibold
+             text-gray-400 max-h-[50px] overflow-hidden"
             >
               2 Feb
             </h1>
           </div>
-          <div className="bg-gray-200 h-[50px] w-[250px] ms-7 ">
-            <div className="bg-gray-200 h-[50px] w-[250px] flex ">
-              <h1 className="font-semibold text-[15px] p-3 text-gray-400 ">
-                Day 2
-              </h1>
-              <h1
-                className="ms-[70px] mt-[5px] text-[45px] font-semibold
+          <div className="bg-gray-200 h-[50px] w-[250px] relative overflow-hidden">
+            <h1 className="font-semibold text-[15px] lg:text-[20px] p-3 text-gray-400 ">
+              Day 2
+            </h1>
+            <h1
+              className=" absolute right-0 bottom-[-10px] text-[30px] lg:text-[45px] font-semibold
              text-gray-400 max-h-[50px] overflow-hidden"
-              >
-                3 Feb
-              </h1>
-            </div>
+            >
+              3 Feb
+            </h1>
           </div>
-          <div className=" h-[50px] w-[230px] "></div>
         </div>
-        <div className="grid grid-cols-4 gap-x-12">
+        <div className="flex overflow-auto gap-x-6">
           {scheduleTab.map((tab, index) => (
             <div
               key={index}
-              className=" py-4 px-5 bg-gray-200  w-full flex items-center justify-between  overflow-hidden relative"
+              className=" py-4 px-5 bg-gray-200  w-full min-w-[220px] flex items-center justify-between  overflow-hidden relative"
             >
               <h1
                 className={`font-semibold text-[20px] ${
@@ -729,167 +803,50 @@ export default function Home() {
             </div>
           ))}
         </div>
-        <div>
+
+        <div class="container mx-auto">
           <div className=" bg-primary-cyan mt-[50px]">
             <div className="flex px-4 items-center ">
               <Calendar width="20" fill="white" />
               <h1 className="text-white ml-3">Main Events</h1>
             </div>
           </div>
-          <div>
-            <div className="grid grid-cols-5 bg-gray-200">
-              <div className="rounded-md overflow-hidden w-full">
-                <Image src={Minister} width={90} height={90} />
-              </div>
-              <div className="flex items-center justify-center flex-col">
-                <div className="text-[20px] font-semibold">14</div>
-                <div>February</div>
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <h1 className="text-[15px] font-semibold">
-                  Conference in Amsterdam
-                </h1>
-                <p className="text-[14px] font-semibold">08 AM 04 PM</p>
-                <p className="text-[10px] font-normal text-gray-500">
-                  Speaker: Daniel Hill
-                </p>
-              </div>
-              <div className="flex items-center justify-center">
-                <button className="rounded-2xl bg-primary-cyan text-white px-10 py-2 text-[10px]">
-                  Read More
-                </button>
-              </div>
-              <div className="flex items-center justify-center">
-                <a
-                  className="text-primary-cyan text-[12px] font-semibold underline underline-primary-cyan"
-                  href=""
-                >
-                  Join Whatsapp
-                </a>
-              </div>
-            </div>
-            <div className="grid grid-cols-5 bg-gray-200">
-              <div className="rounded-md overflow-hidden w-full">
-                <Image src={Minister} width={90} height={90} />
-              </div>
-              <div className="flex items-center justify-center flex-col">
-                <div className="text-[20px] font-semibold">14</div>
-                <div>February</div>
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <h1 className="text-[15px] font-semibold">
-                  Conference in Amsterdam
-                </h1>
-                <p className="text-[14px] font-semibold">08 AM 04 PM</p>
-                <p className="text-[10px] font-normal text-gray-500">
-                  Speaker: Daniel Hill
-                </p>
-              </div>
-              <div className="flex items-center justify-center">
-                <button className="rounded-2xl bg-primary-cyan text-white px-10 py-2 text-[10px]">
-                  Read More
-                </button>
-              </div>
-              <div className="flex items-center justify-center">
-                <a
-                  className="text-primary-cyan text-[12px] font-semibold underline underline-primary-cyan"
-                  href=""
-                >
-                  Join Whatsapp
-                </a>
-              </div>
-            </div>
-            <div className="grid grid-cols-5 bg-gray-200">
-              <div className="rounded-md overflow-hidden w-full">
-                <Image src={Minister} width={90} height={90} />
-              </div>
-              <div className="flex items-center justify-center flex-col">
-                <div className="text-[20px] font-semibold">14</div>
-                <div>February</div>
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <h1 className="text-[15px] font-semibold">
-                  Conference in Amsterdam
-                </h1>
-                <p className="text-[14px] font-semibold">08 AM 04 PM</p>
-                <p className="text-[10px] font-normal text-gray-500">
-                  Speaker: Daniel Hill
-                </p>
-              </div>
-              <div className="flex items-center justify-center">
-                <button className="rounded-2xl bg-primary-cyan text-white px-10 py-2 text-[10px]">
-                  Read More
-                </button>
-              </div>
-              <div className="flex items-center justify-center">
-                <a
-                  className="text-primary-cyan text-[12px] font-semibold underline underline-primary-cyan"
-                  href=""
-                >
-                  Join Whatsapp
-                </a>
-              </div>
-            </div>
-            <div className="grid grid-cols-5 bg-gray-200">
-              <div className="rounded-md overflow-hidden w-full">
-                <Image src={Minister} width={90} height={90} />
-              </div>
-              <div className="flex items-center justify-center flex-col">
-                <div className="text-[20px] font-semibold">14</div>
-                <div>February</div>
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <h1 className="text-[15px] font-semibold">
-                  Conference in Amsterdam
-                </h1>
-                <p className="text-[14px] font-semibold">08 AM 04 PM</p>
-                <p className="text-[10px] font-normal text-gray-500">
-                  Speaker: Daniel Hill
-                </p>
-              </div>
-              <div className="flex items-center justify-center">
-                <button className="rounded-2xl bg-primary-cyan text-white px-10 py-2 text-[10px]">
-                  Read More
-                </button>
-              </div>
-              <div className="flex items-center justify-center">
-                <a
-                  className="text-primary-cyan text-[12px] font-semibold underline underline-primary-cyan"
-                  href=""
-                >
-                  Join Whatsapp
-                </a>
-              </div>
-            </div>
-            <div className="grid grid-cols-5 bg-gray-200">
-              <div className="rounded-md overflow-hidden w-full">
-                <Image src={Minister} width={90} height={90} />
-              </div>
-              <div className="flex items-center justify-center flex-col">
-                <div className="text-[20px] font-semibold">14</div>
-                <div>February</div>
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <h1 className="text-[15px] font-semibold">
-                  Conference in Amsterdam
-                </h1>
-                <p className="text-[14px] font-semibold">08 AM 04 PM</p>
-                <p className="text-[10px] font-normal text-gray-500">
-                  Speaker: Daniel Hill
-                </p>
-              </div>
-              <div className="flex items-center justify-center">
-                <button className="rounded-2xl bg-primary-cyan text-white px-10 py-2 text-[10px]">
-                  Read More
-                </button>
-              </div>
-              <div className="flex items-center justify-center">
-                <a
-                  className="text-primary-cyan text-[12px] font-semibold underline underline-primary-cyan"
-                  href=""
-                >
-                  Join Whatsapp
-                </a>
+          <div class="w-full overflow-auto">
+            <div class="bg-white shadow-md rounded ">
+              <div class="flex flex-col">
+                <div class="flex flex-row border-b border-gray-200">
+                  <div class="w-full md:w-1/4 py-3 px-6 text-left">
+                    <img src={Minister.src} width={100} height={90} alt="" />
+                  </div>
+                  <div class="w-full md:w-1/4 py-3 px-6 text-left flex justify-center items-center flex-col">
+                    <div className="text-[20px] font-semibold">14</div>
+                    <div>February</div>
+                  </div>
+                  <div class="w-full md:w-1/4 py-3 px-6 text-center flex justify-center items-center flex-col">
+                    <h1 className="text-[15px] font-semibold whitespace-nowrap">
+                      Conference in Amsterdam
+                    </h1>
+                    <p className="text-[14px] font-semibold whitespace-nowrap">
+                      08 AM 04 PM
+                    </p>
+                    <p className="text-[10px] font-normal text-gray-500 whitespace-nowrap">
+                      Speaker: Daniel Hill
+                    </p>
+                  </div>
+                  <div class="w-full md:w-1/4 py-3 px-6 text-center flex justify-center items-center">
+                    <button className="rounded-2xl bg-primary-cyan text-white px-10 py-2 text-[10px]">
+                      Read More
+                    </button>
+                  </div>
+                  <div class="w-full md:w-1/4 py-3 px-6 text-center flex justify-center items-center">
+                    <a
+                      className="text-primary-cyan text-[12px] font-semibold underline underline-primary-cyan"
+                      href=""
+                    >
+                      Join Whatsapp
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

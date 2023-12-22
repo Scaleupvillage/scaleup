@@ -13,14 +13,13 @@ import Register from "../Register";
 import dynamic from "next/dynamic";
 import { useState } from "react";
 
-
 const Footer = () => {
-  const [openModal,setOpenModal] = useState(false)
+  const [openModal, setOpenModal] = useState(false);
 
-const handleClick = () =>{
-setOpenModal(true)
-console.log(openModal);
-}
+  const handleClick = () => {
+    setOpenModal(true);
+    console.log(openModal);
+  };
 
   return (
     <div className="bg-[#0B031B]   ">
@@ -61,16 +60,6 @@ console.log(openModal);
           </div>
           <UpArrows className="absolute bottom-[-25px] right-0" />
         </div>
-        <div className="col-span-10 lg:col-span-2 flex justify-center items-center fixed right-[15px] bottom-[20px]">
-          <button
-            type="button"
-            className="w-full bg-primary-cyan  px-8 py-3 rounded-full text-white"
-
-            onClick={handleClick}
-          >
-            Register
-          </button>
-        </div>
       </div>
       <div className="bg-black w-full py-4">
         <div className="custom-container flex flex-col lg:flex-row justify-between items-center">
@@ -96,9 +85,25 @@ console.log(openModal);
           </div>
         </div>
       </div>
-    {
-      openModal ? <Register  setShow={setOpenModal}/> : ""
-    }
+      {openModal ? (
+        <>
+          <div
+            className="fixed top-0 left-0 w-full h-screen justify-center z-50 bg-black bg-opacity-50 z-50 overflow-hidden"
+            onClick={() => setOpenModal(false)}
+          ></div>
+          <Register setShow={setOpenModal} />
+        </>
+      ) : (
+        ""
+      )}
+
+      <button
+        type="button"
+        className=" fixed bottom-[3%] right-[2%]  z-[1000] bg-primary-cyan  px-12 py-3 rounded-full text-white"
+        onClick={handleClick}
+      >
+        Register
+      </button>
     </div>
   );
 };

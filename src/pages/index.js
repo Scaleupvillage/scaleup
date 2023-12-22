@@ -39,21 +39,27 @@ import Speaker from "@/Components/Icons/Speaker";
 import Clock from "@/Components/Icons/Clock";
 import UpArrows from "@/Components/Icons/scribbles/UpArrows";
 import Rocket from "@/Components/Icons/Rocket";
-import cardPlaceHolder from "@/assets/images/placeholder.png";
 import { useState } from "react";
 import hackathon from "@/assets/images/hackathon.png";
 import discussion from "@/assets/images/discussion.png";
 import code from "@/assets/images/code.png";
 import start from "@/assets/images/start.png";
 import colors from "@/assets/images/color.jpeg";
+import slider1 from "@/assets/images/slider1.jpeg";
+import slider2 from "@/assets/images/slider2.jpeg";
+import slider3 from "@/assets/images/slider3.jpeg";
+import slider4 from "@/assets/images/slider4.jpeg";
 const Countdown = dynamic(() => import("@/Components/Counter"), { ssr: false });
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 export default function Home() {
   const [scheduledTab, setScheduledTab] = useState("Students");
   const slides = [
     () => (
-      <div className="w-full bg-black bg-opacity-20 h-full flex justify-center items-center flex-col">
-        <div className="custom-container flex justify-center items-center flex-col">
+      <div
+        className="w-full bg-opacity-20 h-full flex justify-center items-center flex-col relative"
+        style={{ background: `url(${slider1.src})` }}
+      >
+        <div className="custom-container z-[2]">
           <h1 className="text-[18px] lg:text-[42px] font-medium leading-none text-white">
             BE A PART OF OUR
           </h1>
@@ -67,14 +73,18 @@ export default function Home() {
             type="button"
             className="bg-primary-cyan shadow-lg shadow-primary-cyan px-8 py-3 rounded-full text-white"
           >
-            BUY TICKETS NOW
+            Register Now
           </button>
         </div>
+        <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-25 z-[1]"></div>
       </div>
     ),
     () => (
-      <div className="w-full bg-black bg-opacity-20 h-full flex justify-start items-center ">
-        <div className="px-4 md:px-0 custom-container flex justify-center items-center flex-col">
+      <div
+        className="w-full  h-full flex justify-start items-center "
+        style={{ background: `url(${slider2.src})` }}
+      >
+        <div className="custom-container z-[2]">
           <h1 className="text-[14px] lg:text-[42px] font-medium leading-none text-white uppercase">
             Join the annual conclave that is
           </h1>
@@ -88,14 +98,18 @@ export default function Home() {
             type="button"
             className="bg-primary-cyan shadow-lg shadow-primary-cyan px-8 py-3 rounded-full text-white"
           >
-            BUY TICKETS NOW
+            Register Now
           </button>
         </div>
+        <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-25 z-[1]"></div>
       </div>
     ),
     () => (
-      <div className="w-full bg-black bg-opacity-20 h-full flex justify-start items-center ">
-        <div className="custom-container  flex justify-center items-center flex-col">
+      <div
+        className="w-full h-full flex justify-start items-center "
+        style={{ background: `url(${slider4.src})` }}
+      >
+        <div className="custom-container  z-[2]">
           <h1 className="text-[18px] lg:text-[42px] font-medium leading-none text-white uppercase">
             Witness the convergence of
           </h1>
@@ -109,9 +123,35 @@ export default function Home() {
             type="button"
             className="bg-primary-cyan shadow-lg shadow-primary-cyan px-8 py-3 rounded-full text-white"
           >
-            BUY TICKETS NOW
+            Register Now
           </button>
         </div>
+        <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-25 z-[1]"></div>
+      </div>
+    ),
+    () => (
+      <div
+        className="w-full bg-black bg-opacity-20 h-full flex justify-start items-center "
+        style={{ background: `url(${slider3.src})` }}
+      >
+        <div className="custom-container  flex justify-center items-center flex-col z-[2]">
+          <h1 className="text-[18px] lg:text-[42px] font-medium leading-none text-white uppercase">
+            Witness the convergence of
+          </h1>
+          <h1 className="text-white text-[24px] lg:text-[90px] font-extrabold uppercase">
+            business paths
+          </h1>
+          <p className="text-sm lg:text-lg mb-8 text-white uppercase">
+            It&apos;s the nexus where your business scales new heights!
+          </p>
+          <button
+            type="button"
+            className="bg-primary-cyan shadow-lg shadow-primary-cyan px-8 py-3 rounded-full text-white"
+          >
+            Register Now
+          </button>
+        </div>
+        <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-25 z-[1]"></div>
       </div>
     ),
   ];
@@ -384,25 +424,21 @@ export default function Home() {
     },
     {
       title: " Startup Track",
-
       card: [
         {
-          image:
-            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
+          image: discussion.src,
           title: "Panel Discussion",
           description:
             "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
         },
         {
-          image:
-            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
+          image: code.src,
           title: "Mrs & Mr Startup",
           description:
             "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
         },
         {
-          image:
-            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
+          image: hackathon.src,
           title: "Let's talk about Startup ",
           description:
             "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
@@ -413,22 +449,19 @@ export default function Home() {
       title: " Local Business Owners/SMEs Track",
       card: [
         {
-          image:
-            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
+          image: discussion.src,
           title: "Kerala to the Globe",
           description:
             "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
         },
         {
-          image:
-            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
+          image: code.src,
           title: "How to Sell Online",
           description:
             "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
         },
         {
-          image:
-            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
+          image: hackathon.src,
           title: "Branding Workshop",
           description:
             "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
@@ -439,8 +472,7 @@ export default function Home() {
       title: "NRE/Investors ",
       card: [
         {
-          image:
-            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
+          image: discussion.src,
           title: "Investors Clinic",
           description:
             "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
@@ -451,29 +483,25 @@ export default function Home() {
       title: "Artisans/Hobbyists ",
       card: [
         {
-          image:
-            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
+          image: discussion.src,
           title: "Resin Art Workshop",
           description:
             "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
         },
         {
-          image:
-            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
+          image: code.src,
           title: "Knitting Workshop",
           description:
             "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
         },
         {
-          image:
-            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
+          image: hackathon.src,
           title: "Cookathon",
           description:
             "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
         },
         {
-          image:
-            "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
+          image: colors.src,
           title: "Arduino Workshop",
           description:
             "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
@@ -538,7 +566,7 @@ export default function Home() {
   return (
     <div className={exo2.className}>
       <div className={`${Styles["main-container"]} relative overflow-hidden`}>
-        <div>
+        <div className="relative">
           <Navbar />
 
           <div>
@@ -553,7 +581,7 @@ export default function Home() {
                 delay: 4000,
               }}
               modules={[EffectFade, Autoplay]}
-              className="mySwiper h-screen md:h-[80vh]"
+              className="mySwiper h-screen md:h-screen  z-[10]"
               slides={slides}
             />
           </div>
@@ -824,6 +852,138 @@ export default function Home() {
           <div class="w-full overflow-auto">
             <div class="bg-white shadow-md rounded ">
               <div class="flex flex-col">
+                <div class="flex flex-row border-b border-gray-200">
+                  <div class="w-full md:w-1/4 py-3 px-6 text-left">
+                    <img src={Minister.src} width={100} height={90} alt="" />
+                  </div>
+                  <div class="w-full md:w-1/4 py-3 px-6 text-left flex justify-center items-center flex-col">
+                    <div className="text-[20px] font-semibold">14</div>
+                    <div>February</div>
+                  </div>
+                  <div class="w-full md:w-1/4 py-3 px-6 text-center flex justify-center items-center flex-col">
+                    <h1 className="text-[15px] font-semibold whitespace-nowrap">
+                      Conference in Amsterdam
+                    </h1>
+                    <p className="text-[14px] font-semibold whitespace-nowrap">
+                      08 AM 04 PM
+                    </p>
+                    <p className="text-[10px] font-normal text-gray-500 whitespace-nowrap">
+                      Speaker: Daniel Hill
+                    </p>
+                  </div>
+                  <div class="w-full md:w-1/4 py-3 px-6 text-center flex justify-center items-center">
+                    <button className="rounded-2xl bg-primary-cyan text-white px-10 py-2 text-[10px]">
+                      Read More
+                    </button>
+                  </div>
+                  <div class="w-full md:w-1/4 py-3 px-6 text-center flex justify-center items-center">
+                    <a
+                      className="text-primary-cyan text-[12px] font-semibold underline underline-primary-cyan"
+                      href=""
+                    >
+                      Join Whatsapp
+                    </a>
+                  </div>
+                </div>
+                <div class="flex flex-row border-b border-gray-200">
+                  <div class="w-full md:w-1/4 py-3 px-6 text-left">
+                    <img src={Minister.src} width={100} height={90} alt="" />
+                  </div>
+                  <div class="w-full md:w-1/4 py-3 px-6 text-left flex justify-center items-center flex-col">
+                    <div className="text-[20px] font-semibold">14</div>
+                    <div>February</div>
+                  </div>
+                  <div class="w-full md:w-1/4 py-3 px-6 text-center flex justify-center items-center flex-col">
+                    <h1 className="text-[15px] font-semibold whitespace-nowrap">
+                      Conference in Amsterdam
+                    </h1>
+                    <p className="text-[14px] font-semibold whitespace-nowrap">
+                      08 AM 04 PM
+                    </p>
+                    <p className="text-[10px] font-normal text-gray-500 whitespace-nowrap">
+                      Speaker: Daniel Hill
+                    </p>
+                  </div>
+                  <div class="w-full md:w-1/4 py-3 px-6 text-center flex justify-center items-center">
+                    <button className="rounded-2xl bg-primary-cyan text-white px-10 py-2 text-[10px]">
+                      Read More
+                    </button>
+                  </div>
+                  <div class="w-full md:w-1/4 py-3 px-6 text-center flex justify-center items-center">
+                    <a
+                      className="text-primary-cyan text-[12px] font-semibold underline underline-primary-cyan"
+                      href=""
+                    >
+                      Join Whatsapp
+                    </a>
+                  </div>
+                </div>
+                <div class="flex flex-row border-b border-gray-200">
+                  <div class="w-full md:w-1/4 py-3 px-6 text-left">
+                    <img src={Minister.src} width={100} height={90} alt="" />
+                  </div>
+                  <div class="w-full md:w-1/4 py-3 px-6 text-left flex justify-center items-center flex-col">
+                    <div className="text-[20px] font-semibold">14</div>
+                    <div>February</div>
+                  </div>
+                  <div class="w-full md:w-1/4 py-3 px-6 text-center flex justify-center items-center flex-col">
+                    <h1 className="text-[15px] font-semibold whitespace-nowrap">
+                      Conference in Amsterdam
+                    </h1>
+                    <p className="text-[14px] font-semibold whitespace-nowrap">
+                      08 AM 04 PM
+                    </p>
+                    <p className="text-[10px] font-normal text-gray-500 whitespace-nowrap">
+                      Speaker: Daniel Hill
+                    </p>
+                  </div>
+                  <div class="w-full md:w-1/4 py-3 px-6 text-center flex justify-center items-center">
+                    <button className="rounded-2xl bg-primary-cyan text-white px-10 py-2 text-[10px]">
+                      Read More
+                    </button>
+                  </div>
+                  <div class="w-full md:w-1/4 py-3 px-6 text-center flex justify-center items-center">
+                    <a
+                      className="text-primary-cyan text-[12px] font-semibold underline underline-primary-cyan"
+                      href=""
+                    >
+                      Join Whatsapp
+                    </a>
+                  </div>
+                </div>
+                <div class="flex flex-row border-b border-gray-200">
+                  <div class="w-full md:w-1/4 py-3 px-6 text-left">
+                    <img src={Minister.src} width={100} height={90} alt="" />
+                  </div>
+                  <div class="w-full md:w-1/4 py-3 px-6 text-left flex justify-center items-center flex-col">
+                    <div className="text-[20px] font-semibold">14</div>
+                    <div>February</div>
+                  </div>
+                  <div class="w-full md:w-1/4 py-3 px-6 text-center flex justify-center items-center flex-col">
+                    <h1 className="text-[15px] font-semibold whitespace-nowrap">
+                      Conference in Amsterdam
+                    </h1>
+                    <p className="text-[14px] font-semibold whitespace-nowrap">
+                      08 AM 04 PM
+                    </p>
+                    <p className="text-[10px] font-normal text-gray-500 whitespace-nowrap">
+                      Speaker: Daniel Hill
+                    </p>
+                  </div>
+                  <div class="w-full md:w-1/4 py-3 px-6 text-center flex justify-center items-center">
+                    <button className="rounded-2xl bg-primary-cyan text-white px-10 py-2 text-[10px]">
+                      Read More
+                    </button>
+                  </div>
+                  <div class="w-full md:w-1/4 py-3 px-6 text-center flex justify-center items-center">
+                    <a
+                      className="text-primary-cyan text-[12px] font-semibold underline underline-primary-cyan"
+                      href=""
+                    >
+                      Join Whatsapp
+                    </a>
+                  </div>
+                </div>
                 <div class="flex flex-row border-b border-gray-200">
                   <div class="w-full md:w-1/4 py-3 px-6 text-left">
                     <img src={Minister.src} width={100} height={90} alt="" />

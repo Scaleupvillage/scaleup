@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useRef } from "react";
 import Style from "./layout.module.scss";
-import { motion, sync, useCycle } from "framer-motion";
+import { motion, useCycle } from "framer-motion";
 import { useDimensions } from "./useDimensions";
 import logo from "@/assets/images/logo-white-yellow.png";
 import Instagram from "../Icons/instagramColor.png";
@@ -56,12 +56,12 @@ const Navbar = () => {
     },
   };
   return (
-    <div>
-      <div className="  bg-white  flex justify-between  px-[70px] items-center py-3">
+    <div className="absolute w-full z-10">
+      <div className="  bg-white  flex justify-between  px-[70px] items-center py-3 ">
         <div className="flex  gap-6 items-center">
-          <p className="flex justify-start">scaleup@gmail.com</p>
+          <p className="flex justify-start">info@scaleupconclave.com</p>
           <p>|</p>
-          <p className="text-[15px]">9046243717</p>
+          <p className="text-[15px]">9048170077</p>
         </div>
         <div className="flex gap-x-6">
           <Image src={Instagram} className="w-[20px] h-[20px]" />

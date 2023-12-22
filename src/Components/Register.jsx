@@ -1,6 +1,6 @@
-import React from 'react'
+import React from "react";
 import Close from "./Icons/close.png";
-import Image from 'next/image';
+import Image from "next/image";
 
 const Register = ({ setShow }) => {
   const closeModal = () => {
@@ -9,10 +9,10 @@ const Register = ({ setShow }) => {
   return (
     <div
       className="w-[95%] max-w-[450px] z-50 rounded-lg fixed top-[50%] left-[50%] translate-x-[-50%] 
-    translate-y-[-50%] bg-gray-100 p-5"
+    translate-y-[-50%] bg-gray-100 p-[25px]"
     >
       <div className="flex justify-between">
-        <div className="text-[20px] font-semibold">Register</div>
+        <div className="text-[20px] font-semibold mb-6">Register</div>
         <div className="w-[15px] h-[15px]" onClick={closeModal}>
           <Image src={Close} />
         </div>
@@ -51,4 +51,4 @@ const Register = ({ setShow }) => {
   );
 };
 
-export default Register
+export default Register;

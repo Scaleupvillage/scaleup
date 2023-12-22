@@ -484,7 +484,7 @@ export default function Home() {
 
   const scheduleTab = [
     {
-      name: "Students",
+      name: "Main Venue",
       icon: (name) => (
         <ScholarCap
           className={` max-h-[50px] absolute right-0 top-[-5px] ${
@@ -494,7 +494,7 @@ export default function Home() {
       ),
     },
     {
-      name: "Startups",
+      name: "Hall 1",
       icon: (name) => (
         <Rocket
           className={` max-h-[50px] absolute right-0 top-[-5px] ${
@@ -504,7 +504,7 @@ export default function Home() {
       ),
     },
     {
-      name: "Local Business",
+      name: "Hall 2",
       icon: (name) => (
         <Speaker
           className={` max-h-[50px] absolute right-0 top-[-5px] ${
@@ -514,7 +514,17 @@ export default function Home() {
       ),
     },
     {
-      name: "Investors",
+      name: "Hall 3",
+      icon: (name) => (
+        <Clock
+          className={` max-h-[50px] absolute right-0 top-[-5px] ${
+            scheduledTab === name ? "fill-primary-cyan" : "fill-gray-400"
+          }`}
+        />
+      ),
+    },
+    {
+      name: "Hall 4",
       icon: (name) => (
         <Clock
           className={` max-h-[50px] absolute right-0 top-[-5px] ${
@@ -555,7 +565,7 @@ export default function Home() {
           <div className="bg-white w-full grid grid-cols-2 lg:grid-cols-4  lg:gap-x-12  ">
             <div className="col-span-2 my-auto items-center">
               <div className="grid grid-cols-12 p-1">
-                <div className=" col-span-6 bg-primary-purple h-[100px] mr-3 rounded-md flex flex-col items-center justify-center">
+                <div className=" col-span-6 bg-primary-purple h-[120px] mr-3 rounded-md flex flex-col items-center justify-center">
                   <h1 className="text-[30px] font-extrabold text-primary-yellow">
                     5000 +
                   </h1>
@@ -574,7 +584,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="grid grid-cols-12 p-2">
-                <div className="flex items-center justify-center gap-2 col-span-8 bg-primary-cyan h-[100px] mr-3 rounded-md">
+                <div className="flex items-center justify-center gap-2 col-span-8 bg-primary-cyan h-[120px] mr-3 rounded-md">
                   <h1 className="text-primary-yellow text-[30px] font-extrabold">
                     150 +
                   </h1>
@@ -596,8 +606,8 @@ export default function Home() {
             <div className="flex justify-center items-center gap-x-4 col-span-2 h-[300px] w-full rounded-lg overflow-hidden">
               <ReactPlayer
                 url="https://www.youtube.com/watch?v=LfDRCktozmk"
-                height={"100%"}
-                width={"100%"}
+                height={"150%"}
+                width={"120%"}
               />
             </div>
           </div>
@@ -681,11 +691,11 @@ export default function Home() {
         </div>
         <Scribbles scribbles={aboutSecondScribble} />
       </div>
-      <div className="py-[100]">
+      <div className="py-[100px]">
         <div className="custom-container">
           <h1 className="title text-[36px] wave-before">OUR SPEAKERS</h1>
         </div>
-        <div className=" grid grid-cols-1 lg:grid-cols-5">
+        <div className=" grid grid-cols-1 lg:grid-cols-5 ">
           {speakers.map((speaker, index) => (
             <div
               className={`relative w-full ${Styles["speaker"]} h-[500px]`}
@@ -853,7 +863,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className={`${Styles["registration-bg"]} lg:h-[50vh] py-[100px] `}>
+      {/* <div className={`${Styles["registration-bg"]} lg:h-[50vh] py-[100px] `}>
         <div className="custom-container grid grid-cols-10 gap-x-4">
           <div className="col-span-10 mb-5">
             <h1
@@ -894,7 +904,7 @@ export default function Home() {
             </button>
           </div>
         </div>
-      </div>
+      </div> */}
       <Footer />
     </div>
   );

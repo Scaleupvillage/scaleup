@@ -785,7 +785,7 @@ export default function Home() {
                       </div>
                       <button
                         type="button"
-                        className="rounded-full uppercase bg-[#25D366] text-white w-1/2 py-2 mt-4"
+                        className="rounded-full uppercase bg-primary-purple text-white w-1/2 py-2 mt-4"
                       >
                         JOIN NOW
                       </button>

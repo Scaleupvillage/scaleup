@@ -102,7 +102,7 @@ const Footer = () => {
         className=" fixed bottom-[3%] right-[2%]  z-[1000] bg-primary-cyan  px-12 py-3 rounded-full text-white"
         onClick={handleClick}
       >
-        Register
+        Register Now
       </button>
     </div>
   );

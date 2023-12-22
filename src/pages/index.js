@@ -84,7 +84,7 @@ export default function Home() {
         className="w-full  h-full flex justify-start items-center "
         style={{ background: `url(${slider2.src})` }}
       >
-        <div className="custom-container z-[2]">
+        <div className="custom-container z-[2] flex flex-col justify-center items-center">
           <h1 className="text-[14px] lg:text-[42px] font-medium leading-none text-white uppercase">
             Join the annual conclave that is
           </h1>
@@ -660,9 +660,7 @@ export default function Home() {
       <div className="py-[100px] relative overflow-hidden">
         <div className="custom-container relative">
           <div className="py-[100px]">
-            <h1 className="title purple-before text-[36px]">
-              ScaleUp for who?
-            </h1>
+            <h1 className="title purple-before text-[36px]">who can attend</h1>
             <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-x-4 ">
               {aboutCards.map((card, index) => (
                 <div className={Styles["about-card"]} key={index}>

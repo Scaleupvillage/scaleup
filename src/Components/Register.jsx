@@ -1,10 +1,15 @@
 import React from "react";
 import Close from "./Icons/close.png";
 import Image from "next/image";
+import axios from "axios";
 
 const Register = ({ setShow }) => {
   const closeModal = () => {
     setShow(false);
+  };
+
+  const handleClick = () => {
+    axios.get("/api/otp/8137886298").then(() => {});
   };
   return (
     <div
@@ -43,6 +48,7 @@ const Register = ({ setShow }) => {
         <button
           type="button"
           className="w-full bg-primary-cyan  px-8 py-3 rounded-full text-white"
+          onClick={handleClick}
         >
           Register
         </button>

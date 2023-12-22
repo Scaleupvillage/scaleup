@@ -9,7 +9,19 @@ import Pinterest from "../Icons/Pinterest";
 import Instagram from "../Icons/Instagram";
 import Link from "next/link";
 import UpArrows from "../Icons/scribbles/UpArrows";
+import Register from "../Register";
+import dynamic from "next/dynamic";
+import { useState } from "react";
+
+
 const Footer = () => {
+  const [openModal,setOpenModal] = useState(false)
+
+const handleClick = () =>{
+setOpenModal(true)
+console.log(openModal);
+}
+
   return (
     <div className="bg-[#0B031B]   ">
       <div className="relative overflow-hidden">
@@ -49,6 +61,16 @@ const Footer = () => {
           </div>
           <UpArrows className="absolute bottom-[-25px] right-0" />
         </div>
+        <div className="col-span-10 lg:col-span-2 flex justify-center items-center fixed right-[15px] bottom-[20px]">
+          <button
+            type="button"
+            className="w-full bg-primary-cyan  px-8 py-3 rounded-full text-white"
+
+            onClick={handleClick}
+          >
+            Register
+          </button>
+        </div>
       </div>
       <div className="bg-black w-full py-4">
         <div className="custom-container flex flex-col lg:flex-row justify-between items-center">
@@ -74,6 +96,9 @@ const Footer = () => {
           </div>
         </div>
       </div>
+    {
+      openModal ? <Register  setShow={setOpenModal}/> : ""
+    }
     </div>
   );
 };

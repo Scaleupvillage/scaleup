@@ -5,10 +5,10 @@ import Style from "./layout.module.scss";
 import { motion, sync, useCycle } from "framer-motion";
 import { useDimensions } from "./useDimensions";
 import logo from "@/assets/images/logo-white-yellow.png";
-import Facebook from "../Icons/Facebook";
-import Behance from "../Icons/Behance";
-import Pinterest from "../Icons/Pinterest";
-import Instagram from "../Icons/Instagram";
+import Instagram  from "../Icons/instagramColor.png";
+  import Facebook  from "../Icons/FacebookColor.png";
+  import Youtube from "../Icons/download (1).png";
+  import LinkedIn from "../Icons/download.png";
 const Navbar = () => {
   const containerRef = useRef(null);
   const [isOpen, toggleOpen] = useCycle(false, true);
@@ -58,14 +58,16 @@ const Navbar = () => {
   return (
     <div>
       <div className="  bg-white  flex justify-between  px-[70px] items-center py-3">
-        <div className="flex ">
+        <div className="flex  gap-6 items-center">
           <p className="flex justify-start">scaleup@gmail.com</p>
+          <p>|</p>
+            <p className="text-[15px]">9046243717</p>
         </div>
-        <div className="flex gap-x-7">
-          <Behance className="w-[17px] h-[20px]" />
-          <Facebook className="w-[13px] h-[20px]" />
-          <Pinterest className="w-[17px] h-[20px]" />
-          <Instagram fill="black" className="w-[17px] h-[20px]" />
+        <div className="flex gap-x-6">
+          <Image src={Instagram} className="w-[20px] h-[20px]" />
+          <Image src={Facebook} className="w-[20px] h-[20px]" />
+          <Image src={Youtube} className="w-[20px] h-[20px]" />
+          <Image src={LinkedIn} className="w-[20px] h-[20px]" />
         </div>
       </div>
       <div className=" p-5 justify-between items-center h-[20vh] hidden md:flex custom-container">

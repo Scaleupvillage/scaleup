@@ -5,10 +5,10 @@ import Style from "./layout.module.scss";
 import { motion, sync, useCycle } from "framer-motion";
 import { useDimensions } from "./useDimensions";
 import logo from "@/assets/images/logo-white-yellow.png";
-import Instagram  from "../Icons/instagramColor.png";
-  import Facebook  from "../Icons/FacebookColor.png";
-  import Youtube from "../Icons/download (1).png";
-  import LinkedIn from "../Icons/download.png";
+import Instagram from "../Icons/instagramColor.png";
+import Facebook from "../Icons/facebookcolor.png";
+import Youtube from "../Icons/download (1).png";
+import LinkedIn from "../Icons/download.png";
 const Navbar = () => {
   const containerRef = useRef(null);
   const [isOpen, toggleOpen] = useCycle(false, true);
@@ -61,7 +61,7 @@ const Navbar = () => {
         <div className="flex  gap-6 items-center">
           <p className="flex justify-start">scaleup@gmail.com</p>
           <p>|</p>
-            <p className="text-[15px]">9046243717</p>
+          <p className="text-[15px]">9046243717</p>
         </div>
         <div className="flex gap-x-6">
           <Image src={Instagram} className="w-[20px] h-[20px]" />

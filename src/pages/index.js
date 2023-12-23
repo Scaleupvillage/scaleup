@@ -51,15 +51,21 @@ import slider3 from "@/assets/images/slider3.jpeg";
 import slider4 from "@/assets/images/slider4.jpeg";
 import LocatioIcon from "@/Components/Icons/LocatioIcon";
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
+import Register from "@/Components/Register";
 const Countdown = dynamic(() => import("@/Components/Counter"), { ssr: false });
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 export default function Home() {
   const [scheduledTab, setScheduledTab] = useState("Students");
+  const [openModal, setOpenModal] = useState(false);
   const slides = [
     () => (
       <div
         className="w-full bg-opacity-20 h-full flex justify-center items-center flex-col relative"
-        style={{ background: `url(${slider1.src})` }}
+        style={{
+          background: `url(${slider1.src})`,
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+        }}
       >
         <div className="custom-container z-[2]">
           <h1 className="text-[18px] lg:text-[42px] font-medium leading-none text-white">
@@ -84,7 +90,11 @@ export default function Home() {
     () => (
       <div
         className="w-full  h-full flex justify-start items-center "
-        style={{ background: `url(${slider2.src})` }}
+        style={{
+          background: `url(${slider2.src})`,
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+        }}
       >
         <div className="custom-container z-[2] flex flex-col justify-center items-center">
           <h1 className="text-[14px] lg:text-[42px] font-medium leading-none text-white uppercase">
@@ -99,6 +109,7 @@ export default function Home() {
           <button
             type="button"
             className="bg-primary-cyan shadow-lg shadow-primary-cyan px-8 py-3 rounded-full text-white"
+            onClick={() => setOpenModal(true)}
           >
             Register Now
           </button>
@@ -109,7 +120,11 @@ export default function Home() {
     () => (
       <div
         className="w-full h-full flex justify-start items-center "
-        style={{ background: `url(${slider4.src})` }}
+        style={{
+          background: `url(${slider4.src})`,
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+        }}
       >
         <div className="custom-container  z-[2]">
           <h1 className="text-[18px] lg:text-[42px] font-medium leading-none text-white uppercase">
@@ -124,6 +139,7 @@ export default function Home() {
           <button
             type="button"
             className="bg-primary-cyan shadow-lg shadow-primary-cyan px-8 py-3 rounded-full text-white"
+            onClick={() => setOpenModal(true)}
           >
             Register Now
           </button>
@@ -134,7 +150,11 @@ export default function Home() {
     () => (
       <div
         className="w-full bg-black bg-opacity-20 h-full flex justify-start items-center "
-        style={{ background: `url(${slider3.src})` }}
+        style={{
+          background: `url(${slider3.src})`,
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+        }}
       >
         <div className="custom-container  flex justify-center items-center flex-col z-[2]">
           <h1 className="text-[18px] lg:text-[42px] font-medium leading-none text-white uppercase">
@@ -149,6 +169,7 @@ export default function Home() {
           <button
             type="button"
             className="bg-primary-cyan shadow-lg shadow-primary-cyan px-8 py-3 rounded-full text-white"
+            onClick={() => setOpenModal(true)}
           >
             Register Now
           </button>
@@ -575,8 +596,23 @@ export default function Home() {
     height: "400px",
   };
 
+  const handleClick = () => {
+    setOpenModal(true);
+    console.log(openModal);
+  };
+
   return (
     <div className={exo2.className}>
+      {openModal && (
+        <>
+          <div
+            className="fixed top-0 left-0 w-full h-screen justify-center z-50 bg-black bg-opacity-50 z-50 overflow-hidden"
+            onClick={() => setOpenModal(false)}
+          ></div>
+          <Register setShow={setOpenModal} />
+        </>
+      )}
+
       <div className={`${Styles["main-container"]} relative overflow-hidden`}>
         <div className="relative">
           <Navbar />
@@ -656,7 +692,9 @@ export default function Home() {
       </div>
 
       <div className="custom-container py-[100px] lg:h-[75vh]">
-        <h1 className="title text-[36px] wave-before mb-4">CAN WE MEET?</h1>
+        <h1 className="title text-[36px] wave-before mb-4">
+          Join the Extravaganza
+        </h1>
         <div className="custom-container grid grid-cols-2 h-full">
           <div className="grid grid-cols-1">
             <div className="flex justify-center items-center gap-x-4">

@@ -1,5 +1,5 @@
-import dbConnect from "../db";
-import Contact from "../db/model/User";
+import dbConnect from "./db";
+import Contact from "./db/model/User";
 
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 const client = require("twilio")(

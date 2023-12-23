@@ -49,6 +49,8 @@ import slider1 from "@/assets/images/slider1.jpeg";
 import slider2 from "@/assets/images/slider2.jpeg";
 import slider3 from "@/assets/images/slider3.jpeg";
 import slider4 from "@/assets/images/slider4.jpeg";
+import LocatioIcon from "@/Components/Icons/LocatioIcon";
+import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 const Countdown = dynamic(() => import("@/Components/Counter"), { ssr: false });
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 export default function Home() {
@@ -356,11 +358,16 @@ export default function Home() {
   ];
   let aboutSecondScribble = [
     {
-      component: <UpArrows className="absolute bottom-[0px] right-0 z-[1] opacity-30 lg:opacity-100" />,
+      component: (
+        <UpArrows className="absolute bottom-[0px] right-0 z-[1] opacity-30 lg:opacity-100" />
+      ),
     },
     {
       component: (
-        <Group2 className="absolute bottom-[5%] left-[2%] z-[1] opacity-30 lg:opacity-100" height="250" />
+        <Group2
+          className="absolute bottom-[5%] left-[2%] z-[1] opacity-30 lg:opacity-100"
+          height="250"
+        />
       ),
     },
   ];
@@ -563,6 +570,11 @@ export default function Home() {
     },
   ];
   const targetDate = new Date("2024-02-02T00:00:00");
+  const containerStyle = {
+    width: "100%",
+    height: "400px",
+  };
+
   return (
     <div className={exo2.className}>
       <div className={`${Styles["main-container"]} relative overflow-hidden`}>
@@ -642,12 +654,38 @@ export default function Home() {
         </div>
         <Scribbles scribbles={scribblesSecond} />
       </div>
-      
 
-      <div className="grid grid-cols-2">
-              <div>
-
+      <div className="custom-container py-[100px] lg:h-[75vh]">
+        <h1 className="title text-[36px] wave-before mb-4">CAN WE MEET?</h1>
+        <div className="custom-container grid grid-cols-2 h-full">
+          <div className="grid grid-cols-1">
+            <div className="flex justify-center items-center gap-x-4">
+              <Calendar fill="#5182E5" />
+              <div className=" flex flex-col justify-center">
+                <h1 className="text-[18px] font-medium">DATE</h1>
+                <h1 className="text-[14px]">2,3 february 2024</h1>
               </div>
+            </div>
+            <div className="flex justify-center items-center gap-x-4">
+              <LocatioIcon />
+              <div className=" flex flex-col justify-center">
+                <h1 className="text-[18px] font-medium">LOCATION</h1>
+                <h1 className="text-[14px]">Shifa Convention Center</h1>
+              </div>
+            </div>
+          </div>
+          <div className="rounded-sm overflow-hidden">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.808196084451!2d76.24360727472761!3d10.977845489183434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7cda1960f1e95%3A0x971882d6dc32948e!2sShifa%20Convention%20Center!5e0!3m2!1sen!2sin!4v1703326986049!5m2!1sen!2sin"
+              width="100%"
+              height="100%"
+              // style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
       </div>
       {/* COUNTER  */}
       <div className={`${Styles["counter-bg"]} md:h-[50vh]`}>
@@ -803,7 +841,7 @@ export default function Home() {
       </div>
 
       <div className="py-[100px] custom-container">
-        <h1 className="text-[36px] title">SHEDULE</h1>
+        <h1 className="text-[36px] title uppercase">Schedule</h1>
         <div className="custom-container flex gap-x-6 justify-center items-center  pb-6 overflow-auto">
           <div className="bg-gray-200 h-[50px] w-[250px] relative overflow-hidden">
             <h1 className="font-semibold text-[15px] lg:text-[20px] p-3 text-gray-400 ">

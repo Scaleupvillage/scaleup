@@ -16,8 +16,8 @@ export default async function handler(req, res) {
         .verificationChecks.create({ to: `+91${Contact}`, code: otp })
         .then((verification_check) => {
           console.log(verification_check);
-          console.log(verification_check.status, "STATUS");
-          resolve(true);
+          if (verification_check.status) resolve(true);
+          else reject(false);
         })
         .catch((error) => {
           reject(false);
@@ -39,8 +39,7 @@ export default async function handler(req, res) {
           }
         })
         .catch((err) => {
-          console.log(err);
-          return res.status(400).json({ message: "Something went wrong" });
+          return res.status(400).json({ message: "Please enter a valid OTP" });
         });
       break;
   }

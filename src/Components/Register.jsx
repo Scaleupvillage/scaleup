@@ -56,10 +56,12 @@ const Register = ({ setShow }) => {
       newErrors.compony = "Company/Organization is required";
     }
     // Validate Company
-    if (showOtp) {
-      if (formData.otp == "") {
-        newErrors.otp = "otp required";
-      }
+
+    if (formData.otp == "") {
+      newErrors.otp = "otp required";
+    }
+    if (showOtp == false) {
+      newErrors.showOtp = "Please verify your number";
     }
 
     setErrors(newErrors);
@@ -69,27 +71,69 @@ const Register = ({ setShow }) => {
   };
 
   const sendOtp = () => {
-    axios.get("/api/otp/" + formData.phoneNumber).then(() => {
-      setShowOtp(true);
-    });
+    axios
+      .get("/api/otp/" + formData.phoneNumber)
+      .then(() => {
+        setShowOtp(true);
+        toast("OTP send to your mobile number", {
+          type: "success",
+          position: "bottom-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+      })
+      .catch((err) => {
+        toast(err.response.data.message, {
+          type: "error",
+          position: "bottom-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+      });
   };
   const handleFormSubmit = () => {
     const isValid = validateForm();
 
     if (isValid) {
-      axios.post("/api/otp/", { ...formData }).then((response) => {
-        console.log(response);
-        // toast("Registered Successfully", {
-        //   position: "top-right",
-        //   autoClose: 5000,
-        //   hideProgressBar: false,
-        //   closeOnClick: true,
-        //   pauseOnHover: true,
-        //   draggable: true,
-        //   progress: undefined,
-        //   theme: "light",
-        // });
-      });
+      axios
+        .post("/api/otp/", { ...formData })
+        .then((response) => {
+          toast("Registered Successfully", {
+            type: "success",
+            position: "bottom-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
+        })
+        .catch((err) => {
+          console.log(err.response.data.message);
+          toast(err.response.data.message, {
+            type: "error",
+            position: "bottom-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
+        });
     }
   };
   return (
@@ -103,9 +147,13 @@ const Register = ({ setShow }) => {
           <Image src={Close} />
         </div>
       </div>
-
+      {errors.showOtp && !showOtp && (
+        <div className="w-full  bg-red-300 p-3 text-red-800 rounded-md">
+          {errors.showOtp}
+        </div>
+      )}
       <div>
-        <div className="mb-1">
+        <div className="mb-1 mt-4">
           <label className="label text-primary-blue">Full Name</label>
           <input
             type="text"

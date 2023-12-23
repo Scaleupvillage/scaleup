@@ -356,11 +356,11 @@ export default function Home() {
   ];
   let aboutSecondScribble = [
     {
-      component: <UpArrows className="absolute bottom-[0px] right-0" />,
+      component: <UpArrows className="absolute bottom-[0px] right-0 z-[1] opacity-30 lg:opacity-100" />,
     },
     {
       component: (
-        <Group2 className="absolute bottom-[5%] left-[2%]" height="250" />
+        <Group2 className="absolute bottom-[5%] left-[2%] z-[1] opacity-30 lg:opacity-100" height="250" />
       ),
     },
   ];
@@ -591,14 +591,14 @@ export default function Home() {
       <div className="  lg:h-[75vh] py-[100px] relative overflow-hidden">
         <div className="custom-container flex justify-center items-center h-full">
           <div className="bg-white w-full grid grid-cols-2 lg:grid-cols-4  lg:gap-x-12  ">
-            <div className="col-span-2 my-auto items-center">
+            <div className="col-span-2 my-auto items-center mb-4 lg:mb-0">
               <div className="grid grid-cols-12 p-1">
                 <div className=" col-span-6 bg-primary-purple h-[120px] mr-3 rounded-md flex flex-col items-center justify-center">
                   <h1 className="text-[30px] font-extrabold text-primary-yellow">
                     5000 +
                   </h1>
 
-                  <p className="text-white text-[20px] font-normal">
+                  <p className="text-white text-[16px] lg:text-[20px] font-normal">
                     Total Attendees
                   </p>
                 </div>
@@ -606,17 +606,17 @@ export default function Home() {
                   <h1 className="text-primary-blue text-[30px] font-extrabold">
                     300 +
                   </h1>
-                  <p className="text-primary-blue text-[20px] font-normal">
+                  <p className="text-primary-blue text-center text-[16px] lg:text-[20px] font-normal">
                     Local Business Heroes
                   </p>
                 </div>
               </div>
               <div className="grid grid-cols-12 p-2">
-                <div className="flex items-center justify-center gap-2 col-span-8 bg-primary-cyan h-[120px] mr-3 rounded-md">
+                <div className="flex items-center justify-center flex-col md:flex-row gap-2 col-span-8 bg-primary-cyan h-[120px] mr-3 rounded-md">
                   <h1 className="text-primary-yellow text-[30px] font-extrabold">
                     150 +
                   </h1>
-                  <p className="text-white text-[20px] font-normal">
+                  <p className="text-white text-[16px] lg:text-[20px] font-normal">
                     Participating <br /> Educational Institutions
                   </p>
                 </div>
@@ -624,7 +624,7 @@ export default function Home() {
                   <h1 className="text-white text-[30px] font-extrabold">
                     20 +
                   </h1>
-                  <p className="text-primary-cyan text-[20px] font-normal">
+                  <p className="text-primary-cyan text-[16px] lg:text-[20px] font-normal">
                     Investors
                   </p>
                 </div>
@@ -642,7 +642,13 @@ export default function Home() {
         </div>
         <Scribbles scribbles={scribblesSecond} />
       </div>
+      
 
+      <div className="grid grid-cols-2">
+              <div>
+
+              </div>
+      </div>
       {/* COUNTER  */}
       <div className={`${Styles["counter-bg"]} md:h-[50vh]`}>
         <div className="custom-container h-full py-[70px] flex justify-center items-center">
@@ -677,10 +683,10 @@ export default function Home() {
         <Scribbles scribbles={aboutScribble} />
       </div>
       <div
-        className={`${Styles["scaleup-container"]} py-[100px] h-[75vh] relative  bg-primary-purple`}
+        className={`${Styles["scaleup-container"]} py-[100px] lg:h-[75vh] relative  bg-primary-purple`}
       >
-        <div className="custom-container grid grid-cols-2 gap-x-8">
-          <div className="">
+        <div className="custom-container grid grid-cols-1 lg:grid-cols-2 gap-x-8 ">
+          <div className="z-[2]">
             <h1 className="title  text-[36px]" style={{ color: "white" }}>
               SCALEUP CONCLAVE 2024
             </h1>
@@ -696,7 +702,7 @@ export default function Home() {
               ecosystem to unprecedented heights.
             </p>
           </div>
-          <div className="">
+          <div className="z-[2]">
             <h1 className="title  text-[36px]" style={{ color: "white" }}>
               Scaleup Village
             </h1>

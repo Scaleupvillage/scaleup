@@ -765,7 +765,7 @@ export default function Home() {
             <h1 className="title purple-before text-[36px]">ScaleUp who</h1>
             {/* <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-x-4 "> */}
             <Slider
-              spaceBetween={30}
+              centeredSlides={true}
               pagination={{
                 clickable: true,
               }}
@@ -773,11 +773,22 @@ export default function Home() {
                 delay: 3000,
                 pauseOnMouseEnter: true,
               }}
-              slidesPerView={4}
+              // slidesPerView={4}
               paginationComponent={<SliderSidePagination />}
               className="relative"
               loop={true}
               modules={[Autoplay]}
+              breakpoints={{
+                640: {
+                  slidesPerView: 2,
+                  spaceBetween: 30,
+                },
+
+                1024: {
+                  slidesPerView: 4,
+                  spaceBetween: 50,
+                },
+              }}
             >
               {aboutCards.map((card, index) => (
                 <SwiperSlide key={index}>

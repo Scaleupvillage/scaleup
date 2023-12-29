@@ -5,50 +5,23 @@ const client = require("twilio")(
   process.env.TWILIO_ACC_SSID,
   process.env.TWILIO_AUTH_ID
 );
+const textflow = require("textflow.js");
+
+textflow.useKey(
+  "BhHJczxFZOBwqOjmiLqCVF8SjWLvSKhCxK4HSNKzbLAQPS9UJvJ0G0p7C7GBQeUk"
+);
 export default async function handler(req, res) {
   await dbConnect();
-  const sentVerificationOtp = (Contact) => {
-    return new Promise((resolve, reject) => {
-      client.verify.v2
-        .services(process.env.TWILIO_AUTHY_SERVICEID)
-        .verifications.create({ to: `+91${Contact}`, channel: "sms" })
-        .then((verification) => {
-          console.log(verification.status);
-          resolve(verification);
-        })
-        .catch((error) => {
-          console.log(error.message);
-          reject(error);
-        });
-    });
+  const sentVerificationOtp = async (Contact) => {
+    let result = await textflow.sendVerificationSMS("+918137886298");
+    return res.status(result.status).json(result.message);
   };
-  const verifyPhoneOtp = (Contact, otp) => {
-    return new Promise((resolve, reject) => {
-      client.verify.v2
-        .services(process.env.TWILIO_AUTHY_SERVICEID)
-        .verificationChecks.create({ to: `+91${Contact}`, code: otp })
-        .then((verification_check) => {
-          console.log(verification_check);
-          console.log(verification_check.status, "STATUS");
-          resolve(true);
-        })
-        .catch((error) => {
-          reject(false);
-        });
-    });
-  };
+
   const { method } = req;
   const contactNumber = req.query.number;
   switch (method) {
     case "GET":
-      sentVerificationOtp(contactNumber)
-        .then(() => {
-          return res.status(200).json({ message: "Otp send successfully" });
-        })
-        .catch(() => {
-          return res.status(400).json({ message: "Something went wrong" });
-        });
+      sentVerificationOtp(contactNumber);
       break;
-   
   }
 }

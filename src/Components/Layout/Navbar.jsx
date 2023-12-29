@@ -23,16 +23,16 @@ const Navbar = () => {
       link: "/speakers",
     },
     {
-      label: "EVENTS",
-      link: "/events",
+      label: "SCHEDULE",
+      link: "/schedule",
     },
     {
-      label: "NEWS",
-      link: "/news",
+      label: "MEDIA KIT",
+      link: "/media-kit",
     },
     {
-      label: "CONTACT",
-      link: "/contact",
+      label: "CONTACT  US",
+      link: "/contactus",
     },
   ];
 
@@ -57,13 +57,13 @@ const Navbar = () => {
   };
   return (
     <div className="absolute w-full z-10">
-      <div className="  bg-white  flex justify-between  px-[70px] items-center py-3 ">
-        <div className="flex  gap-6 items-center">
+      <div className="  bg-white  flex justify-between  px-3 lg:px-[70px] items-center py-3 ">
+        <div className="flex  gap-x-3 lg:gap-6 items-center text-[10px] lg:text-[16px]">
           <p className="flex justify-start">info@scaleupconclave.com</p>
           <p>|</p>
-          <p className="text-[15px]">9048170077</p>
+          <p className="lg:text-[15px]">9048170077</p>
         </div>
-        <div className="flex gap-x-6">
+        <div className="flex gap-x-3 lg:gap-x-6">
           <Image src={Instagram} className="w-[20px] h-[20px]" />
           <Image src={Facebook} className="w-[20px] h-[20px]" />
           <Image src={Youtube} className="w-[20px] h-[20px]" />

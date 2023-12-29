@@ -45,13 +45,18 @@ import discussion from "@/assets/images/discussion.png";
 import code from "@/assets/images/code.png";
 import start from "@/assets/images/start.png";
 import colors from "@/assets/images/color.jpeg";
-import slider1 from "@/assets/images/slider1.jpeg";
-import slider2 from "@/assets/images/slider2.jpeg";
-import slider3 from "@/assets/images/slider3.jpeg";
-import slider4 from "@/assets/images/slider4.jpeg";
+import slider1 from "@/assets/images/slider1.png";
+import slider2 from "@/assets/images/slider2.png";
+import slider3 from "@/assets/images/slider3.png";
+import slider4 from "@/assets/images/slider4.png";
 import LocatioIcon from "@/Components/Icons/LocatioIcon";
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 import Register from "@/Components/Register";
+import Line from "@/Components/Icons/scribbles/Line";
+import Arrow from "@/Components/Icons/scribbles/Arrow";
+import Link from "next/link";
+import SliderSidePagination from "@/Components/SliderSidePagination";
+import { SwiperSlide } from "swiper/react";
 const Countdown = dynamic(() => import("@/Components/Counter"), { ssr: false });
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 export default function Home() {
@@ -288,7 +293,7 @@ export default function Home() {
     {
       component: (
         <Wave
-          className="absolute bottom-[10%] right-[5%]"
+          className="absolute bottom-[10%] right-[5%] z-[11]"
           width="200"
           fill="#00B4B8"
         />
@@ -297,7 +302,7 @@ export default function Home() {
     {
       component: (
         <Wave
-          className="absolute bottom-[7%] right-[-1%]"
+          className="absolute bottom-[7%] right-[-1%] z-[11]"
           width="200"
           fill="#FFCF3F"
         />
@@ -306,7 +311,7 @@ export default function Home() {
     {
       component: (
         <Group1
-          className="absolute bottom-[5%] left-[-1%]"
+          className="absolute bottom-[5%] left-[-1%] z-[11]"
           width="170"
           fill="#FFCF3F"
         />
@@ -358,22 +363,18 @@ export default function Home() {
   ];
   let timerScribbles = [
     {
-      component: <Wave fill="#FFCF3F" className="absolute top-[55%] left-0" />,
-    },
-    {
-      component: <Wave fill="#FFCF3F" className="absolute top-[55%] right-0" />,
-    },
-    {
       component: (
-        <ArrowHead
+        <Line
           fill="#FFCF3F"
-          className="absolute top-[50%] right-[16%] rotate-180"
+          className="absolute top-[55%] left-0 w-[90%] h-[24px]"
+          preserveAspectRatio="none"
         />
       ),
     },
+
     {
       component: (
-        <ArrowHead fill="#FFCF3F" className="absolute top-[50%] left-[16%] " />
+        <ArrowHead fill="#FFCF3F" className="absolute top-[47%] right-[3%] " />
       ),
     },
   ];
@@ -397,25 +398,55 @@ export default function Home() {
     {
       title: "Studens",
       description:
-        "Engage in vibrant discussions, panels, and workshops to share and absorb industry insights",
+        "Ignite your curiosity and ambition. Discover the practical steps to turn your ideas into reality through hands-on workshops, non-tech explorations, and insights into collaboration models.",
       icon: <ScholarCap />,
+    },
+    {
+      title: "Wantrepreneurs",
+      description:
+        "Take your entrepreneurial aspirations to the next level. Learn how to structure and refine your ideas, connect with industry leaders, and gain insights from successful startup stories.",
+      icon: <Rocket />,
     },
     {
       title: "Startups",
       description:
-        "Explore the innovative landscape as we showcase startups from Kerala and beyond.",
-      icon: <Rocket />,
-    },
-    {
-      title: "Local Business/SMEs",
-      description:
-        "Witness the acknowledgement of outstanding startups, entrepreneurs, and contributors.",
+        "Accelerate your growth journey. Gain expert insights, explore global scaling opportunities, and connect with potential investors. Participate in pitch competitions to elevate your startup's visibility",
       icon: <Speaker />,
     },
     {
-      title: "NREs",
+      title: "Local Business Owners/SMEs",
       description:
-        "Stay ahead of the curve with hands-on workshops on cutting-edge technologies and emerging trends.",
+        "Unlock strategies for scaling your local business. Engage in tailored workshops, MSME-focused sessions, and network with like-minded entrepreneurs to propel your business forward.",
+      icon: <Clock />,
+    },
+    {
+      title: "Educators",
+      description:
+        "Empower the next generation of entrepreneurs. Explore collaborative innovation models, engage in tech-focused learning sessions, and become a catalyst for fostering entrepreneurial spirit.",
+      icon: <Clock />,
+    },
+    {
+      title: "Returning expatriates",
+      description:
+        "Leverage your global expertise in Kerala's evolving business landscape. Connect with investment opportunities, share your insights, and contribute to the growth of the region.",
+      icon: <Clock />,
+    },
+    {
+      title: "Family/Kids",
+      description:
+        "Immerse yourself in the magic of ScaleUp Conclave. Enjoy entertaining shows, creative workshops, and a cooking competition. Experience the fusion of learning and fun for families.",
+      icon: <Clock />,
+    },
+    {
+      title: "Venture Capitalists & Investors",
+      description:
+        "Secure exclusive access to groundbreaking concepts and budding startups. Discover high-potential ventures firsthand. Connect with innovative startups and explore investment possibilities at the forefront of business innovation.",
+      icon: <Clock />,
+    },
+    {
+      title: "Business Mentors & Industry Veterans",
+      description:
+        "Stay ahead of the curve by witnessing the birth of groundbreaking ideas. Guide the next wave of entrepreneurs. Connect with eager minds, offer your expertise, and contribute to the growth of promising startups.",
       icon: <Clock />,
     },
   ];
@@ -642,7 +673,7 @@ export default function Home() {
             <div className="col-span-2 my-auto items-center mb-4 lg:mb-0">
               <div className="grid grid-cols-12 p-1">
                 <div className=" col-span-6 bg-primary-purple h-[120px] mr-3 rounded-md flex flex-col items-center justify-center">
-                  <h1 className="text-[30px] font-extrabold text-primary-yellow">
+                  <h1 className="text-[30px] lg:text-[50px] font-extrabold text-primary-yellow leading-none">
                     5000 +
                   </h1>
 
@@ -651,7 +682,7 @@ export default function Home() {
                   </p>
                 </div>
                 <div className=" col-span-6 rounded-md bg-primary-yellow flex flex-col items-center justify-center  ">
-                  <h1 className="text-primary-blue text-[30px] font-extrabold">
+                  <h1 className="text-primary-blue text-[30px] lg:text-[50px]  font-extrabold">
                     300 +
                   </h1>
                   <p className="text-primary-blue text-center text-[16px] lg:text-[20px] font-normal">
@@ -661,15 +692,15 @@ export default function Home() {
               </div>
               <div className="grid grid-cols-12 p-2">
                 <div className="flex items-center justify-center flex-col md:flex-row gap-2 col-span-8 bg-primary-cyan h-[120px] mr-3 rounded-md">
-                  <h1 className="text-primary-yellow text-[30px] font-extrabold">
+                  <h1 className="text-primary-yellow text-[30px] lg:text-[50px] font-extrabold">
                     150 +
                   </h1>
-                  <p className="text-white text-[16px] lg:text-[20px] font-normal">
+                  <p className="text-white text-[16px] lg:text-[18px] font-normal">
                     Participating <br /> Educational Institutions
                   </p>
                 </div>
                 <div className="flex flex-col items-center justify-center col-span-4 bg-primary-purple rounded-md">
-                  <h1 className="text-white text-[30px] font-extrabold">
+                  <h1 className="text-white text-[30px] lg:text-[50px] font-extrabold leading-none">
                     20 +
                   </h1>
                   <p className="text-primary-cyan text-[16px] lg:text-[20px] font-normal">
@@ -691,69 +722,77 @@ export default function Home() {
         <Scribbles scribbles={scribblesSecond} />
       </div>
 
-      <div className="custom-container py-[100px] lg:h-[75vh]">
-        <h1 className="title text-[36px] wave-before mb-4">
-          Join the Extravaganza
-        </h1>
-        <div className="custom-container grid grid-cols-2 h-full">
-          <div className="grid grid-cols-1">
-            <div className="flex justify-center items-center gap-x-4">
-              <Calendar fill="#5182E5" />
-              <div className=" flex flex-col justify-center">
-                <h1 className="text-[18px] font-medium">DATE</h1>
-                <h1 className="text-[14px]">2,3 february 2024</h1>
-              </div>
-            </div>
-            <div className="flex justify-center items-center gap-x-4">
-              <LocatioIcon />
-              <div className=" flex flex-col justify-center">
-                <h1 className="text-[18px] font-medium">LOCATION</h1>
-                <h1 className="text-[14px]">Shifa Convention Center</h1>
-              </div>
-            </div>
-          </div>
-          <div className="rounded-sm overflow-hidden">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.808196084451!2d76.24360727472761!3d10.977845489183434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7cda1960f1e95%3A0x971882d6dc32948e!2sShifa%20Convention%20Center!5e0!3m2!1sen!2sin!4v1703326986049!5m2!1sen!2sin"
-              width="100%"
-              height="100%"
-              // style="border:0;"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </div>
-        </div>
-      </div>
       {/* COUNTER  */}
       <div className={`${Styles["counter-bg"]} md:h-[50vh]`}>
         <div className="custom-container h-full py-[70px] flex justify-center items-center">
-          <div className="z-[10] relative flex justify-center items-center flex-col">
-            <h1 className="text-black font-bold text-[16px] md:text-[24px] mb-[30px]">
-              The Countdown Has Begun
-            </h1>
-            <Countdown targetDate={targetDate} />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12">
+            <div className="relative">
+              <div className="text-[30px] lg:text-[45px] text-primary-purple flex justify-center items-center">
+                <div className="bg-primary-purple px-5 font-bold rounded-md mr-4">
+                  <span className="text-white">2,</span>
+                  <span className="text-primary-yellow">3</span>
+                </div>
+                <h1 className=" font-semibold flex">February, 2024</h1>
+              </div>
+              <Arrow
+                fill="#FFCF3F"
+                className=" w-full h-[50px] hidden lg:block"
+                preserveAspectRatio="none"
+              />
+              <div className="text-[25px] lg:text-[35px] text-primary-purple flex justify-center items-center">
+                <Link
+                  href="/"
+                  className=" font-semibold flex text-center underline "
+                >
+                  Shifa Convention Center Perinthalmanna
+                </Link>
+              </div>
+            </div>
+            <div className="z-[10] relative flex justify-center items-center flex-col mt-12 lg:mt-0">
+              <h1 className="text-black font-bold text-[16px] md:text-[24px] mb-[20px] lg:mb-0">
+                Gear up for the ultimate business festival
+              </h1>
+              <Countdown targetDate={targetDate} />
+            </div>
           </div>
         </div>
-        <Scribbles scribbles={timerScribbles} />
       </div>
       {/* /COUNTER  */}
 
       <div className="py-[100px] relative overflow-hidden">
         <div className="custom-container relative">
           <div className="py-[100px]">
-            <h1 className="title purple-before text-[36px]">who can attend</h1>
-            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-x-4 ">
+            <h1 className="title purple-before text-[36px]">ScaleUp who</h1>
+            {/* <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-x-4 "> */}
+            <Slider
+              spaceBetween={30}
+              pagination={{
+                clickable: true,
+              }}
+              autoplay={{
+                delay: 3000,
+                pauseOnMouseEnter: true,
+              }}
+              slidesPerView={4}
+              paginationComponent={<SliderSidePagination />}
+              className="relative"
+              loop={true}
+              modules={[Autoplay]}
+            >
               {aboutCards.map((card, index) => (
-                <div className={Styles["about-card"]} key={index}>
-                  {card.icon}
-                  <div className="py-4 h-full">
-                    <h1 className={Styles["card-heading"]}>{card.title}</h1>
-                    <p className="mb-4 line-clamp-3">{card.description}</p>
+                <SwiperSlide key={index}>
+                  <div className={`${Styles["about-card"]} h-full`}>
+                    {card.icon}
+                    <div className="py-4 h-full">
+                      <h1 className={Styles["card-heading"]}>{card.title}</h1>
+                      <p className="mb-4 line-clamp-3">{card.description}</p>
+                    </div>
                   </div>
-                </div>
+                </SwiperSlide>
               ))}
-            </div>
+            </Slider>
+
+            {/* </div> */}
           </div>
         </div>
         <Scribbles scribbles={aboutScribble} />

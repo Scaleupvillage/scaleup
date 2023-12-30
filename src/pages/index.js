@@ -103,7 +103,7 @@ export default function Home() {
           <h1 className="text-[14px] lg:text-[35px] xl:text-[42px]font-medium leading-none text-white uppercase">
             Fostering ScaleUp Village:
           </h1>
-          <h1 className="text-white text-[21px] lg:text-[40px] 2xl:text-[60px] font-extrabold uppercase text-center">
+          <h1 className="text-white text-[20px] lg:text-[60px] xl:text-[70px] font-extrabold uppercase text-center">
             India’s First D2C Industrial Park
           </h1>
           <button
@@ -130,7 +130,7 @@ export default function Home() {
           <h1 className="text-[18px] lg:text-[42px] font-medium leading-none text-white uppercase">
             ScaleUp 2024: India’s First
           </h1>
-          <h1 className="text-white text-[24px] lg:text-[70px] font-extrabold uppercase">
+          <h1 className="text-white text-[20px] lg:text-[60px] xl:text-[70px] font-extrabold uppercase">
             Fusion Business Conclave
           </h1>
           <button
@@ -157,7 +157,7 @@ export default function Home() {
           <h1 className="text-[18px] lg:text-[42px] font-medium leading-none text-white uppercase">
             Learn from Experts and Begin
           </h1>
-          <h1 className="text-white text-[24px] lg:text-[90px] font-extrabold uppercase">
+          <h1 className="text-white text-[20px] lg:text-[60px] xl:text-[70px] font-extrabold uppercase">
             Your Business Journey
           </h1>
 

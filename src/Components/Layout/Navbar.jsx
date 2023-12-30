@@ -5,10 +5,10 @@ import Style from "./layout.module.scss";
 import { motion, useCycle } from "framer-motion";
 import { useDimensions } from "./useDimensions";
 import logo from "@/assets/images/logo-white-yellow.png";
-import Instagram from "../Icons/instagramColor.png";
-import Facebook from "../Icons/facebookcolor.png";
 import Youtube from "../Icons/download (1).png";
 import LinkedIn from "../Icons/download.png";
+import Instagram from "../Icons/Instagram";
+import Facebook from "../Icons/Facebook";
 const Navbar = () => {
   const containerRef = useRef(null);
   const [isOpen, toggleOpen] = useCycle(false, true);
@@ -64,8 +64,8 @@ const Navbar = () => {
           <p className="lg:text-[15px]">9048170077</p>
         </div>
         <div className="flex gap-x-3 lg:gap-x-6">
-          <Image src={Instagram} className="w-[20px] h-[20px]" />
-          <Image src={Facebook} className="w-[20px] h-[20px]" />
+          <Instagram fill="#003B6D" width="20" />
+          <Facebook fill="#003B6D" width="20" />
           <Image src={Youtube} className="w-[20px] h-[20px]" />
           <Image src={LinkedIn} className="w-[20px] h-[20px]" />
         </div>
@@ -81,7 +81,7 @@ const Navbar = () => {
               <li key={index}>
                 <Link
                   href={link}
-                  className="p-5 text-white hover:text-[#f50136] transition-colors ease-in-out duration-700 text-sm"
+                  className="whitespace-nowrap p-5 text-white hover:text-[#f50136] transition-colors ease-in-out duration-700 text-sm"
                 >
                   {label}
                 </Link>

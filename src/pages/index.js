@@ -65,23 +65,21 @@ export default function Home() {
   const slides = [
     () => (
       <div
-        className="w-full bg-opacity-20 h-full flex justify-center items-center flex-col relative"
+        className="w-full bg-opacity-20 h-full flex justify-end flex-col relative"
         style={{
           background: `url(${slider1.src})`,
-          backgroundSize: "cover",
+          backgroundSize: "100% 100%",
           backgroundRepeat: "no-repeat",
         }}
       >
-        <div className="custom-container z-[2]">
-          <h1 className="text-[18px] lg:text-[42px] font-medium leading-none text-white">
-            BE A PART OF OUR
+        <div className="custom-container z-[2] h-[75%]  flex justify-center items-center flex-col">
+          <h1 className="text-[18px] lg:text-[35px] xl:text-[42px] font-medium leading-none text-white">
+            Scale Your Business
           </h1>
-          <h1 className="text-white text-[24px] lg:text-[90px] font-extrabold ">
-            GRAND CELEBERATION
+          <h1 className="text-white text-[20px] lg:text-[60px] xl:text-[70px] font-extrabold uppercase ">
+            Ideas to Bigger and Better
           </h1>
-          <p className="text-sm lg:text-lg mb-8 text-white">
-            OF GROUNDBREAKING BUSINESS IDEAS
-          </p>
+          <p className="text-sm lg:text-lg xl:text-[42px] mb-4 xl:mb-8 text-white"></p>
           <button
             type="button"
             className="bg-primary-cyan shadow-lg shadow-primary-cyan px-8 py-3 rounded-full text-white"
@@ -94,23 +92,20 @@ export default function Home() {
     ),
     () => (
       <div
-        className="w-full  h-full flex justify-start items-center "
+        className="w-full  h-full flex justify-end items-center flex-col "
         style={{
           background: `url(${slider2.src})`,
-          backgroundSize: "cover",
+          backgroundSize: "100% 100%",
           backgroundRepeat: "no-repeat",
         }}
       >
-        <div className="custom-container z-[2] flex flex-col justify-center items-center">
-          <h1 className="text-[14px] lg:text-[42px] font-medium leading-none text-white uppercase">
-            Join the annual conclave that is
+        <div className="custom-container z-[2] h-[75%] flex justify-center items-center flex-col">
+          <h1 className="text-[14px] lg:text-[35px] xl:text-[42px]font-medium leading-none text-white uppercase">
+            Fostering ScaleUp Village:
           </h1>
-          <h1 className="text-white text-[21px] lg:text-[60px] font-extrabold uppercase text-center">
-            reshaping Kerala&apos;s startup landscapes
+          <h1 className="text-white text-[21px] lg:text-[40px] 2xl:text-[60px] font-extrabold uppercase text-center">
+            India’s First D2C Industrial Park
           </h1>
-          <p className="text-sm lg:text-lg mb-8 text-white uppercase">
-            Your gateway to success awaits!
-          </p>
           <button
             type="button"
             className="bg-primary-cyan shadow-lg shadow-primary-cyan px-8 py-3 rounded-full text-white"
@@ -124,23 +119,20 @@ export default function Home() {
     ),
     () => (
       <div
-        className="w-full h-full flex justify-start items-center "
+        className="w-full h-full flex justify-end items-center flex-col "
         style={{
           background: `url(${slider4.src})`,
-          backgroundSize: "cover",
+          backgroundSize: "100% 100%",
           backgroundRepeat: "no-repeat",
         }}
       >
-        <div className="custom-container  z-[2]">
+        <div className="custom-container  z-[2] h-[75%] flex justify-center items-center flex-col">
           <h1 className="text-[18px] lg:text-[42px] font-medium leading-none text-white uppercase">
-            Witness the convergence of
+            ScaleUp 2024: India’s First
           </h1>
-          <h1 className="text-white text-[24px] lg:text-[90px] font-extrabold uppercase">
-            business paths
+          <h1 className="text-white text-[24px] lg:text-[70px] font-extrabold uppercase">
+            Fusion Business Conclave
           </h1>
-          <p className="text-sm lg:text-lg mb-8 text-white uppercase">
-            It&apos;s the nexus where your business scales new heights!
-          </p>
           <button
             type="button"
             className="bg-primary-cyan shadow-lg shadow-primary-cyan px-8 py-3 rounded-full text-white"
@@ -154,23 +146,21 @@ export default function Home() {
     ),
     () => (
       <div
-        className="w-full bg-black bg-opacity-20 h-full flex justify-start items-center "
+        className="w-full bg-black bg-opacity-20 h-full flex justify-end items-center flex-col"
         style={{
           background: `url(${slider3.src})`,
-          backgroundSize: "cover",
+          backgroundSize: "100% 100%",
           backgroundRepeat: "no-repeat",
         }}
       >
-        <div className="custom-container  flex justify-center items-center flex-col z-[2]">
+        <div className="custom-container  h-[75%] flex justify-center items-center flex-col z-[2]">
           <h1 className="text-[18px] lg:text-[42px] font-medium leading-none text-white uppercase">
-            Witness the convergence of
+            Learn from Experts and Begin
           </h1>
           <h1 className="text-white text-[24px] lg:text-[90px] font-extrabold uppercase">
-            business paths
+            Your Business Journey
           </h1>
-          <p className="text-sm lg:text-lg mb-8 text-white uppercase">
-            It&apos;s the nexus where your business scales new heights!
-          </p>
+
           <button
             type="button"
             className="bg-primary-cyan shadow-lg shadow-primary-cyan px-8 py-3 rounded-full text-white"
@@ -293,8 +283,7 @@ export default function Home() {
     {
       component: (
         <Wave
-          className="absolute bottom-[10%] right-[5%] z-[11]"
-          width="200"
+          className="absolute bottom-[13%] lg:bottom-[10%] right-[5%] z-[11] w-[100px] lg:w-[200px] opacity-50"
           fill="#00B4B8"
         />
       ),
@@ -302,8 +291,7 @@ export default function Home() {
     {
       component: (
         <Wave
-          className="absolute bottom-[7%] right-[-1%] z-[11]"
-          width="200"
+          className="absolute bottom-[10%] lg:bottom-[7%] right-[-1%] z-[11] w-[100px] lg:w-[200px] opacity-50"
           fill="#FFCF3F"
         />
       ),
@@ -311,8 +299,7 @@ export default function Home() {
     {
       component: (
         <Group1
-          className="absolute bottom-[5%] left-[-1%] z-[11]"
-          width="170"
+          className="absolute bottom-[10%] lg:bottom-[5%] left-[-1%] z-[11]  w-[100px] lg:w-[200px] opacity-50"
           fill="#FFCF3F"
         />
       ),
@@ -381,13 +368,13 @@ export default function Home() {
   let aboutSecondScribble = [
     {
       component: (
-        <UpArrows className="absolute bottom-[0px] right-0 z-[1] opacity-30 lg:opacity-100" />
+        <UpArrows className="absolute bottom-[0px] right-0 z-[1] opacity-30 2xl:opacity-100" />
       ),
     },
     {
       component: (
         <Group2
-          className="absolute bottom-[5%] left-[2%] z-[1] opacity-30 lg:opacity-100"
+          className="absolute bottom-[5%] left-[2%] z-[1] opacity-30 hidden md:block 2xl:opacity-100"
           height="250"
         />
       ),
@@ -395,18 +382,6 @@ export default function Home() {
   ];
 
   let aboutCards = [
-    {
-      title: "Studens",
-      description:
-        "Ignite your curiosity and ambition. Discover the practical steps to turn your ideas into reality through hands-on workshops, non-tech explorations, and insights into collaboration models.",
-      icon: <ScholarCap />,
-    },
-    {
-      title: "Wantrepreneurs",
-      description:
-        "Take your entrepreneurial aspirations to the next level. Learn how to structure and refine your ideas, connect with industry leaders, and gain insights from successful startup stories.",
-      icon: <Rocket />,
-    },
     {
       title: "Startups",
       description:
@@ -420,40 +395,22 @@ export default function Home() {
       icon: <Clock />,
     },
     {
-      title: "Educators",
+      title: "Educators/Studens",
       description:
         "Empower the next generation of entrepreneurs. Explore collaborative innovation models, engage in tech-focused learning sessions, and become a catalyst for fostering entrepreneurial spirit.",
       icon: <Clock />,
     },
     {
-      title: "Returning expatriates",
+      title: "Gulf Returnees/NREs",
       description:
         "Leverage your global expertise in Kerala's evolving business landscape. Connect with investment opportunities, share your insights, and contribute to the growth of the region.",
-      icon: <Clock />,
-    },
-    {
-      title: "Family/Kids",
-      description:
-        "Immerse yourself in the magic of ScaleUp Conclave. Enjoy entertaining shows, creative workshops, and a cooking competition. Experience the fusion of learning and fun for families.",
-      icon: <Clock />,
-    },
-    {
-      title: "Venture Capitalists & Investors",
-      description:
-        "Secure exclusive access to groundbreaking concepts and budding startups. Discover high-potential ventures firsthand. Connect with innovative startups and explore investment possibilities at the forefront of business innovation.",
-      icon: <Clock />,
-    },
-    {
-      title: "Business Mentors & Industry Veterans",
-      description:
-        "Stay ahead of the curve by witnessing the birth of groundbreaking ideas. Guide the next wave of entrepreneurs. Connect with eager minds, offer your expertise, and contribute to the growth of promising startups.",
       icon: <Clock />,
     },
   ];
 
   let highLighEvents = [
     {
-      title: "Students Track",
+      title: "Students & Wantrepreneurs Track",
       card: [
         {
           image: discussion.src,
@@ -463,76 +420,100 @@ export default function Home() {
         },
         {
           image: code.src,
-          title: "Idea Pitching",
+          title: "3D Printing Workshop ",
           description:
             "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
         },
         {
           image: start.src,
-          title: "3D Printing Workshop          ",
+          title: "Arduino Workshop",
           description:
             "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
         },
         {
           image: hackathon.src,
-          title: "AI & ML Workshop",
+          title: "STEM/Paper Circuits Workshop",
+          description:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
+        },
+        {
+          image: hackathon.src,
+          title: "Live Idea Pitching ",
+          description:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
+        },
+        {
+          image: hackathon.src,
+          title: "AI & Ml Workshop",
           description:
             "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
         },
       ],
     },
     {
-      title: " Startup Track",
+      title: " Startups Track",
       card: [
         {
           image: discussion.src,
-          title: "Panel Discussion",
+          title: "Startup Stories",
           description:
             "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
         },
         {
           image: code.src,
+          title: "Let's talk about D2C  by CEO KSUM",
+          description:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
+        },
+        {
+          image: hackathon.src,
           title: "Mrs & Mr Startup",
           description:
             "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
         },
-        {
-          image: hackathon.src,
-          title: "Let's talk about Startup ",
-          description:
-            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
-        },
       ],
     },
     {
-      title: " Local Business Owners/SMEs Track",
+      title: "Local Business/SMEs",
       card: [
         {
           image: discussion.src,
-          title: "Kerala to the Globe",
+          title: "Panel Discussion: Opportunities and Resolutions for SMEs",
           description:
             "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
         },
         {
           image: code.src,
+          title: "Panel Discussion : Kerala to the Globe",
+          description:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
+        },
+        {
+          image: hackathon.src,
           title: "How to Sell Online",
           description:
             "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
         },
         {
           image: hackathon.src,
-          title: "Branding Workshop",
+          title: "Session about Food Processing",
           description:
             "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
         },
       ],
     },
     {
-      title: "NRE/Investors ",
+      title: "NRE/Investors",
       card: [
         {
           image: discussion.src,
           title: "Investors Clinic",
+          description:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
+        },
+        {
+          image: discussion.src,
+          title: "Session about Company formation",
           description:
             "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
         },
@@ -549,19 +530,13 @@ export default function Home() {
         },
         {
           image: code.src,
-          title: "Knitting Workshop",
+          title: "Perfume Making workshop",
           description:
             "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
         },
         {
           image: hackathon.src,
-          title: "Cookathon",
-          description:
-            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
-        },
-        {
-          image: colors.src,
-          title: "Arduino Workshop",
+          title: "Cookathon - Food Product Pitching",
           description:
             "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quia magnam debitis maxime sed. Error, odit id iusto, hic nobis mollitia incidunt deserunt, expedita suscipit exercitationem aspernatur nihil sunt consequuntur?",
         },
@@ -763,53 +738,23 @@ export default function Home() {
         <div className="custom-container relative">
           <div className="py-[100px]">
             <h1 className="title purple-before text-[36px]">ScaleUp who</h1>
-            {/* <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-x-4 "> */}
-            <Slider
-              centeredSlides={true}
-              pagination={{
-                clickable: true,
-              }}
-              autoplay={{
-                delay: 3000,
-                pauseOnMouseEnter: true,
-              }}
-              // slidesPerView={4}
-              paginationComponent={<SliderSidePagination />}
-              className="relative"
-              loop={true}
-              modules={[Autoplay]}
-              breakpoints={{
-                640: {
-                  slidesPerView: 2,
-                  spaceBetween: 30,
-                },
-
-                1024: {
-                  slidesPerView: 4,
-                  spaceBetween: 50,
-                },
-              }}
-            >
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-x-4 ">
               {aboutCards.map((card, index) => (
-                <SwiperSlide key={index}>
-                  <div className={`${Styles["about-card"]} h-full`}>
-                    {card.icon}
-                    <div className="py-4 h-full">
-                      <h1 className={Styles["card-heading"]}>{card.title}</h1>
-                      <p className="mb-4 line-clamp-3">{card.description}</p>
-                    </div>
+                <div className={`${Styles["about-card"]} `} key={index}>
+                  {card.icon}
+                  <div className="py-4 h-full">
+                    <h1 className={Styles["card-heading"]}>{card.title}</h1>
+                    <p className="mb-4 ">{card.description}</p>
                   </div>
-                </SwiperSlide>
+                </div>
               ))}
-            </Slider>
-
-            {/* </div> */}
+            </div>
           </div>
         </div>
         <Scribbles scribbles={aboutScribble} />
       </div>
       <div
-        className={`${Styles["scaleup-container"]} py-[100px] lg:h-[75vh] relative  bg-primary-purple`}
+        className={`${Styles["scaleup-container"]} py-[100px]  relative  bg-primary-purple`}
       >
         <div className="custom-container grid grid-cols-1 lg:grid-cols-2 gap-x-8 ">
           <div className="z-[2]">
@@ -817,10 +762,11 @@ export default function Home() {
               SCALEUP CONCLAVE 2024
             </h1>
             <p className="text-white mb-5">
-              Is the first edition of an annual celebratory platform that fuses
-              you with entrepreneurs, investors, professionals, and business
-              enthusiasts for a comprehensive two-day event. It promotes
-              inspiration, knowledge exchange, and networking opportunities.
+              IIt is the first edition of an annual celebratory platform that
+              fuses you with entrepreneurs, investors, professionals, and
+              business enthusiasts for a comprehensive two-day event. It
+              promotes inspiration, knowledge exchange, and networking
+              opportunities.
             </p>
             <p className="text-white mb-4">
               Bringing together innovation, expertise, and entrepreneurial
@@ -881,17 +827,13 @@ export default function Home() {
         {highLighEvents.map((event, key) => (
           <div className="py-[50px] custom-container" key={key}>
             <>
-              <h1
-                className={` title wave-before ${
-                  key == 4 ? "text-[30px]" : "text-[36px]"
-                }`}
-              >
+              <h1 className={` title wave-before text-[25px] lg:text-[36px]`}>
                 {event.title}
               </h1>
               <div className="grid grid-cols-12 gap-x-6 mt-[20px]">
                 {event.card.map((card, key) => (
                   <div
-                    className="bg-white border shadow-lg rounded-xl p-4 col-span-12 lg:col-span-4 mb-5"
+                    className="bg-white border shadow-lg rounded-xl p-4 col-span-12 md:col-span-6 lg:col-span-4 mb-5"
                     key={key}
                   >
                     <div className=" items-end " key={key}>

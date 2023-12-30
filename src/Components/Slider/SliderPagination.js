@@ -12,7 +12,7 @@ const SliderPagination = ({ slideLength }) => {
             <div
               role="button"
               key={slideIndex}
-              className={`px-3 py-2 border  rounded-lg font-semibold`}
+              className={`px-3 py-1 border  rounded-lg font-semibold`}
               onClick={() => swiper.slideTo(slideIndex)}
             >
               {slideIndex + 1}

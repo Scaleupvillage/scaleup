@@ -9,7 +9,7 @@ import SliderPagination from "./SliderPagination";
 const Slider = ({ slides, children, paginationComponent, ...props }) => {
   return (
     <div>
-      <Swiper {...props} >
+      <Swiper {...props}>
         {slides && slides.length > 0
           ? slides.map((slide, index) => (
               <SwiperSlide key={index}>{slide()}</SwiperSlide>

@@ -4,7 +4,7 @@ import Styles from "@/pages/index.module.scss";
 import Navbar from "@/Components/Layout/Navbar";
 const exo2 = Exo_2({ subsets: ["latin"], adjustFontFallback: false });
 
-import { EffectFade, Autoplay, Pagination } from "swiper/modules";
+import { EffectFade, Autoplay } from "swiper/modules";
 import Slider from "@/Components/Slider";
 import dynamic from "next/dynamic";
 import Image from "next/image";
@@ -44,19 +44,41 @@ import hackathon from "@/assets/images/hackathon.png";
 import discussion from "@/assets/images/discussion.png";
 import code from "@/assets/images/code.png";
 import start from "@/assets/images/start.png";
-import colors from "@/assets/images/color.jpeg";
 import slider1 from "@/assets/images/slider1.png";
 import slider2 from "@/assets/images/slider2.png";
 import slider3 from "@/assets/images/slider3.png";
 import slider4 from "@/assets/images/slider4.png";
 import LocatioIcon from "@/Components/Icons/LocatioIcon";
-import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 import Register from "@/Components/Register";
 import Line from "@/Components/Icons/scribbles/Line";
 import Arrow from "@/Components/Icons/scribbles/Arrow";
 import Link from "next/link";
 import partnerImage from "@/assets/images/partner.png";
 import { SwiperSlide } from "swiper/react";
+import Aeroplane from "@/Components/Icons/Aeroplane";
+import open from "@/assets/images/partners/open.png";
+import malabar from "@/assets/images/partners/malabar.png";
+import aroha from "@/assets/images/partners/aroha.png";
+import triplei from "@/assets/images/partners/triplei.png";
+import tharacart from "@/assets/images/partners/tharacart.png";
+import flora from "@/assets/images/partners/flora.png";
+import kdisc from "@/assets/images/partners/kdisc.png";
+import id from "@/assets/images/partners/id.png";
+import ksum from "@/assets/images/partners/ksum.png";
+import ksidc from "@/assets/images/partners/ksidc.png";
+import morfinvirsity from "@/assets/images/partners/morfinvirsity.png";
+import bbholdings from "@/assets/images/partners/bbholdings.png";
+import kkem from "@/assets/images/partners/kkem.png";
+import genrobotics from "@/assets/images/partners/genrobotics.png";
+import safari from "@/assets/images/partners/safari.png";
+import zoul from "@/assets/images/partners/zoul.png";
+import meeran from "@/assets/images/partners/meeran.png";
+import edroots from "@/assets/images/partners/edroots.png";
+import duk from "@/assets/images/partners/duk.png";
+import apk from "@/assets/images/partners/apk.png";
+import asap from "@/assets/images/partners/asap.png";
+import xpresso from "@/assets/images/partners/xpresso.png";
+import anar from "@/assets/images/partners/anar.png";
 const Countdown = dynamic(() => import("@/Components/Counter"), { ssr: false });
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 export default function Home() {
@@ -403,7 +425,7 @@ export default function Home() {
       title: "Gulf Returnees/NREs",
       description:
         "Leverage your global expertise in Kerala's evolving business landscape. Connect with investment opportunities, share your insights, and contribute to the growth of the region.",
-      icon: <Clock />,
+      icon: <Aeroplane fill="#f0f2f6" stroke="#7A0996" />,
     },
   ];
 
@@ -542,6 +564,31 @@ export default function Home() {
       ],
     },
   ];
+  let partners = [
+    open,
+    malabar,
+    aroha,
+    triplei,
+    tharacart,
+    flora,
+    kdisc,
+    id,
+    ksum,
+    ksidc,
+    morfinvirsity,
+    bbholdings,
+    kkem,
+    genrobotics,
+    safari,
+    zoul,
+    meeran,
+    edroots,
+    duk,
+    apk,
+    asap,
+    xpresso,
+    anar,
+  ];
 
   const scheduleTab = [
     {
@@ -614,7 +661,9 @@ export default function Home() {
         </>
       )}
 
-      <div className={`${Styles["main-container"]} relative overflow-hidden`}>
+      <div
+        className={`${Styles["main-container"]} relative overflow-hidden main-section`}
+      >
         <div className="relative">
           <Navbar />
 
@@ -709,11 +758,11 @@ export default function Home() {
                 className=" w-full h-[50px] hidden lg:block"
                 preserveAspectRatio="none"
               />
-              <div className="text-[25px] lg:text-[35px] text-primary-purple flex justify-center items-center">
-                <LocatioIcon fill="#803e97" width="90" />
+              <div className="text-[20px] lg:text-[35px] text-primary-purple flex justify-center items-center mt-3">
+                <LocatioIcon fill="#803e97" className="w-[25px] md:w-[40px]" />
                 <Link
                   href="/"
-                  className=" font-semibold flex text-center underline "
+                  className=" font-semibold underline text-center w-[75%] ml-4 md:ml-0"
                 >
                   Shifa Convention Center Perinthalmanna
                 </Link>
@@ -758,7 +807,7 @@ export default function Home() {
               SCALEUP CONCLAVE 2024
             </h1>
             <p className="text-white mb-5">
-              IIt is the first edition of an annual celebratory platform that
+              It is the first edition of an annual celebratory platform that
               fuses you with entrepreneurs, investors, professionals, and
               business enthusiasts for a comprehensive two-day event. It
               promotes inspiration, knowledge exchange, and networking
@@ -819,8 +868,10 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="py-[100px] custom-container">
-        <hi className="title wave-before uppercase text-[36px]">Highlighted Programs</hi>
+      <div className="py-[100px] custom-container flex justify-center items-center flex-col">
+        <hi className="title wave-before uppercase text-[36px] ">
+          Highlighted Programs
+        </hi>
         {highLighEvents.map((event, key) => (
           <div className="py-[50px] custom-container" key={key}>
             <>
@@ -1139,27 +1190,40 @@ export default function Home() {
           Our partners
         </h1>
         <Slider
-          slidesPerView={4}
+          spaceBetween={100}
+          breakpoints={{
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            768: {
+              slidesPerView: 4,
+              spaceBetween: 40,
+            },
+            1024: {
+              slidesPerView: 5,
+              spaceBetween: 50,
+            },
+          }}
           loop={true}
+          centeredSlides="true"
           modules={[Autoplay]}
-          autoplay={{ delay: 3000 }}
-          className="mt-5"
+          autoplay={{ delay: 500 }}
+          className="mt-5 h-[300px]"
         >
-          <SwiperSlide>
-            <Image src={partnerImage.src} width="100" height="100" alt="" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image src={partnerImage.src} width="100" height="100" alt="" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image src={partnerImage.src} width="100" height="100" alt="" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image src={partnerImage.src} width="100" height="100" alt="" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image src={partnerImage.src} width="100" height="100" alt="" />
-          </SwiperSlide>
+          {partners.map((partner, index) => (
+            <SwiperSlide key={index} className="">
+              <div className="h-full flex justify-center items-center">
+                <Image
+                  src={partner.src}
+                  className="w-[300px] h-auto"
+                  width="300"
+                  height="200"
+                  alt=""
+                />
+              </div>
+            </SwiperSlide>
+          ))}
         </Slider>
       </div>
       <Footer />

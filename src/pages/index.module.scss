@@ -48,7 +48,7 @@
   svg {
     @apply fill-primary-purple;
   }
-  &:hover {
+  &:not(:last-child):hover {
     @apply bg-primary-purple;
     .card-heading,
     p,
@@ -58,6 +58,24 @@
     }
     svg {
       fill: #f0f2f6 !important;
+    }
+  }
+  &:last-child {
+    svg {
+      fill: #f0f2f6 !important;
+    }
+  }
+  &:last-child:hover {
+    @apply bg-primary-purple;
+    .card-heading,
+    p,
+    svg,
+    .card-link {
+      color: #f0f2f6 !important;
+    }
+    svg {
+      stroke: #f0f2f6 !important;
+      fill: #803e97 !important;
     }
   }
 }

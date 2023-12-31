@@ -25,20 +25,38 @@ const Footer = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const regBtn = document.querySelector(`.reg-now-btn`);
-      const regBtnTop = document
-        .querySelector(`.reg-now-btn`)
-        .getBoundingClientRect().bottom;
-      const footer = document.querySelector(`.footer`).getBoundingClientRect();
-      console.log(footer.top);
-      console.log(regBtnTop);
-      console.log(window.scrollY);
-      if (regBtn) {
-        regBtn.classList.toggle(
-          "hidden",
-          window.scrollY < window.screen.height || regBtnTop > footer.top
-        );
-      }
+      const floatingElement = document.querySelector(`.reg-now-btn`);
+      const header = document.querySelector(`.main-section`);
+      const footer = document.querySelector(`.footer`);
+
+      let lastScrollPosition = 0;
+
+      window.addEventListener("scroll", () => {
+        const currentScrollPosition = window.scrollY || window.pageYOffset;
+
+        if (currentScrollPosition > lastScrollPosition) {
+          // Scrolling down
+          if (
+            currentScrollPosition < header.clientHeight &&
+            currentScrollPosition + window.innerHeight >
+              document.body.offsetHeight - footer.clientHeight
+          ) {
+            floatingElement.style.display = "none";
+          }
+        } else {
+          if (
+            currentScrollPosition > header.clientHeight &&
+            currentScrollPosition + window.innerHeight <
+              document.body.offsetHeight - footer.clientHeight
+          ) {
+            floatingElement.style.display = "none";
+          } else floatingElement.style.display = "block";
+          // Scrolling up
+        }
+
+        lastScrollPosition =
+          currentScrollPosition <= 0 ? 0 : currentScrollPosition;
+      });
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -57,7 +75,7 @@ const Footer = () => {
               SCALEUP CONCLAVE 2024
             </h1>
             <p className="text-[#838383] mb-4">
-              IIt is the first edition of an annual celebratory platform that
+              It is the first edition of an annual celebratory platform that
               fuses you with entrepreneurs, investors, professionals, and
               business enthusiasts for a comprehensive two-day event. It
               promotes inspiration, knowledge exchange, and networking

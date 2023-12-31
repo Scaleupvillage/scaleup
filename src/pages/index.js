@@ -3,7 +3,8 @@ import { Exo_2 } from "next/font/google";
 import Styles from "@/pages/index.module.scss";
 import Navbar from "@/Components/Layout/Navbar";
 const exo2 = Exo_2({ subsets: ["latin"], adjustFontFallback: false });
-
+import Link from "next/link";
+import { SwiperSlide } from "swiper/react";
 import { EffectFade, Autoplay } from "swiper/modules";
 import Slider from "@/Components/Slider";
 import dynamic from "next/dynamic";
@@ -28,12 +29,8 @@ import Gopinath from "@/assets/images/speakers/Gopinath.png";
 import NavasMeeran from "@/assets/images/speakers/NavasMeeran.png";
 import MuhammedMusthafa from "@/assets/images/speakers/MuhammedMusthafa.png";
 import Calendar from "@/Components/Icons/Calendar";
-import Wave from "@/Components/Icons/scribbles/Wave";
 import Scribbles from "@/Components/Scribbles";
-import Group1 from "@/Components/Icons/scribbles/Group1";
-import Group2 from "@/Components/Icons/scribbles/Group";
-import ArrowHead from "@/Components/Icons/scribbles/ArrowHead";
-import Group3 from "@/Components/Icons/scribbles/Group3";
+
 import ScholarCap from "@/Components/Icons/ScholarCap";
 import Speaker from "@/Components/Icons/Speaker";
 import Clock from "@/Components/Icons/Clock";
@@ -50,11 +47,22 @@ import slider3 from "@/assets/images/slider3.png";
 import slider4 from "@/assets/images/slider4.png";
 import LocatioIcon from "@/Components/Icons/LocatioIcon";
 import Register from "@/Components/Register";
+
+// speaker bg
+import bg1 from "@/assets/images/speakers/bg/bg1.png";
+import bg2 from "@/assets/images/speakers/bg/bg2.png";
+import bg3 from "@/assets/images/speakers/bg/bg3.png";
+import bg4 from "@/assets/images/speakers/bg/bg4.png";
+// elemets
 import Line from "@/Components/Icons/scribbles/Line";
 import Arrow from "@/Components/Icons/scribbles/Arrow";
-import Link from "next/link";
-import partnerImage from "@/assets/images/partner.png";
-import { SwiperSlide } from "swiper/react";
+import Group3 from "@/Components/Icons/scribbles/Group3";
+import Group1 from "@/Components/Icons/scribbles/Group1";
+import Group2 from "@/Components/Icons/scribbles/Group";
+import ArrowHead from "@/Components/Icons/scribbles/ArrowHead";
+import Wave from "@/Components/Icons/scribbles/Wave";
+
+// partners
 import Aeroplane from "@/Components/Icons/Aeroplane";
 import open from "@/assets/images/partners/open.png";
 import malabar from "@/assets/images/partners/malabar.png";
@@ -202,21 +210,33 @@ export default function Home() {
       image: Minister.src,
       role: "Minister for Industries, Law and Coir in the Government of Kerala",
       name: "P Rajeev",
+      bg: bg1.src,
+      nameContainerClassName:
+        "w-full  bg-primary-purple h-[100px] px-8 py-2 rounded-tr-full rounded-br-full text-white flex justify-center items-center flex-col",
     },
     {
       image: Kunjalikutty.src,
       role: "MLA Vengara",
       name: "P. K. Kunhalikutty",
+      bg: bg2.src,
+      nameContainerClassName:
+        "w-full  bg-primary-blue h-[100px] px-8 py-2 rounded-tl-full rounded-bl-full text-white flex justify-center items-center flex-col",
     },
     {
       image: MLA.src,
       role: "MLA Perinthalmanna",
       name: "Najeeb Kanthapuram",
+      bg: bg3.src,
+      nameContainerClassName:
+        "w-full  bg-primary-purple h-[100px] px-8 py-2 rounded-tr-full rounded-br-full text-white flex justify-center items-center flex-col",
     },
     {
       image: AnishAchuthan.src,
       role: "Cofounder & CEO, Open Financial Technologies",
       name: "Anish Achuthan",
+      bg: bg4.src,
+      nameContainerClassName:
+        "w-full  bg-primary-cyan h-[100px] px-8 py-2 rounded-tl-full rounded-bl-full text-white flex justify-center items-center flex-col",
     },
     {
       image: ShamlalAhamad.src,
@@ -844,24 +864,31 @@ export default function Home() {
         <div className="custom-container">
           <h1 className="title text-[36px] wave-before">OUR SPEAKERS</h1>
         </div>
-        <div className=" grid grid-cols-1 lg:grid-cols-5 ">
+        <div className=" grid grid-cols-1 lg:grid-cols-4 ">
           {speakers.map((speaker, index) => (
             <div
-              className={`relative w-full ${Styles["speaker"]} h-[500px]`}
+              className={`relative w-full ${Styles["speaker"]} h-[400px]`}
               key={index}
+              style={{
+                background: `url(${speaker.bg})`,
+                backgroundSize: "100% 100%",
+                backgroundRepeat: "no-repeat",
+              }}
             >
               <Image
                 width={350}
-                height={500}
+                height={5}
                 src={speaker.image}
                 className="w-full"
                 alt="speaker"
               />
-              <div className="w-full absolute bottom-0 bg-[#ffffff] h-[100px] px-8 py-2">
-                <h1 className="text-primary-purple font-bold text-lg">
-                  {speaker.name}
-                </h1>
-                <p className="text-primary-purple text-sm ">{speaker.role}</p>
+              <div className="absolute bottom-0 left-0 w-full ">
+                <div className={speaker.nameContainerClassName}>
+                  <h1 className=" font-bold text-2xl text-center">
+                    {speaker.name}
+                  </h1>
+                  <p className=" text-sm text-center">{speaker.role}</p>
+                </div>
               </div>
             </div>
           ))}
@@ -903,12 +930,18 @@ export default function Home() {
                           to share and absorb industry insights
                         </p>
                       </div>
-                      <button
+                      {/* <button
                         type="button"
                         className="rounded-full uppercase bg-primary-purple text-white w-1/2 py-2 mt-4"
                       >
                         JOIN NOW
-                      </button>
+                      </button> */}
+                      <Link
+                        href=""
+                        className="rounded-full capitalize hover:bg-primary-purple hover:text-white text-primary-purple w-1/2 py-2 mt-4 text-center font-semibold"
+                      >
+                        Learn More
+                      </Link>
                     </div>
                   </div>
                 ))}
@@ -926,7 +959,7 @@ export default function Home() {
               Day 1
             </h1>
             <h1
-              className=" absolute right-0 bottom-[-10px] text-[30px] lg:text-[45px] font-semibold
+              className=" absolute right-0 bottom-0 text-[30px] lg:text-[45px] font-semibold
              text-gray-400 max-h-[50px] overflow-hidden"
             >
               2 Feb
@@ -937,7 +970,7 @@ export default function Home() {
               Day 2
             </h1>
             <h1
-              className=" absolute right-0 bottom-[-10px] text-[30px] lg:text-[45px] font-semibold
+              className=" absolute right-0 bottom-0 text-[30px] lg:text-[45px] font-semibold
              text-gray-400 max-h-[50px] overflow-hidden"
             >
               3 Feb

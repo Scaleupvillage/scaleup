@@ -98,21 +98,21 @@
 .speaker {
   overflow: hidden;
 
-  &:hover {
-    div {
-      @apply bg-primary-purple;
-      h1 {
-        color: #f0f2f6;
-      }
-      p {
-        color: #f0f2f6;
-      }
-    }
-    img {
-      scale: 1.2;
-      transition: all 0.2s ease-in-out;
-    }
-  }
+  // &:hover {
+  //   div {
+  //     @apply bg-primary-purple;
+  //     h1 {
+  //       color: #f0f2f6;
+  //     }
+  //     p {
+  //       color: #f0f2f6;
+  //     }
+  //   }
+  //   img {
+  //     scale: 1.2;
+  //     transition: all 0.2s ease-in-out;
+  //   }
+  // }
 }
 
 .registration-bg {

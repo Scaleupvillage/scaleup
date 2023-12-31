@@ -55,7 +55,7 @@ import Register from "@/Components/Register";
 import Line from "@/Components/Icons/scribbles/Line";
 import Arrow from "@/Components/Icons/scribbles/Arrow";
 import Link from "next/link";
-import SliderSidePagination from "@/Components/SliderSidePagination";
+import partnerImage from "@/assets/images/partner.png";
 import { SwiperSlide } from "swiper/react";
 const Countdown = dynamic(() => import("@/Components/Counter"), { ssr: false });
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
@@ -83,6 +83,7 @@ export default function Home() {
           <button
             type="button"
             className="bg-primary-cyan shadow-lg shadow-primary-cyan px-8 py-3 rounded-full text-white"
+            onClick={() => setOpenModal(true)}
           >
             Register Now
           </button>
@@ -103,7 +104,7 @@ export default function Home() {
           <h1 className="text-[14px] lg:text-[35px] xl:text-[42px]font-medium leading-none text-white uppercase">
             Fostering ScaleUp Village:
           </h1>
-          <h1 className="text-white text-[20px] lg:text-[60px] xl:text-[70px] font-extrabold uppercase text-center">
+          <h1 className="text-white text-[20px] lg:text-[60px] xl:text-[65px] font-extrabold uppercase text-center">
             India’s First D2C Industrial Park
           </h1>
           <button
@@ -309,8 +310,7 @@ export default function Home() {
     {
       component: (
         <Wave
-          className="absolute top-[11%] left-[-4%]"
-          width="200"
+          className="absolute top-[7%] lg:top-[11%] left-[-4%]  w-[100px] lg:w-[200px]"
           fill="#CB8DF7"
         />
       ),
@@ -318,8 +318,7 @@ export default function Home() {
     {
       component: (
         <Wave
-          className="absolute top-[5%] left-[2%]"
-          width="200"
+          className="absolute top-[5%] lg:top-[5%] left-[5%] lg:left-[2%] w-[100px] lg:w-[200px]"
           fill="#FFCF3F"
         />
       ),
@@ -386,19 +385,19 @@ export default function Home() {
       title: "Startups",
       description:
         "Accelerate your growth journey. Gain expert insights, explore global scaling opportunities, and connect with potential investors. Participate in pitch competitions to elevate your startup's visibility",
-      icon: <Speaker />,
+      icon: <Rocket />,
     },
     {
       title: "Local Business Owners/SMEs",
       description:
         "Unlock strategies for scaling your local business. Engage in tailored workshops, MSME-focused sessions, and network with like-minded entrepreneurs to propel your business forward.",
-      icon: <Clock />,
+      icon: <Speaker />,
     },
     {
       title: "Educators/Studens",
       description:
         "Empower the next generation of entrepreneurs. Explore collaborative innovation models, engage in tech-focused learning sessions, and become a catalyst for fostering entrepreneurial spirit.",
-      icon: <Clock />,
+      icon: <ScholarCap />,
     },
     {
       title: "Gulf Returnees/NREs",
@@ -597,10 +596,6 @@ export default function Home() {
     },
   ];
   const targetDate = new Date("2024-02-02T00:00:00");
-  const containerStyle = {
-    width: "100%",
-    height: "400px",
-  };
 
   const handleClick = () => {
     setOpenModal(true);
@@ -612,7 +607,7 @@ export default function Home() {
       {openModal && (
         <>
           <div
-            className="fixed top-0 left-0 w-full h-screen justify-center z-50 bg-black bg-opacity-50 z-50 overflow-hidden"
+            className="fixed top-0 left-0 w-full h-screen justify-center z-[100] bg-black bg-opacity-50  overflow-hidden"
             onClick={() => setOpenModal(false)}
           ></div>
           <Register setShow={setOpenModal} />
@@ -700,7 +695,7 @@ export default function Home() {
       {/* COUNTER  */}
       <div className={`${Styles["counter-bg"]} md:h-[50vh]`}>
         <div className="custom-container h-full py-[70px] flex justify-center items-center">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12">
+          <div className="grid grid-cols-1 xl:grid-cols-2 xl:gap-x-12">
             <div className="relative">
               <div className="text-[30px] lg:text-[45px] text-primary-purple flex justify-center items-center">
                 <div className="bg-primary-purple px-5 font-bold rounded-md mr-4">
@@ -715,6 +710,7 @@ export default function Home() {
                 preserveAspectRatio="none"
               />
               <div className="text-[25px] lg:text-[35px] text-primary-purple flex justify-center items-center">
+                <LocatioIcon fill="#803e97" width="90" />
                 <Link
                   href="/"
                   className=" font-semibold flex text-center underline "
@@ -723,8 +719,8 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-            <div className="z-[10] relative flex justify-center items-center flex-col mt-12 lg:mt-0">
-              <h1 className="text-black font-bold text-[16px] md:text-[24px] mb-[20px] lg:mb-0">
+            <div className="z-[10] relative flex justify-center items-center flex-col mt-12 xl:mt-0">
+              <h1 className="text-black font-bold text-[16px] md:text-[24px] mb-[20px] xl:mb-0">
                 Gear up for the ultimate business festival
               </h1>
               <Countdown targetDate={targetDate} />
@@ -824,6 +820,7 @@ export default function Home() {
       </div>
 
       <div className="py-[100px] custom-container">
+        <hi className="title wave-before uppercase text-[36px]">Highlighted Programs</hi>
         {highLighEvents.map((event, key) => (
           <div className="py-[50px] custom-container" key={key}>
             <>
@@ -1137,6 +1134,34 @@ export default function Home() {
           </div>
         </div>
       </div> */}
+      <div className="py-[100px] custom-container">
+        <h1 className="title wave-before uppercase text-[36px]">
+          Our partners
+        </h1>
+        <Slider
+          slidesPerView={4}
+          loop={true}
+          modules={[Autoplay]}
+          autoplay={{ delay: 3000 }}
+          className="mt-5"
+        >
+          <SwiperSlide>
+            <Image src={partnerImage.src} width="100" height="100" alt="" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Image src={partnerImage.src} width="100" height="100" alt="" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Image src={partnerImage.src} width="100" height="100" alt="" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Image src={partnerImage.src} width="100" height="100" alt="" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Image src={partnerImage.src} width="100" height="100" alt="" />
+          </SwiperSlide>
+        </Slider>
+      </div>
       <Footer />
     </div>
   );

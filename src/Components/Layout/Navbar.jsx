@@ -1,14 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import Style from "./layout.module.scss";
 import { motion, useCycle } from "framer-motion";
 import { useDimensions } from "./useDimensions";
 import logo from "@/assets/images/logo-white-yellow.png";
-import Youtube from "../Icons/download (1).png";
-import LinkedIn from "../Icons/download.png";
+import Youtube from "../Icons/Youtube";
 import Instagram from "../Icons/Instagram";
 import Facebook from "../Icons/Facebook";
+import Linkedin from "../Icons/Linkedin";
 const Navbar = () => {
   const containerRef = useRef(null);
   const [isOpen, toggleOpen] = useCycle(false, true);
@@ -48,6 +48,7 @@ const Navbar = () => {
     closed: {
       height: 0,
       opacity: 0,
+      display: "none",
       transition: {
         type: "spring",
         stiffness: 400,
@@ -55,19 +56,42 @@ const Navbar = () => {
       },
     },
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const navbar = document.querySelector(`.info-nav`);
+      if (navbar) {
+        navbar.classList.toggle("fixed", window.scrollY > 0);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
     <div className="absolute w-full z-10">
-      <div className="  bg-white  flex justify-between  px-3 lg:px-[70px] items-center py-3 ">
-        <div className="flex  gap-x-3 lg:gap-6 items-center text-[10px] lg:text-[16px]">
-          <p className="flex justify-start">info@scaleupconclave.com</p>
+      <div className="  bg-white shadow-md w-full flex justify-between  px-3 lg:px-[70px] items-center py-3 info-nav">
+        <div className="flex   md:gap-x-6 lg:gap-x-6 items-center text-[10px] lg:text-[16px]">
+          <p className="flex justify-start ">info@scaleupconclave.com</p>
           <p>|</p>
-          <p className="lg:text-[15px]">9048170077</p>
+          <p className="lg:text-[15px] hidden md:block">9048170077</p>
         </div>
-        <div className="flex gap-x-3 lg:gap-x-6">
-          <Instagram fill="#003B6D" width="20" />
-          <Facebook fill="#003B6D" width="20" />
-          <Image src={Youtube} className="w-[20px] h-[20px]" />
-          <Image src={LinkedIn} className="w-[20px] h-[20px]" />
+        <div className="flex justify-center items-center gap-x-3 lg:gap-x-4">
+          <Link href="">
+            <Instagram fill="#003B6D" stroke="#003B6D" width="30" />
+          </Link>
+          <Link href="">
+            <Facebook fill="#003B6D" stroke="#003B6D" width="30" />
+          </Link>
+          <Link href="">
+            <Youtube fill="#003B6D" stroke="#003B6D" inner="white" width="30" />
+          </Link>
+          <Link href="">
+            <Linkedin fill="#003B6D" stroke="#003B6D" width="30" />
+          </Link>
         </div>
       </div>
       <div className=" p-5 justify-between items-center h-[20vh] hidden md:flex custom-container">

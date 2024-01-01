@@ -18,9 +18,9 @@ export default async function handler(req, res) {
   };
 
   const { method } = req;
-  const contactNumber = req.query.number;
+  const contactNumber = reg.body;
   switch (method) {
-    case "GET":
+    case "POST":
       sentVerificationOtp(contactNumber);
       break;
   }

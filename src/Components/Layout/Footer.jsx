@@ -31,31 +31,28 @@ const Footer = () => {
 
       let lastScrollPosition = 0;
 
-      window.addEventListener("scroll", () => {
-        const currentScrollPosition = window.scrollY || window.pageYOffset;
+      window.addEventListener("scroll", function () {
+        const currentScrollPosition =
+          window.pageYOffset || document.documentElement.scrollTop;
 
         if (currentScrollPosition > lastScrollPosition) {
           // Scrolling down
-          if (
-            currentScrollPosition < header.clientHeight &&
-            currentScrollPosition + window.innerHeight >
-              document.body.offsetHeight - footer.clientHeight
-          ) {
-            floatingElement.style.display = "none";
-          }
-        } else {
           if (
             currentScrollPosition > header.clientHeight &&
             currentScrollPosition + window.innerHeight <
               document.body.offsetHeight - footer.clientHeight
           ) {
+            floatingElement.style.display = "block";
+          } else {
             floatingElement.style.display = "none";
-          } else floatingElement.style.display = "block";
+          }
+        } else {
           // Scrolling up
+          floatingElement.style.display = "block";
         }
 
         lastScrollPosition =
-          currentScrollPosition <= 0 ? 0 : currentScrollPosition;
+          currentScrollPosition <= 0 ? 0 : currentScrollPosition; // For Mobile or negative scrolling
       });
     };
 

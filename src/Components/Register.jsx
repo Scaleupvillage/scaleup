@@ -17,8 +17,25 @@ const Register = ({ setShow }) => {
     category: "",
     compony: "",
     otp: "",
+    district:""
   });
   const [errors, setErrors] = useState({});
+  const keralaDistricts = [
+    "Thiruvananthapuram",
+    "Kollam",
+    "Pathanamthitta",
+    "Alappuzha",
+    "Kottayam",
+    "Idukki",
+    "Ernakulam",
+    "Thrissur",
+    "Palakkad",
+    "Malappuram",
+    "Kozhikode",
+    "Wayanad",
+    "Kannur",
+    "Kasaragod",
+  ];
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -46,6 +63,10 @@ const Register = ({ setShow }) => {
       newErrors.email = "Valid email is required";
     }
 
+    // Validate Category
+    if (!formData.district || formData.district == "") {
+      newErrors.district = "District is required";
+    }
     // Validate Category
     if (!formData.category || formData.category == "") {
       newErrors.category = "Category is required";
@@ -142,7 +163,7 @@ const Register = ({ setShow }) => {
     translate-y-[-50%] bg-gray-100 p-[25px]  "
     >
       <div className="flex justify-between">
-        <div className="text-[20px] font-semibold mb-6">Register</div>
+        <div className="text-[20px] font-semibold ">Register</div>
         <div className="w-[15px] h-[15px]" onClick={closeModal}>
           <Image src={Close} alt="" />
         </div>
@@ -153,7 +174,7 @@ const Register = ({ setShow }) => {
         </div>
       )}
       <div>
-        <div className="mb-1 mt-4">
+        <div className="mb-3 mt-4">
           <label className="label text-primary-blue">Full Name</label>
           <input
             type="text"
@@ -167,7 +188,7 @@ const Register = ({ setShow }) => {
             <div className="text-red-500 text-sm">{errors.name}</div>
           )}
         </div>
-        <div className="mb-1 ">
+        <div className="mb-3 ">
           <label className="label text-primary-blue">Phone Number</label>
           <div className="w-full flex items-center gap-x-5">
             <div className="w-full">
@@ -196,7 +217,7 @@ const Register = ({ setShow }) => {
           )}
         </div>
         {showOtp && (
-          <div className="mb-1">
+          <div className="mb-3">
             <label className="label text-primary-blue">OTP</label>
             <input
               type="text"
@@ -211,7 +232,7 @@ const Register = ({ setShow }) => {
             )}
           </div>
         )}
-        <div className="mb-1">
+        <div className="mb-3">
           <label className="label text-primary-blue">Email</label>
           <input
             type="email"
@@ -225,7 +246,26 @@ const Register = ({ setShow }) => {
             <div className="text-red-500 text-sm">{errors.email}</div>
           )}
         </div>
-        <div className="mb-1">
+        <div className="mb-3">
+          <label className="label text-primary-blue">District</label>
+          <select
+            name="district"
+            id=""
+            className="input"
+            onChange={handleChange}
+            value={formData.district}
+          >
+            {keralaDistricts.map((district, index) => (
+              <option value={district} key={`district_${index}`}>
+                {district}
+              </option>
+            ))}
+          </select>
+          {errors.district && (
+            <div className="text-red-500 text-sm">{errors.district}</div>
+          )}
+        </div>
+        <div className="mb-3">
           <label className="label text-primary-blue">Category</label>
           <select
             id="mySelect"

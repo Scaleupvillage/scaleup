@@ -20,19 +20,19 @@ const Navbar = () => {
     },
     {
       label: "SPEAKER",
-      link: "/speakers",
+      link: "#speakers",
     },
     {
       label: "SCHEDULE",
-      link: "/schedule",
+      link: "#schedule",
     },
     {
       label: "MEDIA KIT",
-      link: "/media-kit",
+      link: "#media_kit",
     },
     {
       label: "CONTACT  US",
-      link: "/contactus",
+      link: "#contactus",
     },
   ];
 

@@ -126,19 +126,29 @@ const Footer = () => {
           <div>
             <ul className="flex gap-x-4 text-[#838383]">
               <li>
-                <Link href="/">Contact</Link>
+                <Link href="/" className="uppercase">
+                  Home
+                </Link>
               </li>
               <li>
-                <Link href="/">News</Link>
+                <Link href="#speakers" className="uppercase">
+                  Speakers
+                </Link>
               </li>
               <li>
-                <Link href="/">Events</Link>
+                <Link href="#schedule" className="uppercase">
+                  Schedule
+                </Link>
               </li>
               <li>
-                <Link href="/">Speaker</Link>
+                <Link href="#media_kit" className="uppercase">
+                  Media Kit
+                </Link>
               </li>
               <li>
-                <Link href="/">Home</Link>
+                <Link href="#contact" className="uppercase">
+                  Contact
+                </Link>
               </li>
             </ul>
           </div>

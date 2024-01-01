@@ -34,6 +34,7 @@ import miandad from "@/assets/images/speakers/miandad.png";
 import gopinathmuthukad from "@/assets/images/speakers/gopinathmuthukad.png";
 import hassan from "@/assets/images/speakers/hassan.png";
 import majeed from "@/assets/images/speakers/majeed.png";
+import nadeemsafran from "@/assets/images/speakers/nadeemsafran.png";
 import Calendar from "@/Components/Icons/Calendar";
 import Scribbles from "@/Components/Scribbles";
 
@@ -285,7 +286,7 @@ export default function Home() {
         "w-full  bg-primary-purple h-[100px] px-8 py-2 rounded-tr-full rounded-br-full text-white flex justify-center items-center flex-col",
     },
     {
-      image: AnishAchuthan.src,
+      image: nadeemsafran.src,
       role: "CEO, Thara Cart",
       name: "Nadeem Safran kongath",
       bg: bg8.src,
@@ -1084,7 +1085,7 @@ export default function Home() {
           {scheduleTab.map((tab, index) => (
             <div
               key={index}
-              className=" py-4 px-5 bg-gray-200  w-full min-w-[220px] flex items-center justify-between  overflow-hidden relative"
+              className=" py-4 px-5 bg-gray-200  w-full min-w-[200px] flex items-center justify-between  overflow-hidden relative"
             >
               <h1
                 className={`font-semibold text-[20px] ${

@@ -883,7 +883,8 @@ export default function Home() {
               <div className="text-[20px] lg:text-[35px] text-primary-purple flex justify-center items-center mt-3">
                 <LocatioIcon fill="#803e97" className="w-[25px] md:w-[40px]" />
                 <Link
-                  href="/"
+                  href="https://maps.app.goo.gl/U93qFXkLbWsadsA8A"
+                  target="_blank"
                   className=" font-semibold underline text-center w-[75%] ml-4 md:ml-0"
                 >
                   Shifa Convention Center Perinthalmanna

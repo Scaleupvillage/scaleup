@@ -25,38 +25,45 @@ const Footer = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const floatingElement = document.querySelector(`.reg-now-btn`);
-      const header = document.querySelector(`.main-section`);
-      const footer = document.querySelector(`.footer`);
+      const floatingElement = document.querySelector(".reg-now-btn");
+      const header = document.querySelector(".main-section");
+      const footer = document.querySelector(".footer");
 
-      let lastScrollPosition = 0;
-
-      window.addEventListener("scroll", function () {
+      const isScrolledPastHeader = () => {
         const currentScrollPosition =
           window.pageYOffset || document.documentElement.scrollTop;
+        return currentScrollPosition > header.clientHeight;
+      };
 
-        if (currentScrollPosition > lastScrollPosition) {
-          // Scrolling down
-          if (
-            currentScrollPosition > header.clientHeight &&
-            currentScrollPosition + window.innerHeight <
-              document.body.offsetHeight - footer.clientHeight
-          ) {
-            floatingElement.style.display = "block";
-          } else {
-            floatingElement.style.display = "none";
-          }
-        } else {
-          // Scrolling up
-          floatingElement.style.display = "block";
-        }
+      const isScrolledBeforeFooter = () => {
+        const currentScrollPosition =
+          window.pageYOffset || document.documentElement.scrollTop;
+        return (
+          currentScrollPosition + window.innerHeight <
+          document.body.offsetHeight - footer.clientHeight
+        );
+      };
 
-        lastScrollPosition =
-          currentScrollPosition <= 0 ? 0 : currentScrollPosition; // For Mobile or negative scrolling
-      });
+      const shouldDisplayButton = () => {
+        return isScrolledPastHeader() && isScrolledBeforeFooter();
+      };
+      if (shouldDisplayButton()) {
+        floatingElement.style.display = "block";
+      } else {
+        floatingElement.style.display = "none";
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
+
+    var userFeed = new Instafeed({
+      get: "user",
+      target: "instafeed-container",
+      resolution: "low_resolution",
+      accessToken:
+        "IGQWRNVVRuUFJ0MmlzYU42SGJWMFQweUd1OVdyVXJIMjdFajN4VlJqWGNIbng0aGdRV3RleG9kTFlIdi1tVGFOdlh4RU8zUXNkYy1VUFBBdkk0NTUzdTRkdjlWZADhCcy1Kc3hxV3RhblRiUTVPMWRiME5zSi1CUlUZD",
+    });
+    // userFeed.run();
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -79,13 +86,22 @@ const Footer = () => {
               opportunities.
             </p>
             <ul className={`${Styles["footer-link"]} gap-x-4`}>
-              <Link href="">
+              <Link
+                href="https://www.instagram.com/scaleup2024/"
+                target="_blank"
+              >
                 <Instagram width="30" fill="white" stroke="white" />
               </Link>
-              <Link href="">
-                <Facebook width="30" fill="white" stroke="white" />
+              <Link
+                href="https://www.facebook.com/profile.php?id=61554188141132"
+                target="_blank"
+              >
+                <Facebook fill="#003B6D" stroke="#003B6D" width="30" />
               </Link>
-              <Link href="">
+              <Link
+                href="https://www.youtube.com/channel/UCoqK1Qib6qavzM1kAhhFptg"
+                target="_blank"
+              >
                 <Youtube
                   fill="white"
                   stroke="white"
@@ -93,7 +109,10 @@ const Footer = () => {
                   width="30"
                 />
               </Link>
-              <Link href="">
+              <Link
+                href="https://www.linkedin.com/company/99166593/admin/feed/posts/"
+                target="_blank"
+              >
                 <Linkedin width="30" fill="white" stroke="white" />
               </Link>
             </ul>
@@ -124,6 +143,7 @@ const Footer = () => {
             </ul>
           </div>
         </div>
+        <div id="instafeed-container"></div>
       </div>
       {openModal ? (
         <>
@@ -139,7 +159,7 @@ const Footer = () => {
 
       <button
         type="button"
-        className="reg-now-btn hidden fixed bottom-[5%] right-[2%]  z-[90] bg-primary-cyan  px-5 py-3 rounded-full text-white shadow-lg shadow-primary-cyan"
+        className="reg-now-btn hidden fixed bottom-[5%] right-[2%]  z-[90] bg-primary-cyan  px-5 py-3 rounded-full text-white shadow-lg shadow-primary-cyan hidden"
         onClick={handleClick}
       >
         Register

@@ -80,16 +80,16 @@ const Navbar = () => {
           <p className="lg:text-[15px] hidden md:block">9048170077</p>
         </div>
         <div className="flex justify-center items-center gap-x-3 lg:gap-x-4">
-          <Link href="">
+          <Link href="https://www.instagram.com/scaleup2024/" target="_blank">
             <Instagram fill="#003B6D" stroke="#003B6D" width="30" />
           </Link>
-          <Link href="">
+          <Link href="https://www.facebook.com/profile.php?id=61554188141132" target="_blank" >
             <Facebook fill="#003B6D" stroke="#003B6D" width="30" />
           </Link>
-          <Link href="">
+          <Link href="https://www.youtube.com/channel/UCoqK1Qib6qavzM1kAhhFptg" target="_blank" >
             <Youtube fill="#003B6D" stroke="#003B6D" inner="white" width="30" />
           </Link>
-          <Link href="">
+          <Link href="https://www.linkedin.com/company/99166593/admin/feed/posts/"target="_blank" >
             <Linkedin fill="#003B6D" stroke="#003B6D" width="30" />
           </Link>
         </div>

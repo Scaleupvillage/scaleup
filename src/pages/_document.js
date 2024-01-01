@@ -13,6 +13,11 @@ export default function Document() {
       <body>
         <Main />
         <NextScript />
+
+        <script
+          async
+          src="https://cdn.jsdelivr.net/gh/stevenschobert/instafeed.js@2.0.0rc1/src/instafeed.min.js"
+        ></script>
       </body>
     </Html>
   );

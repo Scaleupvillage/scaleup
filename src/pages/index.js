@@ -43,7 +43,7 @@ import Speaker from "@/Components/Icons/Speaker";
 import Clock from "@/Components/Icons/Clock";
 import UpArrows from "@/Components/Icons/scribbles/UpArrows";
 import Rocket from "@/Components/Icons/Rocket";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import hackathon from "@/assets/images/hackathon.png";
 import discussion from "@/assets/images/discussion.png";
 import code from "@/assets/images/code.png";
@@ -110,10 +110,15 @@ import apk from "@/assets/images/partners/apk.png";
 import asap from "@/assets/images/partners/asap.png";
 import xpresso from "@/assets/images/partners/xpresso.png";
 import anar from "@/assets/images/partners/anar.png";
+import axios from "axios";
 const Countdown = dynamic(() => import("@/Components/Counter"), { ssr: false });
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 export default function Home() {
-  const [scheduledTab, setScheduledTab] = useState("Students");
+  const [scheduledTab, setScheduledTab] = useState({
+    main: "Day 1",
+    sub: "Main Venue",
+  });
+  const [schedules, setSchedules] = useState({});
   const [openModal, setOpenModal] = useState(false);
   const slides = [
     () => (
@@ -719,7 +724,7 @@ export default function Home() {
       icon: (name) => (
         <ScholarCap
           className={` max-h-[50px] absolute right-0 top-[-5px] ${
-            scheduledTab === name ? "fill-primary-cyan" : "fill-gray-400"
+            scheduledTab.sub === name ? "fill-primary-cyan" : "fill-gray-400"
           }`}
         />
       ),
@@ -729,7 +734,7 @@ export default function Home() {
       icon: (name) => (
         <Rocket
           className={` max-h-[50px] absolute right-0 top-[-5px] ${
-            scheduledTab === name ? "fill-primary-cyan" : "fill-gray-400"
+            scheduledTab.sub === name ? "fill-primary-cyan" : "fill-gray-400"
           }`}
         />
       ),
@@ -739,7 +744,7 @@ export default function Home() {
       icon: (name) => (
         <Speaker
           className={` max-h-[50px] absolute right-0 top-[-5px] ${
-            scheduledTab === name ? "fill-primary-cyan" : "fill-gray-400"
+            scheduledTab.sub === name ? "fill-primary-cyan" : "fill-gray-400"
           }`}
         />
       ),
@@ -749,7 +754,7 @@ export default function Home() {
       icon: (name) => (
         <Clock
           className={` max-h-[50px] absolute right-0 top-[-5px] ${
-            scheduledTab === name ? "fill-primary-cyan" : "fill-gray-400"
+            scheduledTab.sub === name ? "fill-primary-cyan" : "fill-gray-400"
           }`}
         />
       ),
@@ -759,7 +764,7 @@ export default function Home() {
       icon: (name) => (
         <Clock
           className={` max-h-[50px] absolute right-0 top-[-5px] ${
-            scheduledTab === name ? "fill-primary-cyan" : "fill-gray-400"
+            scheduledTab.sub === name ? "fill-primary-cyan" : "fill-gray-400"
           }`}
         />
       ),
@@ -767,10 +772,19 @@ export default function Home() {
   ];
   const targetDate = new Date("2024-02-02T00:00:00");
 
-  const handleClick = () => {
-    setOpenModal(true);
-    console.log(openModal);
+  const changeTab = (level, tab) => {
+    setScheduledTab({ ...scheduledTab, [level]: tab });
   };
+
+  useEffect(() => {
+    axios
+      .get(
+        "https://script.google.com/macros/s/AKfycbwHkVYoLAzGEizR-dCmebwwQr0jVBs6doLzTg5OjaSUI3WqBc5zlsJDABWmY_b6Xo8X/exec"
+      )
+      .then((response) => {
+        setSchedules(response.data);
+      });
+  }, []);
 
   return (
     <div className={exo2.className}>
@@ -1058,24 +1072,48 @@ export default function Home() {
       <div className="py-[100px] custom-container">
         <h1 className="text-[36px] title uppercase">Schedule</h1>
         <div className="custom-container flex gap-x-6 justify-center items-center  pb-6 overflow-auto">
-          <div className="bg-gray-200 h-[50px] w-[250px] relative overflow-hidden">
-            <h1 className="font-semibold text-[15px] lg:text-[20px] p-3 text-gray-400 ">
+          <div
+            role="button"
+            onClick={() => changeTab("main", "Day 1")}
+            className="bg-gray-200 h-[50px] w-[250px] relative overflow-hidden"
+          >
+            <h1
+              className={`font-semibold text-[15px] lg:text-[20px] p-3 ${
+                scheduledTab.main == "Day 1" ? "" : "text-gray-400"
+              } `}
+            >
               Day 1
             </h1>
             <h1
-              className=" absolute right-0 bottom-0 text-[30px] lg:text-[45px] font-semibold
-             text-gray-400 max-h-[50px] overflow-hidden"
+              className={`absolute right-0 bottom-0 text-[30px] lg:text-[45px] font-semibold
+             max-h-[50px] overflow-hidden ${
+               scheduledTab.main === "Day 1"
+                 ? "text-primary-cyan"
+                 : "text-gray-400"
+             }`}
             >
               2 Feb
             </h1>
           </div>
-          <div className="bg-gray-200 h-[50px] w-[250px] relative overflow-hidden">
-            <h1 className="font-semibold text-[15px] lg:text-[20px] p-3 text-gray-400 ">
+          <div
+            role="button"
+            onClick={() => changeTab("main", "Day 2")}
+            className="bg-gray-200 h-[50px] w-[250px] relative overflow-hidden"
+          >
+            <h1
+              className={`font-semibold text-[15px] lg:text-[20px] p-3 ${
+                scheduledTab.main == "Day 2" ? "" : "text-gray-400"
+              } `}
+            >
               Day 2
             </h1>
             <h1
-              className=" absolute right-0 bottom-0 text-[30px] lg:text-[45px] font-semibold
-             text-gray-400 max-h-[50px] overflow-hidden"
+              className={`absolute right-0 bottom-0 text-[30px] lg:text-[45px] font-semibold
+              max-h-[50px] overflow-hidden ${
+                scheduledTab.main === "Day 2"
+                  ? "text-primary-cyan"
+                  : "text-gray-400"
+              }`}
             >
               3 Feb
             </h1>
@@ -1084,12 +1122,14 @@ export default function Home() {
         <div className="flex overflow-auto gap-x-6">
           {scheduleTab.map((tab, index) => (
             <div
+              role="button"
+              onClick={() => changeTab("sub", tab.name)}
               key={index}
               className=" py-4 px-5 bg-gray-200  w-full min-w-[200px] flex items-center justify-between  overflow-hidden relative"
             >
               <h1
                 className={`font-semibold text-[20px] ${
-                  scheduledTab !== tab.name && "text-gray-400"
+                  scheduledTab.sub !== tab.name && "text-gray-400"
                 }`}
               >
                 {tab.name}
@@ -1109,259 +1149,96 @@ export default function Home() {
           <div class="w-full overflow-auto">
             <div class="bg-white shadow-md rounded ">
               <div class="flex flex-col">
-                <div class="flex flex-row border-b border-gray-200">
-                  <div class="w-full md:w-1/4 py-3 px-6 text-left">
-                    <img src={Minister.src} width={100} height={90} alt="" />
-                  </div>
-                  <div class="w-full md:w-1/4 py-3 px-6 text-left flex justify-center items-center flex-col">
-                    <div className="text-[20px] font-semibold">14</div>
-                    <div>February</div>
-                  </div>
-                  <div class="w-full md:w-1/4 py-3 px-6 text-center flex justify-center items-center flex-col">
-                    <h1 className="text-[15px] font-semibold whitespace-nowrap">
-                      Conference in Amsterdam
-                    </h1>
-                    <p className="text-[14px] font-semibold whitespace-nowrap">
-                      08 AM 04 PM
-                    </p>
-                    <p className="text-[10px] font-normal text-gray-500 whitespace-nowrap">
-                      Speaker: Daniel Hill
-                    </p>
-                  </div>
-                  <div class="w-full md:w-1/4 py-3 px-6 text-center flex justify-center items-center">
-                    <button className="rounded-2xl bg-primary-cyan text-white px-10 py-2 text-[10px]">
-                      Read More
-                    </button>
-                  </div>
-                  <div class="w-full md:w-1/4 py-3 px-6 text-center flex justify-center items-center">
-                    <a
-                      className="text-primary-cyan text-[12px] font-semibold underline underline-primary-cyan"
-                      href=""
-                    >
-                      Join Whatsapp
-                    </a>
-                  </div>
-                </div>
-                <div class="flex flex-row border-b border-gray-200">
-                  <div class="w-full md:w-1/4 py-3 px-6 text-left">
-                    <img src={Minister.src} width={100} height={90} alt="" />
-                  </div>
-                  <div class="w-full md:w-1/4 py-3 px-6 text-left flex justify-center items-center flex-col">
-                    <div className="text-[20px] font-semibold">14</div>
-                    <div>February</div>
-                  </div>
-                  <div class="w-full md:w-1/4 py-3 px-6 text-center flex justify-center items-center flex-col">
-                    <h1 className="text-[15px] font-semibold whitespace-nowrap">
-                      Conference in Amsterdam
-                    </h1>
-                    <p className="text-[14px] font-semibold whitespace-nowrap">
-                      08 AM 04 PM
-                    </p>
-                    <p className="text-[10px] font-normal text-gray-500 whitespace-nowrap">
-                      Speaker: Daniel Hill
-                    </p>
-                  </div>
-                  <div class="w-full md:w-1/4 py-3 px-6 text-center flex justify-center items-center">
-                    <button className="rounded-2xl bg-primary-cyan text-white px-10 py-2 text-[10px]">
-                      Read More
-                    </button>
-                  </div>
-                  <div class="w-full md:w-1/4 py-3 px-6 text-center flex justify-center items-center">
-                    <a
-                      className="text-primary-cyan text-[12px] font-semibold underline underline-primary-cyan"
-                      href=""
-                    >
-                      Join Whatsapp
-                    </a>
-                  </div>
-                </div>
-                <div class="flex flex-row border-b border-gray-200">
-                  <div class="w-full md:w-1/4 py-3 px-6 text-left">
-                    <img src={Minister.src} width={100} height={90} alt="" />
-                  </div>
-                  <div class="w-full md:w-1/4 py-3 px-6 text-left flex justify-center items-center flex-col">
-                    <div className="text-[20px] font-semibold">14</div>
-                    <div>February</div>
-                  </div>
-                  <div class="w-full md:w-1/4 py-3 px-6 text-center flex justify-center items-center flex-col">
-                    <h1 className="text-[15px] font-semibold whitespace-nowrap">
-                      Conference in Amsterdam
-                    </h1>
-                    <p className="text-[14px] font-semibold whitespace-nowrap">
-                      08 AM 04 PM
-                    </p>
-                    <p className="text-[10px] font-normal text-gray-500 whitespace-nowrap">
-                      Speaker: Daniel Hill
-                    </p>
-                  </div>
-                  <div class="w-full md:w-1/4 py-3 px-6 text-center flex justify-center items-center">
-                    <button className="rounded-2xl bg-primary-cyan text-white px-10 py-2 text-[10px]">
-                      Read More
-                    </button>
-                  </div>
-                  <div class="w-full md:w-1/4 py-3 px-6 text-center flex justify-center items-center">
-                    <a
-                      className="text-primary-cyan text-[12px] font-semibold underline underline-primary-cyan"
-                      href=""
-                    >
-                      Join Whatsapp
-                    </a>
-                  </div>
-                </div>
-                <div class="flex flex-row border-b border-gray-200">
-                  <div class="w-full md:w-1/4 py-3 px-6 text-left">
-                    <img src={Minister.src} width={100} height={90} alt="" />
-                  </div>
-                  <div class="w-full md:w-1/4 py-3 px-6 text-left flex justify-center items-center flex-col">
-                    <div className="text-[20px] font-semibold">14</div>
-                    <div>February</div>
-                  </div>
-                  <div class="w-full md:w-1/4 py-3 px-6 text-center flex justify-center items-center flex-col">
-                    <h1 className="text-[15px] font-semibold whitespace-nowrap">
-                      Conference in Amsterdam
-                    </h1>
-                    <p className="text-[14px] font-semibold whitespace-nowrap">
-                      08 AM 04 PM
-                    </p>
-                    <p className="text-[10px] font-normal text-gray-500 whitespace-nowrap">
-                      Speaker: Daniel Hill
-                    </p>
-                  </div>
-                  <div class="w-full md:w-1/4 py-3 px-6 text-center flex justify-center items-center">
-                    <button className="rounded-2xl bg-primary-cyan text-white px-10 py-2 text-[10px]">
-                      Read More
-                    </button>
-                  </div>
-                  <div class="w-full md:w-1/4 py-3 px-6 text-center flex justify-center items-center">
-                    <a
-                      className="text-primary-cyan text-[12px] font-semibold underline underline-primary-cyan"
-                      href=""
-                    >
-                      Join Whatsapp
-                    </a>
-                  </div>
-                </div>
-                <div class="flex flex-row border-b border-gray-200">
-                  <div class="w-full md:w-1/4 py-3 px-6 text-left">
-                    <img src={Minister.src} width={100} height={90} alt="" />
-                  </div>
-                  <div class="w-full md:w-1/4 py-3 px-6 text-left flex justify-center items-center flex-col">
-                    <div className="text-[20px] font-semibold">14</div>
-                    <div>February</div>
-                  </div>
-                  <div class="w-full md:w-1/4 py-3 px-6 text-center flex justify-center items-center flex-col">
-                    <h1 className="text-[15px] font-semibold whitespace-nowrap">
-                      Conference in Amsterdam
-                    </h1>
-                    <p className="text-[14px] font-semibold whitespace-nowrap">
-                      08 AM 04 PM
-                    </p>
-                    <p className="text-[10px] font-normal text-gray-500 whitespace-nowrap">
-                      Speaker: Daniel Hill
-                    </p>
-                  </div>
-                  <div class="w-full md:w-1/4 py-3 px-6 text-center flex justify-center items-center">
-                    <button className="rounded-2xl bg-primary-cyan text-white px-10 py-2 text-[10px]">
-                      Read More
-                    </button>
-                  </div>
-                  <div class="w-full md:w-1/4 py-3 px-6 text-center flex justify-center items-center">
-                    <a
-                      className="text-primary-cyan text-[12px] font-semibold underline underline-primary-cyan"
-                      href=""
-                    >
-                      Join Whatsapp
-                    </a>
-                  </div>
-                </div>
+                {Object.keys(schedules).length > 0 &&
+                  schedules[scheduledTab.main][scheduledTab.sub].map(
+                    (schedule, index) => {
+                      console.log(
+                        schedules[scheduledTab.main][scheduledTab.sub]
+                      );
+                      return (
+                        <div
+                          class="flex flex-row border-b border-gray-200"
+                          key={index}
+                        >
+                          {/* {schedule.map((data, dataIndex) => (
+                            <div
+                              class="w-full md:w-1/4 py-3 px-6 text-left"
+                              key={dataIndex}
+                            >
+                              {dataIndex === 0 ? (
+                                <img
+                                  src={data}
+                                  width={100}
+                                  height={90}
+                                  alt=""
+                                />
+                              ) : (
+                                <>
+                                  {typeof data === "string" &&
+                                  data.split(",").length > 0 ? (
+                                    <>
+                                      <h1 className="text-[15px] font-semibold whitespace-nowrap">
+                                        {data.split(",")[0]}
+                                      </h1>
+                                      <p className="text-[14px] font-semibold whitespace-nowrap">
+                                      {data.split(",")[1]}
+                                      </p>
+                                      <p className="text-[10px] font-normal text-gray-500 whitespace-nowrap">
+                                      {data.split(",")[2]}
+                                      </p>
+                                    </>
+                                  ) : (
+                                    <h1 className="text-[15px] font-semibold whitespace-nowrap">
+                                      {data}
+                                    </h1>
+                                  )}
+                                </>
+                              )}
+                            </div>
+                          ))} */}
+                          <div class="w-full md:w-1/4 py-3 px-6 text-left flex justify-center items-center flex-col">
+                            <div className="text-[20px] font-semibold">14</div>
+                            <div>February</div>
+                          </div>
+                          <div class="w-full md:w-1/4 py-3 px-6 text-center flex justify-center items-center flex-col">
+                            <h1 className="text-[15px] font-semibold whitespace-nowrap">
+                              Conference in Amsterdam
+                            </h1>
+                            <p className="text-[14px] font-semibold whitespace-nowrap">
+                              08 AM 04 PM
+                            </p>
+                            <p className="text-[10px] font-normal text-gray-500 whitespace-nowrap">
+                              Speaker: Daniel Hill
+                            </p>
+                          </div>
+                          <div class="w-full md:w-1/4 py-3 px-6 text-center flex justify-center items-center">
+                            <button className="rounded-2xl bg-primary-cyan text-white px-10 py-2 text-[10px]">
+                              Read More
+                            </button>
+                          </div>
+                          <div class="w-full md:w-1/4 py-3 px-6 text-center flex justify-center items-center">
+                            <a
+                              className="text-primary-cyan text-[12px] font-semibold underline underline-primary-cyan"
+                              href=""
+                            >
+                              Join Whatsapp
+                            </a>
+                          </div>
+                        </div>
+                      );
+                    }
+                  )}
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* <div className={`${Styles["registration-bg"]} lg:h-[50vh] py-[100px] `}>
-        <div className="custom-container grid grid-cols-10 gap-x-4">
-          <div className="col-span-10 mb-5">
-            <h1
-              className="title text-[36px] text-white cyan-before"
-              style={{ color: "white" }}
-            >
-              GET YOUR TIKETS
-            </h1>
-          </div>
-
-          <div className="col-span-10 lg:col-span-8 grid grid-cols-1 lg:grid-cols-2 gap-x-4">
-            <div>
-              <label className="label text-white">Full Name</label>
-              <input
-                type="text"
-                name="name"
-                placeholder="Full Name"
-                className="input"
-              />
-            </div>
-            <div>
-              <label className="label text-white">Phone Number</label>
-              <input
-                type="text"
-                name="name"
-                placeholder="Phone Number"
-                className="input"
-              />
-            </div>
-          </div>
-
-          <div className="col-span-10 lg:col-span-2 flex justify-center items-center">
-            <button
-              type="button"
-              className="w-full bg-primary-cyan  px-8 py-3 rounded-full text-white"
-            >
-              Register
-            </button>
-          </div>
-        </div>
-      </div> */}
       <div className="py-[100px] custom-container">
         <h1 className="title wave-before uppercase text-[36px]">
           Our partners
         </h1>
-        {/* <Slider
-          spaceBetween={100}
-          breakpoints={{
-            640: {
-              slidesPerView: 2,
-              spaceBetween: 20,
-            },
-            768: {
-              slidesPerView: 4,
-              spaceBetween: 40,
-            },
-            1024: {
-              slidesPerView: 5,
-              spaceBetween: 50,
-            },
-          }}
-          loop={true}
-          centeredSlides="true"
-          modules={[Autoplay]}
-          autoplay={{ delay: 500 }}
-          className="mt-5 h-[300px]"
-        >
-          {partners.map((partner, index) => (
-            <SwiperSlide key={index} className="">
-              <div className="h-full flex justify-center items-center">
-                <Image
-                  src={partner.src}
-                  className="w-[300px] h-auto"
-                  width="300"
-                  height="200"
-                  alt=""
-                />
-              </div>
-            </SwiperSlide>
-          ))}
-        </Slider> */}
+
         <div className="grid grid-cols-2 gap-7 lg:grid-cols-5">
           {partners.map((partner, index) => (
             <div

@@ -17,7 +17,7 @@ const Register = ({ setShow }) => {
     category: "",
     compony: "",
     otp: "",
-    district:""
+    district: "",
   });
   const [errors, setErrors] = useState({});
   const keralaDistricts = [
@@ -193,7 +193,7 @@ const Register = ({ setShow }) => {
           <div className="w-full flex items-center gap-x-5">
             <div className="w-full">
               <input
-                type="number"
+                type="text"
                 name="phoneNumber"
                 placeholder="Phone Number"
                 className="input"
@@ -275,14 +275,13 @@ const Register = ({ setShow }) => {
             value={formData.category}
           >
             <option value="Student">Student</option>
-            <option value="Entruprenurs"> Entruprenurs</option>
-            <option value="Professional">Professional</option>
-            <option value="Wantrprenuers">Wantrprenuers</option>
-            <option value="Working">Working</option>
+            <option value="Entruprenurs"> Startup</option>
+            <option value="Working">Local Business/SME </option>
+            <option value="Professional">Working Professional</option>
             <option value="NREs or Gulf Returnees">
-              NREs or Gulf Returnees
+              NRE or Gulf Returnees
             </option>
-            <option value="Others">Others</option>
+            <option value="Others">Other</option>
           </select>
           {errors.category && (
             <div className="text-red-500 text-sm">{errors.category}</div>
@@ -290,7 +289,7 @@ const Register = ({ setShow }) => {
         </div>
         <div className="mb-4  ">
           <label className="label text-primary-blue">
-            Compony/Organisation
+            Company/Organisation
           </label>
           <input
             type="text"

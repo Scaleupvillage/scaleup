@@ -20,19 +20,19 @@ const Navbar = () => {
     },
     {
       label: "SPEAKER",
-      link: "/speakers",
+      link: "#speakers",
     },
     {
       label: "SCHEDULE",
-      link: "/schedule",
+      link: "#schedule",
     },
     {
       label: "MEDIA KIT",
-      link: "/media-kit",
+      link: "#media_kit",
     },
     {
       label: "CONTACT  US",
-      link: "/contactus",
+      link: "#contactus",
     },
   ];
 
@@ -72,24 +72,43 @@ const Navbar = () => {
     };
   }, []);
   return (
-    <div className="absolute w-full z-10">
+    <div className="absolute w-full z-[100]">
       <div className="  bg-white shadow-md w-full flex justify-between  px-3 lg:px-[70px] items-center py-3 info-nav">
         <div className="flex   md:gap-x-6 lg:gap-x-6 items-center text-[10px] lg:text-[16px]">
-          <p className="flex justify-start ">info@scaleupconclave.com</p>
+          <a
+            href="mailto:info@scaleupconclave.com"
+            className="flex justify-start "
+          >
+            info@scaleupconclave.com
+          </a>
           <p>|</p>
-          <p className="lg:text-[15px] hidden md:block">9048170077</p>
+          <a
+            href="tel:info@scaleupconclave.com"
+            className="lg:text-[15px] hidden md:block"
+          >
+           +91 9048170077
+          </a>
         </div>
         <div className="flex justify-center items-center gap-x-3 lg:gap-x-4">
           <Link href="https://www.instagram.com/scaleup2024/" target="_blank">
             <Instagram fill="#003B6D" stroke="#003B6D" width="30" />
           </Link>
-          <Link href="https://www.facebook.com/profile.php?id=61554188141132" target="_blank" >
+          <Link
+            href="https://www.facebook.com/profile.php?id=61554188141132"
+            target="_blank"
+          >
             <Facebook fill="#003B6D" stroke="#003B6D" width="30" />
           </Link>
-          <Link href="https://www.youtube.com/channel/UCoqK1Qib6qavzM1kAhhFptg" target="_blank" >
+          <Link
+            href="https://www.youtube.com/channel/UCoqK1Qib6qavzM1kAhhFptg"
+            target="_blank"
+          >
             <Youtube fill="#003B6D" stroke="#003B6D" inner="white" width="30" />
           </Link>
-          <Link href="https://www.linkedin.com/company/99166593/admin/feed/posts/"target="_blank" >
+          <Link
+            href="https://www.linkedin.com/company/99166593/admin/feed/posts/"
+            target="_blank"
+          >
             <Linkedin fill="#003B6D" stroke="#003B6D" width="30" />
           </Link>
         </div>

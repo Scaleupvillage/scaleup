@@ -34,6 +34,7 @@ import miandad from "@/assets/images/speakers/miandad.png";
 import gopinathmuthukad from "@/assets/images/speakers/gopinathmuthukad.png";
 import hassan from "@/assets/images/speakers/hassan.png";
 import majeed from "@/assets/images/speakers/majeed.png";
+import nadeemsafran from "@/assets/images/speakers/nadeemsafran.png";
 import Calendar from "@/Components/Icons/Calendar";
 import Scribbles from "@/Components/Scribbles";
 
@@ -120,7 +121,7 @@ export default function Home() {
         className="w-full bg-opacity-20 h-full flex justify-end flex-col relative"
         style={{
           background: `url(${slider1.src})`,
-          backgroundSize: "100% 100%",
+          backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
         }}
       >
@@ -148,7 +149,7 @@ export default function Home() {
         className="w-full  h-full flex justify-end items-center flex-col "
         style={{
           background: `url(${slider2.src})`,
-          backgroundSize: "100% 100%",
+          backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
         }}
       >
@@ -175,7 +176,7 @@ export default function Home() {
         className="w-full h-full flex justify-end items-center flex-col "
         style={{
           background: `url(${slider4.src})`,
-          backgroundSize: "100% 100%",
+          backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
         }}
       >
@@ -202,7 +203,7 @@ export default function Home() {
         className="w-full bg-black bg-opacity-20 h-full flex justify-end items-center flex-col"
         style={{
           background: `url(${slider3.src})`,
-          backgroundSize: "100% 100%",
+          backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
         }}
       >
@@ -285,7 +286,7 @@ export default function Home() {
         "w-full  bg-primary-purple h-[100px] px-8 py-2 rounded-tr-full rounded-br-full text-white flex justify-center items-center flex-col",
     },
     {
-      image: AnishAchuthan.src,
+      image: nadeemsafran.src,
       role: "CEO, Thara Cart",
       name: "Nadeem Safran kongath",
       bg: bg8.src,
@@ -364,7 +365,7 @@ export default function Home() {
       name: "Mabel Chacko",
       bg: bg17.src,
       nameContainerClassName:
-        "w-full  bg-primary-purple h-[100px] px-8 py-2 rounded-tl-full rounded-bl-full text-white flex justify-center items-center flex-col",
+        "w-full  bg-primary-purple h-[100px] px-8 py-2 rounded-tr-full rounded-br-full text-white flex justify-center items-center flex-col",
     },
     {
       image: IbnuJala.src,
@@ -883,7 +884,8 @@ export default function Home() {
               <div className="text-[20px] lg:text-[35px] text-primary-purple flex justify-center items-center mt-3">
                 <LocatioIcon fill="#803e97" className="w-[25px] md:w-[40px]" />
                 <Link
-                  href="/"
+                  href="https://maps.app.goo.gl/U93qFXkLbWsadsA8A"
+                  target="_blank"
                   className=" font-semibold underline text-center w-[75%] ml-4 md:ml-0"
                 >
                   Shifa Convention Center Perinthalmanna
@@ -973,7 +975,7 @@ export default function Home() {
               key={index}
               style={{
                 background: `url(${speaker.bg})`,
-                backgroundSize: "100% 100%",
+                backgroundSize: "cover",
                 backgroundRepeat: "no-repeat",
               }}
             >
@@ -1083,7 +1085,7 @@ export default function Home() {
           {scheduleTab.map((tab, index) => (
             <div
               key={index}
-              className=" py-4 px-5 bg-gray-200  w-full min-w-[220px] flex items-center justify-between  overflow-hidden relative"
+              className=" py-4 px-5 bg-gray-200  w-full min-w-[200px] flex items-center justify-between  overflow-hidden relative"
             >
               <h1
                 className={`font-semibold text-[20px] ${

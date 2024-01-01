@@ -1222,7 +1222,7 @@ export default function Home() {
         <h1 className="title wave-before uppercase text-[36px]">
           Our partners
         </h1>
-        <Slider
+        {/* <Slider
           spaceBetween={100}
           breakpoints={{
             640: {
@@ -1257,7 +1257,23 @@ export default function Home() {
               </div>
             </SwiperSlide>
           ))}
-        </Slider>
+        </Slider> */}
+        <div className="grid grid-cols-2 gap-7 lg:grid-cols-5">
+          {partners.map((partner, index) => (
+            <div
+              className="h-full flex justify-center items-center"
+              key={index}
+            >
+              <Image
+                src={partner.src}
+                className="w-[150px] h-auto"
+                width="300"
+                height="200"
+                alt=""
+              />
+            </div>
+          ))}
+        </div>
       </div>
       <Footer />
     </div>

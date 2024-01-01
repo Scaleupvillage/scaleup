@@ -122,7 +122,7 @@ const Footer = () => {
       </div>
       <div className="bg-black w-full py-4">
         <div className="custom-container flex flex-col lg:flex-row justify-between items-center">
-          <p className="text-[#838383]">Copyright ©2023 All rights reserved </p>
+          <p className="text-[#838383]">Copyright ©2024 All rights reserved </p>
           <div>
             <ul className="flex gap-x-4 text-[#838383]">
               <li>

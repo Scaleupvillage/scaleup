@@ -86,7 +86,7 @@ const Navbar = () => {
             href="tel:info@scaleupconclave.com"
             className="lg:text-[15px] hidden md:block"
           >
-            9048170077
+           +91 9048170077
           </a>
         </div>
         <div className="flex justify-center items-center gap-x-3 lg:gap-x-4">

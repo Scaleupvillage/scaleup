@@ -63,7 +63,7 @@ const Footer = () => {
       accessToken:
         "IGQWRNVVRuUFJ0MmlzYU42SGJWMFQweUd1OVdyVXJIMjdFajN4VlJqWGNIbng0aGdRV3RleG9kTFlIdi1tVGFOdlh4RU8zUXNkYy1VUFBBdkk0NTUzdTRkdjlWZADhCcy1Kc3hxV3RhblRiUTVPMWRiME5zSi1CUlUZD",
     });
-    // userFeed.run();
+    userFeed.run();
 
     return () => {
       window.removeEventListener("scroll", handleScroll);

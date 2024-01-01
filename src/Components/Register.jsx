@@ -164,7 +164,7 @@ const Register = ({ setShow }) => {
     >
       <div className="flex justify-between">
         <div className="text-[20px] font-semibold ">Register</div>
-        <div className="w-[15px] h-[15px]" onClick={closeModal}>
+        <div className="w-[15px] h-[15px] cursor-pointer" onClick={closeModal}>
           <Image src={Close} alt="" />
         </div>
       </div>

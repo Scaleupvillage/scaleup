@@ -96,7 +96,7 @@ const Footer = () => {
                 href="https://www.facebook.com/profile.php?id=61554188141132"
                 target="_blank"
               >
-                <Facebook fill="#003B6D" stroke="#003B6D" width="30" />
+                <Facebook fill="white" stroke="white" width="30" />
               </Link>
               <Link
                 href="https://www.youtube.com/channel/UCoqK1Qib6qavzM1kAhhFptg"
@@ -159,7 +159,7 @@ const Footer = () => {
 
       <button
         type="button"
-        className="reg-now-btn hidden fixed bottom-[5%] right-[2%]  z-[90] bg-primary-cyan  px-5 py-3 rounded-full text-white shadow-lg shadow-primary-cyan hidden"
+        className="reg-now-btn  fixed bottom-[5%] right-[2%]  z-[90] bg-primary-cyan  px-5 py-3 rounded-full text-white shadow-lg shadow-primary-cyan hidden"
         onClick={handleClick}
       >
         Register

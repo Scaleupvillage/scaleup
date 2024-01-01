@@ -276,7 +276,7 @@ const Register = ({ setShow }) => {
           >
             <option value="Student">Student</option>
             <option value="Entruprenurs"> Startup</option>
-            <option value="Working">Local </option>
+            <option value="Working">Local Business/SME </option>
             <option value="Professional">Working Professional</option>
             <option value="NREs or Gulf Returnees">
               NRE or Gulf Returnees

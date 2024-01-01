@@ -24,7 +24,7 @@ const ModalHeader = ({
       </div>
       <button
         type="button"
-        className="text-[#ff6b07] text-2xl"
+        className="text-[#ff6b07] text-2xl "
         onClick={closeModal}
       >
         <CloseIcon width="10" />

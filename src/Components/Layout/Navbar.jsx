@@ -124,7 +124,7 @@ const Navbar = () => {
               <li key={index}>
                 <Link
                   href={link}
-                  className="whitespace-nowrap p-5 text-white hover:text-[#f50136] transition-colors ease-in-out duration-700 text-sm"
+                  className="whitespace-nowrap p-5 text-white hover:text-primary-cyan transition-colors ease-in-out duration-700 text-sm"
                 >
                   {label}
                 </Link>

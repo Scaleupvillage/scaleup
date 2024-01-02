@@ -34,7 +34,6 @@ import slider4 from "@/assets/images/slider4.png";
 import LocatioIcon from "@/Components/Icons/LocatioIcon";
 import Register from "@/Components/Register";
 
-
 import { speakers } from "@/constants/speakers";
 import { partners } from "@/constants/partners";
 import {
@@ -488,38 +487,38 @@ export default function Home() {
           <div className="bg-white w-full grid grid-cols-2 lg:grid-cols-4  lg:gap-x-12  ">
             <div className="col-span-2 my-auto items-center mb-4 lg:mb-0">
               <div className="grid grid-cols-12 p-1">
-                <div className=" col-span-6 bg-primary-purple h-[120px] mr-3 rounded-md flex flex-col items-center justify-center">
-                  <h1 className="text-[30px] lg:text-[50px] font-extrabold text-primary-yellow leading-none">
+                <div className=" col-span-12 lg:col-span-6 bg-primary-purple h-[120px] mb-4 lg:mb-0 lg:mr-3 rounded-md flex flex-col items-center justify-center">
+                  <h1 className="text-[30px] xl:text-[50px] font-extrabold text-primary-yellow leading-none">
                     5000 +
                   </h1>
 
-                  <p className="text-white text-[16px] lg:text-[20px] font-normal">
+                  <p className="text-white text-[16px] xl:text-[20px] font-normal">
                     Total Attendees
                   </p>
                 </div>
-                <div className=" col-span-6 rounded-md bg-primary-yellow flex flex-col items-center justify-center  ">
-                  <h1 className="text-primary-blue text-[30px] lg:text-[50px]  font-extrabold">
+                <div className=" col-span-12 lg:col-span-6  h-[120px] lg:h-full rounded-md bg-primary-yellow flex flex-col items-center justify-center  ">
+                  <h1 className="text-primary-blue text-[30px] xl:text-[50px]  font-extrabold">
                     300 +
                   </h1>
-                  <p className="text-primary-blue text-center text-[16px] lg:text-[20px] font-normal">
+                  <p className="text-primary-blue text-center text-[16px] xl:text-[20px] font-normal">
                     Local Business Heroes
                   </p>
                 </div>
               </div>
               <div className="grid grid-cols-12 p-2">
-                <div className="flex items-center justify-center flex-col md:flex-row gap-2 col-span-8 bg-primary-cyan h-[120px] mr-3 rounded-md">
-                  <h1 className="text-primary-yellow text-[30px] lg:text-[50px] font-extrabold">
+                <div className="flex items-center justify-center flex-col md:flex-row gap-2 col-span-12 lg:col-span-8 bg-primary-cyan h-[120px] mb-4 lg:mb-0 lg:mr-3 rounded-md">
+                  <h1 className="text-primary-yellow text-[30px] xl:text-[50px] font-extrabold">
                     150 +
                   </h1>
-                  <p className="text-white text-[16px] lg:text-[18px] font-normal">
+                  <p className="text-white text-[16px] xl:text-[18px] font-normal  text-center">
                     Participating <br /> Educational Institutions
                   </p>
                 </div>
-                <div className="flex flex-col items-center justify-center col-span-4 bg-primary-purple rounded-md">
-                  <h1 className="text-white text-[30px] lg:text-[50px] font-extrabold leading-none">
+                <div className=" h-[120px] lg:h-full flex flex-col items-center justify-center col-span-12 lg:col-span-4 bg-primary-purple rounded-md">
+                  <h1 className="text-white text-[30px] xl:text-[50px] font-extrabold leading-none">
                     20 +
                   </h1>
-                  <p className="text-primary-cyan text-[16px] lg:text-[20px] font-normal">
+                  <p className="text-primary-cyan text-[16px] xl:text-[20px] font-normal">
                     Investors
                   </p>
                 </div>
@@ -539,7 +538,7 @@ export default function Home() {
       </div>
 
       {/* COUNTER  */}
-      <div className={`${Styles["counter-bg"]} md:h-[50vh]`}>
+      <div className={`${Styles["counter-bg"]} `}>
         <div className="custom-container h-full py-[70px] flex justify-center items-center">
           <div className="grid grid-cols-1 xl:grid-cols-2 xl:gap-x-12">
             <div className="relative">

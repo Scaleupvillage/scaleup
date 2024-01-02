@@ -60,8 +60,9 @@ const Footer = () => {
       get: "user",
       target: "instafeed-container",
       resolution: "low_resolution",
+      limit: 9,
       accessToken:
-        "IGQWRQejdjc2NfM0ZAUWmI0NnQycXJxWDc0ZA0lRbjl5UGZAtay01aWswS1FDMDBzdkJ1RUVsNF9EZA0VLXzAzVkxfX2pBcU1QZAFZANMFMyd2NhQ1RnMnR1bkNueFhFZA3lkTVJhdDdudmltUlBCaXZAFUV91WVpRbk1zZAzAZD",
+        "IGQWRNNDBOM0dSVmtDYmd3OWlBQ0tiY3BpMkFlS25LMUZAWYnlteG9qLWhwWGhZAWGp2TkJHSVR5b1VndTlpNVZAid3d4OUNBNnYxNlZAvU0VmSmpYb2VKMk5tZAVpOWTlCU0ZAtOWZAxM2tDaEg3M094VXdMWXlUV3dENlkZD",
     });
     userFeed.run();
 
@@ -122,7 +123,12 @@ const Footer = () => {
           </div>
 
           <div className="text-white text-[36px] font-semibold mb-4  mx-auto ">
-            {/* Insta Feed */}
+            <div className="w-[100px] h-[10px] rounded-full bg-white mb-4"></div>
+
+            <div
+              id="instafeed-container"
+              className={`${Styles["insta-feed"]} grid grid-cols-3 gap-2`}
+            ></div>
           </div>
 
           <div className="flex  flex-col  justify-start mx-auto ">
@@ -157,7 +163,9 @@ const Footer = () => {
 
       <div className="bg-black w-full ">
         <div className="custom-container flex flex-col lg:flex-row justify-between items-center py-4">
-          <p className="text-[#838383] mb-3 lg:mb-0">Copyright ©2024 All rights reserved </p>
+          <p className="text-[#838383] mb-3 lg:mb-0">
+            Copyright ©2024 All rights reserved{" "}
+          </p>
           <div>
             <ul className="flex gap-x-4 text-[#838383] text-[13px] whitespace-nowrap">
               <li>
@@ -188,7 +196,6 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <div id="instafeed-container"></div>
       </div>
       {openModal ? (
         <>

@@ -62,7 +62,7 @@ const Footer = () => {
       resolution: "low_resolution",
       limit: 9,
       accessToken:
-        "IGQWRNNDBOM0dSVmtDYmd3OWlBQ0tiY3BpMkFlS25LMUZAWYnlteG9qLWhwWGhZAWGp2TkJHSVR5b1VndTlpNVZAid3d4OUNBNnYxNlZAvU0VmSmpYb2VKMk5tZAVpOWTlCU0ZAtOWZAxM2tDaEg3M094VXdMWXlUV3dENlkZD",
+        "IGQWRQbERMdUU3Y0RxNnhDeEJaMmJBM0hQTlRlemF2ZADFLaW9zYnJ6X0pHamtUc0w2ZAXJpbEpBbzZAMb0x3SEtFejVCVTVVa1JxTTg1RnpVdGg4NVk5UEFVWlQ2Uzl6dWo3SFExMkd2ekVmSHBxdlExX1o4T3NUM0UZD",
     });
     userFeed.run();
 

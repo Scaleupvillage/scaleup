@@ -13,7 +13,6 @@ export default async function handler(req, res) {
         throw Error("Provide proper phone number");
       }
       let registrationData = await Registration.findOne({ phoneNumber });
-      console.log(registrationData);
       if (registrationData) {
         console.log("hereeeeee");
         return res
@@ -43,7 +42,8 @@ export default async function handler(req, res) {
             return res.status(200).json({ message: "OTP send successfully" });
           else return res.status(400).json({ message: "Something went wrong" });
         })
-        .catch(() => {
+        .catch((err) => {
+          console.log(err);
           return res.status(400).json({ message: "Something went wrong" });
         });
     } catch (error) {

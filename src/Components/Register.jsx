@@ -208,7 +208,7 @@ const Register = ({ setShow }) => {
                 disabled={formData.phoneNumber.length != 10}
                 onClick={sendOtp}
               >
-                Verify{" "}
+                Verify
               </button>
             </div>
           </div>

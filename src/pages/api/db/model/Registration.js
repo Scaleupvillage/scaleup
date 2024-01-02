@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const contactSchema = new mongoose.Schema({
+const registrationSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
@@ -18,8 +18,9 @@ const contactSchema = new mongoose.Schema({
   company: {
     type: String,
   },
+  isVerified: { type: Boolean, default: false },
 });
-const Contact =
-  mongoose.models.Contact || mongoose.model("Contact", contactSchema);
+const Registration =
+  mongoose.models.Registration || mongoose.model("Registration", registrationSchema);
 
-export default Contact;
+export default Registration;

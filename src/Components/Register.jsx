@@ -15,9 +15,9 @@ const Register = ({ setShow }) => {
     phoneNumber: "",
     email: "",
     category: "",
-    compony: "",
+    company: "",
     otp: "",
-    district: "",
+    district: "Malappuram",
   });
   const [errors, setErrors] = useState({});
   const keralaDistricts = [
@@ -73,8 +73,8 @@ const Register = ({ setShow }) => {
     }
 
     // Validate Company
-    if (!formData.compony.trim()) {
-      newErrors.compony = "Company/Organization is required";
+    if (!formData.company.trim()) {
+      newErrors.company = "Company/Organization is required";
     }
     // Validate Company
 
@@ -93,7 +93,7 @@ const Register = ({ setShow }) => {
 
   const sendOtp = () => {
     axios
-      .post("/api/otp/" + formData.phoneNumber)
+      .post("/api/otp/send", { phoneNumber: formData.phoneNumber })
       .then(() => {
         setShowOtp(true);
         toast("OTP send to your mobile number", {
@@ -127,7 +127,7 @@ const Register = ({ setShow }) => {
 
     if (isValid) {
       axios
-        .post("/api/otp/", { ...formData })
+        .post("/api/otp/verify", { ...formData })
         .then((response) => {
           toast("Registered Successfully", {
             type: "success",
@@ -255,6 +255,9 @@ const Register = ({ setShow }) => {
             onChange={handleChange}
             value={formData.district}
           >
+            <option value="" disabled>
+              Select your district
+            </option>
             {keralaDistricts.map((district, index) => (
               <option value={district} key={`district_${index}`}>
                 {district}
@@ -274,6 +277,9 @@ const Register = ({ setShow }) => {
             onChange={handleChange}
             value={formData.category}
           >
+            <option value="" selected disabled>
+              Select your category
+            </option>
             <option value="Student">Student</option>
             <option value="Entruprenurs"> Startup</option>
             <option value="Working">Local Business/SME </option>
@@ -293,14 +299,14 @@ const Register = ({ setShow }) => {
           </label>
           <input
             type="text"
-            name="compony"
-            placeholder="Compony/Organisation"
+            name="company"
+            placeholder="Company/Organisation"
             className="input"
-            value={formData.compony}
+            value={formData.company}
             onChange={handleChange}
           />
           {errors.phoneNumber && (
-            <div className="text-red-500 text-sm">{errors.compony}</div>
+            <div className="text-red-500 text-sm">{errors.company}</div>
           )}
         </div>
       </div>

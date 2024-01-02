@@ -27,10 +27,6 @@ const Navbar = () => {
       link: "#schedule",
     },
     {
-      label: "MEDIA KIT",
-      link: "#media_kit",
-    },
-    {
       label: "CONTACT  US",
       link: "#contactus",
     },

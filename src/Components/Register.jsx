@@ -93,7 +93,7 @@ const Register = ({ setShow }) => {
 
   const sendOtp = () => {
     axios
-      .get("/api/otp/" + formData.phoneNumber)
+      .post("/api/otp/" + formData.phoneNumber)
       .then(() => {
         setShowOtp(true);
         toast("OTP send to your mobile number", {

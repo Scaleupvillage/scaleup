@@ -14,7 +14,6 @@ export default async function handler(req, res) {
       }
       let registrationData = await Registration.findOne({ phoneNumber });
       if (registrationData) {
-        console.log("hereeeeee");
         return res
           .status(400)
           .json({ message: "Phone number is already verified" });
@@ -37,13 +36,14 @@ export default async function handler(req, res) {
             otp: hashedOTP,
             expireAt: moment().add(10, "minutes"),
           });
+
           const createdOTPRecord = await newOTP.save();
           if (createdOTPRecord)
             return res.status(200).json({ message: "OTP send successfully" });
           else return res.status(400).json({ message: "Something went wrong" });
         })
         .catch((err) => {
-          console.log(err);
+          console.log(err.message);
           return res.status(400).json({ message: "Something went wrong" });
         });
     } catch (error) {

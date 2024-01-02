@@ -26,11 +26,5 @@ const registrationSchema = new mongoose.Schema({
 const Registration =
   mongoose.models.Registration ||
   mongoose.model("Registration", registrationSchema);
-// registrationSchema.plugin(autoIncrement.plugin, {
-//   model: "Registration",
-//   field: "redId",
-//   startAt: 10000,
-//   incrementBy: 1,
-// });
 
 export default Registration;

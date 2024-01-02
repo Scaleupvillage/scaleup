@@ -61,7 +61,7 @@ const Footer = () => {
       target: "instafeed-container",
       resolution: "low_resolution",
       accessToken:
-        "IGQWRNVVRuUFJ0MmlzYU42SGJWMFQweUd1OVdyVXJIMjdFajN4VlJqWGNIbng0aGdRV3RleG9kTFlIdi1tVGFOdlh4RU8zUXNkYy1VUFBBdkk0NTUzdTRkdjlWZADhCcy1Kc3hxV3RhblRiUTVPMWRiME5zSi1CUlUZD",
+        "IGQWRQejdjc2NfM0ZAUWmI0NnQycXJxWDc0ZA0lRbjl5UGZAtay01aWswS1FDMDBzdkJ1RUVsNF9EZA0VLXzAzVkxfX2pBcU1QZAFZANMFMyd2NhQ1RnMnR1bkNueFhFZA3lkTVJhdDdudmltUlBCaXZAFUV91WVpRbk1zZAzAZD",
     });
     userFeed.run();
 

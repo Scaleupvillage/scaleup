@@ -34,6 +34,7 @@ import miandad from "@/assets/images/speakers/miandad.png";
 import gopinathmuthukad from "@/assets/images/speakers/gopinathmuthukad.png";
 import hassan from "@/assets/images/speakers/hassan.png";
 import majeed from "@/assets/images/speakers/majeed.png";
+import nadeemsafran from "@/assets/images/speakers/nadeemsafran.png";
 import Calendar from "@/Components/Icons/Calendar";
 import Scribbles from "@/Components/Scribbles";
 
@@ -290,7 +291,7 @@ export default function Home() {
         "w-full  bg-primary-purple h-[100px] px-8 py-2 rounded-tr-full rounded-br-full text-white flex justify-center items-center flex-col",
     },
     {
-      image: AnishAchuthan.src,
+      image: nadeemsafran.src,
       role: "CEO, Thara Cart",
       name: "Nadeem Safran kongath",
       bg: bg8.src,
@@ -308,8 +309,8 @@ export default function Home() {
     },
     {
       image: SanthoshGeorge.src,
-      role: "Santhosh George Kulangara",
-      name: "Founder and MD, Safari TV",
+      role: " Founder and MD, Safari TV",
+      name: "Santhosh George Kulangara",
       bg: bg10.src,
       nameContainerClassName:
         "w-full  bg-primary-blue h-[100px] px-8 py-2 rounded-tl-full rounded-bl-full text-white flex justify-center items-center flex-col",
@@ -1123,7 +1124,7 @@ export default function Home() {
               role="button"
               onClick={() => changeTab("sub", tab.name)}
               key={index}
-              className=" py-4 px-5 bg-gray-200  w-full min-w-[220px] flex items-center justify-between  overflow-hidden relative"
+              className=" py-4 px-5 bg-gray-200  w-full min-w-[200px] flex items-center justify-between  overflow-hidden relative"
             >
               <h1
                 className={`font-semibold text-[20px] ${
@@ -1150,15 +1151,12 @@ export default function Home() {
                 {Object.keys(schedules).length > 0 &&
                   schedules[scheduledTab.main][scheduledTab.sub].map(
                     (schedule, index) => {
-                      console.log(
-                        schedules[scheduledTab.main][scheduledTab.sub]
-                      );
                       return (
                         <div
                           class="flex flex-row border-b border-gray-200"
                           key={index}
                         >
-                          {/* {schedule.map((data, dataIndex) => (
+                          {schedule.map((data, dataIndex) => (
                             <div
                               class="w-full md:w-1/4 py-3 px-6 text-left"
                               key={dataIndex}
@@ -1179,10 +1177,10 @@ export default function Home() {
                                         {data.split(",")[0]}
                                       </h1>
                                       <p className="text-[14px] font-semibold whitespace-nowrap">
-                                      {data.split(",")[1]}
+                                        {data.split(",")[1]}
                                       </p>
                                       <p className="text-[10px] font-normal text-gray-500 whitespace-nowrap">
-                                      {data.split(",")[2]}
+                                        {data.split(",")[2]}
                                       </p>
                                     </>
                                   ) : (
@@ -1193,7 +1191,7 @@ export default function Home() {
                                 </>
                               )}
                             </div>
-                          ))} */}
+                          ))}
                           <div class="w-full md:w-1/4 py-3 px-6 text-left flex justify-center items-center flex-col">
                             <div className="text-[20px] font-semibold">14</div>
                             <div>February</div>
@@ -1245,7 +1243,13 @@ export default function Home() {
             >
               <Image
                 src={partner.src}
-                className={`${index === 7 || index === 21 ? 'w-[75px]' : index === 16 ? 'w-[200px]' : 'w-[150px]'} h-auto`}
+                className={`${
+                  index === 7 || index === 21
+                    ? "w-[75px]"
+                    : index === 16
+                    ? "w-[200px]"
+                    : "w-[150px]"
+                } h-auto`}
                 width="300"
                 height="200"
                 alt=""
@@ -1254,6 +1258,7 @@ export default function Home() {
           ))}
         </div>
       </div>
+
       <Footer />
     </div>
   );

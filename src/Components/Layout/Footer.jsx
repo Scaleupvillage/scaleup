@@ -123,7 +123,7 @@ const Footer = () => {
           </div>
 
           <div className="text-white text-[36px] font-semibold mb-4  mx-auto ">
-            <div className="w-[100px] h-[10px] rounded-full bg-white mb-4"></div>
+            {/* <div className="w-[100px] h-[10px] rounded-full bg-white mb-4"></div> */}
 
             <div
               id="instafeed-container"
@@ -166,7 +166,7 @@ const Footer = () => {
             Copyright ©2024 All rights reserved{" "}
           </p>
           <div>
-            <ul className="flex gap-x-4 text-[#838383] text-[13px] whitespace-nowrap">
+            <ul className="flex gap-x-4 text-[#838383] text-[11px] md:text-[14px] whitespace-nowrap">
               <li>
                 <Link href="/" className="uppercase">
                   Home

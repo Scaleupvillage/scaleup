@@ -70,18 +70,15 @@ const Navbar = () => {
   return (
     <div className="absolute w-full z-[100]">
       <div className="  bg-white shadow-md w-full flex justify-between  px-3 lg:px-[70px] items-center py-3 info-nav">
-        <div className="flex   md:gap-x-6 lg:gap-x-6 items-center text-[10px] lg:text-[16px]">
+        <div className="flex flex-col md:flex-row  md:gap-x-6 lg:gap-x-6 items-start md:items-center  text-[10px] lg:text-[16px]">
           <a
             href="mailto:info@scaleupconclave.com"
             className="flex justify-start "
           >
             info@scaleupconclave.com
           </a>
-          <p>|</p>
-          <a
-            href="tel:info@scaleupconclave.com"
-            className="lg:text-[15px] hidden md:block"
-          >
+          <p className="hidden ">|</p>
+          <a href="tel:info@scaleupconclave.com" className="lg:text-[15px] ">
             +91 9048170077
           </a>
         </div>

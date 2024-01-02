@@ -1,49 +1,28 @@
 /* eslint-disable @next/next/no-img-element */
-import { Exo_2 } from "next/font/google";
+import { useEffect, useState } from "react";
 import Styles from "@/pages/index.module.scss";
-import Navbar from "@/Components/Layout/Navbar";
+import { Exo_2 } from "next/font/google";
 const exo2 = Exo_2({ subsets: ["latin"], adjustFontFallback: false });
 import Link from "next/link";
-import { SwiperSlide } from "swiper/react";
+import axios from "axios";
+
 import { EffectFade, Autoplay } from "swiper/modules";
-import Slider from "@/Components/Slider";
 import dynamic from "next/dynamic";
 import Image from "next/image";
+import Slider from "@/Components/Slider";
+import Navbar from "@/Components/Layout/Navbar";
 import Footer from "@/Components/Layout/Footer";
-import Kunjalikutty from "@/assets/images/speakers/Kunjalikutty.png";
-import MLA from "@/assets/images/speakers/MLA.png";
-import Minister from "@/assets/images/speakers/Minister.png";
-import AnishAchuthan from "@/assets/images/speakers/AnishAchuthan.png";
-import ShamlalAhamad from "@/assets/images/speakers/ShamlalAhamad.png";
-import UshaTitus from "@/assets/images/speakers/UshaTitus.png";
-import IbnuJala from "@/assets/images/speakers/IbnuJala.png";
-import VimalGovind from "@/assets/images/speakers/VimalGovind.png";
-import MabelChacko from "@/assets/images/speakers/MabelChacko.png";
-import Tanooraa from "@/assets/images/speakers/Tanooraa.png";
-import Riyas from "@/assets/images/speakers/Riyas.png";
-import Musthafa from "@/assets/images/speakers/Musthafa.png";
-import SanthoshGeorge from "@/assets/images/speakers/SanthoshGeorge.png";
-import HariKishore from "@/assets/images/speakers/HariKishore.png";
-import AnoopAmbika from "@/assets/images/speakers/AnoopAmbika.png";
-import Gopinath from "@/assets/images/speakers/Gopinath.png";
-import NavasMeeran from "@/assets/images/speakers/NavasMeeran.png";
-import MuhammedMusthafa from "@/assets/images/speakers/MuhammedMusthafa.png";
-import shreyasmv from "@/assets/images/speakers/shreyasmv.png";
-import deepak from "@/assets/images/speakers/deepak.png";
-import miandad from "@/assets/images/speakers/miandad.png";
-import gopinathmuthukad from "@/assets/images/speakers/gopinathmuthukad.png";
-import hassan from "@/assets/images/speakers/hassan.png";
-import majeed from "@/assets/images/speakers/majeed.png";
-import nadeemsafran from "@/assets/images/speakers/nadeemsafran.png";
-import Calendar from "@/Components/Icons/Calendar";
 import Scribbles from "@/Components/Scribbles";
 
+// icons
+import Calendar from "@/Components/Icons/Calendar";
 import ScholarCap from "@/Components/Icons/ScholarCap";
 import Speaker from "@/Components/Icons/Speaker";
 import Clock from "@/Components/Icons/Clock";
-import UpArrows from "@/Components/Icons/scribbles/UpArrows";
 import Rocket from "@/Components/Icons/Rocket";
-import { useEffect, useState } from "react";
+import Aeroplane from "@/Components/Icons/Aeroplane";
+
+// static images
 import hackathon from "@/assets/images/hackathon.png";
 import discussion from "@/assets/images/discussion.png";
 import code from "@/assets/images/code.png";
@@ -55,64 +34,19 @@ import slider4 from "@/assets/images/slider4.png";
 import LocatioIcon from "@/Components/Icons/LocatioIcon";
 import Register from "@/Components/Register";
 
-// speaker bg
-import bg1 from "@/assets/images/speakers/bg/bg1.png";
-import bg2 from "@/assets/images/speakers/bg/bg2.png";
-import bg3 from "@/assets/images/speakers/bg/bg3.png";
-import bg4 from "@/assets/images/speakers/bg/bg4.png";
-import bg5 from "@/assets/images/speakers/bg/bg5.png";
-import bg6 from "@/assets/images/speakers/bg/bg6.png";
-import bg7 from "@/assets/images/speakers/bg/bg7.png";
-import bg8 from "@/assets/images/speakers/bg/bg8.png";
-import bg9 from "@/assets/images/speakers/bg/bg9.png";
-import bg10 from "@/assets/images/speakers/bg/bg10.png";
-import bg11 from "@/assets/images/speakers/bg/bg11.png";
-import bg12 from "@/assets/images/speakers/bg/bg12.png";
-import bg13 from "@/assets/images/speakers/bg/bg13.png";
-import bg14 from "@/assets/images/speakers/bg/bg14.png";
-import bg15 from "@/assets/images/speakers/bg/bg15.png";
-import bg16 from "@/assets/images/speakers/bg/bg16.png";
-import bg17 from "@/assets/images/speakers/bg/bg17.png";
-import bg18 from "@/assets/images/speakers/bg/bg18.png";
-import bg19 from "@/assets/images/speakers/bg/bg19.png";
-import bg20 from "@/assets/images/speakers/bg/bg20.png";
-// elemets
-import Line from "@/Components/Icons/scribbles/Line";
-import Arrow from "@/Components/Icons/scribbles/Arrow";
-import Group3 from "@/Components/Icons/scribbles/Group3";
-import Group1 from "@/Components/Icons/scribbles/Group1";
-import Group2 from "@/Components/Icons/scribbles/Group";
-import ArrowHead from "@/Components/Icons/scribbles/ArrowHead";
-import Wave from "@/Components/Icons/scribbles/Wave";
 
-// partners
-import Aeroplane from "@/Components/Icons/Aeroplane";
-import open from "@/assets/images/partners/open.png";
-import malabar from "@/assets/images/partners/malabar.png";
-import aroha from "@/assets/images/partners/aroha.png";
-import triplei from "@/assets/images/partners/triplei.png";
-import tharacart from "@/assets/images/partners/tharacart.png";
-import flora from "@/assets/images/partners/flora.png";
-import kdisc from "@/assets/images/partners/kdisc.png";
-import id from "@/assets/images/partners/id.png";
-import ksum from "@/assets/images/partners/ksum.png";
-import ksidc from "@/assets/images/partners/ksidc.png";
-import morfinvirsity from "@/assets/images/partners/morfinvirsity.png";
-import bbholdings from "@/assets/images/partners/bbholdings.png";
-import kkem from "@/assets/images/partners/kkem.png";
-import genrobotics from "@/assets/images/partners/genrobotics.png";
-import safari from "@/assets/images/partners/safari.png";
-import zoul from "@/assets/images/partners/zoul.png";
-import meeran from "@/assets/images/partners/meeran.png";
-import edroots from "@/assets/images/partners/edroots.png";
-import duk from "@/assets/images/partners/duk.png";
-import apk from "@/assets/images/partners/apk.png";
-import asap from "@/assets/images/partners/asap.png";
-import xpresso from "@/assets/images/partners/xpresso.png";
-import anar from "@/assets/images/partners/anar.png";
-import axios from "axios";
+import { speakers } from "@/constants/speakers";
+import { partners } from "@/constants/partners";
+import {
+  aboutSecondScribble,
+  aboutScribble,
+  scribblesSecond,
+  scribbles,
+} from "@/constants/scribbles";
+import Arrow from "@/Components/Icons/scribbles/Arrow";
 const Countdown = dynamic(() => import("@/Components/Counter"), { ssr: false });
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
+
 export default function Home() {
   const [scheduledTab, setScheduledTab] = useState({
     main: "Day 1",
@@ -131,10 +65,10 @@ export default function Home() {
         }}
       >
         <div className="custom-container z-[2] h-[75%]  flex justify-center items-center flex-col">
-          <h1 className="text-[18px] lg:text-[35px] xl:text-[42px] font-medium leading-none text-white">
+          <h1 className="text-[16px] lg:text-[35px] xl:text-[42px] font-medium leading-none text-white mb-3">
             Scale Your Business
           </h1>
-          <h1 className="text-white text-[20px] lg:text-[60px] xl:text-[70px] font-extrabold uppercase ">
+          <h1 className="text-white text-[18px] lg:text-[60px] xl:text-[70px] font-extrabold uppercase mb-2">
             Ideas to Bigger and Better
           </h1>
           <p className="text-sm lg:text-lg xl:text-[42px] mb-4 xl:mb-8 text-white"></p>
@@ -159,10 +93,10 @@ export default function Home() {
         }}
       >
         <div className="custom-container z-[2] h-[75%] flex justify-center items-center flex-col">
-          <h1 className="text-[14px] lg:text-[35px] xl:text-[42px]font-medium leading-none text-white uppercase">
+          <h1 className="text-[14px] lg:text-[35px] xl:text-[42px]font-medium leading-none text-white uppercase mb-3">
             Fostering ScaleUp Village:
           </h1>
-          <h1 className="text-white text-[20px] lg:text-[60px] xl:text-[65px] font-extrabold uppercase text-center">
+          <h1 className="text-white text-[20px] lg:text-[60px] xl:text-[65px] font-extrabold uppercase text-center mb-2">
             India’s First D2C Industrial Park
           </h1>
           <button
@@ -186,10 +120,10 @@ export default function Home() {
         }}
       >
         <div className="custom-container  z-[2] h-[75%] flex justify-center items-center flex-col">
-          <h1 className="text-[18px] lg:text-[42px] font-medium leading-none text-white uppercase">
+          <h1 className="text-[18px] lg:text-[42px] font-medium leading-none text-white uppercase mb-3">
             ScaleUp 2024: India’s First
           </h1>
-          <h1 className="text-white text-[20px] lg:text-[60px] xl:text-[70px] font-extrabold uppercase">
+          <h1 className="text-white text-[18px] lg:text-[60px] xl:text-[70px] font-extrabold uppercase mb-2">
             Fusion Business Conclave
           </h1>
           <button
@@ -213,10 +147,10 @@ export default function Home() {
         }}
       >
         <div className="custom-container  h-[75%] flex justify-center items-center flex-col z-[2]">
-          <h1 className="text-[18px] lg:text-[42px] font-medium leading-none text-white uppercase">
+          <h1 className="text-[18px] lg:text-[42px] font-medium leading-none text-white uppercase mb-3">
             Learn from Experts and Begin
           </h1>
-          <h1 className="text-white text-[20px] lg:text-[60px] xl:text-[70px] font-extrabold uppercase">
+          <h1 className="text-white text-[20px] lg:text-[60px] xl:text-[70px] font-extrabold uppercase mb-2">
             Your Business Journey
           </h1>
 
@@ -231,304 +165,6 @@ export default function Home() {
         <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-25 z-[1]"></div>
       </div>
     ),
-  ];
-
-  const speakers = [
-    {
-      image: Minister.src,
-      role: "Minister for Industries, Law and Coir in the Government of Kerala",
-      name: "P Rajeev",
-      bg: bg1.src,
-      nameContainerClassName:
-        "w-full  bg-primary-purple h-[100px] px-8 py-2 rounded-tr-full rounded-br-full text-white flex justify-center items-center flex-col",
-    },
-    {
-      image: Kunjalikutty.src,
-      role: "MLA Vengara",
-      name: "P. K. Kunhalikutty",
-      bg: bg2.src,
-      nameContainerClassName:
-        "w-full  bg-primary-blue h-[100px] px-8 py-2 rounded-tl-full rounded-bl-full text-white flex justify-center items-center flex-col",
-    },
-    {
-      image: MLA.src,
-      role: "MLA Perinthalmanna",
-      name: "Najeeb Kanthapuram",
-      bg: bg3.src,
-      nameContainerClassName:
-        "w-full  bg-primary-purple h-[100px] px-8 py-2 rounded-tr-full rounded-br-full text-white flex justify-center items-center flex-col",
-    },
-    {
-      image: shreyasmv.src,
-      role: "Managing Director, Mathrubhumi",
-      name: "M V Sreyas Kumar",
-      bg: bg4.src,
-      nameContainerClassName:
-        "w-full  bg-primary-cyan h-[100px] px-8 py-2 rounded-tl-full rounded-bl-full text-white flex justify-center items-center flex-col",
-    },
-    {
-      image: ShamlalAhamad.src,
-      role: "MD International Relations Malabar Gold & Diamonds",
-      name: "Shamlal Ahamed MP",
-      bg: bg5.src,
-      nameContainerClassName:
-        "w-full  bg-primary-purple h-[100px] px-8 py-2 rounded-tr-full rounded-br-full text-white flex justify-center items-center flex-col",
-    },
-    {
-      image: AnishAchuthan.src,
-      role: "Cofounder & CEO, Open Financial Technologies",
-      name: "Anish Achuthan",
-      bg: bg6.src,
-      nameContainerClassName:
-        "w-full  bg-primary-blue h-[100px] px-8 py-2 rounded-tl-full rounded-bl-full text-white flex justify-center items-center flex-col",
-    },
-    {
-      image: deepak.src,
-      role: "CEO, Triplei",
-      name: "Deepak H",
-      bg: bg7.src,
-      nameContainerClassName:
-        "w-full  bg-primary-purple h-[100px] px-8 py-2 rounded-tr-full rounded-br-full text-white flex justify-center items-center flex-col",
-    },
-    {
-      image: nadeemsafran.src,
-      role: "CEO, Thara Cart",
-      name: "Nadeem Safran kongath",
-      bg: bg8.src,
-      nameContainerClassName:
-        "w-full  bg-primary-cyan h-[100px] px-8 py-2 rounded-tl-full rounded-bl-full text-white flex justify-center items-center flex-col",
-    },
-
-    {
-      image: UshaTitus.src,
-      role: "Chairperson and MD, ASAP Kerala",
-      name: "Dr Usha Titus",
-      bg: bg9.src,
-      nameContainerClassName:
-        "w-full  bg-primary-purple h-[100px] px-8 py-2 rounded-tr-full rounded-br-full text-white flex justify-center items-center flex-col",
-    },
-    {
-      image: SanthoshGeorge.src,
-      role: " Founder and MD, Safari TV",
-      name: "Santhosh George Kulangara",
-      bg: bg10.src,
-      nameContainerClassName:
-        "w-full  bg-primary-blue h-[100px] px-8 py-2 rounded-tl-full rounded-bl-full text-white flex justify-center items-center flex-col",
-    },
-
-    {
-      image: miandad.src,
-      role: "Chairman 33 Holdings Gloabal",
-      name: "V P Muhammed Miandad",
-      bg: bg11.src,
-      nameContainerClassName:
-        "w-full  bg-primary-cyan h-[100px] px-8 py-2 rounded-tr-full rounded-br-full text-white flex justify-center items-center flex-col",
-    },
-    {
-      image: gopinathmuthukad.src,
-      role: "Indian magician & motivational speaker",
-      name: "Gopinath Muthukad",
-      bg: bg12.src,
-      nameContainerClassName:
-        "w-full  bg-primary-cyan h-[100px] px-8 py-2 rounded-tl-full rounded-bl-full text-white flex justify-center items-center flex-col",
-    },
-    {
-      image: Musthafa.src,
-      role: "CEO, iD Fresh Food India PVT. LTD.",
-      name: "PC Musthafa",
-      bg: bg13.src,
-      nameContainerClassName:
-        "w-full  bg-primary-purple h-[100px] px-8 py-2 rounded-tr-full rounded-br-full text-white flex justify-center items-center flex-col",
-    },
-    {
-      image: Gopinath.src,
-      role: "Vice Chancellor, Kerala University of Digital Sciences, Innovation and Technology",
-      name: "Saji Gopinath",
-      bg: bg14.src,
-      nameContainerClassName:
-        "w-full  bg-primary-blue h-[100px] px-8 py-2 rounded-tl-full rounded-bl-full text-white flex justify-center items-center flex-col",
-    },
-    {
-      image: HariKishore.src,
-      role: "Director, Industries and Commerce Department",
-      name: "Harikishore S. IAS",
-      bg: bg15.src,
-      nameContainerClassName:
-        "w-full  bg-primary-purple h-[100px] px-8 py-2 rounded-tr-full rounded-br-full text-white flex justify-center items-center flex-col",
-    },
-    {
-      image: AnoopAmbika.src,
-      role: "CEO, Kerala Startup Mission",
-      name: "Anoop Ambika",
-      bg: bg16.src,
-      nameContainerClassName:
-        "w-full  bg-primary-purple h-[100px] px-8 py-2 rounded-tl-full rounded-bl-full text-white flex justify-center items-center flex-col",
-    },
-    {
-      image: MabelChacko.src,
-      role: "Co-Founder & COO, Open Financial Technologies",
-      name: "Mabel Chacko",
-      bg: bg17.src,
-      nameContainerClassName:
-        "w-full  bg-primary-purple h-[100px] px-8 py-2 rounded-tr-full rounded-br-full text-white flex justify-center items-center flex-col",
-    },
-    {
-      image: IbnuJala.src,
-      role: "Founder & CEO, Morfin Versity",
-      name: "Ibnu Jala",
-      bg: bg18.src,
-      nameContainerClassName:
-        "w-full  bg-primary-blue h-[100px] px-8 py-2 rounded-tl-full rounded-bl-full text-white flex justify-center items-center flex-col",
-    },
-    {
-      image: majeed.src,
-      role: "Saif Belhasa Auomotive, Dubai, UAE",
-      name: "Majeed C K",
-      bg: bg19.src,
-      nameContainerClassName:
-        "w-full  bg-primary-purple h-[100px] px-8 py-2 rounded-tr-full rounded-br-full text-white flex justify-center items-center flex-col",
-    },
-    {
-      image: hassan.src,
-      role: "Chairman & CEO, Flora Hospitality Dubai. MD, SBK Real Estate Dubai",
-      name: "Hassan V A",
-      bg: bg20.src,
-      nameContainerClassName:
-        "w-full  bg-primary-cyan h-[100px] px-8 py-2 rounded-tl-full rounded-bl-full    text-white flex justify-center items-center flex-col",
-    },
-    {
-      image: VimalGovind.src,
-      role: "Co-Founder & CEO, Genrobotics ",
-      name: "Vimal Govind MK",
-      bg: bg17.src,
-      nameContainerClassName:
-        "w-full  bg-primary-purple h-[100px] px-8 py-2 rounded-tr-full rounded-br-full text-white flex justify-center items-center flex-col",
-    },
-    {
-      image: NavasMeeran.src,
-      role: "Chairman, Group Meeran",
-      name: "Navas Meeran",
-      bg: bg18.src,
-      nameContainerClassName:
-        "w-full  bg-primary-blue h-[100px] px-8 py-2 rounded-tl-full rounded-bl-full text-white flex justify-center items-center flex-col",
-    },
-
-    {
-      image: MuhammedMusthafa.src,
-      role: "Founder & CEO, Edroots International",
-      name: "Muhammed Musthafa Koori",
-      bg: bg19.src,
-      nameContainerClassName:
-        "w-full  bg-primary-purple h-[100px] px-8 py-2 rounded-tr-full rounded-br-full text-white flex justify-center items-center flex-col",
-    },
-    {
-      image: Tanooraa.src,
-      role: "Founder, Zoul and Zera",
-      name: "Tanooraa Swetha Menon",
-      bg: bg20.src,
-      nameContainerClassName:
-        "w-full  bg-primary-cyan h-[100px] px-8 py-2 rounded-tl-full rounded-bl-full    text-white flex justify-center items-center flex-col",
-    },
-  ];
-
-  let scribbles = [
-    {
-      component: (
-        <Wave
-          className="absolute bottom-[13%] lg:bottom-[10%] right-[5%] z-[11] w-[100px] lg:w-[200px] opacity-50"
-          fill="#00B4B8"
-        />
-      ),
-    },
-    {
-      component: (
-        <Wave
-          className="absolute bottom-[10%] lg:bottom-[7%] right-[-1%] z-[11] w-[100px] lg:w-[200px] opacity-50"
-          fill="#FFCF3F"
-        />
-      ),
-    },
-    {
-      component: (
-        <Group1
-          className="absolute bottom-[10%] lg:bottom-[5%] left-[-1%] z-[11]  w-[100px] lg:w-[200px] opacity-50"
-          fill="#FFCF3F"
-        />
-      ),
-    },
-  ];
-  let scribblesSecond = [
-    {
-      component: (
-        <Wave
-          className="absolute top-[7%] lg:top-[11%] left-[-4%]  w-[100px] lg:w-[200px]"
-          fill="#CB8DF7"
-        />
-      ),
-    },
-    {
-      component: (
-        <Wave
-          className="absolute top-[5%] lg:top-[5%] left-[5%] lg:left-[2%] w-[100px] lg:w-[200px]"
-          fill="#FFCF3F"
-        />
-      ),
-    },
-  ];
-  let aboutScribble = [
-    {
-      component: (
-        <Wave
-          className="absolute top-[8%] right-[-9%]"
-          width="200"
-          fill="#FFCF3F"
-        />
-      ),
-    },
-    {
-      component: (
-        <Wave
-          className="absolute top-[5%] right-[-3%]"
-          width="200"
-          fill="#00B4B8"
-        />
-      ),
-    },
-    {
-      component: <Group3 className="absolute top-[3%] left-0" width="150" />,
-    },
-  ];
-  let timerScribbles = [
-    {
-      component: (
-        <Line
-          fill="#FFCF3F"
-          className="absolute top-[55%] left-0 w-[90%] h-[24px]"
-          preserveAspectRatio="none"
-        />
-      ),
-    },
-
-    {
-      component: (
-        <ArrowHead fill="#FFCF3F" className="absolute top-[47%] right-[3%] " />
-      ),
-    },
-  ];
-  let aboutSecondScribble = [
-    {
-      component: (
-        <UpArrows className="absolute bottom-[0px] right-0 z-[1] opacity-30 2xl:opacity-100" />
-      ),
-    },
-    {
-      component: (
-        <Group2
-          className="absolute bottom-[5%] left-[2%] z-[1] opacity-30 hidden md:block 2xl:opacity-100"
-          height="250"
-        />
-      ),
-    },
   ];
 
   let aboutCards = [
@@ -693,29 +329,53 @@ export default function Home() {
       ],
     },
   ];
-  let partners = [
-    open,
-    malabar,
-    aroha,
-    triplei,
-    tharacart,
-    flora,
-    kdisc,
-    id,
-    ksum,
-    ksidc,
-    morfinvirsity,
-    bbholdings,
-    kkem,
-    genrobotics,
-    zoul,
-    meeran,
-    edroots,
-    duk,
-    apk,
-    asap,
-    xpresso,
-    anar,
+  let highlightedPrograms = [
+    [
+      {
+        title: " Panel Discussions",
+        desc: " Engage in dynamic conversations led by industry thought leaders, exploring cutting-edge topics and sharing diverse perspectives to foster insightful discussions",
+      },
+      {
+        title: "Talks by Industry Experts",
+        desc: " Immerse yourself in enlightening sessions delivered by seasoned professionals, gaining deep insights into the latest trends, innovations, and best practices in the industry",
+      },
+      {
+        title: "Medical Hackathon",
+        desc: " Join forces with like-minded innovators to tackle real-world healthcare challenges, leveraging technology and creativity to develop impactful solutions",
+      },
+      {
+        title: "Idea Pitching Events",
+        desc: " Step into the spotlight and present your groundbreaking ideas, receiving valuable feedback and the opportunity to connect with potential collaborators and investors",
+      },
+    ],
+    [
+      {
+        title: "Technical Workshops",
+        desc: " Dive into hands-on technical workshops, equipping yourself with practical skills and knowledge led by experts in the field",
+      },
+      {
+        title: "Art & Craft Workshops",
+        desc: " Unleash your creative side with engaging art and craft workshops, providing a relaxing and enjoyable break from the technical aspects of the event",
+      },
+    ],
+    [
+      {
+        title: "Cookathon",
+        desc: " Explore the intersection of food and innovation in this culinary challenge, where participants compete to create the next big Direct-to-Consumer (D2C) friendly food product",
+      },
+      {
+        title: " 1-1 Mentoring Sessions",
+        desc: " Receive personalized guidance from experienced mentors, addressing specific queries and gaining valuable insights tailored to your individual needs",
+      },
+      {
+        title: " Entertainment Programs & Games",
+        desc: " Enjoy a mix of entertainment and games, fostering a lively and interactive atmosphere to complement the educational aspects of the event",
+      },
+      {
+        title: " Project Expo & Stalls",
+        desc: " Showcase your projects and innovations, network with attendees, and explore a diverse array of stalls featuring cutting-edge products and services",
+      },
+    ],
   ];
 
   const scheduleTab = [
@@ -770,7 +430,7 @@ export default function Home() {
       ),
     },
   ];
-  const targetDate = new Date("2024-02-02T00:00:00");
+  const eventDate = new Date("2024-02-02T00:00:00");
 
   const changeTab = (level, tab) => {
     setScheduledTab({ ...scheduledTab, [level]: tab });
@@ -883,7 +543,7 @@ export default function Home() {
         <div className="custom-container h-full py-[70px] flex justify-center items-center">
           <div className="grid grid-cols-1 xl:grid-cols-2 xl:gap-x-12">
             <div className="relative">
-              <div className="text-[30px] lg:text-[45px] text-primary-purple flex justify-center items-center">
+              <div className="text-[25px] md:text-[30px] lg:text-[45px] text-primary-purple flex justify-center items-center">
                 <div className="bg-primary-purple px-5 font-bold rounded-md mr-4">
                   <span className="text-white">2,</span>
                   <span className="text-primary-yellow">3</span>
@@ -906,10 +566,10 @@ export default function Home() {
               </div>
             </div>
             <div className="z-[10] relative flex justify-center items-center flex-col mt-12 xl:mt-0">
-              <h1 className="text-black font-bold text-[16px] md:text-[24px] mb-[20px] xl:mb-0">
+              <h1 className="text-black font-bold text-[16px] md:text-[24px] mb-[20px] xl:mb-0 text-center">
                 Gear up for the ultimate business festival
               </h1>
-              <Countdown targetDate={targetDate} />
+              <Countdown targetDate={eventDate} />
             </div>
           </div>
         </div>
@@ -918,19 +578,17 @@ export default function Home() {
 
       <div className="py-[100px] relative overflow-hidden">
         <div className="custom-container relative">
-          <div className="py-[100px]">
-            <h1 className="title purple-before text-[36px]">ScaleUp who</h1>
-            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-x-4 ">
-              {aboutCards.map((card, index) => (
-                <div className={`${Styles["about-card"]} `} key={index}>
-                  {card.icon}
-                  <div className="py-4 h-full">
-                    <h1 className={Styles["card-heading"]}>{card.title}</h1>
-                    <p className="mb-4 ">{card.description}</p>
-                  </div>
+          <h1 className="title purple-before text-[36px]">ScaleUp who</h1>
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-x-4 ">
+            {aboutCards.map((card, index) => (
+              <div className={`${Styles["about-card"]} `} key={index}>
+                {card.icon}
+                <div className="py-4 h-full">
+                  <h1 className={Styles["card-heading"]}>{card.title}</h1>
+                  <p className="mb-4 ">{card.description}</p>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
         <Scribbles scribbles={aboutScribble} />
@@ -1012,7 +670,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="py-[100px] custom-container flex justify-center items-center flex-col">
+      {/* <div className="py-[100px] custom-container flex justify-center items-center flex-col">
         <hi className="title wave-before uppercase text-[36px] ">
           Highlighted Programs
         </hi>
@@ -1060,8 +718,56 @@ export default function Home() {
             </>
           </div>
         ))}
+      </div> */}
+      <div className=" py-[100px]   p-4">
+        <div className="custom-container">
+          <h1 className="title wave-before uppercase text-[36px]">
+            Highlighted Programs
+          </h1>
+        </div>
+        {highlightedPrograms.map((programs, highlightedProgramsIndex) => (
+          <div className="grid grid-cols-12 " key={highlightedProgramsIndex}>
+            {programs.map(({ title, desc }, programIndex) => (
+              <div
+                className={`col-span-12 lg:col-span-3 h-[250px] rounded-md shadow-lg  overflow-hidden m-3 bg-white ${
+                  highlightedProgramsIndex == 1 && programIndex === 0
+                    ? "order-1"
+                    : programIndex === 1
+                    ? "order-3"
+                    : ""
+                }`}
+                key={programIndex}
+              >
+                <div class="flip-card border-4 border-primary-purple rounded-[10px] overflow-hidden">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front ">
+                      <div className="relative h-full">
+                        <Image
+                          src={start.src}
+                          alt="Avatar"
+                          width="300"
+                          height="300"
+                          className="z-[1] w-full h-full object-cover"
+                        />
+                        <div className="absolute z-[10] bottom-[10px] bg-primary-purple p-3 rounded-tr-full rounded-br-full text-white font-semibold uppercase">
+                          {title}
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flip-card-back bg-primary-purple flex justify-center items-center flex-col p-4 border-4 border-white rounded-[10px] ">
+                      <h1 className="font-bold text-[23px] mb-4">{title}</h1>
+                      <p className="text-sm">{desc}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+            {highlightedProgramsIndex === 1 && (
+              <div className="hidden lg:block col-span-6 order-2  h-[250px] rounded-md shadow-lg  overflow-hidden m-3 bg-white"></div>
+            )}
+          </div>
+        ))}
       </div>
-
       <div className="py-[100px] custom-container">
         <h1 className="text-[36px] title uppercase">Schedule</h1>
         <div className="custom-container flex gap-x-6 justify-center items-center  pb-6 overflow-auto">
@@ -1142,7 +848,7 @@ export default function Home() {
           <div className="w-full overflow-auto">
             <div className="bg-white shadow-md rounded ">
               <div className="flex flex-col">
-                {Object.keys(schedules).length > 0 &&
+                {/* {Object.keys(schedules).length > 0 &&
                   schedules[scheduledTab.main][scheduledTab.sub].map(
                     (schedule, index) => {
                       return (
@@ -1217,7 +923,11 @@ export default function Home() {
                         </div>
                       );
                     }
-                  )}
+                  )} */}
+
+                <div className="w-full  text-center p-7  border-b border-gray-200 shadow-lg">
+                  <h1 className="title">Coming Soon...</h1>
+                </div>
               </div>
             </div>
           </div>
@@ -1229,7 +939,7 @@ export default function Home() {
           Our partners
         </h1>
 
-        <div className="grid grid-cols-2 gap-7 lg:grid-cols-5">
+        <div className="grid grid-cols-2 gap-7 lg:grid-cols-5 mt-4">
           {partners.map((partner, index) => (
             <div
               className="h-full flex justify-center items-center"

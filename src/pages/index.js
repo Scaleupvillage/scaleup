@@ -369,7 +369,7 @@ export default function Home() {
       name: "Mabel Chacko",
       bg: bg17.src,
       nameContainerClassName:
-        "w-full  bg-primary-purple h-[100px] px-8 py-2 rounded-tl-full rounded-bl-full text-white flex justify-center items-center flex-col",
+        "w-full  bg-primary-purple h-[100px] px-8 py-2 rounded-tr-full rounded-br-full text-white flex justify-center items-center flex-col",
     },
     {
       image: IbnuJala.src,

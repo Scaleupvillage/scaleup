@@ -1047,12 +1047,6 @@ export default function Home() {
                           to share and absorb industry insights
                         </p>
                       </div>
-                      {/* <button
-                        type="button"
-                        className="rounded-full uppercase bg-primary-purple text-white w-1/2 py-2 mt-4"
-                      >
-                        JOIN NOW
-                      </button> */}
                       <Link
                         href=""
                         className="rounded-full capitalize hover:bg-primary-purple hover:text-white text-primary-purple w-1/2 py-2 mt-4 text-center font-semibold"
@@ -1145,20 +1139,20 @@ export default function Home() {
               <h1 className="text-white ml-3">Main Events</h1>
             </div>
           </div>
-          <div class="w-full overflow-auto">
-            <div class="bg-white shadow-md rounded ">
-              <div class="flex flex-col">
+          <div className="w-full overflow-auto">
+            <div className="bg-white shadow-md rounded ">
+              <div className="flex flex-col">
                 {Object.keys(schedules).length > 0 &&
                   schedules[scheduledTab.main][scheduledTab.sub].map(
                     (schedule, index) => {
                       return (
                         <div
-                          class="flex flex-row border-b border-gray-200"
+                          className="flex flex-row border-b border-gray-200"
                           key={index}
                         >
                           {schedule.map((data, dataIndex) => (
                             <div
-                              class="w-full md:w-1/4 py-3 px-6 text-left"
+                              className="w-full md:w-1/4 py-3 px-6 text-left"
                               key={dataIndex}
                             >
                               {dataIndex === 0 ? (
@@ -1192,11 +1186,11 @@ export default function Home() {
                               )}
                             </div>
                           ))}
-                          <div class="w-full md:w-1/4 py-3 px-6 text-left flex justify-center items-center flex-col">
+                          <div className="w-full md:w-1/4 py-3 px-6 text-left flex justify-center items-center flex-col">
                             <div className="text-[20px] font-semibold">14</div>
                             <div>February</div>
                           </div>
-                          <div class="w-full md:w-1/4 py-3 px-6 text-center flex justify-center items-center flex-col">
+                          <div className="w-full md:w-1/4 py-3 px-6 text-center flex justify-center items-center flex-col">
                             <h1 className="text-[15px] font-semibold whitespace-nowrap">
                               Conference in Amsterdam
                             </h1>
@@ -1207,12 +1201,12 @@ export default function Home() {
                               Speaker: Daniel Hill
                             </p>
                           </div>
-                          <div class="w-full md:w-1/4 py-3 px-6 text-center flex justify-center items-center">
+                          <div className="w-full md:w-1/4 py-3 px-6 text-center flex justify-center items-center">
                             <button className="rounded-2xl bg-primary-cyan text-white px-10 py-2 text-[10px]">
                               Read More
                             </button>
                           </div>
-                          <div class="w-full md:w-1/4 py-3 px-6 text-center flex justify-center items-center">
+                          <div className="w-full md:w-1/4 py-3 px-6 text-center flex justify-center items-center">
                             <a
                               className="text-primary-cyan text-[12px] font-semibold underline underline-primary-cyan"
                               href=""

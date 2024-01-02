@@ -82,7 +82,7 @@ const Navbar = () => {
             href="tel:info@scaleupconclave.com"
             className="lg:text-[15px] hidden md:block"
           >
-           +91 9048170077
+            +91 9048170077
           </a>
         </div>
         <div className="flex justify-center items-center gap-x-3 lg:gap-x-4">
@@ -133,7 +133,7 @@ const Navbar = () => {
       <div className="w-full block md:hidden bg-[#18181C] absolute z-20">
         <div
           className="w-full flex justify-between relative  p-5 "
-          initial={false}
+          initial={"false"}
           custom={height}
           ref={containerRef}
         >

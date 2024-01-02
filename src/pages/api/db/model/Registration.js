@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import autoIncrement from "mongoose-auto-increment";
 const registrationSchema = new mongoose.Schema({
   redId: {
     type: Number,

@@ -126,7 +126,7 @@ export default function Home() {
         className="w-full bg-opacity-20 h-full flex justify-end flex-col relative"
         style={{
           background: `url(${slider1.src})`,
-          backgroundSize: "100% 100%",
+          backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
         }}
       >
@@ -154,7 +154,7 @@ export default function Home() {
         className="w-full  h-full flex justify-end items-center flex-col "
         style={{
           background: `url(${slider2.src})`,
-          backgroundSize: "100% 100%",
+          backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
         }}
       >
@@ -181,7 +181,7 @@ export default function Home() {
         className="w-full h-full flex justify-end items-center flex-col "
         style={{
           background: `url(${slider4.src})`,
-          backgroundSize: "100% 100%",
+          backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
         }}
       >
@@ -208,7 +208,7 @@ export default function Home() {
         className="w-full bg-black bg-opacity-20 h-full flex justify-end items-center flex-col"
         style={{
           background: `url(${slider3.src})`,
-          backgroundSize: "100% 100%",
+          backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
         }}
       >

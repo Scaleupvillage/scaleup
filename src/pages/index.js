@@ -27,6 +27,16 @@ import hackathon from "@/assets/images/hackathon.png";
 import discussion from "@/assets/images/discussion.png";
 import code from "@/assets/images/code.png";
 import start from "@/assets/images/start.png";
+import hilight1 from "@/assets/gif/hilight1.gif";
+import hilight2 from "@/assets/gif/hilight2.gif";
+import hilight3 from "@/assets/gif/hilight3.gif";
+import hilight4 from "@/assets/gif/hilight4.gif";
+import hilight5 from "@/assets/gif/hilight5.gif";
+import hilight6 from "@/assets/gif/hilight6.gif";
+import hilight7 from "@/assets/gif/hilight7.gif";
+import hilight8 from "@/assets/gif/hilight8.gif";
+import hilight9 from "@/assets/gif/hilight9.gif";
+import hilight10 from "@/assets/gif/hilight10.gif";
 import slider1 from "@/assets/images/slider1.png";
 import slider2 from "@/assets/images/slider2.png";
 import slider3 from "@/assets/images/slider3.png";
@@ -331,46 +341,56 @@ export default function Home() {
   let highlightedPrograms = [
     [
       {
+        background: hilight1.src,
         title: " Panel Discussions",
         desc: " Engage in dynamic conversations led by industry thought leaders, exploring cutting-edge topics and sharing diverse perspectives to foster insightful discussions",
       },
       {
+        background: hilight2.src,
         title: "Talks by Industry Experts",
         desc: " Immerse yourself in enlightening sessions delivered by seasoned professionals, gaining deep insights into the latest trends, innovations, and best practices in the industry",
       },
       {
+        background: hilight3.src,
         title: "Medical Hackathon",
         desc: " Join forces with like-minded innovators to tackle real-world healthcare challenges, leveraging technology and creativity to develop impactful solutions",
       },
       {
+        background: hilight4.src,
         title: "Idea Pitching Events",
         desc: " Step into the spotlight and present your groundbreaking ideas, receiving valuable feedback and the opportunity to connect with potential collaborators and investors",
       },
     ],
     [
       {
+        background: hilight5.src,
         title: "Technical Workshops",
         desc: " Dive into hands-on technical workshops, equipping yourself with practical skills and knowledge led by experts in the field",
       },
       {
+        background: hilight6.src,
         title: "Art & Craft Workshops",
         desc: " Unleash your creative side with engaging art and craft workshops, providing a relaxing and enjoyable break from the technical aspects of the event",
       },
     ],
     [
       {
+        background: hilight7.src,
         title: "Cookathon",
         desc: " Explore the intersection of food and innovation in this culinary challenge, where participants compete to create the next big Direct-to-Consumer (D2C) friendly food product",
       },
       {
+        background: hilight10.src,
         title: " 1-1 Mentoring Sessions",
         desc: " Receive personalized guidance from experienced mentors, addressing specific queries and gaining valuable insights tailored to your individual needs",
       },
       {
+        background: hilight8.src,
         title: " Entertainment Programs & Games",
         desc: " Enjoy a mix of entertainment and games, fostering a lively and interactive atmosphere to complement the educational aspects of the event",
       },
       {
+        background: hilight9.src,
         title: " Project Expo & Stalls",
         desc: " Showcase your projects and innovations, network with attendees, and explore a diverse array of stalls featuring cutting-edge products and services",
       },
@@ -724,7 +744,7 @@ export default function Home() {
       <div className=" py-[100px]   p-4">
         {highlightedPrograms.map((programs, highlightedProgramsIndex) => (
           <div className="grid grid-cols-12 " key={highlightedProgramsIndex}>
-            {programs.map(({ title, desc }, programIndex) => (
+            {programs.map(({ title, desc, background }, programIndex) => (
               <div
                 className={`col-span-12 lg:col-span-3 h-[250px] rounded-md shadow-lg  overflow-hidden m-3 bg-white ${
                   highlightedProgramsIndex == 1 && programIndex === 0
@@ -740,7 +760,7 @@ export default function Home() {
                     <div className="flip-card-front ">
                       <div className="relative h-full">
                         <Image
-                          src={start.src}
+                          src={background}
                           alt="Avatar"
                           width="300"
                           height="300"
@@ -966,7 +986,7 @@ export default function Home() {
         </div>
       </div>
 
-      <Footer  />
+      <Footer />
     </div>
   );
 }

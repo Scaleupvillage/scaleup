@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Close from "./Icons/close.png";
 import Image from "next/image";
 import axios from "axios";
 import { toast } from "react-toastify";
 import MinuteCounter from "./Counter/MinuteCounter";
+import { modal } from "./Modal";
 
 const Register = ({ setShow }) => {
+  const otpInput = useRef(null);
   const [showOtp, setShowOtp] = useState(false);
-  const [disableVerifyBtn, setDisableVerifyBtn] = useState(false);
   const [verifyOtp, setVerifyOtp] = useState({
     disableVerifyBtn: false,
     verifyOtpDisabledSeconds: 90,
@@ -107,12 +108,6 @@ const Register = ({ setShow }) => {
     if (currentTime >= oneMinuteLater) {
       return { disabled: false };
     } else {
-      // console.log((currentTime.getTime() - new Date(verifyOtp.start)) / 1000);
-      setVerifyOtp({
-        ...verifyOtp,
-        // verifyOtpDisabledSeconds:
-        //   (currentTime.getTime() - new Date(verifyOtp.start)) / 1000,
-      });
       return {
         disabled: true,
       };
@@ -136,6 +131,7 @@ const Register = ({ setShow }) => {
         });
       })
       .catch((err) => {
+        console.log(err);
         toast(err.response.data.message, {
           type: "error",
           position: "bottom-right",
@@ -184,6 +180,12 @@ const Register = ({ setShow }) => {
         });
     }
   };
+
+  useEffect(() => {
+    if (showOtp) {
+      otpInput.current.focus();
+    }
+  }, [showOtp]);
 
   return (
     <div
@@ -246,7 +248,6 @@ const Register = ({ setShow }) => {
           </div>
           {showOtp && (
             <span className="text-[13px] flex">
-              OTP send to your mobile, please request after
               <MinuteCounter
                 second={verifyOtp.verifyOtpDisabledSeconds}
                 onStart={() => {
@@ -276,6 +277,7 @@ const Register = ({ setShow }) => {
               name="otp"
               placeholder="Enter your otp"
               className="input"
+              ref={otpInput}
               value={formData.otp}
               onChange={handleChange}
             />

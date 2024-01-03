@@ -16,7 +16,10 @@ const MinuteCounter = ({ onStart, onEnd, second }) => {
 
   return (
     <div>
-      <h1>{seconds} seconds left</h1>
+      <h1 className="text-green-700">
+        {" "}
+        OTP send to your mobile, please request after {seconds} seconds.
+      </h1>
     </div>
   );
 };

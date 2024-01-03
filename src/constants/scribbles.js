@@ -79,6 +79,35 @@ let aboutScribble = [
     ),
   },
 ];
+
+let hilightScribble = [
+  {
+    component: (
+      <Wave
+        className="absolute top-[3%] right-[-9%] hidden lg:block"
+        width="200"
+        fill="#FFCF3F"
+      />
+    ),
+  },
+  {
+    component: (
+      <Wave
+        className="absolute top-0 right-[-3%] hidden lg:block"
+        width="200"
+        fill="#00B4B8"
+      />
+    ),
+  },
+  {
+    component: (
+      <Group3
+        className="absolute top-0 left-0 hidden lg:block"
+        width="150"
+      />
+    ),
+  },
+];
 let timerScribbles = [
   {
     component: (
@@ -118,4 +147,5 @@ export {
   aboutScribble,
   scribblesSecond,
   scribbles,
+  hilightScribble
 };

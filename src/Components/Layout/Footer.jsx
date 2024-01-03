@@ -15,7 +15,7 @@ import { useEffect, useState } from "react";
 import Youtube from "../Icons/Youtube";
 import Linkedin from "../Icons/Linkedin";
 
-const Footer = () => {
+const Footer = ({ hideFloatingBtn }) => {
   const [openModal, setOpenModal] = useState(false);
 
   const handleClick = () => {
@@ -28,29 +28,30 @@ const Footer = () => {
       const floatingElement = document.querySelector(".reg-now-btn");
       const header = document.querySelector(".main-section");
       const footer = document.querySelector(".footer");
+      if (hideFloatingBtn) {
+        const isScrolledPastHeader = () => {
+          const currentScrollPosition =
+            window.pageYOffset || document.documentElement.scrollTop;
+          return currentScrollPosition > header.clientHeight;
+        };
 
-      const isScrolledPastHeader = () => {
-        const currentScrollPosition =
-          window.pageYOffset || document.documentElement.scrollTop;
-        return currentScrollPosition > header.clientHeight;
-      };
+        const isScrolledBeforeFooter = () => {
+          const currentScrollPosition =
+            window.pageYOffset || document.documentElement.scrollTop;
+          return (
+            currentScrollPosition + window.innerHeight <
+            document.body.offsetHeight - footer.clientHeight
+          );
+        };
 
-      const isScrolledBeforeFooter = () => {
-        const currentScrollPosition =
-          window.pageYOffset || document.documentElement.scrollTop;
-        return (
-          currentScrollPosition + window.innerHeight <
-          document.body.offsetHeight - footer.clientHeight
-        );
-      };
-
-      const shouldDisplayButton = () => {
-        return isScrolledPastHeader() && isScrolledBeforeFooter();
-      };
-      if (shouldDisplayButton()) {
-        floatingElement.style.display = "block";
-      } else {
-        floatingElement.style.display = "none";
+        const shouldDisplayButton = () => {
+          return isScrolledPastHeader() && isScrolledBeforeFooter();
+        };
+        if (shouldDisplayButton()) {
+          floatingElement.style.display = "block";
+        } else {
+          floatingElement.style.display = "none";
+        }
       }
     };
 
@@ -137,13 +138,11 @@ const Footer = () => {
             </div>
             <div className="text-white">
               <a href="mailto:info@scaleupconclave.com">
-               Email: info@scaleupconclave.com
+                Email: info@scaleupconclave.com
               </a>
             </div>
             <div className="text-white  ">
-              <a href="tel:+919048170077">
-               Phone : +91 9048170077
-                </a>
+              <a href="tel:+919048170077">Phone : +91 9048170077</a>
             </div>
             <div className="text-white  mb-4  ">
               Location: Shifa Convention Center
@@ -158,7 +157,6 @@ const Footer = () => {
                 referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
             </div>
-            
           </div>
         </div>
       </div>

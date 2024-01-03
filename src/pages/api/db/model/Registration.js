@@ -21,6 +21,9 @@ const registrationSchema = new mongoose.Schema({
   company: {
     type: String,
   },
+  district: {
+    type: String,
+  },
   isVerified: { type: Boolean, default: false },
 });
 const Registration =

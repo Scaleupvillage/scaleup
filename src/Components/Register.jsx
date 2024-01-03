@@ -257,8 +257,8 @@ const Register = ({ setShow }) => {
                   className="bg-primary-cyan px-5 py-2 rounded-full text-white disabled:cursor-not-allowed disabled:opacity-50"
                   disabled={
                     formData.phoneNumber.length != 10 ||
-                    verifyOtp.disableVerifyBtn ||
-                    isDisabled().disabled
+                    verifyOtp.disableVerifyBtn
+                    // isDisabled().disabled
                   }
                   onClick={sendOtp}
                 >
@@ -361,13 +361,13 @@ const Register = ({ setShow }) => {
                 Select your category
               </option>
               <option value="Student">Student</option>
-              <option value="Entruprenurs"> Startup</option>
-              <option value="Working">Local Business/SME </option>
-              <option value="Professional">Working Professional</option>
-              <option value="NREs or Gulf Returnees">
+              <option value="Startup"> Startup</option>
+              <option value="Local Business/SME">Local Business/SME </option>
+              <option value="Working Professional">Working Professional</option>
+              <option value="NRE or Gulf Returnees">
                 NRE or Gulf Returnees
               </option>
-              <option value="Others">Other</option>
+              <option value="Other">Other</option>
             </select>
             {errors.category && (
               <div className="text-red-500 text-sm">{errors.category}</div>

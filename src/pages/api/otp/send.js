@@ -23,7 +23,6 @@ export default async function handler(req, res) {
 
       //generate pin
       const generatedPin = Math.floor(Math.random() * 1000000);
-
       //save otp record
       const hashedOTP = await bcrypt.hash(`${generatedPin}`, 10);
       axios

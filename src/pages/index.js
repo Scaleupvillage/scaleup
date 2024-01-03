@@ -51,6 +51,7 @@ import {
   aboutScribble,
   scribblesSecond,
   scribbles,
+  hilightScribble,
 } from "@/constants/scribbles";
 import Arrow from "@/Components/Icons/scribbles/Arrow";
 const Countdown = dynamic(() => import("@/Components/Counter"), { ssr: false });
@@ -741,7 +742,7 @@ export default function Home() {
           </div>
         ))}
       </div> */}
-      <div className=" py-[100px]   p-4">
+      <div className=" py-[100px]   p-4 relative overflow-hidden">
         {highlightedPrograms.map((programs, highlightedProgramsIndex) => (
           <div className="grid grid-cols-12 " key={highlightedProgramsIndex}>
             {programs.map(({ title, desc, background }, programIndex) => (
@@ -790,6 +791,7 @@ export default function Home() {
             )}
           </div>
         ))}
+        <Scribbles scribbles={hilightScribble} />
       </div>
       <div className="py-[100px] custom-container" id="schedule">
         <h1 className="text-[36px] title uppercase">Schedule</h1>
@@ -986,7 +988,7 @@ export default function Home() {
         </div>
       </div>
 
-      <Footer />
+      <Footer hideFloatingBtn={true} />
     </div>
   );
 }

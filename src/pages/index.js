@@ -737,9 +737,9 @@ export default function Home() {
                 }`}
                 key={programIndex}
               >
-                <div class="flip-card border-4 border-primary-purple rounded-[10px] overflow-hidden">
-                  <div class="flip-card-inner">
-                    <div class="flip-card-front ">
+                <div className="flip-card border-4 border-primary-purple rounded-[10px] overflow-hidden">
+                  <div className="flip-card-inner">
+                    <div className="flip-card-front ">
                       <div className="relative h-full">
                         <Image
                           src={start.src}
@@ -753,7 +753,7 @@ export default function Home() {
                         </div>
                       </div>
                     </div>
-                    <div class="flip-card-back bg-primary-purple flex justify-center items-center flex-col p-4 border-4 border-white rounded-[10px] ">
+                    <div className="flip-card-back bg-primary-purple flex justify-center items-center flex-col p-4 border-4 border-white rounded-[10px] ">
                       <h1 className="font-bold text-[23px] mb-4">{title}</h1>
                       <p className="text-sm">{desc}</p>
                     </div>

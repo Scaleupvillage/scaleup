@@ -3,9 +3,15 @@ import Close from "./Icons/close.png";
 import Image from "next/image";
 import axios from "axios";
 import { toast } from "react-toastify";
+import MinuteCounter from "./Counter/MinuteCounter";
 
 const Register = ({ setShow }) => {
   const [showOtp, setShowOtp] = useState(false);
+  const [disableVerifyBtn, setDisableVerifyBtn] = useState(false);
+  const [verifyOtp, setVerifyOtp] = useState({
+    disableVerifyBtn: false,
+    verifyOtpDisabledSeconds: 90,
+  });
   const closeModal = () => {
     setShow(false);
   };
@@ -91,6 +97,27 @@ const Register = ({ setShow }) => {
     return Object.keys(newErrors).length === 0;
   };
 
+  const isDisabled = () => {
+    const verifyOtp = JSON.parse(localStorage.getItem("verifyOtp"));
+    if (verifyOtp == null) return { disabled: false };
+    let currentTime = new Date();
+    const oneMinuteLater = new Date(
+      new Date(verifyOtp.start).getTime() + 60000
+    );
+    if (currentTime >= oneMinuteLater) {
+      return { disabled: false };
+    } else {
+      // console.log((currentTime.getTime() - new Date(verifyOtp.start)) / 1000);
+      setVerifyOtp({
+        ...verifyOtp,
+        // verifyOtpDisabledSeconds:
+        //   (currentTime.getTime() - new Date(verifyOtp.start)) / 1000,
+      });
+      return {
+        disabled: true,
+      };
+    }
+  };
   const sendOtp = () => {
     axios
       .post("/api/otp/send", { phoneNumber: formData.phoneNumber })
@@ -157,6 +184,7 @@ const Register = ({ setShow }) => {
         });
     }
   };
+
   return (
     <div
       className="w-[95%] max-w-[450px] z-[110] rounded-lg fixed top-[50%] left-[50%] translate-x-[-50%] 
@@ -204,14 +232,38 @@ const Register = ({ setShow }) => {
             <div>
               <button
                 type="button"
-                className="bg-primary-cyan px-5 py-2 rounded-full text-white disabled:cursor-not-allowed disabled:opacity-75"
-                disabled={formData.phoneNumber.length != 10}
+                className="bg-primary-cyan px-5 py-2 rounded-full text-white disabled:cursor-not-allowed disabled:opacity-50"
+                disabled={
+                  formData.phoneNumber.length != 10 ||
+                  verifyOtp.disableVerifyBtn ||
+                  isDisabled().disabled
+                }
                 onClick={sendOtp}
               >
                 Verify
               </button>
             </div>
           </div>
+          {showOtp && (
+            <span className="text-[13px] flex">
+              OTP send to your mobile, please request after
+              <MinuteCounter
+                second={verifyOtp.verifyOtpDisabledSeconds}
+                onStart={() => {
+                  setVerifyOtp({ ...verifyOtp, disableVerifyBtn: true });
+                  localStorage.setItem(
+                    "verifyOtp",
+                    JSON.stringify({ disabled: true, start: new Date() })
+                  );
+                }}
+                onEnd={() => {
+                  setVerifyOtp({ ...verifyOtp, disableVerifyBtn: false });
+                  localStorage.removeItem("verifyOtp");
+                }}
+              />
+            </span>
+          )}
+
           {errors.phoneNumber && (
             <div className="text-red-500 text-sm">{errors.phoneNumber}</div>
           )}

@@ -89,7 +89,7 @@ const Footer = () => {
               </p>
               <ul className={`${Styles["footer-link"]} gap-x-4`}>
                 <Link
-                  href="https://www.instagram.com/scaleup2024/"
+                  href="https://www.instagram.com/scaleupconclave/"
                   target="_blank"
                 >
                   <Instagram width="30" fill="white" stroke="white" />

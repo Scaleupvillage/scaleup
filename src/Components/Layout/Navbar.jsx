@@ -83,7 +83,7 @@ const Navbar = () => {
           </a>
         </div>
         <div className="flex justify-center items-center gap-x-3 lg:gap-x-4">
-          <Link href="https://www.instagram.com/scaleup2024/" target="_blank">
+          <Link href="https://www.instagram.com/scaleupconclave/" target="_blank">
             <Instagram fill="#003B6D" stroke="#003B6D" width="30" />
           </Link>
           <Link

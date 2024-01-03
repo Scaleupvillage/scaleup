@@ -555,7 +555,10 @@ export default function Home() {
                 preserveAspectRatio="none"
               />
               <div className="text-[20px] lg:text-[35px] text-primary-purple flex justify-center items-center mt-3">
-                <LocatioIcon fill="#803e97" className="w-[25px] md:w-[40px]" />
+                <LocatioIcon
+                  fill="#803e97"
+                  className="w-[25px] md:w-[40px] mr-[20px]"
+                />
                 <Link
                   href="/"
                   className=" font-semibold underline text-center w-[75%] ml-4 md:ml-0"
@@ -634,7 +637,7 @@ export default function Home() {
         </div>
         <Scribbles scribbles={aboutSecondScribble} />
       </div>
-      <div className="py-[100px]">
+      <div className="py-[100px] " id="speaker">
         <div className="custom-container">
           <h1 className="title text-[36px] wave-before">OUR SPEAKERS</h1>
         </div>
@@ -719,11 +722,6 @@ export default function Home() {
         ))}
       </div> */}
       <div className=" py-[100px]   p-4">
-        <div className="custom-container">
-          <h1 className="title wave-before uppercase text-[36px]">
-            Highlighted Programs
-          </h1>
-        </div>
         {highlightedPrograms.map((programs, highlightedProgramsIndex) => (
           <div className="grid grid-cols-12 " key={highlightedProgramsIndex}>
             {programs.map(({ title, desc }, programIndex) => (
@@ -762,12 +760,18 @@ export default function Home() {
               </div>
             ))}
             {highlightedProgramsIndex === 1 && (
-              <div className="hidden lg:block col-span-6 order-2  h-[250px] rounded-md shadow-lg  overflow-hidden m-3 bg-white"></div>
+              <div className="hidden lg:block col-span-6 order-2  h-[250px] rounded-md shadow-lg  overflow-hidden m-3 bg-white">
+                <div className=" flex items-center justify-center w-full h-full">
+                  <h1 className="title  uppercase text-[36px] ">
+                    Highlighted Programs
+                  </h1>
+                </div>
+              </div>
             )}
           </div>
         ))}
       </div>
-      <div className="py-[100px] custom-container">
+      <div className="py-[100px] custom-container" id="schedule">
         <h1 className="text-[36px] title uppercase">Schedule</h1>
         <div className="custom-container flex gap-x-6 justify-center items-center  pb-6 overflow-auto">
           <div
@@ -962,7 +966,7 @@ export default function Home() {
         </div>
       </div>
 
-      <Footer />
+      <Footer  />
     </div>
   );
 }

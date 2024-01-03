@@ -72,7 +72,7 @@ const Footer = () => {
   }, []);
 
   return (
-    <div className="bg-[#0B031B]  footer  ">
+    <div className="bg-[#0B031B]  footer " id="contactus">
       <div className="custom-container overflow-hidden">
         <div className="grid lg:grid-cols-3 grid-cols-1 relative  pt-[50px] pb-[100px] ">
           <div className=" flex  justify-between items-center ">
@@ -132,30 +132,33 @@ const Footer = () => {
           </div>
 
           <div className="flex  flex-col  justify-start mx-auto ">
-            <div className="text-white text-[36px] font-semibold   ">
+            <div className="text-white text-[36px] font-semibold  mb-1 ">
               Contact
             </div>
-            <div className="text-white text-[18px] font-semibold mb-4 pt-[10px] ">
-              Event Venue: Shifa Convention Center
+            <div className="text-white">
+              <a href="mailto:info@scaleupconclave.com">
+               Email: info@scaleupconclave.com
+              </a>
+            </div>
+            <div className="text-white  ">
+              <a href="tel:+919048170077">
+               Phone : +91 9048170077
+                </a>
+            </div>
+            <div className="text-white  mb-4  ">
+              Location: Shifa Convention Center
             </div>
             <div className="mb-4">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.808196084451!2d76.24360727472761!3d10.977845489183434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7cda1960f1e95%3A0x971882d6dc32948e!2sShifa%20Convention%20Center!5e0!3m2!1sen!2sin!4v1704129597752!5m2!1sen!2sin"
-                width="250"
-                height="150"
+                width="350"
+                height="180"
                 style={{ border: 0 }}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
             </div>
-            <div className="text-white">
-              <a href="mailto:info@scaleupconclave.com">
-                info@scaleupconclave.com
-              </a>
-            </div>
-            <div className="text-white  mb-3">
-              <a href="tel:+919048170077"> +91 9048170077</a>
-            </div>
+            
           </div>
         </div>
       </div>

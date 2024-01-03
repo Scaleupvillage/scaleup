@@ -20,7 +20,7 @@ const Navbar = () => {
     },
     {
       label: "SPEAKER",
-      link: "#speakers",
+      link: "#speaker",
     },
     {
       label: "SCHEDULE",

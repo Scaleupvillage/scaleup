@@ -2,6 +2,9 @@ import React from "react";
 import Image from "next/image";
 import Close from "../Icons/close.png";
 import CheckCircle from "../Icons/CheckCircle";
+import Instagram from "../Icons/Instagram";
+import WhatsApp from "../Icons/WhatsApp";
+import InsagramColor from "../Icons/InstagramColor";
 
 const SuccessAlert = ({ closeModal }) => {
   return (
@@ -33,22 +36,26 @@ translate-y-[-50%] bg-gray-100 p-[25px]  "
             </p>
           </div>
           <div className="flex flex-col lg:flex-row gap-2">
-            <p className="text-[13px] lg:text-[15px] first-letter:">
+            <p className="flex text-[13px] lg:text-[15px] first-letter:">
               Join our &nbsp;
               <a
                 href=""
                 className="text-[15px] font-semibold underline lowercase"
               >
-                WhatsApp Discussion Group
+                <p className="flex items-center gap-1">
+                  <WhatsApp width="20" height="20" /> WhatsApp Discussion Group
+                </p>
               </a>
             </p>
-            <p className="text-[15px] ">
+            <p className=" flex text-[15px] ">
               Focus us on&nbsp;
               <a
                 href=""
-                className="text-[15px] font-semibold underline lowercase "
+                className="flex text-[15px] font-semibold underline lowercase "
               >
-                Instagram
+                <p className="flex items-center gap-1">
+                  <InsagramColor width="15" height="15" /> Instagram
+                </p>
               </a>
             </p>
           </div>

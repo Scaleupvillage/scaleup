@@ -59,7 +59,7 @@ const speakers = [
   },
   {
     image: Kunjalikutty.src,
-    role: "MLA Vengara",
+    role: "Former Minister for Industries, MLA Vengara",
     name: "P. K. Kunhalikutty",
     bg: bg2.src,
     nameContainerClassName:

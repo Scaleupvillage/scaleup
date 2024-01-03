@@ -15,6 +15,15 @@ const Register = ({ setShow }) => {
     disableVerifyBtn: false,
     verifyOtpDisabledSeconds: 90,
   });
+  const [otp, setOtp] = useState(["", "", "", "", "", ""]);
+  const inputRefs = [
+    useRef(null),
+    useRef(null),
+    useRef(null),
+    useRef(null),
+    useRef(null),
+    useRef(null),
+  ];
   const closeModal = () => {
     setShow(false);
   };
@@ -53,6 +62,21 @@ const Register = ({ setShow }) => {
     }));
     setErrors({ ...errors, [name]: "" });
   };
+  const handleInputChange = (index, event) => {
+    const newOtp = [...otp];
+    newOtp[index] = event.target.value;
+
+    setOtp(newOtp);
+
+    if (event.target.value !== "" && index < 5) {
+      inputRefs[index + 1].current.focus();
+    }
+  };
+  const handleKeyDown = (index, event) => {
+    if (event.key === "Backspace" && index > 0 && otp[index] === "") {
+      inputRefs[index - 1].current.focus();
+    }
+  };
   const validateForm = () => {
     const newErrors = {};
 
@@ -87,8 +111,8 @@ const Register = ({ setShow }) => {
     }
     // Validate Company
 
-    if (formData.otp == "") {
-      newErrors.otp = "otp required";
+    if (otp.join("") == "") {
+      newErrors.otp = "OTP required";
     }
     if (showOtp == false) {
       newErrors.showOtp = "Please verify your number";
@@ -152,7 +176,7 @@ const Register = ({ setShow }) => {
 
     if (isValid) {
       axios
-        .post("/api/otp/verify", { ...formData })
+        .post("/api/otp/verify", { ...formData, otp: otp.join("") })
         .then((response) => {
           setSuccessAert(true);
         })
@@ -173,11 +197,11 @@ const Register = ({ setShow }) => {
     }
   };
 
-  useEffect(() => {
-    if (showOtp) {
-      otpInput.current.focus();
-    }
-  }, [showOtp]);
+  // useEffect(() => {
+  //   if (showOtp) {
+  //     otpInput.current.focus();
+  //   }
+  // }, [showOtp]);
 
   return (
     <>
@@ -268,15 +292,21 @@ const Register = ({ setShow }) => {
           {showOtp && (
             <div className="mb-3">
               <label className="label text-primary-blue">OTP</label>
-              <input
-                type="text"
-                name="otp"
-                placeholder="Enter your otp"
-                className="input"
-                ref={otpInput}
-                value={formData.otp}
-                onChange={handleChange}
-              />
+              <div className="grid grid-cols-6 gap-x-4">
+                {otp.map((value, index) => (
+                  <input
+                    key={index}
+                    type="text"
+                    className="input"
+                    maxLength={1}
+                    value={value}
+                    onChange={(e) => handleInputChange(index, e)}
+                    onKeyDown={(e) => handleKeyDown(index, e)}
+                    ref={inputRefs[index]}
+                  />
+                ))}
+              </div>
+
               {errors.otp && (
                 <div className="text-red-500 text-sm">{errors.otp}</div>
               )}

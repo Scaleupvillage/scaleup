@@ -755,7 +755,7 @@ export default function Home() {
                 }`}
                 key={programIndex}
               >
-                <div className="flip-card border-4 border-primary-purple rounded-[10px] overflow-hidden">
+                <div className="flip-card border-2 border-primary-purple rounded-[10px] overflow-hidden">
                   <div className="flip-card-inner">
                     <div className="flip-card-front ">
                       <div className="relative h-full">

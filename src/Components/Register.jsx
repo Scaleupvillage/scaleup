@@ -5,10 +5,12 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import MinuteCounter from "./Counter/MinuteCounter";
 import { modal } from "./Modal";
+import SuccessAlert from "./SuccessAlert";
 
 const Register = ({ setShow }) => {
   const otpInput = useRef(null);
   const [showOtp, setShowOtp] = useState(false);
+  const [successAert, setSuccessAert] = useState(false);
   const [verifyOtp, setVerifyOtp] = useState({
     disableVerifyBtn: false,
     verifyOtpDisabledSeconds: 90,
@@ -152,17 +154,7 @@ const Register = ({ setShow }) => {
       axios
         .post("/api/otp/verify", { ...formData })
         .then((response) => {
-          toast("Registered Successfully", {
-            type: "success",
-            position: "bottom-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
-          });
+          setSuccessAert(true);
         })
         .catch((err) => {
           console.log(err.response.data.message);
@@ -188,193 +180,207 @@ const Register = ({ setShow }) => {
   }, [showOtp]);
 
   return (
-    <div
-      className="w-[95%] max-w-[450px] z-[110] rounded-lg fixed top-[50%] left-[50%] translate-x-[-50%] 
+    <>
+      <div
+        className="w-[95%] max-w-[450px] z-[110] rounded-lg fixed top-[50%] left-[50%] translate-x-[-50%] 
     translate-y-[-50%] bg-gray-100 p-[25px]  "
-    >
-      <div className="flex justify-between">
-        <div className="text-[20px] font-semibold ">Register</div>
-        <div className="w-[15px] h-[15px] cursor-pointer" onClick={closeModal}>
-          <Image src={Close} alt="" />
-        </div>
-      </div>
-      {errors.showOtp && !showOtp && (
-        <div className="w-full  bg-red-300 p-3 text-red-800 rounded-md">
-          {errors.showOtp}
-        </div>
-      )}
-      <div>
-        <div className="mb-3 mt-4">
-          <label className="label text-primary-blue">Full Name</label>
-          <input
-            type="text"
-            name="name"
-            placeholder="Full Name"
-            className="input"
-            value={formData.name}
-            onChange={handleChange}
-          />
-          {errors.name && (
-            <div className="text-red-500 text-sm">{errors.name}</div>
-          )}
-        </div>
-        <div className="mb-3 ">
-          <label className="label text-primary-blue">Phone Number</label>
-          <div className="w-full flex items-center gap-x-5">
-            <div className="w-full">
-              <input
-                type="text"
-                name="phoneNumber"
-                placeholder="Phone Number"
-                className="input"
-                value={formData.phoneNumber}
-                onChange={handleChange}
-              />
-            </div>
-            <div>
-              <button
-                type="button"
-                className="bg-primary-cyan px-5 py-2 rounded-full text-white disabled:cursor-not-allowed disabled:opacity-50"
-                disabled={
-                  formData.phoneNumber.length != 10 ||
-                  verifyOtp.disableVerifyBtn ||
-                  isDisabled().disabled
-                }
-                onClick={sendOtp}
-              >
-                Verify
-              </button>
-            </div>
+      >
+        <div className="flex justify-between">
+          <div className="text-[20px] font-semibold ">Register</div>
+          <div
+            className="w-[15px] h-[15px] cursor-pointer"
+            onClick={closeModal}
+          >
+            <Image src={Close} alt="" />
           </div>
-          {showOtp && (
-            <span className="text-[13px] flex">
-              <MinuteCounter
-                second={verifyOtp.verifyOtpDisabledSeconds}
-                onStart={() => {
-                  setVerifyOtp({ ...verifyOtp, disableVerifyBtn: true });
-                  localStorage.setItem(
-                    "verifyOtp",
-                    JSON.stringify({ disabled: true, start: new Date() })
-                  );
-                }}
-                onEnd={() => {
-                  setVerifyOtp({ ...verifyOtp, disableVerifyBtn: false });
-                  localStorage.removeItem("verifyOtp");
-                }}
-              />
-            </span>
-          )}
-
-          {errors.phoneNumber && (
-            <div className="text-red-500 text-sm">{errors.phoneNumber}</div>
-          )}
         </div>
-        {showOtp && (
-          <div className="mb-3">
-            <label className="label text-primary-blue">OTP</label>
-            <input
-              type="text"
-              name="otp"
-              placeholder="Enter your otp"
-              className="input"
-              ref={otpInput}
-              value={formData.otp}
-              onChange={handleChange}
-            />
-            {errors.otp && (
-              <div className="text-red-500 text-sm">{errors.otp}</div>
-            )}
+        {errors.showOtp && !showOtp && (
+          <div className="w-full  bg-red-300 p-3 text-red-800 rounded-md">
+            {errors.showOtp}
           </div>
         )}
-        <div className="mb-3">
-          <label className="label text-primary-blue">Email</label>
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            className="input"
-            value={formData.email}
-            onChange={handleChange}
-          />
-          {errors.email && (
-            <div className="text-red-500 text-sm">{errors.email}</div>
-          )}
-        </div>
-        <div className="mb-3">
-          <label className="label text-primary-blue">District</label>
-          <select
-            name="district"
-            id=""
-            className="input"
-            onChange={handleChange}
-            value={formData.district}
-          >
-            <option value="" disabled>
-              Select your district
-            </option>
-            {keralaDistricts.map((district, index) => (
-              <option value={district} key={`district_${index}`}>
-                {district}
-              </option>
-            ))}
-          </select>
-          {errors.district && (
-            <div className="text-red-500 text-sm">{errors.district}</div>
-          )}
-        </div>
-        <div className="mb-3">
-          <label className="label text-primary-blue">Category</label>
-          <select
-            id="mySelect"
-            name="category"
-            className="input"
-            onChange={handleChange}
-            value={formData.category}
-          >
-            <option value="" selected disabled>
-              Select your category
-            </option>
-            <option value="Student">Student</option>
-            <option value="Entruprenurs"> Startup</option>
-            <option value="Working">Local Business/SME </option>
-            <option value="Professional">Working Professional</option>
-            <option value="NREs or Gulf Returnees">
-              NRE or Gulf Returnees
-            </option>
-            <option value="Others">Other</option>
-          </select>
-          {errors.category && (
-            <div className="text-red-500 text-sm">{errors.category}</div>
-          )}
-        </div>
-        <div className="mb-4  ">
-          <label className="label text-primary-blue">
-            Company/Organisation
-          </label>
-          <input
-            type="text"
-            name="company"
-            placeholder="Company/Organisation"
-            className="input"
-            value={formData.company}
-            onChange={handleChange}
-          />
-          {errors.phoneNumber && (
-            <div className="text-red-500 text-sm">{errors.company}</div>
-          )}
-        </div>
-      </div>
+        <div>
+          <div className="mb-3 mt-4">
+            <label className="label text-primary-blue">Full Name</label>
+            <input
+              type="text"
+              name="name"
+              placeholder="Full Name"
+              className="input"
+              value={formData.name}
+              onChange={handleChange}
+            />
+            {errors.name && (
+              <div className="text-red-500 text-sm">{errors.name}</div>
+            )}
+          </div>
+          <div className="mb-3 ">
+            <label className="label text-primary-blue">Phone Number</label>
+            <div className="w-full flex items-center gap-x-5">
+              <div className="w-full">
+                <input
+                  type="text"
+                  name="phoneNumber"
+                  placeholder="Phone Number"
+                  className="input"
+                  value={formData.phoneNumber}
+                  onChange={handleChange}
+                />
+              </div>
+              <div>
+                <button
+                  type="button"
+                  className="bg-primary-cyan px-5 py-2 rounded-full text-white disabled:cursor-not-allowed disabled:opacity-50"
+                  disabled={
+                    formData.phoneNumber.length != 10 ||
+                    verifyOtp.disableVerifyBtn ||
+                    isDisabled().disabled
+                  }
+                  onClick={sendOtp}
+                >
+                  Verify
+                </button>
+              </div>
+            </div>
+            {showOtp && (
+              <span className="text-[13px] flex">
+                <MinuteCounter
+                  second={verifyOtp.verifyOtpDisabledSeconds}
+                  onStart={() => {
+                    setVerifyOtp({ ...verifyOtp, disableVerifyBtn: true });
+                    localStorage.setItem(
+                      "verifyOtp",
+                      JSON.stringify({ disabled: true, start: new Date() })
+                    );
+                  }}
+                  onEnd={() => {
+                    setVerifyOtp({ ...verifyOtp, disableVerifyBtn: false });
+                    localStorage.removeItem("verifyOtp");
+                  }}
+                />
+              </span>
+            )}
 
-      <div className="col-span-10 lg:col-span-2 flex justify-center items-center">
-        <button
-          type="button"
-          className="w-full bg-primary-cyan  px-8 py-3 rounded-full text-white"
-          onClick={handleFormSubmit}
-        >
-          Register
-        </button>
+            {errors.phoneNumber && (
+              <div className="text-red-500 text-sm">{errors.phoneNumber}</div>
+            )}
+          </div>
+          {showOtp && (
+            <div className="mb-3">
+              <label className="label text-primary-blue">OTP</label>
+              <input
+                type="text"
+                name="otp"
+                placeholder="Enter your otp"
+                className="input"
+                ref={otpInput}
+                value={formData.otp}
+                onChange={handleChange}
+              />
+              {errors.otp && (
+                <div className="text-red-500 text-sm">{errors.otp}</div>
+              )}
+            </div>
+          )}
+          <div className="mb-3">
+            <label className="label text-primary-blue">Email</label>
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              className="input"
+              value={formData.email}
+              onChange={handleChange}
+            />
+            {errors.email && (
+              <div className="text-red-500 text-sm">{errors.email}</div>
+            )}
+          </div>
+          <div className="mb-3">
+            <label className="label text-primary-blue">District</label>
+            <select
+              name="district"
+              id=""
+              className="input"
+              onChange={handleChange}
+              value={formData.district}
+            >
+              <option value="" disabled>
+                Select your district
+              </option>
+              {keralaDistricts.map((district, index) => (
+                <option value={district} key={`district_${index}`}>
+                  {district}
+                </option>
+              ))}
+            </select>
+            {errors.district && (
+              <div className="text-red-500 text-sm">{errors.district}</div>
+            )}
+          </div>
+          <div className="mb-3">
+            <label className="label text-primary-blue">Category</label>
+            <select
+              id="mySelect"
+              name="category"
+              className="input"
+              onChange={handleChange}
+              value={formData.category}
+            >
+              <option value="" selected disabled>
+                Select your category
+              </option>
+              <option value="Student">Student</option>
+              <option value="Entruprenurs"> Startup</option>
+              <option value="Working">Local Business/SME </option>
+              <option value="Professional">Working Professional</option>
+              <option value="NREs or Gulf Returnees">
+                NRE or Gulf Returnees
+              </option>
+              <option value="Others">Other</option>
+            </select>
+            {errors.category && (
+              <div className="text-red-500 text-sm">{errors.category}</div>
+            )}
+          </div>
+          <div className="mb-4  ">
+            <label className="label text-primary-blue">
+              Company/Organisation
+            </label>
+            <input
+              type="text"
+              name="company"
+              placeholder="Company/Organisation"
+              className="input"
+              value={formData.company}
+              onChange={handleChange}
+            />
+            {errors.phoneNumber && (
+              <div className="text-red-500 text-sm">{errors.company}</div>
+            )}
+          </div>
+        </div>
+
+        <div className="col-span-10 lg:col-span-2 flex justify-center items-center">
+          <button
+            type="button"
+            className="w-full bg-primary-cyan  px-8 py-3 rounded-full text-white"
+            onClick={handleFormSubmit}
+          >
+            Register
+          </button>
+        </div>
       </div>
-    </div>
+      {successAert && (
+        <>
+          <div
+            className="fixed top-0 left-0 w-full h-screen justify-center z-[111] bg-black bg-opacity-50  overflow-hidden"
+            onClick={() => setSuccessAert(false)}
+          ></div>
+          <SuccessAlert closeModal={() => setSuccessAert(false)} />
+        </>
+      )}
+    </>
   );
 };
 

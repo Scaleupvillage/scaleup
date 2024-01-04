@@ -475,6 +475,43 @@ export default function Home() {
           name="description"
           content="Explore the future of Kerala's startup landscape at this first-of-its-kind business event. Network and exchange ideas with top entrepreneurs, incubators, and investors at the two-day startup conclave"
         />
+        <meta
+          name="keywords"
+          content="Annual celebratory platform, entrepreneurs, investors, professionals, business enthusiasts, two-day event, inspiration, knowledge exchange, networking opportunities, innovation, expertise, entrepreneurial ethos, Kerala, startup ecosystem"
+        />
+
+        <meta
+          property="og:title"
+          content="Annual Celebratory Platform:  Entrepreneurs, Investors, and Professionals | Kerala Startup Conclave"
+        />
+        <meta
+          property="og:description"
+          content="Join us for an inspiring two-day event! Kerala Startup Conclave unites entrepreneurs, investors, and business enthusiasts, fostering knowledge exchange, networking, and innovation to elevate Kerala's startup ecosystem."
+        />
+        <meta
+          property="og:image"
+          content="https://example.com/your-image.jpg"
+        />
+        <meta property="og:url" content="https://example.com/your-event-page" />
+        <meta property="og:type" content="website" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Annual Celebratory Platform: Connecting Entrepreneurs, Investors, and Professionals | Kerala Startup Conclave"
+        />
+        <meta
+          name="twitter:description"
+          content="Join us for an inspiring two-day event! Kerala Startup Conclave unites entrepreneurs, investors, and business enthusiasts, fostering knowledge exchange, networking, and innovation to elevate Kerala's startup ecosystem."
+        />
+        <meta
+          name="twitter:image"
+          content="https://example.com/your-image.jpg"
+        />
+        <meta
+          name="twitter:url"
+          content="https://example.com/your-event-page"
+        />
       </Head>
       {openModal && (
         <>

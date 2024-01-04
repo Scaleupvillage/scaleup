@@ -54,6 +54,7 @@ import {
   hilightScribble,
 } from "@/constants/scribbles";
 import Arrow from "@/Components/Icons/scribbles/Arrow";
+import Nextpage from "@/Components/Icons/Nextpage";
 import Head from "next/head";
 const Countdown = dynamic(() => import("@/Components/Counter"), { ssr: false });
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
@@ -576,7 +577,7 @@ export default function Home() {
                   <h1 className="text-primary-yellow text-[30px] xl:text-[50px] font-extrabold">
                     150 +
                   </h1>
-                  <p className="text-white text-[16px] xl:text-[18px] font-normal  text-center">
+                  <p className="text-white text-[14px] xl:text-[17px]  font-normal  text-center">
                     Participating <br /> Educational Institutions
                   </p>
                 </div>
@@ -597,6 +598,8 @@ export default function Home() {
                 height={"150%"}
                 width={"120%"}
                 playing={true}
+                volume={"0"}
+                muted={ true}
               />
             </div>
           </div>
@@ -821,7 +824,12 @@ export default function Home() {
                     <div className="flip-card-back bg-primary-purple flex justify-center items-center flex-col p-4 border-4 border-white rounded-[10px] z-[2]">
                       <h1 className="font-bold text-[23px] mb-4">{title}</h1>
                       <p className="text-sm">{desc}</p>
-                      <Link href={`/highlighted/${title}`}>Learn More</Link>
+                
+                 <Link href={`/highlighted/${title}`} className="flex gap-2 items-center mt-3">
+                      <Nextpage width="18" height="18"/> Learn More</Link>
+               
+                      
+                     
                     </div>
                   </div>
                 </div>

@@ -6,6 +6,7 @@ import Instagram from "../Icons/Instagram";
 import WhatsApp from "../Icons/WhatsApp";
 import InsagramColor from "../Icons/InstagramColor";
 
+
 const SuccessAlert = ({ closeModal }) => {
   return (
     <div

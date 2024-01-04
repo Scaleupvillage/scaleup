@@ -54,6 +54,7 @@ import {
   hilightScribble,
 } from "@/constants/scribbles";
 import Arrow from "@/Components/Icons/scribbles/Arrow";
+import Nextpage from "@/Components/Icons/Nextpage";
 const Countdown = dynamic(() => import("@/Components/Counter"), { ssr: false });
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 
@@ -775,7 +776,12 @@ export default function Home() {
                     <div className="flip-card-back bg-primary-purple flex justify-center items-center flex-col p-4 border-4 border-white rounded-[10px] z-[2]">
                       <h1 className="font-bold text-[23px] mb-4">{title}</h1>
                       <p className="text-sm">{desc}</p>
-                      <Link href={`/highlighted/${title}`}>Learn More</Link>
+                
+                 <Link href={`/highlighted/${title}`} className="flex gap-2 items-center mt-3">
+                      <Nextpage width="18" height="18"/> Learn More</Link>
+               
+                      
+                     
                     </div>
                   </div>
                 </div>

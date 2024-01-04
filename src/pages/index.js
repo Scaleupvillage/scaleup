@@ -54,6 +54,7 @@ import {
   hilightScribble,
 } from "@/constants/scribbles";
 import Arrow from "@/Components/Icons/scribbles/Arrow";
+import Head from "next/head";
 const Countdown = dynamic(() => import("@/Components/Counter"), { ssr: false });
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 
@@ -468,6 +469,9 @@ export default function Home() {
 
   return (
     <div className={exo2.className}>
+      <Head>
+        <title>ScaleUp</title>
+      </Head>
       {openModal && (
         <>
           <div
@@ -549,7 +553,6 @@ export default function Home() {
             <div className="flex justify-center items-center gap-x-4 col-span-2 h-[300px] w-full rounded-lg overflow-hidden">
               <ReactPlayer
                 url="https://youtu.be/yqWX86uT5jM?si=FARobCwuwXM3GPni"
-                
                 height={"150%"}
                 width={"120%"}
               />

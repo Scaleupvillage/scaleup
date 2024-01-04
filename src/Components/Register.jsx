@@ -8,7 +8,6 @@ import { modal } from "./Modal";
 import SuccessAlert from "./SuccessAlert";
 
 const Register = ({ setShow }) => {
-  const otpInput = useRef(null);
   const [showOtp, setShowOtp] = useState(false);
   const [successAert, setSuccessAert] = useState(false);
   const [verifyOtp, setVerifyOtp] = useState({
@@ -31,6 +30,10 @@ const Register = ({ setShow }) => {
     district: "Malappuram",
   });
   const [errors, setErrors] = useState({});
+  const [otpStatus, setOtpStatus] = useState({
+    status: false,
+    message: "",
+  });
   const keralaDistricts = [
     "Thiruvananthapuram",
     "Kollam",
@@ -61,8 +64,29 @@ const Register = ({ setShow }) => {
 
     setOtp(newOtp);
 
-    if (event.target.value !== "" && index < 5) {
+    if (event.target.value !== "" && index < 3) {
       inputRefs[index + 1].current.focus();
+    }
+    if (event.target.value !== "" && index === 3) {
+      axios
+        .post("/api/otp/isvalid", {
+          otp: newOtp.join(""),
+          phoneNumber: formData.phoneNumber,
+        })
+        .then((response) => {
+          setOtpStatus({
+            ...setVerifyOtp,
+            status: response.data.status,
+            message: response.data.message,
+          });
+        })
+        .catch((error) => {
+          setOtpStatus({
+            ...setVerifyOtp,
+            status: error.response.data.status,
+            message: error.response.data.message,
+          });
+        });
     }
   };
   const handleKeyDown = (index, event) => {
@@ -174,7 +198,6 @@ const Register = ({ setShow }) => {
           setSuccessAert(true);
         })
         .catch((err) => {
-          console.log(err.response.data.message);
           toast(err.response.data.message, {
             type: "error",
             position: "bottom-right",
@@ -193,7 +216,7 @@ const Register = ({ setShow }) => {
   return (
     <>
       <div
-        className="w-[95%] max-w-[450px] z-[110] rounded-lg fixed top-[50%] left-[50%] translate-x-[-50%] 
+        className="w-[95%] h-[90%] lg:h-auto  overflow-auto max-w-[450px] z-[110] rounded-lg fixed top-[50%] left-[50%] translate-x-[-50%] 
     translate-y-[-50%] bg-gray-100 p-[25px]  "
       >
         <div className="flex justify-between">
@@ -210,7 +233,7 @@ const Register = ({ setShow }) => {
             {errors.showOtp}
           </div>
         )}
-        <div>
+        <div className="overflow-auto ">
           <div className="mb-3 mt-4">
             <label className="label text-primary-blue">Full Name</label>
             <input
@@ -284,7 +307,13 @@ const Register = ({ setShow }) => {
                   <input
                     key={index}
                     type="text"
-                    className="input"
+                    className={`input ${
+                      otpStatus.status && otpStatus.message != ""
+                        ? "border border-green-500"
+                        : !otpStatus.status && otpStatus.message !== ""
+                        ? "border border-red-500"
+                        : ""
+                    }`}
                     maxLength={1}
                     value={value}
                     onChange={(e) => handleInputChange(index, e)}
@@ -294,6 +323,15 @@ const Register = ({ setShow }) => {
                 ))}
               </div>
 
+              {otpStatus.message !== "" && (
+                <div
+                  className={`${
+                    otpStatus.status ? "text-green-600" : "text-red-500"
+                  } text-sm`}
+                >
+                  {otpStatus.message}
+                </div>
+              )}
               {errors.otp && (
                 <div className="text-red-500 text-sm">{errors.otp}</div>
               )}

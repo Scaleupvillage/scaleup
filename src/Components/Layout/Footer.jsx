@@ -15,7 +15,7 @@ import { useEffect, useState } from "react";
 import Youtube from "../Icons/Youtube";
 import Linkedin from "../Icons/Linkedin";
 
-const Footer = ({ hideFloatingBtn }) => {
+const Footer = ({ hideFloatingBtn = false }) => {
   const [openModal, setOpenModal] = useState(false);
 
   const handleClick = () => {
@@ -28,7 +28,7 @@ const Footer = ({ hideFloatingBtn }) => {
       const floatingElement = document.querySelector(".reg-now-btn");
       const header = document.querySelector(".main-section");
       const footer = document.querySelector(".footer");
-      if (hideFloatingBtn) {
+      if (hideFloatingBtn && header && floatingElement && footer) {
         const isScrolledPastHeader = () => {
           const currentScrollPosition =
             window.pageYOffset || document.documentElement.scrollTop;
@@ -57,20 +57,20 @@ const Footer = ({ hideFloatingBtn }) => {
 
     window.addEventListener("scroll", handleScroll);
 
-    var userFeed = new Instafeed({
-      get: "user",
-      target: "instafeed-container",
-      resolution: "low_resolution",
-      limit: 9,
-      accessToken:
-        "IGQWRQbERMdUU3Y0RxNnhDeEJaMmJBM0hQTlRlemF2ZADFLaW9zYnJ6X0pHamtUc0w2ZAXJpbEpBbzZAMb0x3SEtFejVCVTVVa1JxTTg1RnpVdGg4NVk5UEFVWlQ2Uzl6dWo3SFExMkd2ekVmSHBxdlExX1o4T3NUM0UZD",
-    });
-    userFeed.run();
+    // var userFeed = new Instafeed({
+    //   get: "user",
+    //   target: "instafeed-container",
+    //   resolution: "low_resolution",
+    //   limit: 9,
+    //   accessToken:
+    //     "IGQWRQbERMdUU3Y0RxNnhDeEJaMmJBM0hQTlRlemF2ZADFLaW9zYnJ6X0pHamtUc0w2ZAXJpbEpBbzZAMb0x3SEtFejVCVTVVa1JxTTg1RnpVdGg4NVk5UEFVWlQ2Uzl6dWo3SFExMkd2ekVmSHBxdlExX1o4T3NUM0UZD",
+    // });
+    // userFeed.run();
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [hideFloatingBtn]);
 
   return (
     <div className="bg-[#0B031B]  footer " id="contactus">
@@ -126,10 +126,10 @@ const Footer = ({ hideFloatingBtn }) => {
           <div className="text-white text-[36px] font-semibold mb-4  mx-auto ">
             {/* <div className="w-[100px] h-[10px] rounded-full bg-white mb-4"></div> */}
 
-            <div
+            {/* <div
               id="instafeed-container"
               className={`${Styles["insta-feed"]} grid grid-cols-3 gap-2`}
-            ></div>
+            ></div> */}
           </div>
 
           <div className="flex  flex-col  justify-start mx-auto ">

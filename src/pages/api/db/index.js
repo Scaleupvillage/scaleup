@@ -32,7 +32,7 @@ async function dbConnect() {
 
   if (!cached.promise) {
     const opts = {
-      dbName: "VASS",
+      dbName: "scaleup",
     };
 
     cached.promise = mongoose.connect(MONGODB_URI, opts).then((mongoose) => {

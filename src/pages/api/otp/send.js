@@ -22,7 +22,7 @@ export default async function handler(req, res) {
       await OTP.deleteOne({ phoneNumber: phoneNumber });
 
       //generate pin
-      const generatedPin = Math.floor(Math.random() * 1000000);
+      const generatedPin = Math.floor(Math.random() * (9999 - 1001 + 1)) + 1001;
       //save otp record
       const hashedOTP = await bcrypt.hash(`${generatedPin}`, 10);
       axios

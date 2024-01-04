@@ -15,15 +15,8 @@ const Register = ({ setShow }) => {
     disableVerifyBtn: false,
     verifyOtpDisabledSeconds: 90,
   });
-  const [otp, setOtp] = useState(["", "", "", "", "", ""]);
-  const inputRefs = [
-    useRef(null),
-    useRef(null),
-    useRef(null),
-    useRef(null),
-    useRef(null),
-    useRef(null),
-  ];
+  const [otp, setOtp] = useState(["", "", "", ""]);
+  const inputRefs = [useRef(null), useRef(null), useRef(null), useRef(null)];
   const closeModal = () => {
     setShow(false);
   };
@@ -197,12 +190,6 @@ const Register = ({ setShow }) => {
     }
   };
 
-  // useEffect(() => {
-  //   if (showOtp) {
-  //     otpInput.current.focus();
-  //   }
-  // }, [showOtp]);
-
   return (
     <>
       <div
@@ -292,7 +279,7 @@ const Register = ({ setShow }) => {
           {showOtp && (
             <div className="mb-3">
               <label className="label text-primary-blue">OTP</label>
-              <div className="grid grid-cols-6 gap-x-4">
+              <div className="grid grid-cols-4 gap-x-4">
                 {otp.map((value, index) => (
                   <input
                     key={index}

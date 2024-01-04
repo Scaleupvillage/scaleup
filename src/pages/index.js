@@ -343,7 +343,7 @@ export default function Home() {
     [
       {
         background: hilight1.src,
-        title: " Panel Discussions",
+        title: "Panel Discussions",
         desc: " Engage in dynamic conversations led by industry thought leaders, exploring cutting-edge topics and sharing diverse perspectives to foster insightful discussions",
       },
       {
@@ -758,7 +758,7 @@ export default function Home() {
               >
                 <div className="flip-card border-2 border-primary-purple rounded-[10px] overflow-hidden">
                   <div className="flip-card-inner">
-                    <div className="flip-card-front ">
+                    <div className="flip-card-front z-[1]">
                       <div className="relative h-full">
                         <Image
                           src={background}
@@ -772,9 +772,10 @@ export default function Home() {
                         </div>
                       </div>
                     </div>
-                    <div className="flip-card-back bg-primary-purple flex justify-center items-center flex-col p-4 border-4 border-white rounded-[10px] ">
+                    <div className="flip-card-back bg-primary-purple flex justify-center items-center flex-col p-4 border-4 border-white rounded-[10px] z-[2]">
                       <h1 className="font-bold text-[23px] mb-4">{title}</h1>
                       <p className="text-sm">{desc}</p>
+                      <Link href={`/highlighted/${title}`}>Learn More</Link>
                     </div>
                   </div>
                 </div>

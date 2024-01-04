@@ -471,6 +471,10 @@ export default function Home() {
     <div className={exo2.className}>
       <Head>
         <title>ScaleUp</title>
+        <meta
+          name="description"
+          content="Explore the future of Kerala's startup landscape at this first-of-its-kind business event. Network and exchange ideas with top entrepreneurs, incubators, and investors at the two-day startup conclave"
+        />
       </Head>
       {openModal && (
         <>
@@ -555,6 +559,7 @@ export default function Home() {
                 url="https://youtu.be/yqWX86uT5jM?si=FARobCwuwXM3GPni"
                 height={"150%"}
                 width={"120%"}
+                playing={true}
               />
             </div>
           </div>

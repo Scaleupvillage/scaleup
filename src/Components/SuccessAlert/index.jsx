@@ -39,7 +39,7 @@ translate-y-[-50%] bg-gray-100 p-[25px]  "
             <p className="flex text-[13px] lg:text-[15px] first-letter:">
               Join our &nbsp;
               <a
-                href=""
+                href="https://chat.whatsapp.com/EkVvmrMIW3zHXtxJSgyK2B"
                 className="text-[15px] font-semibold underline lowercase"
               >
                 <p className="flex items-center gap-1">
@@ -50,7 +50,7 @@ translate-y-[-50%] bg-gray-100 p-[25px]  "
             <p className=" flex text-[15px] ">
               Focus us on&nbsp;
               <a
-                href=""
+                href="https://www.instagram.com/scaleupconclave/"
                 className="flex text-[15px] font-semibold underline lowercase "
               >
                 <p className="flex items-center gap-1">

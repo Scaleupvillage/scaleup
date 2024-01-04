@@ -15,7 +15,7 @@ import { useEffect, useState } from "react";
 import Youtube from "../Icons/Youtube";
 import Linkedin from "../Icons/Linkedin";
 
-const Footer = ({ hideFloatingBtn }) => {
+const Footer = ({ hideFloatingBtn = false }) => {
   const [openModal, setOpenModal] = useState(false);
 
   const handleClick = () => {
@@ -28,7 +28,7 @@ const Footer = ({ hideFloatingBtn }) => {
       const floatingElement = document.querySelector(".reg-now-btn");
       const header = document.querySelector(".main-section");
       const footer = document.querySelector(".footer");
-      if (hideFloatingBtn) {
+      if (hideFloatingBtn && header && floatingElement && footer) {
         const isScrolledPastHeader = () => {
           const currentScrollPosition =
             window.pageYOffset || document.documentElement.scrollTop;
@@ -70,7 +70,7 @@ const Footer = ({ hideFloatingBtn }) => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [hideFloatingBtn]);
 
   return (
     <div className="bg-[#0B031B]  footer " id="contactus">

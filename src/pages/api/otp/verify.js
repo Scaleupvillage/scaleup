@@ -45,13 +45,12 @@ export default async function handler(req, res) {
               return res.status(400).json({ message: "Something went wrong" });
             });
         } else {
-          res.status(400).json({ message: "Invalid otp" });
+         return res.status(400).json({ message: "Invalid otp" });
         }
       } else {
-        res.status(400).json({ message: "otp not found" });
+        return res.status(400).json({ message: "otp not found" });
       }
     } catch (error) {
-      console.log(error.message);
       return res.status(400).json({ message: "Something went wrong" });
     }
   };

@@ -483,15 +483,15 @@ export default function Home() {
 
         <meta
           property="og:title"
-          content="Annual Celebratory Platform:  Entrepreneurs, Investors, and Professionals | Kerala Startup Conclave"
+          content="ScaleUp Conclave - ScaleUp Village"
         />
         <meta
           property="og:description"
-          content="Join us for an inspiring two-day event! Kerala Startup Conclave unites entrepreneurs, investors, and business enthusiasts, fostering knowledge exchange, networking, and innovation to elevate Kerala's startup ecosystem."
+          content="India's first D2C Industrial Park at Perinthalmanna: Connecting Entrepreneurs, Investors, Students. "
         />
         <meta
           property="og:image"
-          content="https://example.com/your-image.jpg"
+          content="/favicon.ico"
         />
         <meta property="og:url" content="https://example.com/your-event-page" />
         <meta property="og:type" content="website" />
@@ -499,19 +499,19 @@ export default function Home() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="Annual Celebratory Platform: Connecting Entrepreneurs, Investors, and Professionals | Kerala Startup Conclave"
+          content="ScaleUp Conclave - ScaleUp Village"
         />
         <meta
           name="twitter:description"
-          content="Join us for an inspiring two-day event! Kerala Startup Conclave unites entrepreneurs, investors, and business enthusiasts, fostering knowledge exchange, networking, and innovation to elevate Kerala's startup ecosystem."
+          content="India's first D2C Industrial Park at Perinthalmanna: Connecting Entrepreneurs, Investors, Students. "
         />
         <meta
           name="twitter:image"
-          content="https://example.com/your-image.jpg"
+          content="/favicon.ico"
         />
         <meta
           name="twitter:url"
-          content="https://example.com/your-event-page"
+          content="https://www.scaleupconclave.com/"
         />
       </Head>
       {openModal && (

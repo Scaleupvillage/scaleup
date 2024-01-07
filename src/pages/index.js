@@ -471,10 +471,10 @@ export default function Home() {
   return (
     <div className={exo2.className}>
       <Head>
-        <title>ScaleUp</title>
+        <title>ScaleUp Conclave 2024  - ScaleUp Village</title>
         <meta
           name="description"
-          content="Explore the future of Kerala's startup landscape at this first-of-its-kind business event. Network and exchange ideas with top entrepreneurs, incubators, and investors at the two-day startup conclave"
+          content=" India's first D2C Industrial Park at Perinthalmanna: Connecting Entrepreneurs, Investors, Students. Explore the future of Kerala's startup landscape at this first-of-its-kind business event. Network and exchange ideas with top entrepreneurs, incubators, and investors at the two-day startup conclave"
         />
         <meta
           name="keywords"
@@ -483,35 +483,35 @@ export default function Home() {
 
         <meta
           property="og:title"
-          content="Annual Celebratory Platform:  Entrepreneurs, Investors, and Professionals | Kerala Startup Conclave"
+          content="ScaleUp Conclave 2024  - ScaleUp Village"
         />
         <meta
           property="og:description"
-          content="Join us for an inspiring two-day event! Kerala Startup Conclave unites entrepreneurs, investors, and business enthusiasts, fostering knowledge exchange, networking, and innovation to elevate Kerala's startup ecosystem."
+          content="India's first D2C Industrial Park at Perinthalmanna: Connecting Entrepreneurs, Investors, Students. "
         />
         <meta
           property="og:image"
-          content="https://example.com/your-image.jpg"
+          content="/favicon.ico"
         />
-        <meta property="og:url" content="https://example.com/your-event-page" />
+        <meta property="og:url" content="https://www.scaleupconclave.com/" />
         <meta property="og:type" content="website" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="Annual Celebratory Platform: Connecting Entrepreneurs, Investors, and Professionals | Kerala Startup Conclave"
+          content="ScaleUp Conclave 2024  - ScaleUp Village"
         />
         <meta
           name="twitter:description"
-          content="Join us for an inspiring two-day event! Kerala Startup Conclave unites entrepreneurs, investors, and business enthusiasts, fostering knowledge exchange, networking, and innovation to elevate Kerala's startup ecosystem."
+          content="India's first D2C Industrial Park at Perinthalmanna: Connecting Entrepreneurs, Investors, Students. "
         />
         <meta
           name="twitter:image"
-          content="https://example.com/your-image.jpg"
+          content="/favicon.ico"
         />
         <meta
           name="twitter:url"
-          content="https://example.com/your-event-page"
+          content="https://www.scaleupconclave.com/"
         />
       </Head>
       {openModal && (
@@ -599,7 +599,7 @@ export default function Home() {
                 width={"120%"}
                 playing={true}
                 volume={"0"}
-                muted={ true}
+                muted={true}
               />
             </div>
           </div>
@@ -630,8 +630,9 @@ export default function Home() {
                   className="w-[25px] md:w-[40px] mr-[20px]"
                 />
                 <Link
-                  href="/"
-                  className=" font-semibold underline text-center w-[75%] ml-4 md:ml-0"
+                  href="https://maps.app.goo.gl/U93qFXkLbWsadsA8A"
+                  target="_blank"
+                  className="font-semibold underline text-center w-[75%] ml-4 md:ml-0"
                 >
                   Shifa Convention Center Perinthalmanna
                 </Link>
@@ -742,55 +743,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* <div className="py-[100px] custom-container flex justify-center items-center flex-col">
-        <hi className="title wave-before uppercase text-[36px] ">
-          Highlighted Programs
-        </hi>
-        {highLighEvents.map((event, key) => (
-          <div className="py-[50px] custom-container" key={key}>
-            <>
-              <h1 className={` title wave-before text-[25px] lg:text-[36px]`}>
-                {event.title}
-              </h1>
-              <div className="grid grid-cols-12 gap-x-6 mt-[20px]">
-                {event.card.map((card, key) => (
-                  <div
-                    className="bg-white border shadow-lg rounded-xl p-4 col-span-12 md:col-span-6 lg:col-span-4 mb-5"
-                    key={key}
-                  >
-                    <div className=" items-end " key={key}>
-                      <img
-                        src={card.image}
-                        className="w-full h-[200px] rounded-md"
-                        width="100"
-                        height="100"
-                        alt=""
-                        quality={100}
-                      />
-                    </div>
-                    <h1 className="title ">{card.title}</h1>
-
-                    <div className="flex flex-col justify-between items-end ">
-                      <div className="">
-                        <p className="text-text-muted">
-                          Engage in vibrant discussions, panels, and workshops
-                          to share and absorb industry insights
-                        </p>
-                      </div>
-                      <Link
-                        href=""
-                        className="rounded-full capitalize hover:bg-primary-purple hover:text-white text-primary-purple w-1/2 py-2 mt-4 text-center font-semibold"
-                      >
-                        Learn More
-                      </Link>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </>
-          </div>
-        ))}
-      </div> */}
       <div className=" py-[100px]   p-4 relative overflow-hidden">
         {highlightedPrograms.map((programs, highlightedProgramsIndex) => (
           <div className="grid grid-cols-12 " key={highlightedProgramsIndex}>
@@ -824,12 +776,13 @@ export default function Home() {
                     <div className="flip-card-back bg-primary-purple flex justify-center items-center flex-col p-4 border-4 border-white rounded-[10px] z-[2]">
                       <h1 className="font-bold text-[23px] mb-4">{title}</h1>
                       <p className="text-sm">{desc}</p>
-                
-                 <Link href={`/highlighted/${title}`} className="flex gap-2 items-center mt-3">
-                      <Nextpage width="18" height="18"/> Learn More</Link>
-               
-                      
-                     
+
+                      <Link
+                        href={`/highlighted/${title}`}
+                        className="flex gap-2 items-center mt-3"
+                      >
+                        <Nextpage width="18" height="18" /> Learn More
+                      </Link>
                     </div>
                   </div>
                 </div>

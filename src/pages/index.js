@@ -471,7 +471,7 @@ export default function Home() {
   return (
     <div className={exo2.className}>
       <Head>
-        <title>ScaleUp Conclave - ScaleUp Village</title>
+        <title>ScaleUp Conclave 2024  - ScaleUp Village</title>
         <meta
           name="description"
           content=" India's first D2C Industrial Park at Perinthalmanna: Connecting Entrepreneurs, Investors, Students. Explore the future of Kerala's startup landscape at this first-of-its-kind business event. Network and exchange ideas with top entrepreneurs, incubators, and investors at the two-day startup conclave"
@@ -483,7 +483,7 @@ export default function Home() {
 
         <meta
           property="og:title"
-          content="ScaleUp Conclave - ScaleUp Village"
+          content="ScaleUp Conclave 2024  - ScaleUp Village"
         />
         <meta
           property="og:description"
@@ -493,13 +493,13 @@ export default function Home() {
           property="og:image"
           content="/favicon.ico"
         />
-        <meta property="og:url" content="https://example.com/your-event-page" />
+        <meta property="og:url" content="https://www.scaleupconclave.com/" />
         <meta property="og:type" content="website" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="ScaleUp Conclave - ScaleUp Village"
+          content="ScaleUp Conclave 2024  - ScaleUp Village"
         />
         <meta
           name="twitter:description"

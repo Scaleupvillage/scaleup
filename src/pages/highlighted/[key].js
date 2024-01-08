@@ -14,7 +14,6 @@ const Highlighted = () => {
     setProgram(hilightedEvent[key]);
   }, [key]);
 
-console.log(key);
   return (
     <>
       <Navbar />

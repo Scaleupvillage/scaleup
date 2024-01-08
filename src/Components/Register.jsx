@@ -56,14 +56,14 @@ const Register = ({ setShow }) => {
       ...prevData,
       [name]: value,
     }));
-    setErrors({ ...errors, [name]: "" });
+    setErrors({ ...errors, [name]: "", showOtp:"" });
   };
   const handleInputChange = (index, event) => {
     const newOtp = [...otp];
     newOtp[index] = event.target.value;
 
     setOtp(newOtp);
-
+    setErrors({ ...errors, otp: "" });
     if (event.target.value !== "" && index < 3) {
       inputRefs[index + 1].current.focus();
     }
@@ -122,10 +122,6 @@ const Register = ({ setShow }) => {
       newErrors.category = "Category is required";
     }
 
-    // Validate Company
-    if (!formData.company.trim()) {
-      newErrors.company = "Company/Organization is required";
-    }
     // Validate Company
 
     if (otp.join("") == "") {

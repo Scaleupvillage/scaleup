@@ -594,12 +594,12 @@ export default function Home() {
 
             <div className="flex justify-center items-center gap-x-4 col-span-2 h-[300px] w-full rounded-lg overflow-hidden">
               <ReactPlayer
-                url="https://youtu.be/yqWX86uT5jM?si=FARobCwuwXM3GPni"
+                url="https://www.youtube.com/watch?v=jXpYAYwjOvM"
                 height={"150%"}
                 width={"120%"}
                 playing={true}
                 volume={"0"}
-                muted={ true}
+                muted={true}
               />
             </div>
           </div>
@@ -824,12 +824,13 @@ export default function Home() {
                     <div className="flip-card-back bg-primary-purple flex justify-center items-center flex-col p-4 border-4 border-white rounded-[10px] z-[2]">
                       <h1 className="font-bold text-[23px] mb-4">{title}</h1>
                       <p className="text-sm">{desc}</p>
-                
-                 <Link href={`/highlighted/${title}`} className="flex gap-2 items-center mt-3">
-                      <Nextpage width="18" height="18"/> Learn More</Link>
-               
-                      
-                     
+
+                      <Link
+                        href={`/highlighted/${title}`}
+                        className="flex gap-2 items-center mt-3"
+                      >
+                        <Nextpage width="18" height="18" /> Learn More
+                      </Link>
                     </div>
                   </div>
                 </div>

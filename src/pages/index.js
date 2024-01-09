@@ -193,7 +193,7 @@ export default function Home() {
       icon: <Speaker />,
     },
     {
-      title: "Educators/Studens",
+      title: "Educators/Students",
       description:
         "Empower the next generation of entrepreneurs. Explore collaborative innovation models, engage in tech-focused learning sessions, and become a catalyst for fostering entrepreneurial spirit.",
       icon: <ScholarCap />,

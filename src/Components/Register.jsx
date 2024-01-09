@@ -124,12 +124,12 @@ const Register = ({ setShow }) => {
 
     // Validate Company
 
-    if (otp.join("") == "") {
-      newErrors.otp = "OTP required";
-    }
-    if (showOtp == false) {
-      newErrors.showOtp = "Please verify your number";
-    }
+    // if (otp.join("") == "") {
+    //   newErrors.otp = "OTP required";
+    // }
+    // if (showOtp == false) {
+    //   newErrors.showOtp = "Please verify your number";
+    // }
 
     setErrors(newErrors);
 
@@ -152,7 +152,9 @@ const Register = ({ setShow }) => {
       };
     }
   };
-  const sendOtp = () => {
+  const sendOtp = (e) => {
+    // setVerifyOtp({...verifyOtp,})
+    e.target.disabled = true
     axios
       .post("/api/otp/send", { phoneNumber: formData.phoneNumber })
       .then(() => {
@@ -168,6 +170,7 @@ const Register = ({ setShow }) => {
           progress: undefined,
           theme: "light",
         });
+        e.target.disabled = false
       })
       .catch((err) => {
         console.log(err);
@@ -182,6 +185,7 @@ const Register = ({ setShow }) => {
           progress: undefined,
           theme: "light",
         });
+        e.target.disabled = false
       });
   };
   const handleFormSubmit = () => {
@@ -257,20 +261,19 @@ const Register = ({ setShow }) => {
                   onChange={handleChange}
                 />
               </div>
-              <div>
+              {/* <div>
                 <button
                   type="button"
                   className="bg-primary-cyan px-5 py-2 rounded-full text-white disabled:cursor-not-allowed disabled:opacity-50"
                   disabled={
                     formData.phoneNumber.length != 10 ||
                     verifyOtp.disableVerifyBtn
-                    // isDisabled().disabled
                   }
                   onClick={sendOtp}
                 >
                   Verify
                 </button>
-              </div>
+              </div> */}
             </div>
             {showOtp && (
               <span className="text-[13px] flex">

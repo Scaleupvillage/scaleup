@@ -595,8 +595,8 @@ export default function Home() {
             <div className="flex justify-center items-center gap-x-4 col-span-2 h-[300px] w-full rounded-lg overflow-hidden">
               <ReactPlayer
                 url="https://youtube.com/watch?v=f8BbOGpf7HI&si=zUgdGJxBHYIaunFi"
-                height={"150%"}
-                width={"120%"}  
+                height={"100%"}
+                width={"100%"}  
               />
             </div>
           </div>

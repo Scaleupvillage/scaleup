@@ -1,0 +1,54 @@
+.s-table-responsive {
+  width: 100%;
+  overflow: auto;
+}
+
+.s-table {
+  width: 100%;
+
+  thead {
+    @apply border-b-2 border-b-primary-purple;
+  }
+
+  thead,
+  tbody {
+    tr {
+      th {
+        // background: #4b4b50;
+        &:nth-child(1) {
+          border-radius: 10px 0 0 0;
+        }
+
+        &:last-child {
+          border-radius: 0 10px 0 0;
+        }
+      }
+
+      th {
+        padding: 12px;
+      }
+
+      td {
+        padding: 15px;
+      }
+
+      th,
+      td {
+        font-size: 13px;
+      }
+    }
+  }
+
+  &.bordered {
+    thead,
+    tbody {
+      tr {
+        td {
+          border-bottom: 1px solid #eeeaf5;
+        }
+      }
+    }
+  }
+}
+
+// TABLE

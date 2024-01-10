@@ -167,7 +167,7 @@ const Footer = ({ hideFloatingBtn = false }) => {
             Copyright ©2024 All rights reserved{" "}
           </p>
           <div>
-            <ul className="flex gap-x-4 text-[#838383] text-[11px] md:text-[14px] whitespace-nowrap">
+            <ul className="flex gap-4 w-full flex-wrap md:flex-nowrap text-[#838383] text-[11px] md:text-[14px] whitespace-nowrap">
               <li>
                 <Link href="/" className="uppercase">
                   Home
@@ -186,6 +186,16 @@ const Footer = ({ hideFloatingBtn = false }) => {
               <li>
                 <Link href="#media_kit" className="uppercase">
                   Media Kit
+                </Link>
+              </li>
+              <li>
+                <Link href="/terms-conditions" className="uppercase">
+                  Terms&Conditions
+                </Link>
+              </li>
+              <li>
+                <Link href="/refund-policies" className="uppercase">
+                  Refund Policies
                 </Link>
               </li>
               <li>

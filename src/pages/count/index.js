@@ -8,6 +8,7 @@ const Count = () => {
       Startup: 0,
       "Local Business/SME": 0,
       "NRE or Gulf Returnees": 0,
+      "Working Professional":0,
       other: 0,
     },
   });
@@ -31,6 +32,7 @@ const Count = () => {
               <th className="text-left">Startups</th>
               <th className="text-left">Local Business/SME</th>
               <th className="text-left">NRE or Gulf Returnees</th>
+              <th className="text-left">Working Proffesionals</th>
               <th className="text-left">others</th>
             </tr>
           </thead>
@@ -40,6 +42,7 @@ const Count = () => {
               <td>{countPageDetails.count.Startup}</td>
               <td>{countPageDetails.count["Local Business/SME"]}</td>
               <td>{countPageDetails.count["NRE or Gulf Returnees"]}</td>
+              <td>{countPageDetails.count["Working Professional"]}</td>
               <td>{countPageDetails.count.other}</td>
             </tr>
           </tbody>

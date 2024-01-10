@@ -167,7 +167,7 @@ const Footer = ({ hideFloatingBtn = false }) => {
             Copyright ©2024 All rights reserved{" "}
           </p>
           <div>
-            <ul className="flex gap-x-4 text-[#838383] text-[11px] md:text-[14px] whitespace-nowrap">
+            <ul className="flex gap-4 w-full flex-wrap md:flex-nowrap text-[#838383] text-[11px] md:text-[14px] whitespace-nowrap">
               <li>
                 <Link href="/" className="uppercase">
                   Home

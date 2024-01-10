@@ -189,6 +189,16 @@ const Footer = ({ hideFloatingBtn = false }) => {
                 </Link>
               </li>
               <li>
+                <Link href="/terms-conditions" className="uppercase">
+                  Terms&Conditions
+                </Link>
+              </li>
+              <li>
+                <Link href="/refund-policies" className="uppercase">
+                  Refund Policies
+                </Link>
+              </li>
+              <li>
                 <Link href="#contact" className="uppercase">
                   Contact
                 </Link>

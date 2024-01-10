@@ -471,7 +471,7 @@ export default function Home() {
   return (
     <div className={exo2.className}>
       <Head>
-        <title>ScaleUp Conclave 2024  - ScaleUp Village</title>
+        <title>ScaleUp Conclave 2024 - ScaleUp Village</title>
         <meta
           name="description"
           content=" India's first D2C Industrial Park at Perinthalmanna: Connecting Entrepreneurs, Investors, Students. Explore the future of Kerala's startup landscape at this first-of-its-kind business event. Network and exchange ideas with top entrepreneurs, incubators, and investors at the two-day startup conclave"
@@ -489,10 +489,7 @@ export default function Home() {
           property="og:description"
           content="India's first D2C Industrial Park at Perinthalmanna: Connecting Entrepreneurs, Investors, Students. "
         />
-        <meta
-          property="og:image"
-          content="/favicon.ico"
-        />
+        <meta property="og:image" content="/favicon.ico" />
         <meta property="og:url" content="https://www.scaleupconclave.com/" />
         <meta property="og:type" content="website" />
 
@@ -505,14 +502,8 @@ export default function Home() {
           name="twitter:description"
           content="India's first D2C Industrial Park at Perinthalmanna: Connecting Entrepreneurs, Investors, Students. "
         />
-        <meta
-          name="twitter:image"
-          content="/favicon.ico"
-        />
-        <meta
-          name="twitter:url"
-          content="https://www.scaleupconclave.com/"
-        />
+        <meta name="twitter:image" content="/favicon.ico" />
+        <meta name="twitter:url" content="https://www.scaleupconclave.com/" />
       </Head>
       {openModal && (
         <>
@@ -596,7 +587,7 @@ export default function Home() {
               <ReactPlayer
                 url="https://youtu.be/jXpYAYwjOvM?si=_GmVzd4o8yXJhdoR"
                 height={"100%"}
-                width={"100%"}  
+                width={"100%"}
               />
             </div>
           </div>

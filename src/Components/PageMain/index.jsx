@@ -21,9 +21,8 @@ const PageMain = ({
 
       {introduction.length > 0 && (
         <div className="custom-container ">
-          <div className="grid grid-cols-12">
-            <div className="col-span-6 py-5">
-              {/* IMAGES */}
+          <div className="grid grid-cols-12 py-10">
+            <div className="col-span-6 ">
               {introductionImages.images &&
                 introductionImages.images.length > 0 && (
                   <div className={introductionImages?.containerClassname}>

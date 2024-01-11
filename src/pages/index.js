@@ -1,8 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { useEffect, useState } from "react";
 import Styles from "@/pages/index.module.scss";
-import { Exo_2 } from "next/font/google";
-const exo2 = Exo_2({ subsets: ["latin"], adjustFontFallback: false });
+
 import Link from "next/link";
 import axios from "axios";
 
@@ -469,7 +468,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className={exo2.className}>
+    <div >
       <Head>
         <title>ScaleUp Conclave 2024 - ScaleUp Village</title>
         <meta
@@ -974,7 +973,7 @@ export default function Home() {
               <Image
                 src={partner.src}
                 className={`${
-                  index === 7 || index === 21
+                  index === 7 || index === 30
                     ? "w-[75px]"
                     : index === 16
                     ? "w-[200px]"

@@ -5,7 +5,8 @@ import { useEffect } from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ReactGA from "react-ga";
-
+import { Exo_2 } from "next/font/google";
+const exo2 = Exo_2({ subsets: ["latin"], adjustFontFallback: false });
 export default function App({ Component, pageProps }) {
   const router = useRouter();
   useEffect(() => {
@@ -33,9 +34,9 @@ export default function App({ Component, pageProps }) {
     });
   }, [router.events]);
   return (
-    <>
+    <div className={exo2.className}>
       <ToastContainer />
       <Component {...pageProps} />
-    </>
+    </div>
   );
 }

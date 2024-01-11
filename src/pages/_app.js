@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { initGA, logPageView } from "../analytics";
 export default function App({ Component, pageProps }) {
   const router = useRouter();
   useEffect(() => {
@@ -18,6 +19,13 @@ export default function App({ Component, pageProps }) {
         });
       });
   }, [router.events]);
+  useEffect(() => {
+    if (!window.GA_INITIALIZED) {
+      initGA();
+      window.GA_INITIALIZED = true;
+    }
+    logPageView();
+  }, []);
   return (
     <>
       <ToastContainer />

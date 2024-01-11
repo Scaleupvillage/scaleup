@@ -19,6 +19,16 @@ export default function Document() {
           {dataLayer.push(arguments)}
           gtag('js', new Date()); gtag('config', 'AW-11461800534');`}
         </Script>
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-2XBK94JCJQ"
+        ></Script>
+        <Script id="google-tag">
+          {` window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2XBK94JCJQ');`}
+        </Script>
       </Head>
       <body>
         <Main />
@@ -32,4 +42,3 @@ export default function Document() {
     </Html>
   );
 }
-

@@ -1,4 +1,5 @@
 import axios from "axios";
+import moment from "moment";
 import React, { useEffect, useState } from "react";
 
 const Count = () => {
@@ -11,8 +12,8 @@ const Count = () => {
       "Working Professional": 0,
       other: 0,
     },
-    totalEntry:0,
-    lastEntry:{}
+    totalEntry: 0,
+    lastEntry: {},
   });
   useEffect(() => {
     const getRegistrationCount = () => {
@@ -75,6 +76,11 @@ const Count = () => {
           </div>
           <div>
             <label>District: {countPageDetails?.lastEntry.district}</label>
+          </div>
+          <div>
+            <label>
+              Created At: {moment(countPageDetails?.lastEntry.createdAt).format("DD/MM/YYYY, HH:MM")}
+            </label>
           </div>
         </div>
       </div>

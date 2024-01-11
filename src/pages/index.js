@@ -766,7 +766,12 @@ export default function Home() {
                       <p className="text-sm">{desc}</p>
 
                       <Link
-                        href={`/highlighted/${title}`}
+                      target="_blank"
+                        href={
+                          title === "Medical Hackathon"
+                            ? "https://hack.scaleupconclave.com/"
+                            : `/highlighted/${title}`
+                        }
                         className="flex gap-2 items-center mt-3"
                       >
                         <Nextpage width="18" height="18" /> Learn More

@@ -974,7 +974,7 @@ export default function Home() {
               <Image
                 src={partner.src}
                 className={`${
-                  index === 7 || index === 21
+                  index === 7 || index === 30
                     ? "w-[75px]"
                     : index === 16
                     ? "w-[200px]"

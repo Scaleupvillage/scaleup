@@ -56,7 +56,7 @@ const Register = ({ setShow }) => {
       ...prevData,
       [name]: value,
     }));
-    setErrors({ ...errors, [name]: "", showOtp:"" });
+    setErrors({ ...errors, [name]: "", showOtp: "" });
   };
   const handleInputChange = (index, event) => {
     const newOtp = [...otp];
@@ -154,7 +154,7 @@ const Register = ({ setShow }) => {
   };
   const sendOtp = (e) => {
     // setVerifyOtp({...verifyOtp,})
-    e.target.disabled = true
+    e.target.disabled = true;
     axios
       .post("/api/otp/send", { phoneNumber: formData.phoneNumber })
       .then(() => {
@@ -170,7 +170,7 @@ const Register = ({ setShow }) => {
           progress: undefined,
           theme: "light",
         });
-        e.target.disabled = false
+        e.target.disabled = false;
       })
       .catch((err) => {
         console.log(err);
@@ -185,7 +185,7 @@ const Register = ({ setShow }) => {
           progress: undefined,
           theme: "light",
         });
-        e.target.disabled = false
+        e.target.disabled = false;
       });
   };
   const handleFormSubmit = () => {
@@ -399,12 +399,12 @@ const Register = ({ setShow }) => {
           </div>
           <div className="mb-4  ">
             <label className="label text-primary-blue">
-              Company/Organisation
+              Company/Organaisation/School/College Name
             </label>
             <input
               type="text"
               name="company"
-              placeholder="Company/Organisation"
+              placeholder="Company/Organaisation/School/College Name"
               className="input"
               value={formData.company}
               onChange={handleChange}

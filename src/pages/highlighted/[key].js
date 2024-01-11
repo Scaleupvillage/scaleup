@@ -1,6 +1,5 @@
 import PageMain from "@/Components/PageMain";
 import React, { useEffect, useState } from "react";
-import slider1 from "@/assets/images/slider1.png";
 import Navbar from "@/Components/Layout/Navbar";
 import Footer from "@/Components/Layout/Footer";
 import Slider from "@/Components/Slider";

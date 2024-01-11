@@ -19,7 +19,7 @@ export default async function handler(req, res) {
           "Local Business/SME": 0,
           "Working Professional": 0,
           "NRE or Gulf Returnees": 0,
-          other: 0,
+          Other: 0,
         }
       );
       return {

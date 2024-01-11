@@ -12,7 +12,7 @@ const Nextpage = (props) => {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      class="feather feather-external-link"
+      className="feather feather-external-link"
       {...props}
     >
       <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>

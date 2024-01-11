@@ -346,32 +346,38 @@ export default function Home() {
         background: hilight1.src,
         title: "Panel Discussions",
         desc: " Engage in dynamic conversations led by industry thought leaders, exploring cutting-edge topics and sharing diverse perspectives to foster insightful discussions",
+        link: "/Panel Discussions",
       },
       {
         background: hilight2.src,
         title: "Talks by Industry Experts",
         desc: " Immerse yourself in enlightening sessions delivered by seasoned professionals, gaining deep insights into the latest trends, innovations, and best practices in the industry",
+        link: "/Talks by Industry Experts",
       },
       {
         background: hilight3.src,
         title: "Medical Hackathon",
         desc: " Join forces with like-minded innovators to tackle real-world healthcare challenges, leveraging technology and creativity to develop impactful solutions",
+        link: "https://youtu.be/jXpYAYwjOvM?si=_GmVzd4o8yXJhdoR",
       },
       {
         background: hilight4.src,
         title: "Idea Pitching Events",
         desc: " Step into the spotlight and present your groundbreaking ideas, receiving valuable feedback and the opportunity to connect with potential collaborators and investors",
+        link: "/Idea Pitching Events",
       },
     ],
     [
       {
         background: hilight5.src,
         title: "Technical Workshops",
+        link: "/Technical Workshops",
         desc: " Dive into hands-on technical workshops, equipping yourself with practical skills and knowledge led by experts in the field",
       },
       {
         background: hilight6.src,
         title: "Art & Craft Workshops",
+        link: "/Art & Craft Workshops",
         desc: " Unleash your creative side with engaging art and craft workshops, providing a relaxing and enjoyable break from the technical aspects of the event",
       },
     ],
@@ -379,21 +385,25 @@ export default function Home() {
       {
         background: hilight7.src,
         title: "Cookathon",
+        link: "/cookathon",
         desc: " Explore the intersection of food and innovation in this culinary challenge, where participants compete to create the next big Direct-to-Consumer (D2C) friendly food product",
       },
       {
         background: hilight10.src,
         title: " 1-1 Mentoring Sessions",
+        link: "/1-1 Mentoring Sessions",
         desc: " Receive personalized guidance from experienced mentors, addressing specific queries and gaining valuable insights tailored to your individual needs",
       },
       {
         background: hilight8.src,
-        title: " Entertainment Programs & Games",
+        title: "Entertainment Programs & Games",
+        link: "/Entertainment Programs & Games",
         desc: " Enjoy a mix of entertainment and games, fostering a lively and interactive atmosphere to complement the educational aspects of the event",
       },
       {
         background: hilight9.src,
         title: " Project Expo & Stalls",
+        link: "/Project Expo & Stalls",
         desc: " Showcase your projects and innovations, network with attendees, and explore a diverse array of stalls featuring cutting-edge products and services",
       },
     ],
@@ -468,7 +478,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div >
+    <div>
       <Head>
         <title>ScaleUp Conclave 2024 - ScaleUp Village</title>
         <meta
@@ -733,7 +743,7 @@ export default function Home() {
       <div className=" py-[100px]   p-4 relative overflow-hidden">
         {highlightedPrograms.map((programs, highlightedProgramsIndex) => (
           <div className="grid grid-cols-12 " key={highlightedProgramsIndex}>
-            {programs.map(({ title, desc, background }, programIndex) => (
+            {programs.map(({ title, desc, background, link }, programIndex) => (
               <div
                 className={`col-span-12 lg:col-span-3 h-[250px] rounded-md shadow-lg  overflow-hidden m-3 bg-white ${
                   highlightedProgramsIndex == 1 && programIndex === 0
@@ -765,12 +775,8 @@ export default function Home() {
                       <p className="text-sm">{desc}</p>
 
                       <Link
-                      target="_blank"
-                        href={
-                          title === "Medical Hackathon"
-                            ? "https://hack.scaleupconclave.com/"
-                            : `/highlighted/${title}`
-                        }
+                        target="_blank"
+                        href={link}
                         className="flex gap-2 items-center mt-3"
                       >
                         <Nextpage width="18" height="18" /> Learn More

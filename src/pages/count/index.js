@@ -47,7 +47,7 @@ const Count = () => {
               <td>{countPageDetails.count["Local Business/SME"]}</td>
               <td>{countPageDetails.count["NRE or Gulf Returnees"]}</td>
               <td>{countPageDetails.count["Working Professional"]}</td>
-              <td>{countPageDetails.count.other}</td>
+              <td>{countPageDetails.count.Other}</td>
               <td>{countPageDetails.totalEntry}</td>
             </tr>
           </tbody>

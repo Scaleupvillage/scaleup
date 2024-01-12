@@ -6,6 +6,7 @@ import coockathon from "@/assets/images/coockathon.png";
 import Question from "@/Components/Icons/Question";
 import Scale from "@/Components/Icons/Scale";
 import CalenderFill from "@/Components/Icons/CalenderFill";
+import Link from "next/link";
 const Coockathon = () => {
   return (
     <>
@@ -36,12 +37,12 @@ const Coockathon = () => {
         }}
       />
       <div className="flex justify-center items-center py-5">
-        <button
-          type="button"
+        <Link
+          href="https://docs.google.com/forms/d/e/1FAIpQLSdLjc1DNLqvukhdqWeN1kV6ouYoXeDrqWHYZF997uBfs-3YxQ/viewform?usp=sf_link"
           className="bg-primary-purple shadow-lg shadow-primary-purple px-8 py-3 rounded-full text-white"
         >
           Register Now
-        </button>
+        </Link>
       </div>
 
       <div className="custom-container py-[100px]">

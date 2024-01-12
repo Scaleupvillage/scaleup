@@ -511,6 +511,10 @@ export default function Home() {
           name="twitter:description"
           content="India's first D2C Industrial Park at Perinthalmanna: Connecting Entrepreneurs, Investors, Students. "
         />
+        <meta
+          name="facebook-domain-verification"
+          content="yibegoejabtonullxwtvd6jfxm64d7"
+        />
         <meta name="twitter:image" content="/favicon.ico" />
         <meta name="twitter:url" content="https://www.scaleupconclave.com/" />
       </Head>

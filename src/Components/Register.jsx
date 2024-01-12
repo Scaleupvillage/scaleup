@@ -188,16 +188,18 @@ const Register = ({ setShow }) => {
         e.target.disabled = false;
       });
   };
-  const handleFormSubmit = () => {
+  const handleFormSubmit = (event) => {
     const isValid = validateForm();
-
     if (isValid) {
+      event.target.disabled = true;
       axios
         .post("/api/otp/verify", { ...formData, otp: otp.join("") })
         .then((response) => {
           setSuccessAert(true);
+          event.target.disabled = false;
         })
         .catch((err) => {
+          event.target.disabled = false;
           toast(err.response.data.message, {
             type: "error",
             position: "bottom-right",
@@ -418,7 +420,7 @@ const Register = ({ setShow }) => {
         <div className="col-span-10 lg:col-span-2 flex justify-center items-center">
           <button
             type="button"
-            className="w-full bg-primary-cyan  px-8 py-3 rounded-full text-white"
+            className="w-full bg-primary-cyan  px-8 py-3 rounded-full text-white disabled:cursor-not-allowed disabled:opacity-50"
             onClick={handleFormSubmit}
           >
             Register

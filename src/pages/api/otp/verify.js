@@ -55,8 +55,20 @@ export default async function handler(req, res) {
           });
         return res.status(200).json({ message: "Successfull" });
       })
-      .catch((err) => {
-        console.log(err.response.data.response);
+      .catch((error) => {
+        console.log(error.response.data.response);
+        let err = error.response.data.response;
+        if (err.email) {
+          return res.status(400).json({ message: "Email id already exists" });
+        } else if (err.phone_number) {
+          return res
+            .status(400)
+            .json({ message: "Phone number already exists" });
+        } else if (err.phone_number) {
+          return res
+            .status(400)
+            .json({ message: "Phone number already exists" });
+        }
         return res.status(400).json({ message: "Something went wrong" });
       });
   };

@@ -2,7 +2,7 @@ import Footer from "@/Components/Layout/Footer";
 import Navbar from "@/Components/Layout/Navbar";
 import PageMain from "@/Components/PageMain";
 import React from "react";
-import coockathon from "@/assets/images/coockathon.png";
+import coockathon from "@/assets/images/coockathon.jpg";
 import Question from "@/Components/Icons/Question";
 import Scale from "@/Components/Icons/Scale";
 import CalenderFill from "@/Components/Icons/CalenderFill";

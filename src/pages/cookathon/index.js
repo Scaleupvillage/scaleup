@@ -2,7 +2,7 @@ import Footer from "@/Components/Layout/Footer";
 import Navbar from "@/Components/Layout/Navbar";
 import PageMain from "@/Components/PageMain";
 import React from "react";
-import coockathon from "@/assets/images/coockathon.png";
+import coockathon from "@/assets/images/coockathon.jpg";
 import Question from "@/Components/Icons/Question";
 import Scale from "@/Components/Icons/Scale";
 import CalenderFill from "@/Components/Icons/CalenderFill";
@@ -12,7 +12,8 @@ const Coockathon = () => {
     <>
       <Navbar />
       <PageMain
-        title={"Cookathon "}
+        title={"Cookathon"}
+        overlay={true}
         introduction={[
           {
             text: "Cookathon, an innovative food innovation challenge brought to you by Scaleup Village, invites all passionate food entrepreneurs to showcase their creativity and bring innovative, market-ready products to the forefront of the Direct-to-Consumer (D2C) market.",

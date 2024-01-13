@@ -1,6 +1,7 @@
 import React from "react";
 import Style from "./pagemain.module.scss";
 import Image from "next/image";
+import ReactPlayer from "react-player";
 const PageMain = ({
   main = {},
   title,
@@ -26,10 +27,22 @@ const PageMain = ({
         {mainRender()}
       </div>
 
-      {introduction.length > 0 && (
+      {Object.keys(introductionImages).length > 0 && (
         <div className="custom-container ">
           <div className="grid grid-cols-12 py-10">
-            <div className="col-span-6 ">
+            {Object.keys(introductionImages).map((key, index) => (
+              <div key={index} className="col-span-6">
+                {key === "images" &&
+                  introductionImages[key].map((props, propindex) => (
+                    <Image {...props} key={propindex} />
+                  ))}
+                {key === "videos" &&
+                  introductionImages[key].map((props, propindex) => (
+                    <ReactPlayer {...props} key={propindex} />
+                  ))}
+              </div>
+            ))}
+            {/* <div className="col-span-6 ">
               {introductionImages.images &&
                 introductionImages.images.length > 0 && (
                   <div className={introductionImages?.containerClassname}>
@@ -38,7 +51,7 @@ const PageMain = ({
                     ))}
                   </div>
                 )}
-            </div>
+            </div> */}
             <div className="col-span-6 py-5">
               {introduction.map(({ text, ...rest }, index) => (
                 <div className="row" key={index}>

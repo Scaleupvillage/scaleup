@@ -27,6 +27,14 @@ const Coockathon = () => {
               width: "100",
             },
           ],
+          videos: [
+            {
+              src: "https://www.youtube.com/watch?v=Zz5Z3Xs2PNs",
+              alt: "",
+              width: "100",
+              height: "100",
+            },
+          ],
         }}
         main={{
           style: {

@@ -12,7 +12,8 @@ const Coockathon = () => {
     <>
       <Navbar />
       <PageMain
-        title={"Cookathon "}
+        title={"Cookathon"}
+        overlay={true}
         introduction={[
           {
             text: "Cookathon, an innovative food innovation challenge brought to you by Scaleup Village, invites all passionate food entrepreneurs to showcase their creativity and bring innovative, market-ready products to the forefront of the Direct-to-Consumer (D2C) market.",

@@ -6,12 +6,18 @@ const PageMain = ({
   title,
   introduction,
   introductionImages = {},
+  overlay,
   mainRender = () => {},
 }) => {
   return (
     <>
-      <div className={`${Style["page-main-container"]} relative`} style={main.style}>
-        <div className="absolute top-0 left-0 w-full h-full bg-[#00000031]"></div>
+      <div
+        className={`${Style["page-main-container"]} relative`}
+        style={main.style}
+      >
+        {overlay && (
+          <div className="absolute top-0 left-0 w-full h-full bg-[#00000031]"></div>
+        )}
         <div className="row h-full w-full mx-auto">
           <div className="w-full h-full flex justify-center items-center">
             <h1 className={`${Style["page-main-title"]} z-[100]`}>{title}</h1>

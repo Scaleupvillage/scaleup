@@ -19,22 +19,25 @@ export default function Document() {
           {dataLayer.push(arguments)}
           gtag('js', new Date()); gtag('config', 'AW-11461800534');`}
         </Script>
-        <Script
+        <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-2XBK94JCJQ"
-        ></Script>
-        <Script id="google-tag">
-          {` window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-2XBK94JCJQ');`}
-        </Script>
+        />
+        <script
+          id="google-analytics"
+          dangerouslySetInnerHTML={{
+            __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-2XBK94JCJQ');
+        `,
+          }}
+        />
       </Head>
       <body>
         <Main />
         <NextScript />
-
-
       </body>
     </Html>
   );

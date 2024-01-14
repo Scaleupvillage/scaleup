@@ -9,7 +9,7 @@ import Youtube from "../Icons/Youtube";
 import Instagram from "../Icons/Instagram";
 import Facebook from "../Icons/Facebook";
 import Linkedin from "../Icons/Linkedin";
-const Navbar = () => {
+const Navbar = ({ isAbsolute = false }) => {
   const containerRef = useRef(null);
   const [isOpen, toggleOpen] = useCycle(false, true);
   const { height } = useDimensions(containerRef);
@@ -68,7 +68,7 @@ const Navbar = () => {
     };
   }, []);
   return (
-    <div className="absolute w-full z-[100]">
+    <div className={`  w-full z-[100] ${isAbsolute ? "absolute" : "bg-black"}`}>
       <div className="  bg-white shadow-md w-full flex justify-between  px-3 lg:px-[70px] items-center py-3 info-nav">
         <div className="flex flex-col md:flex-row  md:gap-x-6 lg:gap-x-6 items-start md:items-center  text-[10px] lg:text-[16px]">
           <a
@@ -83,7 +83,10 @@ const Navbar = () => {
           </a>
         </div>
         <div className="flex justify-center items-center gap-x-3 lg:gap-x-4">
-          <Link href="https://www.instagram.com/scaleupconclave/" target="_blank">
+          <Link
+            href="https://www.instagram.com/scaleupconclave/"
+            target="_blank"
+          >
             <Instagram fill="#003B6D" stroke="#003B6D" width="30" />
           </Link>
           <Link
@@ -106,7 +109,7 @@ const Navbar = () => {
           </Link>
         </div>
       </div>
-      <div className=" p-5 justify-between items-center h-[20vh] hidden md:flex custom-container">
+      <div className="  p-5 justify-between items-center h-[20vh] hidden md:flex custom-container">
         <Link href="/">
           <Image width="100" height="100" alt="logo" src={logo.src} />
         </Link>
@@ -127,7 +130,11 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className="w-full block md:hidden bg-[#18181C] absolute z-20">
+      <div
+        className={`w-full block md:hidden bg-[#18181C]  z-20 ${
+          isAbsolute && "absolute"
+        }`}
+      >
         <div
           className="w-full flex justify-between relative  p-5 "
           initial={"false"}

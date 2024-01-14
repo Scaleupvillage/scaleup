@@ -6,55 +6,132 @@ import coockathon from "@/assets/images/coockathon.jpg";
 import Question from "@/Components/Icons/Question";
 import Scale from "@/Components/Icons/Scale";
 import CalenderFill from "@/Components/Icons/CalenderFill";
+import dynamic from "next/dynamic";
+const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 import Link from "next/link";
 const Coockathon = () => {
   return (
     <>
-      <Navbar />
+      <Navbar isAbsolute={false} />
       <PageMain
         title={"Cookathon"}
         overlay={true}
-        introduction={[
-          {
-            text: "Cookathon, an innovative food innovation challenge brought to you by Scaleup Village, invites all passionate food entrepreneurs to showcase their creativity and bring innovative, market-ready products to the forefront of the Direct-to-Consumer (D2C) market.",
+        introduction={{
+          container: {
+            // className: "col-span-12 lg:col-span-6",
           },
-        ]}
-        introductionImages={{
-          images: [
+          content: [
             {
-              src: coockathon.rc,
-              alt: "",
-              width: "100",
+              text: "Cookathon, an innovative food innovation challenge brought to you by Scaleup Village, invites all passionate food entrepreneurs to showcase their creativity and bring innovative, market-ready products to the forefront of the Direct-to-Consumer (D2C) market.",
             },
           ],
+        }}
+        introductionImages={{
+          container: {
+            // className: "col-span-12 lg:col-span-6",
+          },
+
           videos: [
             {
-              src: "https://www.youtube.com/watch?v=Zz5Z3Xs2PNs",
+              url: "https://www.youtube.com/watch?v=Zz5Z3Xs2PNs",
               alt: "",
-              width: "100",
-              height: "100",
+              width: "100%",
+              height: "100%",
             },
           ],
         }}
         main={{
           style: {
             backgroundImage: `url(${coockathon.src})`,
-            backgroundSize: "cover",
+            backgroundSize: "100% 100%",
             backgroundPosition: "50%",
-            height: "600px",
           },
         }}
       />
-      <div className="flex justify-center items-center py-5">
+      <div className="flex justify-center items-center py-5 gap-x-4 flex-col lg:flex-row">
         <Link
           href="https://docs.google.com/forms/d/e/1FAIpQLSdLjc1DNLqvukhdqWeN1kV6ouYoXeDrqWHYZF997uBfs-3YxQ/viewform?usp=sf_link"
-          className="bg-primary-purple shadow-lg shadow-primary-purple px-8 py-3 rounded-full text-white"
+          className="bg-primary-purple shadow-lg shadow-primary-purple px-8 py-3 rounded-full text-white mb-4 lg:mb-0"
         >
-          Register Now
+          Register Now For Cookathon
+        </Link>
+        <Link
+          href="https://chat.whatsapp.com/CVSxNUUyZeP9pgFaZLhegr"
+          target="_blank"
+          className="bg-[#25D366] shadow-lg shadow-[#25D366] px-8 py-3 rounded-full text-white"
+        >
+          WhatsApp Discussion Group
         </Link>
       </div>
 
-      <div className="custom-container py-[100px]">
+      <div className="custom-container py-[50px]">
+        <h2 className="title text-[25px] wave-before">
+          What is D2C (Direct-to-Consumer)?
+        </h2>
+        <div className="grid grid-cols-1 lg:grid-cols-2">
+          <div className="mb-4 lg:mb-0">
+            <p>
+              Direct-to-Consumer (D2C) is a business model that involves selling
+              products directly to customers without the need for intermediaries
+              like retailers or wholesalers. In simpler terms, it&apos;s a
+              direct link between the producer and the end consumer. This model
+              cuts out the middle steps, allowing businesses to connect with
+              their audience more intimately.Read this article to learn more
+              about Indian D2C Startup Ecosystem
+              https://inc42.com/features/fb-d2c-brands-in-india/
+            </p>
+          </div>
+          <div className="flex justify-center items-center gap-x-4  h-[300px] w-full rounded-lg overflow-hidden">
+            <ReactPlayer
+              url="https://youtu.be/Zz5Z3Xs2PNs"
+              height={"100%"}
+              width={"100%"}
+            />
+          </div>
+        </div>
+      </div>
+      <div className="custom-container py-[50px]">
+        <h2 className="title text-[25px] wave-before">Advantages of D2C</h2>
+        <div className="">
+          <div className="mb-4 lg:mb-0">
+            <ul className="list-decimal px-8">
+              <li className="mb-4">
+                <span className="title"> Direct Relationship:</span> D2C allows
+                brands to build a direct and personal relationship with their
+                customers. For instance, a local artisanal jam maker can
+                interact directly with jam enthusiasts through online platforms,
+                understanding preferences and gaining valuable insights.
+              </li>
+              <li className="mb-4">
+                <span className="title"> Brand Control:</span>With D2C,
+                businesses have better control over their brand image and
+                messaging. An example would be a small tea company that crafts
+                unique blends and communicates directly with tea lovers,
+                emphasising the authenticity of their products.
+              </li>
+              <li className="mb-4">
+                <span className="title">Real-time Feedback:</span>Direct
+                communication channels foster real-time feedback loops. A D2C
+                skincare brand, for instance, can receive immediate responses
+                from users, helping them tweak formulations or launch new
+                products based on customer suggestions.
+              </li>
+              <li className="mb-4">
+                <span className="title"> Adaptability to Trends:</span> D2C
+                enables businesses to adapt swiftly to market trends. Consider a
+                health-conscious snack producer introducing a new superfood
+                blend directly to consumers, responding rapidly to the rising
+                demand for nutritious snacks.
+              </li>
+              <li className="mb-4">
+                <span className="title"> Cutting Costs</span> Skipping
+                intermediaries often reduces costs.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div className="custom-container py-[50px]">
         <div className="grid grid-cols-12 gap-4 lg:gap-x-12">
           <div className="col-span-12  lg:col-span-6 flex flex-col gap-4 lg:gap-x-8">
             <div className="  bg-white  shadow-md hover:shadow-xl border-[1px] rounded-lg">
@@ -130,7 +207,7 @@ const Coockathon = () => {
                       <CalenderFill className="fill-primary-yellow" />
                     </div>
 
-                    <h3 className="title ">JAN 13: Official Announcement</h3>
+                    <h3 className="title ">JAN 14: Official Announcement</h3>
                   </div>
                   <div className="p-3">
                     <ul className="list-disc px-8">
@@ -142,7 +219,6 @@ const Coockathon = () => {
                     </ul>
                   </div>
                 </div>
-
                 <div className="  bg-white   rounded-lg">
                   <div className="w-full py-2 px-4 flex items-center border-b-[1px] border-primary-purple">
                     <div className="  w-[40px] h-[40px] rounded-full mr-4 flex justify-center items-center">
@@ -150,7 +226,26 @@ const Coockathon = () => {
                     </div>
 
                     <h3 className="title ">
-                      Jan 27: Preliminary Screening at Perinthalmanna
+                      Jan 27: Last date for registration
+                    </h3>
+                  </div>
+                  <div className="p-3">
+                    <ul className="list-disc px-8">
+                      <li>
+                        Participants need to fill registration form before JAN
+                        27,11:59 PM
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="  bg-white   rounded-lg">
+                  <div className="w-full py-2 px-4 flex items-center border-b-[1px] border-primary-purple">
+                    <div className="  w-[40px] h-[40px] rounded-full mr-4 flex justify-center items-center">
+                      <CalenderFill className="fill-primary-yellow" />
+                    </div>
+
+                    <h3 className="title ">
+                      Jan 29: Preliminary Screening at Perinthalmanna
                     </h3>
                   </div>
                   <div className="p-3">
@@ -194,53 +289,7 @@ const Coockathon = () => {
           </div>
         </div>
       </div>
-      <div className="custom-container py-[100px]">
-        <h2 className="title text-[25px] wave-before">Examples</h2>
-        <div className="grid grid-cols-12 gap-4 lg:gap-x-8">
-          <div className=" col-span-12 lg:col-span-4 bg-white  shadow-md hover:shadow-xl border-[1px] rounded-lg">
-            <div className="w-full py-2 px-4 flex items-center border-b-[1px] border-primary-purple">
-              <div className="bg-primary-purple  w-[40px] h-[40px] rounded-full mr-4 flex justify-center items-center">
-                <span className="text-white font-bold"> 1</span>
-              </div>
 
-              <h3 className="title ">Chai Masala Kits </h3>
-            </div>
-            <div className="p-3">
-              DIY chai masala kits containing handpicked spices, allowing
-              customers to brew their perfect cup of spiced tea at home.
-            </div>
-          </div>
-
-          <div className=" col-span-12  lg:col-span-4 bg-white  shadow-md hover:shadow-xl border-[1px] rounded-lg">
-            <div className="w-full py-2 px-4 flex items-center border-b-[1px] border-primary-blue">
-              <div className="bg-primary-blue  w-[40px] h-[40px] rounded-full mr-4 flex justify-center items-center">
-                <span className="text-white font-bold">2</span>
-              </div>
-
-              <h3 className="title ">Instant Healthy Mixes </h3>
-            </div>
-            <div className="p-3">
-              Quick and nutritious instant mixes for traditional Indian
-              breakfast options like dosas, idlis, or upma, catering to the
-              demand for easy and wholesome meals
-            </div>
-          </div>
-          <div className=" col-span-12  lg:col-span-4 bg-white  shadow-md hover:shadow-xl border-[1px] rounded-lg">
-            <div className="w-full py-2 px-4 flex items-center border-b-[1px] border-primary-blue">
-              <div className="bg-primary-blue  w-[40px] h-[40px] rounded-full mr-4 flex justify-center items-center">
-                <span className="text-white font-bold">2</span>
-              </div>
-
-              <h3 className="title ">Homestyle Spice Blends </h3>
-            </div>
-            <div className="p-3">
-              Homestyle spice blends represent regional Indian flavours, making
-              it easy for customers to add authentic tastes to their daily
-              meals.
-            </div>
-          </div>
-        </div>
-      </div>
       <Footer hideFloatingBtn={false} />
     </>
   );

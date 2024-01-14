@@ -346,65 +346,104 @@ export default function Home() {
         background: hilight1.src,
         title: "Panel Discussions",
         desc: " Engage in dynamic conversations led by industry thought leaders, exploring cutting-edge topics and sharing diverse perspectives to foster insightful discussions",
-        link: "/Panel Discussions",
+        button: {
+          label: "",
+          link: "/Panel Discussions",
+        },
       },
       {
         background: hilight2.src,
         title: "Talks by Industry Experts",
         desc: " Immerse yourself in enlightening sessions delivered by seasoned professionals, gaining deep insights into the latest trends, innovations, and best practices in the industry",
-        link: "/Talks by Industry Experts",
+        link: "",
+        button: {
+          label: "",
+          link: "/Talks by Industry Experts",
+        },
       },
       {
         background: hilight3.src,
         title: "Medical Hackathon",
+        regRequired: true,
         desc: " Join forces with like-minded innovators to tackle real-world healthcare challenges, leveraging technology and creativity to develop impactful solutions",
-        link: "https://youtu.be/jXpYAYwjOvM?si=_GmVzd4o8yXJhdoR",
+        link: "",
+        button: {
+          label: "Register for the event",
+          link: "https://hack.scaleupconclave.com/",
+        },
       },
       {
         background: hilight4.src,
         title: "Idea Pitching Events",
         desc: " Step into the spotlight and present your groundbreaking ideas, receiving valuable feedback and the opportunity to connect with potential collaborators and investors",
         link: "/Idea Pitching Events",
+        button: {
+          label: "",
+          link: "/Idea Pitching Events",
+        },
       },
     ],
     [
       {
         background: hilight5.src,
         title: "Technical Workshops",
-        link: "/Technical Workshops",
         desc: " Dive into hands-on technical workshops, equipping yourself with practical skills and knowledge led by experts in the field",
+        link: "/Technical Workshops",
+        button: {
+          label: "",
+          link: "/Technical Workshops",
+        },
       },
       {
         background: hilight6.src,
         title: "Art & Craft Workshops",
-        link: "/Art & Craft Workshops",
         desc: " Unleash your creative side with engaging art and craft workshops, providing a relaxing and enjoyable break from the technical aspects of the event",
+        link: "/Art & Craft Workshops",
+        button: {
+          label: "",
+          link: "/Art & Craft Workshops",
+        },
       },
     ],
     [
       {
         background: hilight7.src,
         title: "Cookathon",
-        link: "/cookathon",
+        regRequired: true,
         desc: " Explore the intersection of food and innovation in this culinary challenge, where participants compete to create the next big Direct-to-Consumer (D2C) friendly food product",
+        button: {
+          label: "Register for the event",
+          link: "/cookathon",
+        },
       },
       {
         background: hilight10.src,
-        title: " 1-1 Mentoring Sessions",
-        link: "/1-1 Mentoring Sessions",
+        title: "2 Days Business Bootcamp",
         desc: " Receive personalized guidance from experienced mentors, addressing specific queries and gaining valuable insights tailored to your individual needs",
+        link: "/",
+        button: {
+          label: "",
+          link: "/bootcamp",
+        },
       },
       {
         background: hilight8.src,
         title: "Entertainment Programs & Games",
-        link: "/Entertainment Programs & Games",
         desc: " Enjoy a mix of entertainment and games, fostering a lively and interactive atmosphere to complement the educational aspects of the event",
+        link: "/Entertainment Programs & Games",
+        button: {
+          label: "",
+          link: "/Entertainment Programs & Games",
+        },
       },
       {
         background: hilight9.src,
         title: " Project Expo & Stalls",
-        link: "/Project Expo & Stalls",
         desc: " Showcase your projects and innovations, network with attendees, and explore a diverse array of stalls featuring cutting-edge products and services",
+        button: {
+          label: "",
+          link: "/Project Expo & Stalls",
+        },
       },
     ],
   ];
@@ -532,7 +571,7 @@ export default function Home() {
         className={`${Styles["main-container"]} relative overflow-hidden main-section`}
       >
         <div className="relative">
-          <Navbar />
+          <Navbar isAbsolute={true} />
 
           <div>
             <Slider
@@ -747,49 +786,62 @@ export default function Home() {
       <div className=" py-[100px]   p-4 relative overflow-hidden">
         {highlightedPrograms.map((programs, highlightedProgramsIndex) => (
           <div className="grid grid-cols-12 " key={highlightedProgramsIndex}>
-            {programs.map(({ title, desc, background, link }, programIndex) => (
-              <div
-                className={`col-span-12 lg:col-span-3 h-[250px] rounded-md shadow-lg  overflow-hidden m-3 bg-white ${
-                  highlightedProgramsIndex == 1 && programIndex === 0
-                    ? "order-1"
-                    : programIndex === 1
-                    ? "order-3"
-                    : ""
-                }`}
-                key={programIndex}
-              >
-                <div className="flip-card border-2 border-primary-purple rounded-[10px] overflow-hidden">
-                  <div className="flip-card-inner">
-                    <div className="flip-card-front z-[1]">
-                      <div className="relative h-full">
-                        <Image
-                          src={background}
-                          alt="Avatar"
-                          width="300"
-                          height="300"
-                          className="z-[1] w-full h-full object-cover"
-                        />
-                        <div className="absolute z-[10] bottom-[10px] bg-primary-purple p-3 rounded-tr-full rounded-br-full text-white font-semibold uppercase">
-                          {title}
+            {programs.map(
+              (
+                { title, desc, background, button, regRequired },
+                programIndex
+              ) => (
+                <div
+                  className={`col-span-12 lg:col-span-3 h-[250px] rounded-md shadow-lg  overflow-hidden m-3 bg-white ${
+                    highlightedProgramsIndex == 1 && programIndex === 0
+                      ? "order-1"
+                      : programIndex === 1
+                      ? "order-3"
+                      : ""
+                  }`}
+                  key={programIndex}
+                >
+                  <div className="flip-card border-2 border-primary-purple rounded-[10px] overflow-hidden">
+                    <div className="flip-card-inner">
+                      <div className="flip-card-front z-[1]">
+                        <div className="relative h-full">
+                          <Image
+                            src={background}
+                            alt="Avatar"
+                            width="300"
+                            height="300"
+                            className="z-[1] w-full h-full object-cover"
+                          />
+                          <div className="absolute z-[10] bottom-[10px] bg-primary-purple p-3 rounded-tr-full rounded-br-full text-white font-semibold uppercase">
+                            {title}
+                          </div>
+
+                          {regRequired && (
+                            <div className="absolute top-[5px] right-[5px] text-[12px] z-[10] bg-primary-yellow text-black rounded-full py-1 px-4">
+                              *Event Registration Required
+                            </div>
+                          )}
                         </div>
                       </div>
-                    </div>
-                    <div className="flip-card-back bg-primary-purple flex justify-center items-center flex-col p-4 border-4 border-white rounded-[10px] z-[2]">
-                      <h1 className="font-bold text-[23px] mb-4">{title}</h1>
-                      <p className="text-sm">{desc}</p>
-
-                      <Link
-                        target="_blank"
-                        href={link}
-                        className="flex gap-2 items-center mt-3"
-                      >
-                        <Nextpage width="18" height="18" /> Learn More
-                      </Link>
+                      <div className="flip-card-back bg-primary-purple flex justify-center items-center flex-col p-4 border-4 border-white rounded-[10px] z-[2]">
+                        <h1 className="font-bold text-[23px] mb-4">{title}</h1>
+                        <p className="text-sm">{desc}</p>
+                        {button && button.label !== "" && (
+                          <Link
+                            target="_blank"
+                            href={button.link}
+                            className="flex gap-2 items-center mt-3 bg-primary-blue rounded-md px-4 py-2 hover:shadow-md"
+                          >
+                            <Nextpage width="18" height="18" />
+                            {button.label}
+                          </Link>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              )
+            )}
             {highlightedProgramsIndex === 1 && (
               <div className="hidden lg:block col-span-6 order-2  h-[250px] rounded-md shadow-lg  overflow-hidden m-3 bg-white">
                 <div className=" flex items-center justify-center w-full h-full">

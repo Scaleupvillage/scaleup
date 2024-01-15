@@ -289,7 +289,100 @@ const Coockathon = () => {
           </div>
         </div>
       </div>
-
+      <div className="custom-container py-[50px]">
+        <h2 className="title text-[25px] wave-before">Benefits to Finalists</h2>
+        <p className="mb-4">
+          Congratulations on reaching the final stage of Cookathon! As one of
+          the chosen few, your creation is about to receive unparalleled
+          recognition and support.
+        </p>
+        <div className="">
+          <div className="mb-4 lg:mb-0">
+            <h3 className="title">
+              Exclusive Presentation to Industry Experts and Investors
+            </h3>
+            <ul className="list-decimal px-8">
+              <li className="mb-4">
+                <span className="title"> Opportunity:</span> Showcase your
+                product to a select panel of industry experts and potential
+                investors.
+              </li>
+              <li className="mb-4">
+                <span className="title"> Advantage:</span> Receive focused
+                attention, detailed feedback, and the chance to form strategic
+                partnerships.
+              </li>
+            </ul>
+          </div>
+          <div className="mb-4 lg:mb-0">
+            <h3 className="title">
+              Prime Placement at the Main Venue of Scaleup Conclave
+            </h3>
+            <ul className="list-decimal px-8">
+              <li className="mb-4">
+                <span className="title"> Opportunity:</span> Feature your
+                product prominently during the main event at Scaleup Conclave
+              </li>
+              <li className="mb-4">
+                <span className="title"> Advantage:</span> Gain visibility in
+                front of a diverse audience, including industry leaders,
+                influencers, and potential collaborators.
+              </li>
+            </ul>
+          </div>
+          <div className="mb-4 lg:mb-0">
+            <h3 className="title">
+              Dedicated Stalls in Scaleup Conclave with a 5000-strong Crowd
+            </h3>
+            <ul className="list-decimal px-8">
+              <li className="mb-4">
+                <span className="title"> Opportunity:</span> Display your
+                culinary innovation at dedicated stalls, ensuring maximum
+                exposure.
+              </li>
+              <li className="mb-4">
+                <span className="title"> Advantage:</span> Interact directly
+                with a large audience, build brand awareness, and potentially
+                attract customers.
+              </li>
+            </ul>
+          </div>
+          <div className="mb-4 lg:mb-0">
+            <h3 className="title">
+              Tailored Support for Manufacturing Facility Setup in Scaleup
+              Village
+            </h3>
+            <ul className="list-decimal px-8">
+              <li className="mb-4">
+                <span className="title"> Opportunity:</span> Receive
+                personalised assistance in establishing your manufacturing
+                facility at Scaleup Village
+              </li>
+              <li className="mb-4">
+                <span className="title"> Advantage:</span> Leverage top-notch
+                facilities, reducing production barriers and facilitating
+                efficient scaling.
+              </li>
+            </ul>
+          </div>
+          <div className="mb-4 lg:mb-0">
+            <h3 className="title">
+              Strategic Investment and Marketing Backing
+            </h3>
+            <ul className="list-decimal px-8">
+              <li className="mb-4">
+                <span className="title"> Opportunity:</span> Secure targeted
+                financial support and expert guidance in marketing your product.
+              </li>
+              <li className="mb-4">
+                <span className="title"> Advantage:</span> Propel your brand to
+                new heights with the backing of investors and a customised
+                marketing strategy.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
       <Footer hideFloatingBtn={false} />
     </>
   );

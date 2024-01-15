@@ -164,7 +164,7 @@ const Footer = ({ hideFloatingBtn = false }) => {
       <div className="bg-black w-full ">
         <div className="custom-container flex flex-col lg:flex-row justify-between items-center py-4">
           <p className="text-[#838383] mb-3 lg:mb-0">
-            Copyright ©2024 All rights reserved{" "}
+           Powered by Mudra Charitable Foundation
           </p>
           <div>
             <ul className="flex gap-4 w-full flex-wrap md:flex-nowrap text-[#838383] text-[11px] md:text-[14px] whitespace-nowrap">

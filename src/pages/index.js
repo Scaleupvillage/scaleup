@@ -422,7 +422,7 @@ export default function Home() {
         desc: " Receive personalized guidance from experienced mentors, addressing specific queries and gaining valuable insights tailored to your individual needs",
         link: "/",
         button: {
-          label: "",
+          label: "Register for the event",
           link: "/bootcamp",
         },
       },

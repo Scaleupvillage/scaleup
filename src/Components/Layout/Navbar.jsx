@@ -69,7 +69,7 @@ const Navbar = ({ isAbsolute = false }) => {
   }, []);
   return (
     <div className={`  w-full z-[100] ${isAbsolute ? "absolute" : "bg-black"}`}>
-      <div className="  bg-white shadow-md w-full flex justify-between  px-3 lg:px-[70px] items-center py-3 info-nav">
+      <div className="  bg-white shadow-md w-full flex justify-between  px-3 lg:px-[70px] items-center py-3 info-nav z-[100]">
         <div className="flex flex-col md:flex-row  md:gap-x-6 lg:gap-x-6 items-start md:items-center  text-[10px] lg:text-[16px]">
           <a
             href="mailto:info@scaleupconclave.com"

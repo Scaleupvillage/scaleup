@@ -31,6 +31,7 @@ import abate from "@/assets/images/partners/abate.png";
 import profinz from "@/assets/images/partners/profinz.png";
 import foxlab from "@/assets/images/partners/foxlab.png";
 import impex from "@/assets/images/partners/impex.png";
+import dhanam from "@/assets/images/partners/dhanam .png";
 
 let partners = [
   open,
@@ -64,6 +65,7 @@ let partners = [
   jain,
   xpresso,
   anar,
+  dhanam
 ];
 
 export { partners };

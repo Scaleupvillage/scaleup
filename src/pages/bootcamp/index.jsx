@@ -203,7 +203,7 @@ const Bootcamp = () => {
                 </p>
               </div>
             </div>
-            <div className="flex justify-center items-center flex-col">
+            <div className="flex justify-center items-center flex-col h-[400px]">
               <div className="h-[70%]">
                 <Image
                   src={praveen.src}
@@ -229,7 +229,7 @@ const Bootcamp = () => {
                 </p>
               </div>
             </div>
-            <div className="flex justify-center items-center flex-col">
+            <div className="flex justify-center items-center flex-col h-[400px]">
               <div className="h-[70%]">
                 <Image
                   src={sameer.src}

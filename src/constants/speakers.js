@@ -220,14 +220,12 @@ const speakers = [
   },
   {
     image: shreyasmv.src,
-
     role: "Managing Director, Mathrubhumi",
     name: "M V Sreyas Kumar",
     bg: bg18.src,
     nameContainerClassName:
       "w-full  bg-primary-blue h-[100px] px-8 py-2 rounded-tl-full rounded-bl-full text-white flex justify-center items-center flex-col",
   },
-
   {
     image: MuhammedMusthafa.src,
     role: "Founder & CEO, Edroots International",

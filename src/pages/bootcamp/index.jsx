@@ -158,7 +158,7 @@ const Bootcamp = () => {
                 />
               </div>
               <div className="h-[30%] w-full">
-                <h3 className="text-[24px] font-bold text-center">Ajmal TP</h3>
+                <h3 className="text-[24px] font-bold text-center">Ajmal T P</h3>
                 <p className="text-center">
                   Founder,{" "}
                   <Link
@@ -215,18 +215,16 @@ const Bootcamp = () => {
               </div>
               <div className="h-[30%]">
                 <h3 className="text-[24px] font-bold text-center">
-                  CA Praveen
+                  CA Praveen P K
                 </h3>
-                <p className="text-center ">
-                  ACA Chartered Accountant{" "}
-                  <Link
-                    target="_blank"
-                    className="text-blue-600"
-                    href="https://www.linkedin.com/company/praveen-shabana-co-llp-chartered-accountants/?originalSubdomain=in"
-                  >
-                    Praveen Shabana & CO LLP
-                  </Link>
-                </p>
+                <p className="text-center ">Chartered Accountant </p>
+                <Link
+                  target="_blank"
+                  className="text-blue-600"
+                  href="https://www.linkedin.com/company/praveen-shabana-co-llp-chartered-accountants/?originalSubdomain=in"
+                >
+                  Praveen Shabana & CO LLP
+                </Link>
               </div>
             </div>
             <div className="flex justify-center items-center flex-col h-[400px]">
@@ -240,7 +238,9 @@ const Bootcamp = () => {
                 />
               </div>
               <div className="h-[30%]">
-                <h3 className="text-[24px] font-bold text-center">CS Sameer</h3>
+                <h3 className="text-[24px] font-bold text-center">
+                  Shameer C S
+                </h3>
                 <p className="text-center">Company Secretory</p>
                 <p className="text-center">
                   {" "}
@@ -287,7 +287,7 @@ const Bootcamp = () => {
               <p className="text-2xl" style={{ color: "white" }}>
                 Designed for{" "}
                 <span className="text-primary-yellow">
-                  local business owners, SMEs
+                  business owners, SMEs
                 </span>
                 , and{" "}
                 <span className="text-primary-yellow">
@@ -465,6 +465,7 @@ const Bootcamp = () => {
                 <p className="text-[20px]" style={{ color: "white" }}>
                   Limited Seats Only*
                 </p>
+
                 <div className="flex justify-start">
                   <Link
                     className="bg-primary-yellow px-5 py-3 rounded-full mt-8 font-bold block capitalize"
@@ -487,6 +488,14 @@ const Bootcamp = () => {
                 </p>
                 <p className="text-[20px]" style={{ color: "white" }}>
                   info@scaleupconclave.com
+                </p>
+
+                <p className="my-4" style={{ color: "white" }}>
+                  Note: ScaleUp Conc lave is the first-of-its-kind business
+                  conclave here in Perinthalmanna, open to all (Free Access, but
+                  registration is required at https://www.scaleupconclave.com).
+                  ScaleUp Business Bootcamp is a paid, closed-room program for
+                  business owners, SMEs, and aspiring entrepreneurs.
                 </p>
               </div>
             </div>

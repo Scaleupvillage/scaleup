@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Footer from "@/Components/Layout/Footer";
 import Navbar from "@/Components/Layout/Navbar";
 import React from "react";
@@ -6,11 +7,14 @@ import faisal from "@/assets/images/bootcampspeakers/faisal.png";
 import arranjit from "@/assets/images/bootcampspeakers/arranjit.png";
 import athif from "@/assets/images/bootcampspeakers/athif.png";
 import ajmal from "@/assets/images/bootcampspeakers/ajmal.png";
+import sameer from "@/assets/images/bootcampspeakers/sameer.png";
+import praveen from "@/assets/images/bootcampspeakers/praveen.png";
 import people from "@/assets/images/people.png";
 import bootcampoverviewleft from "@/assets/images/bootcampoverviewleft.png";
 import bootcampoverviewright from "@/assets/images/bootcampoverviewright.png";
 import rocket from "@/assets/images/rocket.png";
 import Image from "next/image";
+import Link from "next/link";
 const Bootcamp = () => {
   return (
     <div>
@@ -43,7 +47,7 @@ const Bootcamp = () => {
                   style={{ color: "white" }}
                   className="text-[14px] lg:text-[25px]"
                 >
-                  February 2-3, 2024
+                  February 2,3- 2024
                 </p>
                 <p
                   style={{ color: "white" }}
@@ -57,13 +61,15 @@ const Bootcamp = () => {
                 >
                   Perinthalmanna
                 </p>
-
-                <button
-                  type="button"
-                  className="bg-primary-yellow px-5 py-3 rounded-full mt-4 font-bold"
-                >
-                  BOOK NOW FOR EARLY BIRD PRICES
-                </button>
+                <div className="flex justify-start">
+                  <Link
+                    className="bg-primary-yellow px-5 py-3 rounded-full mt-8 font-bold block"
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSc7Vv449AmGMbGv8_b-qCBGHFKERvFz6SydlVASVR9mYfYucA/viewform?usp=sf_link"
+                    target="_blank"
+                  >
+                    BOOK NOW
+                  </Link>
+                </div>
               </div>
             </div>
             <div className="flex justify-center items-center">
@@ -87,9 +93,24 @@ const Bootcamp = () => {
               />
               <div className="my-4">
                 <h3 className="text-[24px] font-bold text-center">
-                  Faisal Seyd
+                  Faisal P Seyd
                 </h3>
-                <p className="">Academic Dean, The B School International</p>
+                <p className="text-center ">
+                  Professor, Corporate Trainer, Strategic Consultant
+                </p>
+                <p className="text-center ">
+                  Academic Dean, The{" "}
+                  <Link
+                    href="https://www.thebschool.org"
+                    className="text-blue-600"
+                    target="_blank"
+                  >
+                    B School International{" "}
+                  </Link>{" "}
+                </p>
+                <p className="text-center ">
+                  Former Professor of UK University in Maldives
+                </p>
               </div>
             </div>
             <div className="flex justify-center items-center flex-col">
@@ -105,6 +126,15 @@ const Bootcamp = () => {
                   AR Ranjith
                 </h3>
                 <p className="text-center">
+                  CEO{" "}
+                  <Link
+                    href="https://arranjith.com"
+                    className="text-blue-600"
+                    target="_blank"
+                  >
+                    {" "}
+                    Bramma,
+                  </Link>{" "}
                   Business strategist for 600+ companies
                 </p>
                 <p className="text-center">Mentor for 2000+ entrepreneurs</p>
@@ -117,60 +147,111 @@ const Bootcamp = () => {
         <div className="custom-container py-[50px]">
           <h2 className="text-[36px] title text-center ">Speakers</h2>
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-x-8">
-            <div className="flex justify-center items-center flex-col">
-              <Image
-                src={ajmal.src}
-                width="300"
-                height="200"
-                className=" h-[270px]"
-                alt="ajmal"
-              />
-              <div className="my-4">
+            <div className="flex justify-center items-center flex-col h-[400px]">
+              <div className="h-[70%]">
+                <Image
+                  src={ajmal.src}
+                  width="300"
+                  height="200"
+                  className=" h-full"
+                  alt="ajmal"
+                />
+              </div>
+              <div className="h-[30%] w-full">
                 <h3 className="text-[24px] font-bold text-center">Ajmal TP</h3>
-                <p className="">Founder ,Brandbuji</p>
+                <p className="text-center">
+                  Founder,{" "}
+                  <Link
+                    href="https://www.linkedin.com/in/ajmaltpin/?originalSubdomain=in"
+                    target="_blank"
+                    className="text-blue-600"
+                  >
+                    Brandbuji
+                  </Link>{" "}
+                </p>
+                <p className="text-center">1000+ Projects Designed</p>
+                <p className="text-center">100+ Brands Consulted</p>
               </div>
             </div>
-            <div className="flex justify-center items-center flex-col">
-              <Image
-                src={athif.src}
-                width="300"
-                height="200"
-                className="h-[270px]"
-                alt="athif"
-              />
-              <div className="my-4">
+            <div className="flex justify-center items-center flex-col h-[400px]">
+              <div className="h-[70%]">
+                <Image
+                  src={athif.src}
+                  width="300"
+                  height="200"
+                  className="h-full"
+                  alt="athif"
+                />
+              </div>
+              <div className=" h-[30%]  w-full">
                 <h3 className="text-[24px] font-bold text-center">
                   Athif Muhammed
                 </h3>
-                <p className="text-center">BCEO,Inspler eCommerce PVT Ltd</p>
+                <p className="text-center">
+                  CEO,{" "}
+                  <Link
+                    href="https://inspler.com"
+                    target="_blank"
+                    className="text-blue-600"
+                  >
+                    {" "}
+                    Inspler eCommerce PVT Ltd
+                  </Link>
+                </p>
+                <p className="text-center">
+                  Shopify Expert - ECommerce Consultant
+                </p>
               </div>
             </div>
             <div className="flex justify-center items-center flex-col">
-              <Image
-                src={athif.src}
-                width="300"
-                height="200"
-                className="h-[270px]"
-                alt="athif"
-              />
-              <div className="my-4">
+              <div className="h-[70%]">
+                <Image
+                  src={praveen.src}
+                  width="300"
+                  height="200"
+                  className="h-full"
+                  alt="athif"
+                />
+              </div>
+              <div className="h-[30%]">
                 <h3 className="text-[24px] font-bold text-center">
                   CA Praveen
                 </h3>
-                <p className="text-center">BCEO,Inspler eCommerce PVT Ltd</p>
+                <p className="text-center ">
+                  ACA Chartered Accountant{" "}
+                  <Link
+                    target="_blank"
+                    className="text-blue-600"
+                    href="https://www.linkedin.com/company/praveen-shabana-co-llp-chartered-accountants/?originalSubdomain=in"
+                  >
+                    Praveen Shabana & CO LLP
+                  </Link>
+                </p>
               </div>
             </div>
             <div className="flex justify-center items-center flex-col">
-              <Image
-                src={athif.src}
-                width="300"
-                height="200"
-                className="h-[270px]"
-                alt="athif"
-              />
-              <div className="my-4">
+              <div className="h-[70%]">
+                <Image
+                  src={sameer.src}
+                  width="300"
+                  height="200"
+                  className="h-full"
+                  alt="athif"
+                />
+              </div>
+              <div className="h-[30%]">
                 <h3 className="text-[24px] font-bold text-center">CS Sameer</h3>
-                <p className="text-center">BCEO,Inspler eCommerce PVT Ltd</p>
+                <p className="text-center">Company Secretory</p>
+                <p className="text-center">
+                  {" "}
+                  <Link
+                    href="http://pmacs.in"
+                    target="_blank"
+                    className="text-blue-600"
+                  >
+                    PMA & Associates{" "}
+                  </Link>
+                </p>
               </div>
             </div>
           </div>
@@ -184,7 +265,7 @@ const Bootcamp = () => {
                 className="text-[20px] lg:text-[60px] font-bold "
                 style={{ color: "white" }}
               >
-                The most awaited business Master Calss is back!
+                The most awaited business Master Class is back!
               </h3>
             </div>
             <div>
@@ -204,11 +285,11 @@ const Bootcamp = () => {
                 Who Can attend :
               </p>
               <p className="text-2xl" style={{ color: "white" }}>
-                Designed for
+                Designed for{" "}
                 <span className="text-primary-yellow">
                   local business owners, SMEs
                 </span>
-                , and
+                , and{" "}
                 <span className="text-primary-yellow">
                   aspiring entrepreneurs
                 </span>
@@ -218,7 +299,7 @@ const Bootcamp = () => {
             </div>
           </div>
           <div>
-            <Image
+            <img
               src={people.src}
               width="300"
               height="300"
@@ -239,22 +320,25 @@ const Bootcamp = () => {
           <div className="w-full overflow-x-auto">
             <table className="text-white">
               <thead>
-                <th className="w-[25%] p-4 border-4">Time</th>
-                <th className="w-[75%] p-4 border-4">Event</th>
+                <tr>
+                  <th className="w-[25%] p-4 border-4">Time</th>
+                  <th className="w-[75%] p-4 border-4">Event</th>
+                </tr>
               </thead>
               <tbody>
                 <tr>
                   <td className="p-4 border-4">9:00 AM - 10:00 AM</td>
                   <td className="p-4 border-4">
                     Breakfast and Kickoff - Energizing breakfast and icebreakers
-                    led by Faisal Seyd and the ScaleUp Team.
+                    led by the ScaleUp Team.
                   </td>
                 </tr>
                 <tr>
                   <td className="p-4 border-4">10:00 AM - 11:00 AM</td>
                   <td className="p-4 border-4">
-                    Global Scaling Insights - Strategies for system design and
-                    global business expansion with Faisal Seyd.
+                    System Building & Global Scaling Insights - Strategies for
+                    system design and global business expansion with Faisal
+                    Seyd.
                   </td>
                 </tr>
                 <tr>
@@ -295,8 +379,10 @@ const Bootcamp = () => {
           <div className="w-full overflow-x-auto">
             <table className="text-white">
               <thead>
-                <th className="w-[25%] p-4 border-4">Time</th>
-                <th className="w-[75%] p-4 border-4">Event</th>
+                <tr>
+                  <th className="w-[25%] p-4 border-4">Time</th>
+                  <th className="w-[75%] p-4 border-4">Event</th>
+                </tr>
               </thead>
               <tbody>
                 <tr>
@@ -343,17 +429,17 @@ const Bootcamp = () => {
       </div>
       <div className="bg-primary-yellow">
         <div className="custom-container py-[100px]">
-          <div className="grid grid-cols-1 lg:grid-cols-2">
-            <div className="flex justify-center items-center">
+          <div className="grid grid-cols-12">
+            <div className=" col-span-12 lg:col-span-4 flex justify-center items-center">
               <Image
                 src={bootcampoverviewleft.src}
-                width={500}
+                width={300}
                 height={500}
                 alt=""
-                className="w-[150px] md:w-[500px]"
+                className="w-[150px] md:w-[300px]"
               />
             </div>
-            <div>
+            <div className="col-span-12 lg:col-span-8">
               <Image
                 src={bootcampoverviewright.src}
                 width={500}
@@ -376,6 +462,18 @@ const Bootcamp = () => {
                 <p className="text-[20px]" style={{ color: "white" }}>
                   (Including 2 Days of Breakfast, Lunch, and Refreshments )
                 </p>
+                <p className="text-[20px]" style={{ color: "white" }}>
+                  Limited Seats Only*
+                </p>
+                <div className="flex justify-start">
+                  <Link
+                    className="bg-primary-yellow px-5 py-3 rounded-full mt-8 font-bold block capitalize"
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSc7Vv449AmGMbGv8_b-qCBGHFKERvFz6SydlVASVR9mYfYucA/viewform?usp=sf_link"
+                    target="_blank"
+                  >
+                    BOOK YOUR SLOT
+                  </Link>
+                </div>
               </div>
               <div>
                 <h3 className="text-[30px]" style={{ color: "white" }}>
@@ -385,7 +483,7 @@ const Bootcamp = () => {
                   ScaleUp Conclave
                 </p>
                 <p className="text-[20px]" style={{ color: "white" }}>
-                  +91 8129 155 621
+                  +91 90 48 17 00 77
                 </p>
                 <p className="text-[20px]" style={{ color: "white" }}>
                   info@scaleupconclave.com

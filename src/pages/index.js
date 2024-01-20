@@ -567,7 +567,6 @@ export default function Home() {
           <Register setShow={setOpenModal} />
         </>
       )}
-
       <div
         className={`${Styles["main-container"]} relative overflow-hidden main-section`}
       >
@@ -647,7 +646,6 @@ export default function Home() {
         </div>
         <Scribbles scribbles={scribblesSecond} />
       </div>
-
       {/* COUNTER  */}
       <div className={`${Styles["counter-bg"]} `}>
         <div className="custom-container h-full py-[70px] flex justify-center items-center">
@@ -689,7 +687,6 @@ export default function Home() {
         </div>
       </div>
       {/* /COUNTER  */}
-
       <div className="py-[100px] relative overflow-hidden">
         <div className="custom-container relative">
           <h1 className="title purple-before text-[36px]">ScaleUp who</h1>
@@ -793,7 +790,6 @@ export default function Home() {
           })}
         </div>
       </div>
-
       <div className=" py-[100px]   p-4 relative overflow-hidden">
         {highlightedPrograms.map((programs, highlightedProgramsIndex) => (
           <div className="grid grid-cols-12 " key={highlightedProgramsIndex}>
@@ -866,6 +862,69 @@ export default function Home() {
         ))}
         <Scribbles scribbles={hilightScribble} />
       </div>
+
+      <div className="grid sm:grid-cols-1 lg:grid-cols-4  justify-center">
+        <div className="max-w-sm rounded overflow-hidden shadow-lg  ">
+          <img className="w-full" src={Clock} alt="card image" />
+          <div className="px-6 py-4">
+            <div className="font-bold text-xl mb-2">title</div>
+            <button
+              onClick={() => {
+                console.log("clicked");
+              }}
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+            >
+              Next
+            </button>
+          </div>
+        </div>
+
+        <div className="max-w-sm rounded overflow-hidden shadow-lg">
+          <img className="w-full" src={Clock} alt="card image" />
+          <div className="px-6 py-4">
+            <div className="font-bold text-xl mb-2">title</div>
+            <button
+              onClick={() => {
+                console.log("clicked");
+              }}
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+            >
+              Next
+            </button>
+          </div>
+        </div>
+
+        <div className="max-w-sm rounded overflow-hidden shadow-lg">
+          <img className="w-full" src={Clock} alt="card image" />
+          <div className="px-6 py-4">
+            <div className="font-bold text-xl mb-2">title</div>
+            <button
+              onClick={() => {
+                console.log("clicked");
+              }}
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+            >
+              Next
+            </button>
+          </div>
+        </div>
+
+        <div className="max-w-sm rounded overflow-hidden shadow-lg">
+          <img className="w-full" src={Clock} alt="card image" />
+          <div className="px-6 py-4">
+            <div className="font-bold text-xl mb-2">title</div>
+            <button
+              onClick={() => {
+                console.log("clicked");
+              }}
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+            >
+              Next
+            </button>
+          </div>
+        </div>
+      </div>
+
       <div className="py-[100px] custom-container" id="schedule">
         <h1 className="text-[36px] title uppercase">Schedule</h1>
         <div className="custom-container flex gap-x-6 justify-center items-center  pb-6 overflow-auto">
@@ -1031,7 +1090,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-
       <div className="py-[100px] custom-container">
         <h1 className="title wave-before uppercase text-[36px]">
           Our partners
@@ -1060,7 +1118,6 @@ export default function Home() {
           ))}
         </div>
       </div>
-
       <Footer hideFloatingBtn={true} />
     </div>
   );

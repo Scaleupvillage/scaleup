@@ -43,7 +43,7 @@ import slider4 from "@/assets/images/slider4.png";
 import LocatioIcon from "@/Components/Icons/LocatioIcon";
 import Register from "@/Components/Register";
 
-import { speakers } from "@/constants/speakers";
+import { speakers, bg } from "@/constants/speakers";
 import { partners } from "@/constants/partners";
 import {
   aboutSecondScribble,
@@ -419,6 +419,7 @@ export default function Home() {
       {
         background: hilight10.src,
         title: "2 Days Business Bootcamp",
+        regRequired: true,
         desc: " Receive personalized guidance from experienced mentors, addressing specific queries and gaining valuable insights tailored to your individual needs",
         link: "/",
         button: {
@@ -753,33 +754,43 @@ export default function Home() {
           <h1 className="title text-[36px] wave-before">OUR SPEAKERS</h1>
         </div>
         <div className=" grid grid-cols-1 lg:grid-cols-4 ">
-          {speakers.map((speaker, index) => (
-            <div
-              className={`relative w-full ${Styles["speaker"]} h-[400px]`}
-              key={index}
-              style={{
-                background: `url(${speaker.bg})`,
-                backgroundSize: "100% 100%",
-                backgroundRepeat: "no-repeat",
-              }}
-            >
-              <Image
-                width={350}
-                height={5}
-                src={speaker.image}
-                className="w-full"
-                alt="speaker"
-              />
-              <div className="absolute bottom-0 left-0 w-full ">
-                <div className={speaker.nameContainerClassName}>
-                  <h1 className=" font-bold text-2xl text-center">
-                    {speaker.name}
-                  </h1>
-                  <p className=" text-sm text-center">{speaker.role}</p>
+          {speakers.map((speaker, index) => {
+            return (
+              <div
+                className={`relative w-full ${Styles["speaker"]} h-[400px]`}
+                key={index}
+                style={{
+                  background: `url(${bg[Object.keys(bg)[index % 20]]})`,
+                  backgroundSize: "100% 100%",
+                  backgroundRepeat: "no-repeat",
+                }}
+              >
+                {/* <Image
+                  width={350}
+                  height={5}
+                  src={speaker.image}
+                  className="w-full"
+                  alt="speaker"
+                /> */}
+                <div className="absolute bottom-0 left-0 w-full ">
+                  <div
+                    className={`w-full  h-[100px] px-8 py-2 ${
+                      index % 2 == 0
+                        ? "rounded-tr-full rounded-br-full"
+                        : "rounded-tl-full rounded-bl-full"
+                    }  ${
+                      speaker.captionBg
+                    }  text-white flex justify-center items-center flex-col`}
+                  >
+                    <h1 className=" font-bold text-2xl text-center">
+                      {speaker.name}
+                    </h1>
+                    <p className=" text-sm text-center">{speaker.role}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
 

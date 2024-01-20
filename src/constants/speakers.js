@@ -395,7 +395,7 @@ const speakers = [
     image: umer.src,
     role: "Google",
     name: "Umer Abdusalam",
-    captionBg: "  bg-primary-pruple ",
+    captionBg: "  bg-primary-cyan ",
   },
   {
     image: sheelan.src,

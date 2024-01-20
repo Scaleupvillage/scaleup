@@ -65,7 +65,7 @@ import azaadmoopan from "@/assets/images/speakers/azaadmoopan.webp";
 import farish from "@/assets/images/speakers/farish.webp";
 import umer from "@/assets/images/speakers/umer.webp";
 
-// speakers background images
+// speakers backg round images
 // speaker bg
 import bg1 from "@/assets/images/speakers/bg/bg1.png";
 import bg2 from "@/assets/images/speakers/bg/bg2.png";
@@ -482,7 +482,6 @@ const speakers = [
 for (let i = 0; i < speakers.length; i = i + 4) {
   speakers[i].captionBg = "bg-primary-purple";
 }
-console.log(speakers);
 
 let bg = {
   bg1: bg1.src,

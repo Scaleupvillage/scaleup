@@ -41,8 +41,15 @@ import slider2 from "@/assets/images/slider2.png";
 import slider3 from "@/assets/images/slider3.png";
 import slider4 from "@/assets/images/slider4.png";
 import LocatioIcon from "@/Components/Icons/LocatioIcon";
-import Register from "@/Components/Register";
 
+// business.jpeg
+import business from "@/assets/images/business.jpeg";
+import resinartworkshop from "@/assets/images/resinartworkshop.jpeg";
+import cookathon from "@/assets/images/cookathon.jpeg";
+import medicalhackathon from "@/assets/images/medicalhackathon.jpeg";
+import linefollower from "@/assets/images/linefollower.jpeg";
+
+import Register from "@/Components/Register";
 import { speakers, bg } from "@/constants/speakers";
 import { partners } from "@/constants/partners";
 import {
@@ -448,7 +455,92 @@ export default function Home() {
       },
     ],
   ];
-
+  let seperateEvents = [
+    {
+      image: business.src,
+      title: "Business Bootcamp",
+      price: "8500 Rupees",
+      registration: "",
+    },
+    {
+      image: medicalhackathon.src,
+      title: "Medical Hackathon",
+      price: "Free",
+      registration: "",
+    },
+    {
+      image: cookathon.src,
+      title: "Cookathon",
+      price: "Free",
+      registration: "",
+    },
+    {
+      image: linefollower.src,
+      title: "Line Follower Robot",
+      price: "Free",
+      registration: "",
+    },
+    {
+      image: business.src,
+      title: "Startup Idea Pitching",
+      price: "Free",
+      registration: "",
+    },
+    {
+      image: business.src,
+      title: "Investor Connect",
+      price: "Free",
+      registration: "",
+    },
+    {
+      image: resinartworkshop.src,
+      title: "Resin Art",
+      price: "Free",
+      registration: "",
+    },
+    {
+      image: business.src,
+      title: "Knitting Workshop",
+      price: "Free",
+      registration: "",
+    },
+    {
+      image: business.src,
+      title: "Robo Soccer",
+      price: "Free",
+      registration: "",
+    },
+    {
+      image: business.src,
+      title: "RC Car Race",
+      price: "Free",
+      registration: "",
+    },
+    {
+      image: business.src,
+      title: "3D Printing",
+      price: "50 Rupees",
+      registration: "",
+    },
+    {
+      image: business.src,
+      title: "Ardunio Workshop",
+      price: "50 Rupees",
+      registration: "",
+    },
+    {
+      image: business.src,
+      title: "Marathon",
+      price: "Free",
+      registration: "",
+    },
+    {
+      image: business.src,
+      title: "Yoga@Kodikuthimala",
+      price: "Free",
+      registration: "",
+    },
+  ];
   const scheduleTab = [
     {
       name: "Main Venue",
@@ -865,6 +957,32 @@ export default function Home() {
           </div>
         ))}
         <Scribbles scribbles={hilightScribble} />
+      </div>
+      <div className="py-[100px] custom-container">
+        <div className="grid grid-cols-5 gap-8">
+          {seperateEvents.map((event, index) => (
+            <div key={index}>
+              <Image
+                src={event.image}
+                width="100"
+                height="100"
+                alt={event.title}
+                className="rounded-lg w-full "
+              />
+
+              <div className="px-3">
+                <h2 className="font-bold mt-2">{event.title}</h2>
+                <div className="text-sm lg:text-base">{event.price}</div>
+                <Link
+                  href=""
+                  className=" mt-4 font-semibold bg-primary-yellow px-3 py-2 rounded-full w-full text-sm flex justify-center items-center"
+                >
+                  Register Now
+                </Link>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
       <div className="py-[100px] custom-container" id="schedule">
         <h1 className="text-[36px] title uppercase">Schedule</h1>

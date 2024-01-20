@@ -198,12 +198,7 @@ const speakers = [
     name: "R Roshan",
     captionBg: "bg-primary-blue ",
   },
-  {
-    image: suman.src,
-    role: "ATAL Tinkering Lab",
-    name: "Suman",
-    captionBg: "bg-primary-purple ",
-  },
+  
   {
     image: anvar.src,
     role: "Little Kites",

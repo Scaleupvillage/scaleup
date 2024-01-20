@@ -419,6 +419,7 @@ export default function Home() {
       {
         background: hilight10.src,
         title: "2 Days Business Bootcamp",
+        regRequired: true,
         desc: " Receive personalized guidance from experienced mentors, addressing specific queries and gaining valuable insights tailored to your individual needs",
         link: "/",
         button: {

@@ -334,7 +334,7 @@ const speakers = [
     image: shameena.src,
     role: "Amaze Crochet",
     name: "Shameena",
-    captionBg: "  bg-primary-pruple ",
+    captionBg: "  bg-primary-purple ",
   },
   {
     image: minshad.src,

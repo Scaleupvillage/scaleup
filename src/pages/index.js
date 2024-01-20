@@ -765,13 +765,13 @@ export default function Home() {
                   backgroundRepeat: "no-repeat",
                 }}
               >
-                <Image
+                {/* <Image
                   width={350}
                   height={5}
                   src={speaker.image}
                   className="w-full"
                   alt="speaker"
-                />
+                /> */}
                 <div className="absolute bottom-0 left-0 w-full ">
                   <div
                     className={`w-full  h-[100px] px-8 py-2 ${

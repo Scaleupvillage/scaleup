@@ -977,7 +977,7 @@ export default function Home() {
         <Scribbles scribbles={hilightScribble} />
       </div>
       <div className="py-[100px] custom-container">
-        <div className="grid grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
           {seperateEvents.map((event, index) => (
             <div key={index}>
               <Image
@@ -1005,15 +1005,15 @@ export default function Home() {
       <div className="py-[100px] custom-container" id="schedule">
         <h1 className="text-[36px] title uppercase">Schedule</h1>
         <div className="flex justify-center items-center">
-          <Link
-            href=""
+          <a
+            href="ScheduleScaleuppdf.pdf"
             className="flex justify-center items-center underline text-blue-600"
             download
           >
             <h2 className="font-semibold text-center text-[30px]">
               Download the schedule in pdf format
             </h2>
-          </Link>
+          </a>
         </div>
       </div>
 

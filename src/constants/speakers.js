@@ -3,16 +3,13 @@ import Kunjalikutty from "@/assets/images/speakers/Kunjalikutty.webp";
 import MLA from "@/assets/images/speakers/MLA.webp";
 import Minister from "@/assets/images/speakers/Minister.webp";
 import AnishAchuthan from "@/assets/images/speakers/AnishAchuthan.webp";
-import ShamlalAhamad from "@/assets/images/speakers/ShamlalAhamad.webp";
 import UshaTitus from "@/assets/images/speakers/UshaTitus.webp";
 import IbnuJala from "@/assets/images/speakers/IbnuJala.webp";
 import VimalGovind from "@/assets/images/speakers/VimalGovind.webp";
 import MabelChacko from "@/assets/images/speakers/MabelChacko.webp";
 import Tanooraa from "@/assets/images/speakers/Tanooraa.webp";
-import Musthafa from "@/assets/images/speakers/Musthafa.webp";
 import SanthoshGeorge from "@/assets/images/speakers/SanthoshGeorge.webp";
 import HariKishore from "@/assets/images/speakers/HariKishore.webp";
-import AnoopAmbika from "@/assets/images/speakers/AnoopAmbika.webp";
 import Gopinath from "@/assets/images/speakers/Gopinath.webp";
 import NavasMeeran from "@/assets/images/speakers/NavasMeeran.webp";
 import MuhammedMusthafa from "@/assets/images/speakers/MuhammedMusthafa.webp";
@@ -32,29 +29,21 @@ import ebadu from "@/assets/images/speakers/ebadu.webp";
 import shameem from "@/assets/images/speakers/shameem.webp";
 import anil from "@/assets/images/speakers/anil.webp";
 import roshan from "@/assets/images/speakers/roshan.webp";
-import suman from "@/assets/images/speakers/suman.webp";
 import anvar from "@/assets/images/speakers/anvar.webp";
 import mehar from "@/assets/images/speakers/mehar.webp";
 import nadeem from "@/assets/images/speakers/nadeem.webp";
 import pvunnikrishnan from "@/assets/images/speakers/pvunnikrishnan.webp";
 import jayashankar from "@/assets/images/speakers/jayashankar.webp";
-import abhijit from "@/assets/images/speakers/abhijit.webp";
+import abhijit from "@/assets/images/speakers/abhijit.png";
 import ramees from "@/assets/images/speakers/ramees.webp";
 import bpnazar from "@/assets/images/speakers/bpnazar.webp";
-import razak from "@/assets/images/speakers/razak.webp";
 import mathewjoseph from "@/assets/images/speakers/mathewjoseph.webp";
 import dana from "@/assets/images/speakers/dana.webp";
 import kalesh from "@/assets/images/speakers/kalesh.webp";
 import mathukutty from "@/assets/images/speakers/mathukutty.webp";
-import jogin from "@/assets/images/speakers/jogin.webp";
-import mufeed from "@/assets/images/speakers/mufeed.webp";
-import atif from "@/assets/images/speakers/atif.webp";
+
 import thomasgeorge from "@/assets/images/speakers/thomasgeorge.webp";
-import najiya from "@/assets/images/speakers/najiya.webp";
-import shameena from "@/assets/images/speakers/shameena.webp";
-import minshad from "@/assets/images/speakers/minshad.webp";
 import arranjit from "@/assets/images/speakers/arranjit.webp";
-import ajmaltp from "@/assets/images/speakers/ajmaltp.webp";
 import deena from "@/assets/images/speakers/deena.webp";
 import ashokkurian from "@/assets/images/speakers/ashokkurian.webp";
 import balagopal from "@/assets/images/speakers/balagopal.webp";
@@ -62,8 +51,16 @@ import akshay from "@/assets/images/speakers/akshay.webp";
 import sheelan from "@/assets/images/speakers/sheelan.webp";
 import riyas from "@/assets/images/speakers/riyas.webp";
 import azaadmoopan from "@/assets/images/speakers/azaadmoopan.webp";
-import farish from "@/assets/images/speakers/farish.webp";
 import umer from "@/assets/images/speakers/umer.webp";
+import nazarjamal from "@/assets/images/speakers/nazarjamal.png";
+import nezrin from "@/assets/images/speakers/nezrin.png";
+import aishashameeha from "@/assets/images/speakers/aishashameeha.png";
+import noureen from "@/assets/images/speakers/noureen.png";
+import sujit from "@/assets/images/speakers/sujit.png";
+import saima from "@/assets/images/speakers/saima.png";
+import anas from "@/assets/images/speakers/anas.png";
+import silvan from "@/assets/images/speakers/silvan.png";
+import tomjoseph from "@/assets/images/speakers/tomjoseph.png";
 
 // speakers backg round images
 // speaker bg
@@ -218,7 +215,7 @@ const speakers = [
   },
   {
     image: abdulnazar.src,
-    role: "C0-Founder, Director at ID Fresh",
+    role: "Co-Founder, Director at ID Fresh",
     name: "Abdul Nazar",
     captionBg: "bg-primary-purple",
   },
@@ -253,13 +250,13 @@ const speakers = [
     captionBg: "  bg-primary-purple ",
   },
   {
-    image: "",
+    image: tomjoseph.src,
     role: "Jain University",
     name: "Tom Jospeh",
     captionBg: "  bg-primary-purple ",
   },
   {
-    image: "",
+    image: nazarjamal.src,
     role: "Cosmo Travels",
     name: "Nasar Jamal",
     captionBg: "  bg-primary-purple ",
@@ -343,19 +340,19 @@ const speakers = [
     captionBg: "bg-primary-purple ",
   },
   {
-    image: "",
+    image: nezrin.src,
     role: "Nez& Co",
     name: "Nezrin Midhlaj",
     captionBg: "bg-primary-purple ",
   },
   {
-    image: "",
+    image: aishashameeha.src,
     role: "Koderfin",
     name: "Aisha Sameeha",
     captionBg: "bg-primary-purple ",
   },
   {
-    image: "",
+    image: noureen.src,
     role: "Femisafe",
     name: "Noureen Aysha",
     captionBg: "bg-primary-purple ",
@@ -367,7 +364,7 @@ const speakers = [
     captionBg: "bg-primary-purple ",
   },
   {
-    image: "",
+    image: saima.src,
     role: "Edhwi",
     name: "Saima Nadeem",
     captionBg: "bg-primary-purple ",
@@ -409,7 +406,7 @@ const speakers = [
     captionBg: "bg-primary-blue ",
   },
   {
-    image: "",
+    image: silvan.src,
     role: "MD, Silvan Group",
     name: "Mustafa Silvan",
     captionBg: "bg-primary-blue ",
@@ -439,8 +436,8 @@ const speakers = [
     captionBg: "  bg-primary-blue ",
   },
   {
-    image: "",
-    role: "CEO, Bagmo",
+    image: anas.src,
+    role: "Co-Founder, Bagmo",
     name: "Anas",
     captionBg: "  bg-primary-blue ",
   },
@@ -464,7 +461,7 @@ const speakers = [
     captionBg: "bg-primary-purple ",
   },
   {
-    image: "",
+    image: sujit.src,
     role: "",
     name: "Sujith Bhakthan",
     captionBg: "bg-primary-purple ",

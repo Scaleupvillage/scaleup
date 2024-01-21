@@ -913,7 +913,7 @@ export default function Home() {
                 programIndex
               ) => (
                 <div
-                  className={`col-span-12 lg:col-span-3 h-[250px] rounded-md shadow-lg  overflow-hidden m-3 bg-white ${
+                  className={`col-span-12 md:col-span-6 lg:col-span-3 h-[250px] rounded-md shadow-lg  overflow-hidden m-3 bg-white ${
                     highlightedProgramsIndex == 1 && programIndex === 0
                       ? "order-1"
                       : programIndex === 1

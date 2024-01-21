@@ -496,14 +496,14 @@ export default function Home() {
       image: loadingevent.src,
       title: "Investor Connect",
       price: "Free",
-      registration: "",
+      registration: "https://docs.google.com/forms/d/e/1FAIpQLSejWz_iSFiYP7WmhSA65-beAe9e81Lk2xS5y2VKpTRInFAJvQ/viewform?usp=sf_link",
       regCaption: "Regiter Now",
     },
     {
       image: resinartworkshop.src,
       title: "Resin Art",
       price: "100 Rupees",
-      registration: "",
+      registration: "https://docs.google.com/forms/d/e/1FAIpQLSf1FuBvrisahRId4bJjM7CttU_MR_C_rqHgSJ9nEVqJX1-EMw/viewform?usp=sf_link",
       regCaption: "Regiter Now",
     },
     {
@@ -519,14 +519,14 @@ export default function Home() {
       image: threedprinting.src,
       title: "3D Printing Workshop",
       price: "50 Rupees",
-      registration: "",
+      registration: "https://docs.google.com/forms/d/e/1FAIpQLSe91ux_Iy4thRUZeN7hAXDRor1zrNruBW5K-QL2_oKmshgXtA/viewform?usp=sf_link",
       regCaption: "Regiter Now",
     },
     {
       image: arduino.src,
       title: "Ardunio & Robotics",
       price: "50 Rupees",
-      registration: "",
+      registration: "https://docs.google.com/forms/d/e/1FAIpQLSe3X-s-h8r90B-L-Ffxeg41s5Htd-X5e2-N4scwyyZiwnGBJw/viewform?usp=sf_link",
       regCaption: "Regiter Now",
     },
     {
@@ -977,7 +977,8 @@ export default function Home() {
         <Scribbles scribbles={hilightScribble} />
       </div>
       <div className="py-[100px] custom-container">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+        <h1 className="title wave-before text-[36px]">Events required Separate Registration </h1>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mt-4">
           {seperateEvents.map((event, index) => (
             <div key={index}>
               <Image
@@ -992,7 +993,7 @@ export default function Home() {
                 <h2 className="font-bold mt-2">{event.title}</h2>
                 <div className="text-sm lg:text-base">{event.price}</div>
                 <Link
-                  href=""
+                  href={event.registration}
                   className=" mt-4 font-semibold bg-primary-yellow px-3 py-2 rounded-full w-full text-sm flex justify-center items-center"
                 >
                   {event.regCaption}

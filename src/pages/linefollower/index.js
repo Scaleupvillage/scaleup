@@ -28,7 +28,7 @@ const LineFollower = () => {
       />
 
       <div className="custom-container py-[50px]">
-        <div className="flex justify-evenly items-center  py-8 ">
+        <div className="flex justify-evenly items-center  py-8 flex-col lg:flex-row">
           <div className="flex justify-center items-center">
             <div className="bg-[#003a6d47]  w-[40px] h-[40px] rounded-full mr-4 flex justify-center items-center">
               <CalenderFill className="fill-primary-blue" />
@@ -97,17 +97,13 @@ const LineFollower = () => {
             </p>
           </li>
           <li>
-            <p>
+            <p className="">
               Registration: Limited slots available. Register online at
-              <Link
-                href="www.scaleupconclave.com/linefollower"
-                className="text-blue-600"
-              >
-                {" "}
-                www.scaleupconclave.com/linefollower{" "}
-              </Link>{" "}
-              .
             </p>
+            <Link
+              href="www.scaleupconclave.com/linefollower"
+              className="text-blue-600 whitespace-normal"
+            ></Link>
           </li>
           <li>
             <p>Team Size: Maximum of three members per team.</p>

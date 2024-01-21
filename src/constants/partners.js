@@ -32,6 +32,7 @@ import profinz from "@/assets/images/partners/profinz.png";
 import foxlab from "@/assets/images/partners/foxlab.png";
 import impex from "@/assets/images/partners/impex.png";
 import dhanam from "@/assets/images/partners/dhanam .png";
+import cozmo from "@/assets/images/partners/cozmo.png";
 
 let partners = [
   open,
@@ -46,6 +47,7 @@ let partners = [
   ksidc,
   bbholdings,
   kkem,
+  cozmo,
   morfinvirsity,
   safari,
   zoul,

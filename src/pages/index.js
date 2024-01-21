@@ -863,7 +863,7 @@ export default function Home() {
         <div className="custom-container">
           <h1 className="title text-[36px] wave-before">OUR SPEAKERS</h1>
         </div>
-        <div className=" grid grid-cols-1 lg:grid-cols-4 ">
+        <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ">
           {speakers.map((speaker, index) => {
             return (
               <div
@@ -977,7 +977,7 @@ export default function Home() {
         <Scribbles scribbles={hilightScribble} />
       </div>
       <div className="py-[100px] custom-container">
-        <h1 className="title wave-before text-[36px]">Events required Separate Registration </h1>
+        <h1 className="title wave-before text-[18px] lg:text-[36px]">Events required Separate Registration </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mt-4">
           {seperateEvents.map((event, index) => (
             <div key={index}>

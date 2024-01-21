@@ -99,11 +99,14 @@ const LineFollower = () => {
           <li>
             <p className="">
               Registration: Limited slots available. Register online at
+              <Link
+                href="www.scaleupconclave.com/linefollower"
+                className="text-blue-600 break-words"
+              >
+                {" "}
+                www.scaleupconclave.com/linefollower .
+              </Link>
             </p>
-            <Link
-              href="www.scaleupconclave.com/linefollower"
-              className="text-blue-600 whitespace-normal"
-            ></Link>
           </li>
           <li>
             <p>Team Size: Maximum of three members per team.</p>

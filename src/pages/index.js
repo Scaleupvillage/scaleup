@@ -55,6 +55,7 @@ import {
 import Arrow from "@/Components/Icons/scribbles/Arrow";
 import Nextpage from "@/Components/Icons/Nextpage";
 import Head from "next/head";
+import RegisterFallback from "@/Components/RegisterFallback";
 const Countdown = dynamic(() => import("@/Components/Counter"), { ssr: false });
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 
@@ -564,7 +565,8 @@ export default function Home() {
             className="fixed top-0 left-0 w-full h-screen justify-center z-[100] bg-black bg-opacity-50  overflow-hidden"
             onClick={() => setOpenModal(false)}
           ></div>
-          <Register setShow={setOpenModal} />
+          {/* <Register setShow={setOpenModal} /> */}
+          <RegisterFallback setShow={setOpenModal} />
         </>
       )}
 

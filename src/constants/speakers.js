@@ -65,7 +65,7 @@ import azaadmoopan from "@/assets/images/speakers/azaadmoopan.webp";
 import farish from "@/assets/images/speakers/farish.webp";
 import umer from "@/assets/images/speakers/umer.webp";
 
-// speakers background images
+// speakers backg round images
 // speaker bg
 import bg1 from "@/assets/images/speakers/bg/bg1.png";
 import bg2 from "@/assets/images/speakers/bg/bg2.png";
@@ -242,7 +242,7 @@ const speakers = [
   },
   {
     image: bpnazar.src,
-    role: "Fortune Logistic",
+    role: "Frontline Group",
     name: "P B Nasar",
     captionBg: "  bg-primary-purple ",
   },
@@ -464,7 +464,7 @@ const speakers = [
     captionBg: "bg-primary-purple ",
   },
   {
-    image: anil.src,
+    image: "",
     role: "",
     name: "Sujith Bhakthan",
     captionBg: "bg-primary-purple ",
@@ -473,7 +473,7 @@ const speakers = [
     image: ashokkurian.src,
     role: "Kerala Startup Mission",
     name: "Ashok Kurian ",
-    captionBg: "  bg-primary-purple ",
+    captionBg: "bg-primary-purple",
   },
   {
     image: dana.src,

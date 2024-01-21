@@ -493,7 +493,7 @@ export default function Home() {
     },
 
     {
-      image: business.src,
+      image: loadingevent.src,
       title: "Investor Connect",
       price: "Free",
       registration: "",
@@ -977,7 +977,7 @@ export default function Home() {
         <Scribbles scribbles={hilightScribble} />
       </div>
       <div className="py-[100px] custom-container">
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
           {seperateEvents.map((event, index) => (
             <div key={index}>
               <Image
@@ -985,7 +985,7 @@ export default function Home() {
                 width="100"
                 height="100"
                 alt={event.title}
-                className="rounded-lg w-full h-[200px]"
+                className="rounded-lg w-full object-contain   h-[200px]"
               />
 
               <div className="px-3">
@@ -1002,7 +1002,7 @@ export default function Home() {
           ))}
         </div>
       </div>
-      <div className="py-[100px] custom-container" id="schedule">
+      <div className="py-[50px] lg:py-[100px] custom-container" id="schedule">
         <h1 className="text-[36px] title uppercase">Schedule</h1>
         <div className="flex justify-center items-center">
           <a
@@ -1010,7 +1010,7 @@ export default function Home() {
             className="flex justify-center items-center underline text-blue-600"
             download
           >
-            <h2 className="font-semibold text-center text-[30px]">
+            <h2 className="font-semibold text-center text-[18px] lg:text-[30px]">
               Download the schedule in pdf format
             </h2>
           </a>

@@ -52,9 +52,10 @@ const Register = ({ setShow }) => {
   ];
   const handleChange = (e) => {
     const { name, value } = e.target;
+
     setFormData((prevData) => ({
       ...prevData,
-      [name]: value,
+      [name]: name === "phoneNumber" ? value.replace(/[^0-9]/g, "") : value,
     }));
     setErrors({ ...errors, [name]: "", showOtp: "" });
   };
@@ -105,6 +106,8 @@ const Register = ({ setShow }) => {
     // Validate Phone Number
     if (!formData.phoneNumber.trim()) {
       newErrors.phoneNumber = "Phone Number is required";
+    } else if (formData.phoneNumber.length !== 10) {
+      newErrors.phoneNumber = "Please enter a valid phone number";
     }
 
     // Validate Email

@@ -61,6 +61,13 @@ import saima from "@/assets/images/speakers/saima.png";
 import anas from "@/assets/images/speakers/anas.png";
 import silvan from "@/assets/images/speakers/silvan.png";
 import tomjoseph from "@/assets/images/speakers/tomjoseph.png";
+import ajfan from "@/assets/images/speakers/ajfan.png";
+import rafeeq from "@/assets/images/speakers/rafeeq.png";
+import sathyajeet from "@/assets/images/speakers/sathyajeet.png";
+import satheesh from "@/assets/images/speakers/satheesh.png";
+import jamad from "@/assets/images/speakers/jamad.png";
+import afra from "@/assets/images/speakers/afra.png";
+import shahida from "@/assets/images/speakers/shahida.png";
 
 // speakers backg round images
 // speaker bg
@@ -147,7 +154,7 @@ const speakers = [
     captionBg: "  bg-primary-purple ",
   },
   {
-    image: "",
+    image: ajfan.src,
     role: "Chairman, AJFAN",
     name: "Mohamed Kutty Nechikatte",
     captionBg: "  bg-primary-purple ",
@@ -165,7 +172,7 @@ const speakers = [
     captionBg: "  bg-primary-cyan ",
   },
   {
-    image: "",
+    image: sathyajeet.src,
     role: "Additional CEO, KIIFB",
     name: "Satyajeet Rajan IAS",
     captionBg: "bg-primary-blue",
@@ -226,7 +233,7 @@ const speakers = [
     captionBg: "  bg-primary-cyan ",
   },
   {
-    image: "",
+    image: satheesh.src,
     role: "GALFAR",
     name: "Satheesh Pillai",
     captionBg: "  bg-primary-cyan ",
@@ -244,7 +251,7 @@ const speakers = [
     captionBg: "  bg-primary-purple ",
   },
   {
-    image: "",
+    image: jamad.src,
     role: "Emirates First",
     name: "Jamad Usman",
     captionBg: "  bg-primary-purple ",
@@ -358,7 +365,7 @@ const speakers = [
     captionBg: "bg-primary-purple ",
   },
   {
-    image: "",
+    image: shahida.src,
     role: "Nvio Water Solutions",
     name: "Shahida",
     captionBg: "bg-primary-purple ",
@@ -370,7 +377,7 @@ const speakers = [
     captionBg: "bg-primary-purple ",
   },
   {
-    image: "",
+    image: afra.src,
     role: "Mall of Abayas",
     name: "Afra Shabeeb",
     captionBg: "bg-primary-purple ",

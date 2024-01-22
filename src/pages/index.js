@@ -1012,7 +1012,7 @@ export default function Home() {
             download
           >
             <h2 className="font-semibold text-center text-[18px] lg:text-[30px]">
-              Download the schedule in pdf format
+              Click here to view the schedule
             </h2>
           </a>
         </div>

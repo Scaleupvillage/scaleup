@@ -533,28 +533,28 @@ export default function Home() {
       image: marathon.src,
       title: "Marathon",
       price: "Free",
-      registration: "",
+      registration: "/#events-seperate",
       regCaption: "Event Concluded",
     },
     {
       image: loadingevent.src,
       title: "Robo Soccer",
       price: "20 Rupees",
-      registration: "",
+      registration: "/#events-seperate",
       regCaption: "Spot Registration",
     },
     {
       image: loadingevent.src,
       title: "RC Car Race",
       price: "20 Rupees",
-      registration: "",
+      registration: "/#events-seperate",
       regCaption: "Spot Registration",
     },
     {
       image: loadingevent.src,
       title: "Yoga@Kodikuthimala",
       price: "Free",
-      registration: "",
+      registration: "/#events-seperate",
       regCaption: "Coming Soon",
     },
   ];
@@ -904,7 +904,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className=" py-[100px]   p-4 relative overflow-hidden">
+      <div className=" py-[100px] p-4 relative overflow-hidden">
         {highlightedPrograms.map((programs, highlightedProgramsIndex) => (
           <div className="grid grid-cols-12 " key={highlightedProgramsIndex}>
             {programs.map(
@@ -913,7 +913,7 @@ export default function Home() {
                 programIndex
               ) => (
                 <div
-                  className={`col-span-12 md:col-span-6 lg:col-span-3 h-[250px] rounded-md shadow-lg  overflow-hidden m-3 bg-white ${
+                  className={`col-span-12 sm:col-span-6 xl:col-span-3 h-[250px] rounded-md shadow-lg  overflow-hidden m-3 bg-white ${
                     highlightedProgramsIndex == 1 && programIndex === 0
                       ? "order-1"
                       : programIndex === 1
@@ -964,7 +964,7 @@ export default function Home() {
               )
             )}
             {highlightedProgramsIndex === 1 && (
-              <div className="hidden lg:block col-span-6 order-2  h-[250px] rounded-md shadow-lg  overflow-hidden m-3 bg-white">
+              <div className="hidden xl:block col-span-6 order-2  h-[250px] rounded-md shadow-lg  overflow-hidden m-3 bg-white">
                 <div className=" flex items-center justify-center w-full h-full">
                   <h1 className="title  uppercase text-[36px] ">
                     Highlighted Programs
@@ -976,7 +976,7 @@ export default function Home() {
         ))}
         <Scribbles scribbles={hilightScribble} />
       </div>
-      <div className="py-[100px] custom-container">
+      <div className="py-[100px] custom-container" id="events-seperate">
         <h1 className="title wave-before text-[18px] lg:text-[36px]">Events required Separate Registration </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mt-4">
           {seperateEvents.map((event, index) => (

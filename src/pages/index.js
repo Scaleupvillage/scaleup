@@ -53,6 +53,7 @@ import threedprinting from "@/assets/images/3dprinting.jpg";
 import arduino from "@/assets/images/arduino.jpg";
 import marathon from "@/assets/images/marathon.jpeg";
 import loadingevent from "@/assets/images/loadingevent.jpeg";
+import investorconn from "@/assets/images/investorconn.jpeg";
 
 import Register from "@/Components/Register";
 import { speakers, bg } from "@/constants/speakers";
@@ -493,7 +494,7 @@ export default function Home() {
     },
 
     {
-      image: loadingevent.src,
+      image: investorconn.src,
       title: "Investor Connect",
       price: "Free",
       registration: "https://docs.google.com/forms/d/e/1FAIpQLSejWz_iSFiYP7WmhSA65-beAe9e81Lk2xS5y2VKpTRInFAJvQ/viewform?usp=sf_link",

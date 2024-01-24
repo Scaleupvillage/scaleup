@@ -9,6 +9,8 @@ import arduino from "@/assets/images/arduino.jpg";
 import marathon from "@/assets/images/marathon.jpeg";
 import loadingevent from "@/assets/images/loadingevent.jpeg";
 import investorconn from "@/assets/images/investorconn.jpeg";
+import  rccars from '@/assets/images/rccars.jpg'
+import yoga from '@/assets/images/yogasession.jpg'
 let seperateEvents = [
   {
     image: business.src,
@@ -95,17 +97,17 @@ let seperateEvents = [
     regCaption: "Spot Registration",
   },
   {
-    image: loadingevent.src,
+    image: rccars.src,
     title: "RC Car Race",
     price: "20 Rupees",
-    registration: "/#events-seperate",
+    registration: "https://forms.gle/GSjGZZcBd6Q6KJLH7",
     regCaption: "Spot Registration",
   },
   {
-    image: loadingevent.src,
+    image: yogasessions.src,
     title: "Yoga@Kodikuthimala",
     price: "Free",
-    registration: "/#events-seperate",
+    registration: "https://forms.gle/7o5QHqpDa3RRYDZR9",
     regCaption: "Coming Soon",
   },
 ];

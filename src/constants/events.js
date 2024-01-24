@@ -10,7 +10,7 @@ import marathon from "@/assets/images/marathon.jpeg";
 import loadingevent from "@/assets/images/loadingevent.jpeg";
 import investorconn from "@/assets/images/investorconn.jpeg";
 import  rccars from '@/assets/images/rccars.jpg'
-import yoga from '@/assets/images/yogasession.jpg'
+import yogasessions from '@/assets/images/yogasession.jpg'
 let seperateEvents = [
   {
     image: business.src,

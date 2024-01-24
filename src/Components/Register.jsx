@@ -25,7 +25,7 @@ const Register = ({ setShow }) => {
     phoneNumber: "",
     email: "",
     category: "",
-    company: "",
+    company: "",  
     otp: "",
     district: "Malappuram",
   });

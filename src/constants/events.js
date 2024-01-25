@@ -108,7 +108,7 @@ let seperateEvents = [
     title: "Yoga@Kodikuthimala",
     price: "Free",
     registration: "https://forms.gle/7o5QHqpDa3RRYDZR9",
-    regCaption: "Coming Soon",
+    regCaption: "Regiter Now",
   },
 ];
 

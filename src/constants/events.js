@@ -7,10 +7,11 @@ import crochetworkshop from "@/assets/images/crochetworkshop.jpg";
 import threedprinting from "@/assets/images/3dprinting.jpg";
 import arduino from "@/assets/images/arduino.jpg";
 import marathon from "@/assets/images/marathon.jpeg";
-import loadingevent from "@/assets/images/loadingevent.jpeg";
 import investorconn from "@/assets/images/investorconn.jpeg";
-import  rccars from '@/assets/images/rccars.jpg'
-import yogasessions from '@/assets/images/yogasession.jpg'
+import rccars from "@/assets/images/rccars.jpg";
+import yogasessions from "@/assets/images/yogasession.jpg";
+import robosoccer from "@/assets/images/robosoccer.jpeg";
+import award from "@/assets/images/award.jpeg";
 let seperateEvents = [
   {
     image: business.src,
@@ -90,7 +91,7 @@ let seperateEvents = [
     regCaption: "Event Concluded",
   },
   {
-    image: loadingevent.src,
+    image: robosoccer.src,
     title: "Robo Soccer",
     price: "20 Rupees",
     registration: "/#events-seperate",
@@ -99,9 +100,9 @@ let seperateEvents = [
   {
     image: rccars.src,
     title: "RC Car Race",
-    price: "20 Rupees",
+    price: "Fre",
     registration: "https://forms.gle/GSjGZZcBd6Q6KJLH7",
-    regCaption: "Spot Registration",
+    regCaption: "Register Now",
   },
   {
     image: yogasessions.src,
@@ -109,6 +110,13 @@ let seperateEvents = [
     price: "Free",
     registration: "https://forms.gle/7o5QHqpDa3RRYDZR9",
     regCaption: "Coming Soon",
+  },
+  {
+    image: award.src,
+    title: "SCALEUP INNOVATION AWARD",
+    price: "Free",
+    registration: "https://forms.gle/AJkPFbQo4eecLxPp7",
+    regCaption: "Register Now",
   },
 ];
 

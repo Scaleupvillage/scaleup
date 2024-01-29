@@ -573,7 +573,6 @@ export default function Home() {
           {/* <RegisterFallback setShow={setOpenModal} /> */}
         </>
       )}
-
       <div
         className={`${Styles["main-container"]} relative overflow-hidden main-section`}
       >
@@ -653,7 +652,6 @@ export default function Home() {
         </div>
         <Scribbles scribbles={scribblesSecond} />
       </div>
-
       {/* COUNTER  */}
       <div className={`${Styles["counter-bg"]} `}>
         <div className="custom-container h-full py-[70px] flex justify-center items-center">
@@ -695,7 +693,6 @@ export default function Home() {
         </div>
       </div>
       {/* /COUNTER  */}
-
       <div className="py-[100px] relative overflow-hidden">
         <div className="custom-container relative">
           <h1 className="title purple-before text-[36px]">ScaleUp who</h1>
@@ -913,7 +910,6 @@ export default function Home() {
           </a>
         </div>
       </div>
-
       <div className="py-[100px] custom-container">
         <h1 className="title wave-before uppercase text-[36px]">
           Our partners
@@ -942,7 +938,6 @@ export default function Home() {
           ))}
         </div>
       </div>
-
       <Footer hideFloatingBtn={true} />
     </div>
   );

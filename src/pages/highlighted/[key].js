@@ -4,7 +4,7 @@ import Navbar from "@/Components/Layout/Navbar";
 import Footer from "@/Components/Layout/Footer";
 import Slider from "@/Components/Slider";
 import { useRouter } from "next/router";
-import { hilightedEvent } from "@/constants/hilightedPrograms";
+import { hilightedEvent } from "@/constants/events";
 
 const Highlighted = () => {
   const { key } = useRouter().query;

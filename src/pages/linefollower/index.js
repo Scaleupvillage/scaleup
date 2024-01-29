@@ -9,7 +9,9 @@ import Scale from "@/Components/Icons/Scale";
 import Question from "@/Components/Icons/Question";
 import UserGroup from "@/Components/Icons/UserGroup";
 import Footer from "@/Components/Layout/Footer";
-// import  from '@/Components/'
+import dynamic from "next/dynamic";
+const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
+
 const LineFollower = () => {
   return (
     <>
@@ -20,7 +22,7 @@ const LineFollower = () => {
         main={{
           style: {
             backgroundImage:
-              "url(https://vaanahaa.com/wp-content/uploads/2018/06/line-follwer-1.jpg)",
+              "url(https://i.ytimg.com/vi/VF5w7Ct5s8Q/maxresdefault.jpg)",
             backgroundSize: "100% 100%",
             backgroundPosition: "50%",
           },
@@ -28,31 +30,41 @@ const LineFollower = () => {
       />
 
       <div className="custom-container py-[50px]">
-        <div className="flex justify-evenly items-center  py-8 ">
-          <div className="flex justify-center items-center">
+        <div className="flex justify-evenly items-start lg:items-center  py-8 flex-col md:flex-row">
+          <div className="flex justify-center items-center mb-4 lg:mb-0">
             <div className="bg-[#003a6d47]  w-[40px] h-[40px] rounded-full mr-4 flex justify-center items-center">
               <CalenderFill className="fill-primary-blue" />
             </div>
-            <h3 className="text-[19px]">February 2-3, 2024</h3>
+            <h3 className="text-[13px] lg:text-[19px]">February 2-3, 2024</h3>
           </div>
-          <div>
-            <div className="flex justify-center items-center">
-              <div className="bg-[#b203ed39] w-[40px] h-[40px] rounded-full mr-4 flex justify-center items-center">
-                <LocatioIcon width="20" className="fill-primary-purple" />
-              </div>
-              <h3 className="text-[19px]">
-                Shifa Convention Centre, Perinthalmanna
-              </h3>
+          <div className="flex justify-center items-center mb-4 lg:mb-0">
+            <div className="bg-[#b203ed39] w-[40px] h-[40px] rounded-full mr-4 flex justify-center items-center">
+              <LocatioIcon width="20" className="fill-primary-purple" />
             </div>
+            <h3 className="text-[13px] lg:text-[19px]">
+              Shifa Convention Centre, Perinthalmanna
+            </h3>
           </div>
-          <div>
-            <div className="flex justify-center items-center">
-              <div className="bg-[#ffcf3f54] w-[40px] h-[40px] rounded-full mr-4 flex justify-center items-center">
-                <CupIcon className="fill-primary-yellow" />
-              </div>
-              <h3 className="text-[19px]">15,000</h3>
+          <div className="flex justify-center items-center mb-4 lg:mb-0">
+            <div className="bg-[#ffcf3f54] w-[40px] h-[40px] rounded-full mr-4 flex justify-center items-center">
+              <CupIcon className="fill-primary-yellow" />
             </div>
+            <h3 className="text-[13px] lg:text-[19px]">15,000</h3>
           </div>
+        </div>
+        <div className="flex justify-center items-center">
+          <p className="my-4">
+            Contact this number for any doubts, Shahanas Beegam - +91 9745 862
+            578
+          </p>
+        </div>
+        <div className="flex justify-center items-center mt-4">
+          <Link
+            href="https://docs.google.com/forms/d/e/1FAIpQLSdl0rus1uRA-hSt2n3idYPXQf7HcDZ_fozXQ-uqHuNK6OJAdA/viewform?usp=sf_link"
+            className="bg-primary-purple shadow-lg shadow-primary-purple px-8 py-3 rounded-full text-white mb-4 lg:mb-0 text-center"
+          >
+            Register Now For Line Follower
+          </Link>
         </div>
       </div>
 
@@ -97,16 +109,15 @@ const LineFollower = () => {
             </p>
           </li>
           <li>
-            <p>
+            <p className="">
               Registration: Limited slots available. Register online at
               <Link
                 href="www.scaleupconclave.com/linefollower"
-                className="text-blue-600"
+                className="text-blue-600 break-words"
               >
                 {" "}
-                www.scaleupconclave.com/linefollower{" "}
-              </Link>{" "}
-              .
+                www.scaleupconclave.com/linefollower .
+              </Link>
             </p>
           </li>
           <li>
@@ -202,6 +213,38 @@ const LineFollower = () => {
                 </li>
               </ul>
             </div>
+          </div>
+        </div>
+      </div>
+      <div className="custom-container py-[50px]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+          <div className="w-full h-[300px] rounded-lg overflow-hidden">
+            <ReactPlayer
+              url="https://www.youtube.com/watch?v=QPen0-u8HsM"
+              height={"100%"}
+              width={"100%"}
+            />
+          </div>
+          <div className="w-full h-[300px] rounded-lg overflow-hidden">
+            <ReactPlayer
+              url="https://www.youtube.com/watch?v=5jh-5HGvC-I"
+              height={"100%"}
+              width={"100%"}
+            />
+          </div>
+          <div className="w-full h-[300px] rounded-lg overflow-hidden">
+            <ReactPlayer
+              url="https://www.youtube.com/watch?v=bZJYAhzlYa0"
+              height={"100%"}
+              width={"100%"}
+            />
+          </div>
+          <div className="w-full h-[300px] rounded-lg overflow-hidden">
+            <ReactPlayer
+              url="https://www.youtube.com/watch?v=so-OOdNkNvo"
+              height={"100%"}
+              width={"100%"}
+            />
           </div>
         </div>
       </div>

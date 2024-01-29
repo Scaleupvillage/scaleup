@@ -14,6 +14,7 @@ import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import Youtube from "../Icons/Youtube";
 import Linkedin from "../Icons/Linkedin";
+import RegisterFallback from "../RegisterFallback";
 
 const Footer = ({ hideFloatingBtn = false }) => {
   const [openModal, setOpenModal] = useState(false);
@@ -214,6 +215,7 @@ const Footer = ({ hideFloatingBtn = false }) => {
             onClick={() => setOpenModal(false)}
           ></div>
           <Register setShow={setOpenModal} />
+          {/* <RegisterFallback setShow={setOpenModal} /> */}
         </>
       ) : (
         ""

@@ -41,8 +41,10 @@ import slider2 from "@/assets/images/slider2.png";
 import slider3 from "@/assets/images/slider3.png";
 import slider4 from "@/assets/images/slider4.png";
 import LocatioIcon from "@/Components/Icons/LocatioIcon";
-import Register from "@/Components/Register";
 
+
+
+import Register from "@/Components/Register";
 import { speakers, bg } from "@/constants/speakers";
 import { partners } from "@/constants/partners";
 import {
@@ -55,6 +57,9 @@ import {
 import Arrow from "@/Components/Icons/scribbles/Arrow";
 import Nextpage from "@/Components/Icons/Nextpage";
 import Head from "next/head";
+import RegisterFallback from "@/Components/RegisterFallback";
+import Download from "@/Components/Icons/Download";
+import { seperateEvents } from "@/constants/events";
 const Countdown = dynamic(() => import("@/Components/Counter"), { ssr: false });
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 
@@ -448,7 +453,7 @@ export default function Home() {
       },
     ],
   ];
-
+  
   const scheduleTab = [
     {
       name: "Main Venue",
@@ -565,6 +570,7 @@ export default function Home() {
             onClick={() => setOpenModal(false)}
           ></div>
           <Register setShow={setOpenModal} />
+          {/* <RegisterFallback setShow={setOpenModal} /> */}
         </>
       )}
       <div
@@ -750,7 +756,7 @@ export default function Home() {
         <div className="custom-container">
           <h1 className="title text-[36px] wave-before">OUR SPEAKERS</h1>
         </div>
-        <div className=" grid grid-cols-1 lg:grid-cols-4 ">
+        <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ">
           {speakers.map((speaker, index) => {
             return (
               <div
@@ -762,13 +768,13 @@ export default function Home() {
                   backgroundRepeat: "no-repeat",
                 }}
               >
-                {/* <Image
+                <Image
                   width={350}
                   height={5}
                   src={speaker.image}
                   className="w-full"
                   alt="speaker"
-                /> */}
+                />
                 <div className="absolute bottom-0 left-0 w-full ">
                   <div
                     className={`w-full  h-[100px] px-8 py-2 ${
@@ -790,7 +796,8 @@ export default function Home() {
           })}
         </div>
       </div>
-      <div className=" py-[100px]   p-4 relative overflow-hidden">
+
+      <div className=" py-[100px] p-4 relative overflow-hidden">
         {highlightedPrograms.map((programs, highlightedProgramsIndex) => (
           <div className="grid grid-cols-12 " key={highlightedProgramsIndex}>
             {programs.map(
@@ -799,7 +806,7 @@ export default function Home() {
                 programIndex
               ) => (
                 <div
-                  className={`col-span-12 lg:col-span-3 h-[250px] rounded-md shadow-lg  overflow-hidden m-3 bg-white ${
+                  className={`col-span-12 sm:col-span-6 xl:col-span-3 h-[250px] rounded-md shadow-lg  overflow-hidden m-3 bg-white ${
                     highlightedProgramsIndex == 1 && programIndex === 0
                       ? "order-1"
                       : programIndex === 1
@@ -850,7 +857,7 @@ export default function Home() {
               )
             )}
             {highlightedProgramsIndex === 1 && (
-              <div className="hidden lg:block col-span-6 order-2  h-[250px] rounded-md shadow-lg  overflow-hidden m-3 bg-white">
+              <div className="hidden xl:block col-span-6 order-2  h-[250px] rounded-md shadow-lg  overflow-hidden m-3 bg-white">
                 <div className=" flex items-center justify-center w-full h-full">
                   <h1 className="title  uppercase text-[36px] ">
                     Highlighted Programs
@@ -862,232 +869,45 @@ export default function Home() {
         ))}
         <Scribbles scribbles={hilightScribble} />
       </div>
+      <div className="py-[100px] custom-container" id="events-seperate">
+        <h1 className="title wave-before text-[18px] lg:text-[36px]">Events required Separate Registration </h1>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mt-4">
+          {seperateEvents.map((event, index) => (
+            <div key={index}>
+              <Image
+                src={event.image}
+                width="100"
+                height="100"
+                alt={event.title}
+                className="rounded-lg w-full object-contain   h-[200px]"
+              />
 
-      <div className="grid sm:grid-cols-1 lg:grid-cols-4  justify-center">
-        <div className="max-w-sm rounded overflow-hidden shadow-lg  ">
-          <img className="w-full" src={Clock} alt="card image" />
-          <div className="px-6 py-4">
-            <div className="font-bold text-xl mb-2">title</div>
-            <button
-              onClick={() => {
-                console.log("clicked");
-              }}
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
-            >
-              Next
-            </button>
-          </div>
-        </div>
-
-        <div className="max-w-sm rounded overflow-hidden shadow-lg">
-          <img className="w-full" src={Clock} alt="card image" />
-          <div className="px-6 py-4">
-            <div className="font-bold text-xl mb-2">title</div>
-            <button
-              onClick={() => {
-                console.log("clicked");
-              }}
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
-            >
-              Next
-            </button>
-          </div>
-        </div>
-
-        <div className="max-w-sm rounded overflow-hidden shadow-lg">
-          <img className="w-full" src={Clock} alt="card image" />
-          <div className="px-6 py-4">
-            <div className="font-bold text-xl mb-2">title</div>
-            <button
-              onClick={() => {
-                console.log("clicked");
-              }}
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
-            >
-              Next
-            </button>
-          </div>
-        </div>
-
-        <div className="max-w-sm rounded overflow-hidden shadow-lg">
-          <img className="w-full" src={Clock} alt="card image" />
-          <div className="px-6 py-4">
-            <div className="font-bold text-xl mb-2">title</div>
-            <button
-              onClick={() => {
-                console.log("clicked");
-              }}
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
-            >
-              Next
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <div className="py-[100px] custom-container" id="schedule">
-        <h1 className="text-[36px] title uppercase">Schedule</h1>
-        <div className="custom-container flex gap-x-6 justify-center items-center  pb-6 overflow-auto">
-          <div
-            role="button"
-            onClick={() => changeTab("main", "Day 1")}
-            className="bg-gray-200 h-[50px] w-[250px] relative overflow-hidden"
-          >
-            <h1
-              className={`font-semibold text-[15px] lg:text-[20px] p-3 ${
-                scheduledTab.main == "Day 1" ? "" : "text-gray-400"
-              } `}
-            >
-              Day 1
-            </h1>
-            <h1
-              className={`absolute right-0 bottom-0 text-[30px] lg:text-[45px] font-semibold
-             max-h-[50px] overflow-hidden ${
-               scheduledTab.main === "Day 1"
-                 ? "text-primary-cyan"
-                 : "text-gray-400"
-             }`}
-            >
-              2 Feb
-            </h1>
-          </div>
-          <div
-            role="button"
-            onClick={() => changeTab("main", "Day 2")}
-            className="bg-gray-200 h-[50px] w-[250px] relative overflow-hidden"
-          >
-            <h1
-              className={`font-semibold text-[15px] lg:text-[20px] p-3 ${
-                scheduledTab.main == "Day 2" ? "" : "text-gray-400"
-              } `}
-            >
-              Day 2
-            </h1>
-            <h1
-              className={`absolute right-0 bottom-0 text-[30px] lg:text-[45px] font-semibold
-              max-h-[50px] overflow-hidden ${
-                scheduledTab.main === "Day 2"
-                  ? "text-primary-cyan"
-                  : "text-gray-400"
-              }`}
-            >
-              3 Feb
-            </h1>
-          </div>
-        </div>
-        <div className="flex overflow-auto gap-x-6">
-          {scheduleTab.map((tab, index) => (
-            <div
-              role="button"
-              onClick={() => changeTab("sub", tab.name)}
-              key={index}
-              className=" py-4 px-5 bg-gray-200  w-full min-w-[200px] flex items-center justify-between  overflow-hidden relative"
-            >
-              <h1
-                className={`font-semibold text-[20px] ${
-                  scheduledTab.sub !== tab.name && "text-gray-400"
-                }`}
-              >
-                {tab.name}
-              </h1>
-              {tab.icon(tab.name)}
+              <div className="px-3">
+                <h2 className="font-bold mt-2">{event.title}</h2>
+                <div className="text-sm lg:text-base">{event.price}</div>
+                <Link
+                  href={event.registration}
+                  className=" mt-4 font-semibold bg-primary-yellow px-3 py-2 rounded-full w-full text-sm flex justify-center items-center"
+                >
+                  {event.regCaption}
+                </Link>
+              </div>
             </div>
           ))}
         </div>
-
-        <div className="container mx-auto">
-          <div className=" bg-primary-cyan mt-[50px]">
-            <div className="flex px-4 items-center ">
-              <Calendar width="20" fill="white" />
-              <h1 className="text-white ml-3">Main Events</h1>
-            </div>
-          </div>
-          <div className="w-full overflow-auto">
-            <div className="bg-white shadow-md rounded ">
-              <div className="flex flex-col">
-                {/* {Object.keys(schedules).length > 0 &&
-                  schedules[scheduledTab.main][scheduledTab.sub].map(
-                    (schedule, index) => {
-                      return (
-                        <div
-                          className="flex flex-row border-b border-gray-200"
-                          key={index}
-                        >
-                          {schedule.map((data, dataIndex) => (
-                            <div
-                              className="w-full md:w-1/4 py-3 px-6 text-left"
-                              key={dataIndex}
-                            >
-                              {dataIndex === 0 ? (
-                                <img
-                                  src={data}
-                                  width={100}
-                                  height={90}
-                                  alt=""
-                                />
-                              ) : (
-                                <>
-                                  {typeof data === "string" &&
-                                  data.split(",").length > 0 ? (
-                                    <>
-                                      <h1 className="text-[15px] font-semibold whitespace-nowrap">
-                                        {data.split(",")[0]}
-                                      </h1>
-                                      <p className="text-[14px] font-semibold whitespace-nowrap">
-                                        {data.split(",")[1]}
-                                      </p>
-                                      <p className="text-[10px] font-normal text-gray-500 whitespace-nowrap">
-                                        {data.split(",")[2]}
-                                      </p>
-                                    </>
-                                  ) : (
-                                    <h1 className="text-[15px] font-semibold whitespace-nowrap">
-                                      {data}
-                                    </h1>
-                                  )}
-                                </>
-                              )}
-                            </div>
-                          ))}
-                          <div className="w-full md:w-1/4 py-3 px-6 text-left flex justify-center items-center flex-col">
-                            <div className="text-[20px] font-semibold">14</div>
-                            <div>February</div>
-                          </div>
-                          <div className="w-full md:w-1/4 py-3 px-6 text-center flex justify-center items-center flex-col">
-                            <h1 className="text-[15px] font-semibold whitespace-nowrap">
-                              Conference in Amsterdam
-                            </h1>
-                            <p className="text-[14px] font-semibold whitespace-nowrap">
-                              08 AM 04 PM
-                            </p>
-                            <p className="text-[10px] font-normal text-gray-500 whitespace-nowrap">
-                              Speaker: Daniel Hill
-                            </p>
-                          </div>
-                          <div className="w-full md:w-1/4 py-3 px-6 text-center flex justify-center items-center">
-                            <button className="rounded-2xl bg-primary-cyan text-white px-10 py-2 text-[10px]">
-                              Read More
-                            </button>
-                          </div>
-                          <div className="w-full md:w-1/4 py-3 px-6 text-center flex justify-center items-center">
-                            <a
-                              className="text-primary-cyan text-[12px] font-semibold underline underline-primary-cyan"
-                              href=""
-                            >
-                              Join Whatsapp
-                            </a>
-                          </div>
-                        </div>
-                      );
-                    }
-                  )} */}
-
-                <div className="w-full  text-center p-7  border-b border-gray-200 shadow-lg">
-                  <h1 className="title">Coming Soon...</h1>
-                </div>
-              </div>
-            </div>
-          </div>
+      </div>
+      <div className="py-[50px] lg:py-[100px] custom-container" id="schedule">
+        <h1 className="text-[36px] title uppercase">Schedule</h1>
+        <div className="flex justify-center items-center">
+          <a
+            href="ScheduleScaleuppdf.pdf"
+            className="flex justify-center items-center underline text-blue-600"
+            download
+          >
+            <h2 className="font-semibold text-center text-[18px] lg:text-[30px]">
+              Click here to view the schedule
+            </h2>
+          </a>
         </div>
       </div>
       <div className="py-[100px] custom-container">

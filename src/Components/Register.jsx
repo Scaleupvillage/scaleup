@@ -8,6 +8,7 @@ import { modal } from "./Modal";
 import SuccessAlert from "./SuccessAlert";
 
 const Register = ({ setShow }) => {
+  const [isLoading, setIsLoading] = useState(false);
   const [showOtp, setShowOtp] = useState(false);
   const [successAert, setSuccessAert] = useState(false);
   const [verifyOtp, setVerifyOtp] = useState({
@@ -52,9 +53,10 @@ const Register = ({ setShow }) => {
   ];
   const handleChange = (e) => {
     const { name, value } = e.target;
+
     setFormData((prevData) => ({
       ...prevData,
-      [name]: value,
+      [name]: name === "phoneNumber" ? value.replace(/[^0-9]/g, "") : value,
     }));
     setErrors({ ...errors, [name]: "", showOtp: "" });
   };
@@ -105,6 +107,8 @@ const Register = ({ setShow }) => {
     // Validate Phone Number
     if (!formData.phoneNumber.trim()) {
       newErrors.phoneNumber = "Phone Number is required";
+    } else if (formData.phoneNumber.length !== 10) {
+      newErrors.phoneNumber = "Please enter a valid phone number";
     }
 
     // Validate Email
@@ -192,11 +196,13 @@ const Register = ({ setShow }) => {
     const isValid = validateForm();
     if (isValid) {
       event.target.disabled = true;
+      setIsLoading(true);
       axios
         .post("/api/otp/verify", { ...formData, otp: otp.join("") })
         .then((response) => {
           setSuccessAert(true);
           event.target.disabled = false;
+          setIsLoading(false);
         })
         .catch((err) => {
           event.target.disabled = false;
@@ -211,6 +217,7 @@ const Register = ({ setShow }) => {
             progress: undefined,
             theme: "light",
           });
+          setIsLoading(false);
         });
     }
   };
@@ -420,10 +427,10 @@ const Register = ({ setShow }) => {
         <div className="col-span-10 lg:col-span-2 flex justify-center items-center">
           <button
             type="button"
-            className="w-full bg-primary-cyan  px-8 py-3 rounded-full text-white disabled:cursor-not-allowed disabled:opacity-50"
+            className="w-full bg-primary-cyan  px-8 py-3 rounded-full text-white disabled:cursor-not-allowed disabled:opacity-50 flex justify-center items-center"
             onClick={handleFormSubmit}
           >
-            Register
+            {isLoading ? <div class="loader"></div> : "Register"}
           </button>
         </div>
       </div>

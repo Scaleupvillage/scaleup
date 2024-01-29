@@ -40,7 +40,7 @@ translate-y-[-50%] bg-gray-100 p-[25px]  "
             <p className="flex text-[13px] lg:text-[15px] first-letter:">
               Join our &nbsp;
               <a
-                href="https://chat.whatsapp.com/EkVvmrMIW3zHXtxJSgyK2B"
+                href="https://chat.whatsapp.com/HxsN8aGzntmH7QCEV4NxfH"
                 className="text-[15px] font-semibold underline lowercase"
               >
                 <p className="flex items-center gap-1">

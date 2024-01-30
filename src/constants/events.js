@@ -108,8 +108,8 @@ let seperateEvents = [
     image: yogasessions.src,
     title: "Yoga@Kodikuthimala",
     price: "Free",
-    registration: "https://forms.gle/7o5QHqpDa3RRYDZR9",
-    regCaption: "Regiter Now",
+    registration: "",
+    regCaption: "Event Concluded",
   },
   {
     image: award.src,

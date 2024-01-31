@@ -24,8 +24,8 @@ translate-y-[-50%] bg-gray-100 p-[25px]  "
           </div>
         </div>
         <div className="py-12 text-center">
-          <p>Sorry, We are facing some technical Erro</p>
-          <p>
+          <p>Registration Closed</p>
+          {/* <p>
             Please register here :
             <Link
               href="https://forms.gle/aTo77LbEU7N5CLLKA"
@@ -35,7 +35,7 @@ translate-y-[-50%] bg-gray-100 p-[25px]  "
               {" "}
               Register Now
             </Link>
-          </p>
+          </p> */}
         </div>
       </div>
     </div>

@@ -86,13 +86,6 @@ export default function Home() {
             Ideas to Bigger and Better
           </h1>
           <p className="text-sm lg:text-lg xl:text-[42px] mb-4 xl:mb-8 text-white"></p>
-          <button
-            type="button"
-            className="bg-primary-cyan shadow-lg shadow-primary-cyan px-8 py-3 rounded-full text-white"
-            onClick={() => setOpenModal(true)}
-          >
-            Register Now
-          </button>
         </div>
         <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-25 z-[1]"></div>
       </div>
@@ -113,13 +106,6 @@ export default function Home() {
           <h1 className="text-white text-[20px] lg:text-[60px] xl:text-[65px] font-extrabold uppercase text-center mb-2">
             India’s First D2C Industrial Park
           </h1>
-          <button
-            type="button"
-            className="bg-primary-cyan shadow-lg shadow-primary-cyan px-8 py-3 rounded-full text-white"
-            onClick={() => setOpenModal(true)}
-          >
-            Register Now
-          </button>
         </div>
         <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-25 z-[1]"></div>
       </div>
@@ -140,13 +126,6 @@ export default function Home() {
           <h1 className="text-white text-[18px] lg:text-[60px] xl:text-[70px] font-extrabold uppercase mb-2">
             Fusion Business Conclave
           </h1>
-          <button
-            type="button"
-            className="bg-primary-cyan shadow-lg shadow-primary-cyan px-8 py-3 rounded-full text-white"
-            onClick={() => setOpenModal(true)}
-          >
-            Register Now
-          </button>
         </div>
         <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-25 z-[1]"></div>
       </div>
@@ -167,14 +146,6 @@ export default function Home() {
           <h1 className="text-white text-[20px] lg:text-[60px] xl:text-[70px] font-extrabold uppercase mb-2">
             Your Business Journey
           </h1>
-
-          <button
-            type="button"
-            className="bg-primary-cyan shadow-lg shadow-primary-cyan px-8 py-3 rounded-full text-white"
-            onClick={() => setOpenModal(true)}
-          >
-            Register Now
-          </button>
         </div>
         <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-25 z-[1]"></div>
       </div>

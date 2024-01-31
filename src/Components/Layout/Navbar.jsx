@@ -9,6 +9,7 @@ import Youtube from "../Icons/Youtube";
 import Instagram from "../Icons/Instagram";
 import Facebook from "../Icons/Facebook";
 import Linkedin from "../Icons/Linkedin";
+import Important from "../Icons/Important";
 const Navbar = ({ isAbsolute = false }) => {
   const containerRef = useRef(null);
   const [isOpen, toggleOpen] = useCycle(false, true);
@@ -167,11 +168,19 @@ const Navbar = ({ isAbsolute = false }) => {
         </motion.div>
       </div>
 
-      {/* <div className="fixed p-5 bg-red-500 w-full bottom-[10px]">
-              <div className="custom-container">
-
-              </div>
-      </div> */}
+      <div className="fixed  w-full bottom-[10px]">
+        <div className="custom-container py-2 px-4 bg-white shadow-md shadow-[#eeeeee] prounded-md border-[1px] border-primary-purple flex justify-center items-center gap-x-4 rounded-[16px]">
+          <div className="w-[50px] h-[50px] border-[1px] border-primary-purple rounded-full flex justify-center  items-center ">
+            <Important className="fill-primary-purple" width="25" />
+          </div>
+          <div>
+            <p className="text-sm">
+              Registrations Closed , Tickets only available for 2 Days Business
+              Bootcamp.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

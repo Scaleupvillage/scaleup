@@ -900,7 +900,7 @@ export default function Home() {
         <h1 className="text-[36px] title uppercase">Schedule</h1>
         <div className="flex justify-center items-center">
           <a
-            href="ScheduleScaleuppdf.pdf"
+            href="schedule_scaleup.pdf"
             className="flex justify-center items-center underline text-blue-600"
             download
           >

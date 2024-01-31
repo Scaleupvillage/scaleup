@@ -42,8 +42,6 @@ import slider3 from "@/assets/images/slider3.png";
 import slider4 from "@/assets/images/slider4.png";
 import LocatioIcon from "@/Components/Icons/LocatioIcon";
 
-
-
 import Register from "@/Components/Register";
 import { speakers, bg } from "@/constants/speakers";
 import { partners } from "@/constants/partners";
@@ -453,7 +451,7 @@ export default function Home() {
       },
     ],
   ];
-  
+
   const scheduleTab = [
     {
       name: "Main Venue",
@@ -870,7 +868,9 @@ export default function Home() {
         <Scribbles scribbles={hilightScribble} />
       </div>
       <div className="py-[100px] custom-container" id="events-seperate">
-        <h1 className="title wave-before text-[18px] lg:text-[36px]">Events required Separate Registration </h1>
+        <h1 className="title wave-before text-[18px] lg:text-[36px]">
+          Events required Separate Registration{" "}
+        </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mt-4">
           {seperateEvents.map((event, index) => (
             <div key={index}>
@@ -905,7 +905,7 @@ export default function Home() {
             download
           >
             <h2 className="font-semibold text-center text-[18px] lg:text-[30px]">
-              Click here to view the schedule
+              Click here to download the schedule (Final)
             </h2>
           </a>
         </div>

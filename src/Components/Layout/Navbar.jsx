@@ -167,11 +167,11 @@ const Navbar = ({ isAbsolute = false }) => {
         </motion.div>
       </div>
 
-      <div className="fixed p-5 bg-red-500 w-full bottom-[10px]">
+      {/* <div className="fixed p-5 bg-red-500 w-full bottom-[10px]">
               <div className="custom-container">
-                
+
               </div>
-      </div>
+      </div> */}
     </div>
   );
 };

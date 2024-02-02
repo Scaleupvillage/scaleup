@@ -1,5 +1,5 @@
 import Register from "@/Components/Register";
-
+import { useState } from 'react';
 const PrivateReg = ()=> {
 const [openModal, setOpenModal] = useState(false);
 return (

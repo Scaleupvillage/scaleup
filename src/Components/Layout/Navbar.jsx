@@ -175,8 +175,7 @@ const Navbar = ({ isAbsolute = false }) => {
           </div>
           <div>
             <p className="text-sm">
-              Registrations Closed , Tickets only available for 2 Days Business
-              Bootcamp.
+              Event sucessfully completed, stay tuned for next year
             </p>
           </div>
         </div>

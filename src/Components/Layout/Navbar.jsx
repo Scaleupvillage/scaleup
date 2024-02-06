@@ -175,7 +175,7 @@ const Navbar = ({ isAbsolute = false }) => {
           </div>
           <div>
             <p className="text-sm">
-              Event sucessfully completed, stay tuned for next year
+              Event sucessfully completed, stay tuned for next year.
             </p>
           </div>
         </div>
